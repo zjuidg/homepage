@@ -1,0 +1,57 @@
+[
+  {
+    "title":"Congratulations to Shifu Chen on winning the Honorable Mention Award at IEEE PacificVIS 2026 (Conference Track)!",
+    "titleZh":"祝贺 Shifu Chen 荣获 IEEE PacificVis 2026（会议论文）荣誉提名奖！",
+    "subtitle":"A Declarative Grammar for Interactive Trajectory Visualization: Interaction as First-Class Component",
+    "imgSrc":"source/slides/trajgram.jpg",
+    "link":"/publications/trajgram"
+  },{
+  "title":"Shuhan Liu presented RCInvestigator at PacificVis 2026!",
+  "titleZh":"Shuhan Liu 在 PacificVis 2026 上汇报了 RCInvestigator！",
+  "subtitle":"RCInvestigator: Towards Better Investigation of Anomaly Root Causes in Cloud Computing Systems",
+  "imgSrc":"source/slides/rcinvestigator.jpg",
+  "link":"/publications/rcinvestigator"
+},{
+  "title":"Zhenning Chen presented KEditVis at PacificVis 2026!",
+  "titleZh":"Zhenning Chen 在 PacificVis 2026 上汇报了 KEditVis！",
+  "subtitle":"KEditVis: A Visual Analytics System for Knowledge Editing of Large Language Models",
+  "imgSrc":"source/slides/keditvis.jpg",
+  "link":"/publications/keditvis"
+},{
+    "title":"Di Weng presented TrajectoryCurer at PacificVis 2026! ",
+    "titleZh":"Di Weng 在 PacificVis 2026 上汇报了 TrajectoryCurer！",
+    "subtitle":"TrajectoryCurer: Visual Analysis of Trajectory Data Quality",
+    "imgSrc":"source/slides/trajectorycurer.png",
+    "link":"/publications/trajectorycurer"
+  },{
+    "title":"Yuchen He presented Exchart at ACM CHI 2026!",
+    "titleZh":"Yuchen He 在 ACM CHI 2026 上汇报了 Exchart！",
+    "subtitle":"Making Multimodal LLMs Reliable Chart Data Extractors: A Benchmark and Training Framework",
+    "imgSrc":"source/slides/exchart.jpg",
+    "link":"/publications/exchart"
+  },{
+  "title":"Feiyuan Qu presented Toa at ACM CHI 2026!",
+  "titleZh":"Feiyuan Qu 在 ACM CHI 2026 上汇报了 Toa！",
+  "subtitle":"Visualizing Tree-of-Analysis: Facilitating Conversational Visual Analytics for Novices",
+  "imgSrc":"source/slides/feiyuan.jpg",
+  "link":"/publications/toa"
+},{
+    "title":"Yuan Tian presented NoteFlow at ACM CHI 2026!",
+    "titleZh":"Yuan Tian 在 ACM CHI 2026 上汇报了 NoteFlow！",
+    "subtitle":"NoteFlow: Leveraging Charts as Sight Glasses for Consistent and Continuous Data Flow Tracing",
+    "imgSrc":"source/slides/noteflow.png",
+    "link":"/publications/noteflow"
+  },{
+    "title":"Zihan Xu presented TSEditor at ACM CHI 2026!",
+    "titleZh":"Zihan Xu 在 ACM CHI 2026 上汇报了 TSEditor！",
+    "subtitle":"TSEditor: Interactive Time Series Editing for Privacy Preservation",
+    "imgSrc":"source/slides/tseditor.jpg",
+    "link":"/publications/tseditor"
+  },{
+    "title": "Yunfan Zhou presented Cerebra at ACM CHI 2026!",
+    "titleZh": "Yunfan Zhou 在 ACM CHI 2026 上汇报了 Cerebra！",
+    "subtitle": "Cerebra: Aligning Implicit Knowledge in Interactive SQL Authoring",
+    "imgSrc": "source/slides/cerebra.jpg",
+    "link": "/publications/cerebra"
+  }
+]

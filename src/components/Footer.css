@@ -1,0 +1,68 @@
+.footer {
+  position: relative;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: clamp(64px, 8vw, 100px) 0 36px;
+  background:
+    radial-gradient(800px 360px at 50% 0%, rgba(91, 140, 255, 0.1), transparent 70%);
+}
+
+.footer__cta { text-align: center; max-width: 640px; margin: 0 auto 72px; }
+.footer__cta h2 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 700; margin: 14px 0 16px; }
+.footer__cta p { color: var(--text-dim); margin: 0 auto 28px; max-width: 50ch; }
+
+.footer__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer__brand { display: flex; align-items: flex-start; gap: 14px; max-width: 460px; }
+.footer__brand-text strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 1.02rem; }
+.footer__brand-text > span { display: block; color: var(--text-faint); font-size: 0.85rem; margin-top: 2px; }
+
+/* animated equalizer mark — three horizontal, side-by-side bars */
+.footer__mark {
+  flex: none;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 26px;
+  margin-top: 2px;
+}
+.footer__mark span {
+  width: 6px;
+  border-radius: 2px;
+  background: var(--gradient);
+  transform-origin: bottom;
+  animation: barPulse 1.8s var(--ease) infinite;
+}
+.footer__mark span:nth-child(1) { height: 60%; animation-delay: 0s; }
+.footer__mark span:nth-child(2) { height: 100%; animation-delay: 0.2s; }
+.footer__mark span:nth-child(3) { height: 42%; animation-delay: 0.4s; }
+@keyframes barPulse { 0%, 100% { transform: scaleY(0.65); opacity: 0.7; } 50% { transform: scaleY(1); opacity: 1; } }
+
+.footer__addr { color: var(--text-dim); font-size: 0.88rem; font-style: normal; line-height: 1.7; margin-top: 12px; }
+
+.footer__links { display: flex; flex-direction: column; gap: 10px; }
+.footer__links a { color: var(--text-dim); font-size: 0.9rem; transition: color 0.2s; }
+.footer__links a:hover { color: var(--accent); }
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+  color: var(--text-faint);
+  font-size: 0.84rem;
+}
+.footer__bottom a { transition: color 0.2s; }
+.footer__bottom a:hover { color: var(--text); }
+
+@media (max-width: 560px) {
+  .footer__grid { flex-direction: column; gap: 24px; }
+}
