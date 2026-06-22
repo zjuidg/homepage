@@ -1,0 +1,138 @@
+# CLAUDE.md
+
+Guidance for working in this repo. The site is the **ZJU Interactive Data Group**
+homepage — a single-page SolidJS app that showcases the group's publications.
+
+## Stack & commands
+
+- **SolidJS + Vite + TypeScript**, package manager **pnpm**.
+- Dark theme only. Full **English / Simplified Chinese** i18n (English default).
+
+```bash
+pnpm install
+pnpm dev        # http://localhost:5173
+pnpm build      # tsc -b && vite build -> dist/
+pnpm preview    # serve the production build
+```
+
+Verify changes in the browser before claiming done (the repo is configured for the
+preview tooling). Run `pnpm build` / `npx tsc -b` to typecheck.
+
+## Architecture
+
+- `src/App.tsx` — composition; loads data with `createResource`.
+- `src/data.ts` — JSON loaders + URL resolvers (`asset`, `paperUrl`, `isTVCG`, `doiUrl`).
+- `src/i18n.ts` — `en`/`zh` copy bundle + `lang` signal + `t()` accessor. UI strings live
+  here, **not** inline in components. Paper titles/authors/venues are data and stay
+  in their original language.
+- `src/types.ts` — `Publication`, `Slide`.
+- `src/components/` — `Nav`, `LangToggle`, `Hero`, `About`, `Carousel`, `Publications`,
+  `PublicationCard`, `Footer`. Each has a colocated `.css`.
+- `public/source/` — content JSON + teaser images (served as static assets).
+
+Content lives in `public/source/`. **Edit those files directly** — they are the
+committed, served source of truth. (`scripts/copy-assets.py` was a one-time migration
+from the legacy CRA site in `old/`, which is git-ignored; don't rely on re-running it,
+it would overwrite hand edits.)
+
+## Adding a publication  ← most common task
+
+A publication is one object in **`public/source/publications.json`**. Steps:
+
+### 1. Add the teaser image (committed)
+Put a teaser at `public/source/projects/<id>/<id>.png` (or `.jpg`). These are small and
+**are** committed to the repo. If omitted, the card shows a gradient placeholder.
+
+Commit the full-resolution original — don't hand-shrink it. At build time the
+`compressTeasers` Vite plugin (`scripts/vite-plugin-compress-teasers.ts`) downscales and
+recompresses every teaser in the `dist/` output to 440px wide (2× the largest rendered
+thumbnail) and re-encodes (mozjpeg q80 / palette PNG). The committed sources under
+`public/` are left untouched; only the deployed copies shrink. This cut the shipped
+teaser payload from ~33 MB to ~4 MB.
+
+### 2. Add the paper PDF (hosted on Cloudflare R2, NOT committed)
+PDFs are too large for the repo (`public/source/**/*.pdf` is git-ignored). Place the PDF
+locally at `public/source/projects/<id>/<file>.pdf`, then upload it to R2:
+
+```bash
+npx wrangler login                 # once, OAuth (1Password Touch ID approval)
+PAPERS_PUBLIC_BASE=https://pub-b17d7d2288df4942a00824c4394886f8.r2.dev \
+  scripts/upload-papers.sh zjuidg-papers
+```
+
+The script is **resumable** (skips PDFs already on R2). The R2 object key mirrors the
+local path minus `source/` — e.g. `source/projects/foo/foo.pdf` → key
+`projects/foo/foo.pdf`. At build time `paperUrl()` rewrites the `paper` field to
+`$VITE_PAPERS_BASE/projects/foo/foo.pdf`. **If you skip the upload, the "Paper" link
+404s.**
+
+### 3. Add the JSON entry
+Append an object to `public/source/publications.json` (order doesn't matter — the list is
+sorted by `year` descending at load):
+
+```jsonc
+{
+  "id": "foo",                                  // unique, kebab/lowercase
+  "title": "Full Paper Title",
+  "authors": ["First Author", "Di Weng", "Yingcai Wu"],
+  "source": "IEEE VIS",                         // SHORT venue → venue tag + venue filter
+  "transaction": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2026)",
+  "year": 2026,                                 // number → sort, year tag, year filter
+  "abstract": "…",                              // optional → expandable "Abstract"
+  "teaser": "source/projects/foo/foo.png",      // optional
+  "paper": "source/projects/foo/foo.pdf",       // optional → resolved to R2
+  "doi": "10.1109/TVCG.2026.123456",            // optional → "DOI" link (doi.org/…)
+  "video": "https://youtu.be/…",                // optional
+  "demo": "https://…",                          // optional
+  "system": "https://…",                        // optional → "System" link
+  "titleKey": ["Best Paper", "Honorable Mention"] // optional → gold award badges
+}
+```
+
+Field behavior worth knowing:
+
+- **`source`** is the short venue shown as the venue chip and is what the venue dropdown
+  filters on. Keep it consistent with existing values (`IEEE VIS`, `CHI`, `UIST`,
+  `PacificVis`, `IEEE TVCG`, …) so filtering groups correctly.
+- **TVCG tag is automatic** — `isTVCG()` adds an extra "IEEE TVCG" chip when `source`
+  contains `TVCG` or `transaction` matches "Transactions on Visualization and Computer
+  Graphics". So IEEE VIS / PacificVis-journal papers get both their venue chip and a
+  TVCG chip; do **not** add a manual TVCG tag.
+- **`titleKey`** entries render as gold award badges and make the paper count toward the
+  "Award papers" filter.
+- **`doi`/`DOI`**: bare DOI (e.g. `10.1109/…`) is auto-prefixed with `https://doi.org/`;
+  a full URL is used as-is.
+
+### 4. Deploy
+Push to `main` → the GitHub Action builds and deploys to Cloudflare Pages. Or deploy
+manually: `pnpm build && npx wrangler pages deploy dist --project-name=zjuidg-homepage`.
+The build needs `VITE_PAPERS_BASE` set (locally via `.env`; in CI via a repo variable).
+
+## Adding a carousel highlight (optional)
+
+Add an object to `public/source/slides.json`. Translate the sentence in `titleZh` but keep
+system/paper names verbatim; leave `subtitle` (the paper title) untranslated:
+
+```jsonc
+{
+  "title":   "Foo Bar presented BazSystem at ACM CHI 2026!",
+  "titleZh": "Foo Bar 在 ACM CHI 2026 上汇报了 BazSystem！",
+  "subtitle":"Full Paper Title",
+  "imgSrc":  "source/slides/baz.jpg",          // committed image
+  "link":    "/publications/foo"
+}
+```
+
+## Deployment quick reference
+
+- **Hosting:** Cloudflare Pages, project `zjuidg-homepage` → https://zjuidg-homepage.pages.dev
+- **Paper PDFs:** Cloudflare R2 bucket `zjuidg-papers`, public origin
+  `https://pub-b17d7d2288df4942a00824c4394886f8.r2.dev` (`VITE_PAPERS_BASE`).
+- **CI:** `.github/workflows/deploy.yml` deploys on push to `main`. Requires repo secrets
+  `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` and variable `VITE_PAPERS_BASE`.
+
+## Conventions
+
+- Don't reintroduce a team/members section (people data from the old site is outdated).
+- New user-facing strings go through `t()` in `src/i18n.ts` with both `en` and `zh`.
+- Keep copy plain and factual; avoid marketing/dramatic phrasing.
