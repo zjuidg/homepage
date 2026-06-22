@@ -11,7 +11,7 @@ interface Area {
 
 export interface Copy {
   langLabel: string; // label shown on the switcher (the OTHER language to switch to)
-  nav: { about: string; highlights: string; publications: string; contact: string };
+  nav: { about: string; highlights: string; network: string; publications: string; contact: string };
   hero: {
     eyebrow: string;
     title1: string;
@@ -30,6 +30,20 @@ export interface Copy {
     areas: [Area, Area, Area, Area];
   };
   highlights: { eyebrow: string; heading: string; subtitle: string };
+  network: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    filterLabel: string;
+    thAll: string;
+    th2: string;
+    th3: string;
+    stats: (nodes: number, links: number) => string;
+    hint: string;
+    cardMeta: (papers: number, collaborators: number) => string;
+    legendSize: string;
+    legendLink: string;
+  };
   pubs: {
     eyebrow: string;
     heading: string;
@@ -74,6 +88,7 @@ const en: Copy = {
   nav: {
     about: 'About',
     highlights: 'Highlights',
+    network: 'Network',
     publications: 'Publications',
     contact: 'Contact',
   },
@@ -115,6 +130,22 @@ const en: Copy = {
     eyebrow: 'Highlights',
     heading: 'Recent highlights',
     subtitle: 'Talks, awards, and papers our group has recently presented.',
+  },
+  network: {
+    eyebrow: 'Collaboration network',
+    heading: 'A network of co-authors',
+    intro:
+      'Each node is an author; each link, a shared paper. Drag to explore, hover to spotlight collaborators.',
+    filterLabel: 'Show authors with',
+    thAll: 'Any paper',
+    th2: '2+ papers',
+    th3: '3+ papers',
+    stats: (nodes, links) => `${nodes} authors · ${links} collaborations`,
+    hint: 'Hover or drag a node to inspect an author.',
+    cardMeta: (papers, collaborators) =>
+      `${papers} paper${papers === 1 ? '' : 's'} · ${collaborators} collaborator${collaborators === 1 ? '' : 's'}`,
+    legendSize: 'Papers authored',
+    legendLink: 'Shared papers',
   },
   pubs: {
     eyebrow: 'Publications',
@@ -162,6 +193,7 @@ const zh: Copy = {
   nav: {
     about: '关于',
     highlights: '近期亮点',
+    network: '合作网络',
     publications: '学术论文',
     contact: '联系',
   },
@@ -203,6 +235,21 @@ const zh: Copy = {
     eyebrow: '近期亮点',
     heading: '近期亮点',
     subtitle: '课题组近期的学术报告、获奖与论文。',
+  },
+  network: {
+    eyebrow: '合作网络',
+    heading: '作者合作网络',
+    intro:
+      '每个节点是一位作者，每条连线代表一篇合作论文。可拖拽探索，悬停高亮合作者。',
+    filterLabel: '筛选作者',
+    thAll: '全部',
+    th2: '≥2 篇',
+    th3: '≥3 篇',
+    stats: (nodes, links) => `${nodes} 位作者 · ${links} 条合作`,
+    hint: '悬停或拖拽节点以查看作者信息。',
+    cardMeta: (papers, collaborators) => `${papers} 篇论文 · ${collaborators} 位合作者`,
+    legendSize: '论文数量',
+    legendLink: '合作论文',
   },
   pubs: {
     eyebrow: '学术论文',

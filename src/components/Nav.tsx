@@ -11,6 +11,7 @@ export default function Nav() {
     { href: '#about', label: t().nav.about },
     { href: '#highlights', label: t().nav.highlights },
     { href: '#publications', label: t().nav.publications },
+    { href: '#network', label: t().nav.network },
     { href: '#contact', label: t().nav.contact },
   ];
 

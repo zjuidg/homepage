@@ -1,0 +1,255 @@
+.netsec {
+  position: relative;
+}
+
+/* ---- controls ---- */
+.net__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.net__threshold {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.net__threshold-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 0 8px 0 10px;
+}
+.net__threshold button {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: transparent;
+  padding: 7px 16px;
+  border-radius: 999px;
+  transition: color 0.25s, background 0.25s;
+}
+.net__threshold button:hover {
+  color: var(--text);
+}
+.net__threshold button.active {
+  color: #06070d;
+  background: var(--gradient);
+}
+
+.net__stats {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- stage ---- */
+.net__stage {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: radial-gradient(120% 90% at 50% 0%, rgba(91, 140, 255, 0.06), transparent 60%), var(--bg-2);
+  overflow: hidden;
+}
+
+.net__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 680;
+  touch-action: none;
+  cursor: grab;
+}
+
+/* ---- links ---- */
+.net__link {
+  stroke: var(--border-strong);
+  stroke-opacity: 0.5;
+  pointer-events: none; /* links never intercept the pointer */
+  transition: stroke-opacity 0.25s, stroke 0.25s;
+}
+.net__svg.is-focused .net__link.dim {
+  stroke-opacity: 0.06;
+}
+.net__svg.is-focused .net__link.hot {
+  stroke: var(--accent);
+  stroke-opacity: 0.85;
+}
+
+/* ---- nodes ---- */
+.net__node {
+  cursor: grab;
+}
+.net__node:active {
+  cursor: grabbing;
+}
+.net__halo {
+  fill: transparent;
+  stroke: transparent;
+  /* the single, stable hit target for the whole node (bigger than the dot, so
+     small pointer movements near the edge don't thrash enter/leave) */
+  pointer-events: all;
+  transition: fill 0.25s;
+}
+.net__dot {
+  fill: var(--accent);
+  stroke: rgba(6, 7, 13, 0.85);
+  stroke-width: 1.5;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.net__node:hover .net__halo {
+  fill: rgba(255, 255, 255, 0.06);
+}
+
+.net__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  fill: #fff;
+  text-anchor: middle;
+  dominant-baseline: central;
+  paint-order: stroke;
+  stroke: rgba(6, 7, 13, 0.92);
+  stroke-width: 3.5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.net__node.has-label .net__label {
+  opacity: 0.92;
+}
+
+/* focus state: dim the rest, spotlight the neighbourhood */
+.net__svg.is-focused .net__node.dim .net__dot {
+  opacity: 0.18;
+}
+.net__svg.is-focused .net__node.dim .net__label {
+  opacity: 0;
+}
+.net__svg.is-focused .net__node.hot .net__label {
+  opacity: 1;
+}
+.net__node.hot .net__dot {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+/* ---- readout (hovered author) ---- */
+.net__readout {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  right: 16px;
+  max-width: 340px;
+  pointer-events: none;
+}
+.net__hint {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+.net__card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--nav-menu-bg);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+.net__card-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px currentColor;
+}
+.net__card-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.net__card-name {
+  font-size: 0.98rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+}
+.net__card-meta {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- legend ---- */
+.net__legend {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  pointer-events: none;
+}
+.net__legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.net__legend-dot {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.net__legend-dot--sm { width: 7px; height: 7px; }
+.net__legend-dot--lg { width: 14px; height: 14px; margin-left: -2px; }
+.net__legend-line {
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border-strong);
+}
+
+@media (max-width: 640px) {
+  .net__controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .net__svg {
+    aspect-ratio: 1 / 1;
+  }
+  .net__legend { display: none; }
+  .net__readout { max-width: none; }
+  .net__label { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .net__link,
+  .net__dot,
+  .net__label,
+  .net__halo { transition: none; }
+}

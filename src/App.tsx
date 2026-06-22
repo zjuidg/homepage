@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
 import Carousel from './components/Carousel';
+import CoauthorNetwork from './components/CoauthorNetwork';
 import Publications from './components/Publications';
 import Footer from './components/Footer';
 import { loadPublications, loadSlides } from './data';
@@ -28,6 +29,7 @@ export default function App() {
           </Show>
           <Show when={pubs()}>
             <Publications pubs={pubs()!} />
+            <CoauthorNetwork pubs={pubs()!} />
           </Show>
         </Suspense>
       </main>
