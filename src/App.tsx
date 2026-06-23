@@ -19,7 +19,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero pubs={pubs()} />
-        <About />
+        <About pubs={pubs()} />
 
         <Suspense fallback={<Loader />}>
           <Show when={slides()?.length}>

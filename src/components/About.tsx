@@ -1,4 +1,5 @@
-import { For } from 'solid-js';
+import { createMemo, createSignal, For, Show } from 'solid-js';
+import type { Publication } from '../types';
 import { reveal } from '../reveal';
 import { searchPublications } from '../search';
 import { t } from '../i18n';
@@ -14,7 +15,30 @@ const recent: string[][] = [
   ['AdversaFlow', 'KEditVis', 'Smartboard'],
 ];
 
-export default function About() {
+export default function About(props: { pubs?: Publication[] }) {
+  const [tip, setTip] = createSignal<{ x: number; y: number; title: string; venue: string } | null>(null);
+  let gridEl: HTMLDivElement | undefined;
+
+  // Map each tag (a unique system name) to its paper's full title + venue.
+  const tagInfo = createMemo(() => {
+    const pubs = props.pubs ?? [];
+    const map = new Map<string, { title: string; venue: string }>();
+    for (const names of recent) {
+      for (const name of names) {
+        const p = pubs.find((pp) => pp.title.toLowerCase().includes(name.toLowerCase()));
+        if (p) map.set(name, { title: p.title, venue: p.venue.join(' · ') });
+      }
+    }
+    return map;
+  });
+
+  const showTip = (e: MouseEvent, name: string) => {
+    const info = tagInfo().get(name);
+    if (!info || !gridEl) return;
+    const r = gridEl.getBoundingClientRect();
+    setTip({ x: e.clientX - r.left, y: e.clientY - r.top, title: info.title, venue: info.venue });
+  };
+
   return (
     <section id="about" class="section about">
       <div class="container">
@@ -28,7 +52,7 @@ export default function About() {
           <p>{t().about.body}</p>
         </div>
 
-        <div class="about__grid">
+        <div class="about__grid" ref={gridEl}>
           <For each={t().about.areas}>
             {(a, i) => (
               <article
@@ -47,6 +71,9 @@ export default function About() {
                         type="button"
                         class="about__tag"
                         onClick={() => searchPublications(name)}
+                        onMouseEnter={(e) => showTip(e, name)}
+                        onMouseMove={(e) => showTip(e, name)}
+                        onMouseLeave={() => setTip(null)}
                       >
                         {name}
                       </button>
@@ -56,6 +83,15 @@ export default function About() {
               </article>
             )}
           </For>
+
+          <Show when={tip()}>
+            {(tp) => (
+              <div class="about__tip" style={{ left: `${tp().x}px`, top: `${tp().y}px` }}>
+                <span class="about__tip-title">{tp().title}</span>
+                <span class="about__tip-venue">{tp().venue}</span>
+              </div>
+            )}
+          </Show>
         </div>
       </div>
     </section>
