@@ -1,5 +1,7 @@
-import { createEffect, createMemo, createSignal, For, Show } from 'solid-js';
+import { createEffect, createMemo, createSignal, For, on, Show } from 'solid-js';
 import type { Publication } from '../types';
+import { venueSeriesList } from '../venues';
+import { searchQuery, setSearchQuery, externalTick } from '../search';
 import { reveal } from '../reveal';
 import { t } from '../i18n';
 import PublicationCard from './PublicationCard';
@@ -9,32 +11,41 @@ const ALL = 'All';
 const PER_PAGE = 12;
 
 export default function Publications(props: { pubs: Publication[] }) {
-  const [query, setQuery] = createSignal('');
   const [year, setYear] = createSignal<number | typeof ALL>(ALL);
   const [venue, setVenue] = createSignal<string>(ALL);
   const [awardsOnly, setAwardsOnly] = createSignal(false);
   const [page, setPage] = createSignal(1);
 
+  // An external search (About tag, hero unit) clears the other filters so the
+  // searched paper is the only result.
+  createEffect(
+    on(externalTick, () => {
+      setYear(ALL);
+      setVenue(ALL);
+      setAwardsOnly(false);
+    }, { defer: true })
+  );
+
   const years = createMemo(() =>
     Array.from(new Set(props.pubs.map((p) => p.year))).sort((a, b) => b - a)
   );
   const venues = createMemo(() =>
-    Array.from(new Set(props.pubs.map((p) => p.source))).sort()
+    Array.from(new Set(props.pubs.flatMap((p) => venueSeriesList(p)))).sort()
   );
   const awardCount = createMemo(() => props.pubs.filter((p) => p.titleKey?.length).length);
 
   const filtered = createMemo(() => {
-    const q = query().trim().toLowerCase();
+    const q = searchQuery().trim().toLowerCase();
     const y = year();
     const v = venue();
     const aw = awardsOnly();
     return props.pubs.filter((p) => {
       if (y !== ALL && p.year !== y) return false;
-      if (v !== ALL && p.source !== v) return false;
+      if (v !== ALL && !venueSeriesList(p).includes(v)) return false;
       if (aw && !p.titleKey?.length) return false;
       if (q) {
         const hay = (
-          p.title + ' ' + p.authors.join(' ') + ' ' + p.source + ' ' + (p.transaction || '')
+          p.title + ' ' + p.authors.join(' ') + ' ' + p.venue.join(' ')
         ).toLowerCase();
         if (!hay.includes(q)) return false;
       }
@@ -87,8 +98,8 @@ export default function Publications(props: { pubs: Publication[] }) {
             <input
               type="search"
               placeholder={t().pubs.search}
-              value={query()}
-              onInput={(e) => setQuery(e.currentTarget.value)}
+              value={searchQuery()}
+              onInput={(e) => setSearchQuery(e.currentTarget.value)}
             />
           </div>
 

@@ -21,7 +21,7 @@
 }
 
 .footer__brand { display: flex; align-items: flex-start; gap: 14px; max-width: 460px; }
-.footer__brand-text strong { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 1.02rem; }
+.footer__brand-text strong { display: block; font-family: var(--display); font-size: 1.02rem; }
 .footer__brand-text > span { display: block; color: var(--text-faint); font-size: 0.85rem; margin-top: 2px; }
 
 /* animated equalizer mark — three horizontal, side-by-side bars */
@@ -36,7 +36,7 @@
 .footer__mark span {
   width: 6px;
   border-radius: 2px;
-  background: var(--gradient);
+  background: var(--accent);
   transform-origin: bottom;
   animation: barPulse 1.8s var(--ease) infinite;
 }

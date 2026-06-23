@@ -1,94 +1,90 @@
-import { onCleanup, onMount } from 'solid-js';
+import { createMemo, createSignal, For, Show } from 'solid-js';
+import type { Publication } from '../types';
+import { venueGroup, venueScale } from '../venues';
+import { searchPublications } from '../search';
 import { t } from '../i18n';
 import './Hero.css';
 
 interface Props {
-  pubCount: number;
-  venueCount: number;
+  pubs?: Publication[];
 }
 
+// unit-chart geometry (SVG user units; the svg scales to its container)
+const CELL = 10;
+const GAP = 3;
+const COLS = 3; // units per row, within one year
+const YEAR_GAP = 14;
+const PAD_T = 12;
+const AXIS = 24;
+
+const blockW = COLS * CELL + (COLS - 1) * GAP;
+const yearPitch = blockW + YEAR_GAP;
+
 export default function Hero(props: Props) {
-  let canvas: HTMLCanvasElement | undefined;
+  const [hot, setHot] = createSignal<string | null>(null);
+  const [tip, setTip] = createSignal<{ x: number; y: number; title: string; venue: string } | null>(null);
+  let figEl: HTMLElement | undefined;
+  const pubs = () => props.pubs ?? [];
+  const scale = createMemo(() => venueScale(pubs()));
 
-  onMount(() => {
-    if (!canvas) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+  const showTip = (e: MouseEvent, m: { title: string; venue: string }) => {
+    if (!figEl) return;
+    const r = figEl.getBoundingClientRect();
+    setTip({ x: e.clientX - r.left, y: e.clientY - r.top, title: m.title, venue: m.venue });
+  };
 
-    let raf = 0;
-    let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-    type P = { x: number; y: number; vx: number; vy: number };
-    let pts: P[] = [];
-
-    const resize = () => {
-      const r = canvas!.getBoundingClientRect();
-      w = r.width; h = r.height;
-      canvas!.width = w * dpr; canvas!.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.min(70, Math.round((w * h) / 16000));
-      pts = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.28,
-        vy: (Math.random() - 0.5) * 0.28,
-      }));
-    };
-
-    const draw = () => {
-      ctx.clearRect(0, 0, w, h);
-      for (const p of pts) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-      }
-      // links
-      for (let i = 0; i < pts.length; i++) {
-        for (let j = i + 1; j < pts.length; j++) {
-          const a = pts[i], b = pts[j];
-          const d2 = (a.x - b.x) ** 2 + (a.y - b.y) ** 2;
-          if (d2 < 130 * 130) {
-            const o = (1 - Math.sqrt(d2) / 130) * 0.5;
-            ctx.strokeStyle = `rgba(120,150,255,${o})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
-        }
-      }
-      // nodes
-      for (const p of pts) {
-        ctx.fillStyle = 'rgba(160,190,255,0.85)';
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      raf = requestAnimationFrame(draw);
-    };
-
-    resize();
-    draw();
-    window.addEventListener('resize', resize);
-    onCleanup(() => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener('resize', resize);
-    });
+  const maxRows = createMemo(() => {
+    const totals = new Map<number, number>();
+    for (const p of pubs()) totals.set(p.year, (totals.get(p.year) ?? 0) + 1);
+    return Math.max(1, ...[...totals.values()].map((n) => Math.ceil(n / COLS)));
   });
+
+  // one block per year; each paper is a positioned square (sorted by venue rank,
+  // packed into COLS columns, filled bottom row first)
+  const columns = createMemo(() => {
+    const sc = scale();
+    const byYear = new Map<number, Publication[]>();
+    for (const p of pubs()) {
+      if (!byYear.has(p.year)) byYear.set(p.year, []);
+      byYear.get(p.year)!.push(p);
+    }
+    const baseY = PAD_T + maxRows() * (CELL + GAP);
+    return [...byYear.entries()]
+      .sort((a, b) => a[0] - b[0])
+      .map(([year, papers], xi) => {
+        const xLeft = xi * yearPitch;
+        const sorted = papers
+          .map((p) => ({ p, m: sc.lookup(venueGroup(p)) }))
+          .sort((a, b) => sc.rank(a.m.id) - sc.rank(b.m.id));
+        const marks = sorted.map(({ p, m }, k) => {
+          const col = k % COLS;
+          const row = Math.floor(k / COLS);
+          return {
+            x: xLeft + col * (CELL + GAP),
+            y: baseY - (row + 1) * (CELL + GAP),
+            color: m.color,
+            id: m.id,
+            title: p.title,
+            venue: p.venue.join(' · '),
+          };
+        });
+        return { year, cx: xLeft + blockW / 2, marks };
+      });
+  });
+
+  const venueCount = createMemo(() => new Set(pubs().map((p) => venueGroup(p))).size);
+  const width = () => Math.max(1, columns().length) * yearPitch - YEAR_GAP;
+  const height = () => PAD_T + maxRows() * (CELL + GAP) + AXIS;
+  const axisY = () => PAD_T + maxRows() * (CELL + GAP) + 17;
 
   return (
     <section id="top" class="hero">
-      <canvas ref={canvas} class="hero__net" aria-hidden="true"></canvas>
-      <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
-      <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
-
       <div class="container hero__inner">
         <p class="eyebrow hero__eyebrow">{t().hero.eyebrow}</p>
 
         <h1 class="hero__title">
           <span>{t().hero.title1}</span>
-          <span class="gradient-text">{t().hero.title2}</span>
+          <span class="hero__title-em">{t().hero.title2}</span>
         </h1>
 
         <p class="hero__lead">{t().hero.lead}</p>
@@ -101,25 +97,90 @@ export default function Hero(props: Props) {
           <a class="btn btn--ghost" href="#about">{t().hero.aboutCta}</a>
         </div>
 
+        {/* the masthead: every published paper, one square, by year & venue */}
+        <figure class="hero__archive" ref={figEl}>
+          <figcaption class="hero__legend">
+            <For each={scale().legend}>
+              {(item) => (
+                <button
+                  type="button"
+                  class="hero__legend-item"
+                  classList={{ dim: hot() !== null && hot() !== item.id }}
+                  onMouseEnter={() => setHot(item.id)}
+                  onMouseLeave={() => setHot(null)}
+                  onFocus={() => setHot(item.id)}
+                  onBlur={() => setHot(null)}
+                >
+                  <span class="hero__swatch" style={{ background: item.color }} />
+                  {item.label}
+                </button>
+              )}
+            </For>
+          </figcaption>
+
+          <Show when={columns().length} fallback={<div class="hero__archive-skeleton" />}>
+            <svg
+              class="hero__chart"
+              viewBox={`0 0 ${width()} ${height()}`}
+              preserveAspectRatio="xMidYMax meet"
+              role="img"
+              aria-label={t().hero.archiveAria(pubs().length)}
+            >
+              <For each={columns()}>
+                {(col) => (
+                  <g>
+                    <For each={col.marks}>
+                      {(m) => (
+                        <rect
+                          class="hero__mark"
+                          classList={{ dim: hot() !== null && hot() !== m.id }}
+                          x={m.x}
+                          y={m.y}
+                          width={CELL}
+                          height={CELL}
+                          rx={2}
+                          fill={m.color}
+                          onMouseEnter={(e) => showTip(e, m)}
+                          onMouseMove={(e) => showTip(e, m)}
+                          onMouseLeave={() => setTip(null)}
+                          onClick={() => searchPublications(m.title)}
+                        />
+                      )}
+                    </For>
+                    <text class="hero__year" x={col.cx} y={axisY()} text-anchor="middle">
+                      {`'${String(col.year).slice(2)}`}
+                    </text>
+                  </g>
+                )}
+              </For>
+            </svg>
+          </Show>
+
+          <Show when={tip()}>
+            {(tp) => (
+              <div class="hero__tip" style={{ left: `${tp().x}px`, top: `${tp().y}px` }}>
+                <span class="hero__tip-title">{tp().title}</span>
+                <span class="hero__tip-venue">{tp().venue}</span>
+              </div>
+            )}
+          </Show>
+        </figure>
+
         <dl class="hero__stats">
           <div>
             <dt>2015</dt>
             <dd>{t().hero.stats.founded}</dd>
           </div>
           <div>
-            <dt>{props.pubCount}+</dt>
+            <dt>{pubs().length || '—'}</dt>
             <dd>{t().hero.stats.publications}</dd>
           </div>
           <div>
-            <dt>{props.venueCount}</dt>
+            <dt>{venueCount() || '—'}</dt>
             <dd>{t().hero.stats.venues}</dd>
           </div>
         </dl>
       </div>
-
-      <a href="#about" class="hero__scroll" aria-label="Scroll down">
-        <span></span>
-      </a>
     </section>
   );
 }

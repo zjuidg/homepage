@@ -81,7 +81,7 @@
   border-radius: 99px;
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--display);
   color: var(--text-dim);
   background: var(--surface);
   border: 1px solid var(--border);
@@ -89,7 +89,7 @@
   transition: all 0.22s var(--ease);
 }
 .pubs__years button:hover { color: var(--text); border-color: var(--border-strong); }
-.pubs__years button.active { color: #07070d; background: var(--gradient); border-color: transparent; box-shadow: 0 8px 22px -10px var(--glow); }
+.pubs__years button.active { color: #07070d; background: var(--accent); border-color: transparent; }
 
 .pubs__count { color: var(--text-faint); font-size: 0.88rem; margin: 0 0 20px; }
 .pubs__count strong { color: var(--text); }
@@ -118,7 +118,7 @@
   height: 40px;
   padding: 0 12px;
   border-radius: 10px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--display);
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-dim);
@@ -128,6 +128,6 @@
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 .pubs__pager-btn:hover:not(:disabled) { color: var(--text); border-color: var(--border-strong); }
-.pubs__pager-btn.active { color: #07070d; background: var(--gradient); border-color: transparent; box-shadow: 0 8px 22px -10px var(--glow); }
+.pubs__pager-btn.active { color: #07070d; background: var(--accent); border-color: transparent; }
 .pubs__pager-btn:disabled { opacity: 0.4; cursor: default; }
 .pubs__pager-gap { color: var(--text-faint); padding: 0 4px; }

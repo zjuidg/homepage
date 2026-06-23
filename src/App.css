@@ -14,7 +14,7 @@
 .app-loader__bars span {
   width: 7px;
   border-radius: 3px;
-  background: var(--gradient);
+  background: var(--accent);
   animation: loaderBar 1.1s var(--ease) infinite;
 }
 .app-loader__bars span:nth-child(1) { animation-delay: 0s; }

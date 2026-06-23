@@ -20,7 +20,7 @@
 .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 
 /* brand */
-.nav__brand { display: flex; align-items: center; gap: 11px; font-family: 'Space Grotesk', sans-serif; }
+.nav__brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); }
 .nav__name { font-weight: 700; font-size: 1.12rem; letter-spacing: 0.02em; }
 .nav__name-dim { color: var(--text-faint); font-weight: 500; }
 
@@ -28,7 +28,7 @@
 .nav__mark span {
   width: 5px;
   border-radius: 2px;
-  background: var(--gradient);
+  background: var(--accent);
   animation: barPulse 1.8s var(--ease) infinite;
 }
 .nav__mark span:nth-child(1) { height: 60%; animation-delay: 0s; }
@@ -47,7 +47,7 @@
   left: 0; bottom: -6px;
   width: 0; height: 2px;
   border-radius: 2px;
-  background: var(--gradient);
+  background: var(--accent);
   transition: width 0.28s var(--ease);
 }
 .nav__links a:not(.nav__cta):hover { color: var(--text); }

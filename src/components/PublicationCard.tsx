@@ -1,6 +1,6 @@
 import { createSignal, Show, For } from 'solid-js';
 import type { Publication } from '../types';
-import { asset, doiUrl, isTVCG, paperUrl } from '../data';
+import { asset, doiUrl, paperUrl } from '../data';
 import { t } from '../i18n';
 import './PublicationCard.css';
 
@@ -37,10 +37,7 @@ export default function PublicationCard(props: { pub: Publication; index: number
 
       <div class="pcard__main">
         <div class="pcard__meta">
-          <span class="pcard__venue">{p.source}</span>
-          <Show when={isTVCG(p) && !/tvcg/i.test(p.source)}>
-            <span class="pcard__venue pcard__venue--tvcg">IEEE TVCG</span>
-          </Show>
+          <For each={p.venue}>{(v) => <span class="pcard__venue">{v}</span>}</For>
           <span class="pcard__tag pcard__year">{p.year}</span>
           <Show when={p.titleKey?.length}>
             <For each={p.titleKey}>{(k) => <span class="pcard__award">★ {k}</span>}</For>
@@ -59,9 +56,6 @@ export default function PublicationCard(props: { pub: Publication; index: number
         </h3>
 
         <p class="pcard__authors">{p.authors.join(', ')}</p>
-        <Show when={p.transaction}>
-          <p class="pcard__venue-full">{p.transaction}</p>
-        </Show>
 
         <Show when={open() && p.abstract}>
           <p class="pcard__abstract">{p.abstract}</p>

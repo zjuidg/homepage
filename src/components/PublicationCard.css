@@ -13,48 +13,63 @@
   background: var(--surface);
 }
 .pcard__thumb img { width: 100%; height: 100%; object-fit: cover; }
-.pcard__thumb-ph { width: 100%; height: 100%; background: var(--gradient-soft); }
+.pcard__thumb-ph {
+  width: 100%;
+  height: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
 
 .pcard__main { min-width: 0; }
 
-.pcard__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.pcard__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+
+/* one neutral chip color for all venues — color lives in the masthead, not here */
 .pcard__venue {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent-3);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.01em;
+  color: var(--text-dim);
   padding: 3px 9px;
   border-radius: 6px;
-  background: rgba(47, 230, 214, 0.1);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
 }
-.pcard__venue--tvcg { color: var(--accent); background: rgba(91, 140, 255, 0.12); }
+
 .pcard__tag {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
   padding: 3px 9px;
   border-radius: 6px;
 }
-.pcard__year { color: var(--text-dim); background: var(--surface-2); }
+.pcard__year { color: var(--text-faint); border: 1px solid var(--border); }
+
+/* award badge — the one deliberately prominent chip */
 .pcard__award {
-  font-size: 0.72rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: #1a1205;
-  background: linear-gradient(120deg, #ffd479, #ff9d4d);
-  padding: 3px 9px;
+  background: var(--award);
+  padding: 3px 10px;
   border-radius: 6px;
+  box-shadow: 0 2px 12px -2px color-mix(in srgb, var(--award) 60%, transparent);
 }
 
 .pcard__title { margin: 0 0 8px; }
 .pcard__title button {
   font: inherit;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.08rem;
+  font-family: var(--display);
+  font-size: 1.1rem;
   font-weight: 600;
-  line-height: 1.32;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
   color: var(--text);
   text-align: left;
   background: none;
@@ -66,8 +81,7 @@
 .pcard__title button:not(:disabled):hover { color: var(--accent); }
 .pcard__title button:disabled { cursor: default; }
 
-.pcard__authors { margin: 0 0 4px; color: var(--text-dim); font-size: 0.9rem; }
-.pcard__venue-full { margin: 0; color: var(--text-faint); font-size: 0.82rem; font-style: italic; }
+.pcard__authors { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
 
 .pcard__abstract {
   margin: 14px 0 4px;
@@ -84,7 +98,7 @@
   align-items: center;
   gap: 6px;
   font-size: 0.84rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-faint);
   background: none;
   border: none;

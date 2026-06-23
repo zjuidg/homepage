@@ -1,4 +1,4 @@
-import type { Publication, Slide } from './types';
+import { Venue, type Publication, type Slide } from './types';
 
 const base = import.meta.env.BASE_URL || '/';
 
@@ -44,15 +44,12 @@ export async function loadSlides(): Promise<Slide[]> {
 }
 
 /**
- * True when a paper is published in TVCG. IEEE VIS and the PacificVis journal
- * track are archived in IEEE Transactions on Visualization and Computer Graphics,
- * so they should also carry a TVCG tag (alongside their conference venue).
+ * True when a paper is archived in TVCG. IEEE VIS and the PacificVis journal
+ * track carry Venue.TVCG alongside their conference venue (see the migration in
+ * Venue), so this is a simple membership check.
  */
 export function isTVCG(p: Publication): boolean {
-  if (/tvcg/i.test(p.source)) return true;
-  return /transactions?\s+on\s+visualization\s+and\s+computer\s+graphics/i.test(
-    p.transaction || ''
-  );
+  return p.venue.includes(Venue.TVCG);
 }
 
 /** External link for a publication, preferring DOI then video then demo. */

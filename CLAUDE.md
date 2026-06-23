@@ -75,8 +75,7 @@ sorted by `year` descending at load):
   "id": "foo",                                  // unique, kebab/lowercase
   "title": "Full Paper Title",
   "authors": ["First Author", "Di Weng", "Yingcai Wu"],
-  "source": "IEEE VIS",                         // SHORT venue → venue tag + venue filter
-  "transaction": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS 2026)",
+  "venue": ["IEEE TVCG", "IEEE VIS 2026"],       // Venue[] → venue chips, filter, chart color
   "year": 2026,                                 // number → sort, year tag, year filter
   "abstract": "…",                              // optional → expandable "Abstract"
   "teaser": "source/projects/foo/foo.png",      // optional
@@ -91,13 +90,17 @@ sorted by `year` descending at load):
 
 Field behavior worth knowing:
 
-- **`source`** is the short venue shown as the venue chip and is what the venue dropdown
-  filters on. Keep it consistent with existing values (`IEEE VIS`, `CHI`, `UIST`,
-  `PacificVis`, `IEEE TVCG`, …) so filtering groups correctly.
-- **TVCG tag is automatic** — `isTVCG()` adds an extra "IEEE TVCG" chip when `source`
-  contains `TVCG` or `transaction` matches "Transactions on Visualization and Computer
-  Graphics". So IEEE VIS / PacificVis-journal papers get both their venue chip and a
-  TVCG chip; do **not** add a manual TVCG tag.
+- **`venue`** is a `Venue[]` (`src/types.ts`) — the enum values *are* the labels stored in
+  JSON. List the archival journal/outlet (generic, e.g. `"IEEE TVCG"`, `"Computer Graphics
+  Forum"`) **and/or** the conference (year-specific, e.g. `"IEEE VIS 2026"`, `"CHI 2026"`,
+  `"PacificVis 2026 TVCG Journal Track"`). Each entry renders as a venue chip. Add a new
+  `Venue` member when introducing a new venue/year. Prefer reusing existing members so
+  filtering/coloring stays consistent.
+- **TVCG is just a `venue` entry.** IEEE VIS and PacificVis-journal papers are archived in
+  TVCG, so include `"IEEE TVCG"` in `venue` alongside the conference — `isTVCG()` is now a
+  membership check, and the unit chart / venue filter group these under "IEEE TVCG"
+  (`venueGroup()` in `src/venues.ts`, which also strips the year, e.g. "IEEE VIS 2026" →
+  "IEEE VIS"). Conference-track (non-journal) papers omit `"IEEE TVCG"`.
 - **`titleKey`** entries render as gold award badges and make the paper count toward the
   "Award papers" filter.
 - **`doi`/`DOI`**: bare DOI (e.g. `10.1109/…`) is auto-prefixed with `https://doi.org/`;

@@ -14,13 +14,11 @@ export default function App() {
   const [pubs] = createResource(loadPublications);
   const [slides] = createResource(loadSlides);
 
-  const venueCount = () => new Set((pubs() ?? []).map((p) => p.source)).size;
-
   return (
     <>
       <Nav />
       <main>
-        <Hero pubCount={pubs()?.length ?? 120} venueCount={venueCount() || 12} />
+        <Hero pubs={pubs()} />
         <About />
 
         <Suspense fallback={<Loader />}>

@@ -74,6 +74,7 @@
   touch-action: none;
   cursor: grab;
 }
+.net__svg.is-panning { cursor: grabbing; }
 
 /* ---- links ---- */
 .net__link {
