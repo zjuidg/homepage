@@ -1,5 +1,249 @@
 [
   {
+    "id": "geoauthor",
+    "paper": "source/projects/geoauthor/geoauthor.pdf",
+    "teaser": "source/projects/geoauthor/geoauthor.png",
+    "title": "GeoAuthor: Linking Text and Visualization for Geographic Article Authoring",
+    "authors": [
+      "Zhenning Chen",
+      "Hanbei Zhan",
+      "Shifu Chen",
+      "Zikun Deng",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE TVCG"
+    ],
+    "year": 2026,
+    "abstract": "Articles containing geographic information are widely distributed and commonly used in daily life, frequently incorporating geographic visualizations as illustrations. However, the creation of such articles remains cumbersome, necessitating authors to switch between authoring text and illustrations, thereby disrupting immersive writing. Our interviews corroborated this observation and revealed the primary challenge in the traditional process stems from the low synchronization frequency between text and geographic visualizations during creation, coupled with weak visual links, forcing users to mentally maintain this synchronization and thereby increasing their cognitive burden. In response, we developed GeoAuthor, which facilitates the interactive creation of geographic articles by automatically synchronizing text creation with geographic visualizations with rich visual links. This bidirectional approach ensures that the written content and visual representations remain consistent and mutually informative throughout the creation process. Our evaluation demonstrated the efficacy of GeoAuthor, indicating its capacity to streamline the process of creating geographic articles."
+  },
+  {
+    "id": "rulescope",
+    "paper": "source/projects/rulescope/rulescope.pdf",
+    "teaser": "source/projects/rulescope/rulescope.png",
+    "title": "RuleScope: Semantic-aware Authoring of Data Validation Rules",
+    "authors": [
+      "Zhongsu Luo",
+      "Di Weng",
+      "Jiawen Zhu",
+      "Shuhan Liu",
+      "Xiwen Cai",
+      "Ran Chen",
+      "Kai Xiong",
+      "Jiajun Zhu",
+      "Xinhuan Shu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE TVCG"
+    ],
+    "year": 2026,
+    "abstract": "Data validation is a crucial step in data analytics workflows that assesses and ensures the reliability of data flowing into analytical processes. One common approach to data validation involves defining validation rules, which provide explicit constraints and conditions that data must satisfy. However, creating accurate and effective validation rules remains challenging for many practitioners. This challenge stems from the need for practitioners to understand both data structures and their domain-specific semantic relationships. Recent studies have proposed automated approaches to generate validation rules by deriving patterns from data properties. However, these approaches generate rules with limited interpretability and lack support for rule verification and modification, making the rules difficult to understand and adapt. To address these limitations in current validation rule authoring approaches, we present RuleScope, an interactive system for authoring data validation rules through semantic-aware rule generation, visualization, and refinement. RuleScope employs an LLM-based workflow to generate interpretable rules by analyzing data semantics and incorporating domain knowledge. To facilitate rule comprehension, we design a matrix-based visualization that helps users understand rules and analyze validation results. Additionally, RuleScope enables users to interactively refine rules. We evaluate the LLM-based workflow through model evaluation on datasets from different domains and assess RuleScope's usability and effectiveness through two case studies and a user study.",
+    "demo": "https://github.com/rulescopevis/RuleScope"
+  },
+  {
+    "id": "tmoe",
+    "paper": "source/projects/tmoe/tmoe.pdf",
+    "teaser": "source/projects/tmoe/tmoe.png",
+    "title": "Dynamic TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series Forecasting",
+    "authors": [
+      "Jiawen Zhu",
+      "Shuhan Liu",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "ICML 2026"
+    ],
+    "year": 2026,
+    "abstract": "Non-stationary time series forecasting is challenged by evolving distribution shifts that static models struggle to capture. While Mixture-of-Experts (MoE) architectures offer a promising paradigm for decoupling complex drift patterns, existing approaches are limited by fixed expert pools and memoryless routing, hampering their ability to adapt to abrupt regime shifts. To address this, we propose Dynamic TMoE, a framework that unifies architectural evolution with temporal continuity during learning phase. By detecting distribution shifts via Maximum Mean Discrepancy (MMD), we dynamically instantiate heterogeneous experts and prune redundant ones to optimize capacity. Additionally, a temporal memory router leverages recurrent states and an anomaly repository to ensure stable, context-aware expert selection without requiring test-time updates. Experiments on nine benchmarks demonstrate state-of-the-art performance, reducing MSE by 10.4% and MAE by 7.8%.",
+    "demo": "https://github.com/andone-07/Dynamic-TMoE"
+  },
+  {
+    "id": "visualtsc",
+    "paper": "source/projects/visualtsc/visualtsc.pdf",
+    "teaser": "source/projects/visualtsc/visualtsc.png",
+    "title": "A Visual Analytics Approach to Traffic Signal Control Optimization for Multiple Road Intersections",
+    "authors": [
+      "Yuchen Yang",
+      "Jie Yu",
+      "Zihan Xu",
+      "Di Weng"
+    ],
+    "venue": [
+      "Journal of Computer-Aided Design & Computer Graphics"
+    ],
+    "year": 2026,
+    "abstract": "Traffic lights have been widely used to alleviate traffic congestion and improve traffic efficiency. However, due to the complex variability of traffic conditions and interactions between intersections, formulating effective traffic signal control strategies for multiple intersections is highly challenging. Aiming at issues in existing optimization methods which are adaptive and fixed-time, this paper proposes a visual analytics method for multi-intersection traffic signal control optimization. Through collaborative interviews with experts, the paper extracts the problems and demands related to identifying and optimizing inefficient traffic signal control strategies, and accordingly constructs a novel visual analytics system, VisualTSC. The implemented trajectory mining process, which integrates the extraction of inefficient intersections and generation of optimization strategies, assists experts to understand the traffic efficiency of intersections and provides feasible alternative control strategies via simulation combined with the visual analytics system. VisualTSC employs a multi-level contour map to visualize intersection relationships, and offers tabular and trajectory views to support optimal strategies decision-making. The effectiveness of VisualTSC is verified via two application scenarios using real-world datasets and follow-up expert interviews, where experts reproduced the cases and provided positive qualitative evaluations on its performance.",
+    "doi": "10.3724/SP.J.1089.2025-00260"
+  },
+  {
+    "id": "pvesight",
+    "paper": "source/projects/pvesight/pvesight.pdf",
+    "teaser": "source/projects/pvesight/pvesight.png",
+    "title": "PVeSight: Dimensionality reduction-based anomaly detection and visual analysis of photovoltaic strings",
+    "authors": [
+      "Yurun Yang",
+      "Xinjing Yi",
+      "Yingqiang Jin",
+      "Sen Li",
+      "Kang Ma",
+      "Shuhan Liu",
+      "Dazhen Deng",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2025,
+    "abstract": "Efficient and accurate detection of anomalies in photovoltaic (PV) strings is essential for ensuring the normal operation of PV power stations. Most existing studies focus on developing automated anomaly detection models based on temporal abnormalities in PV strings. However, since analyzing anomalies often requires domain knowledge, existing automated methods have significant limitations in assisting experts to understand the causes and impact of these anomalies. In close collaboration with domain experts, this work has summarized the specific user requirements for PV string anomaly detection and designed PVeSight, an interactive visual analysis system to help experts discover and analyze anomalies in PV strings. We use dimensionality reduction techniques to generate string pattern map. These maps are used for anomaly detection, classifying anomalies, comparative analysis between strings, and hierarchical analysis under inverters and combiner boxes. This helps experts trace the causes of anomalies and acquire valuable insights into anomalous PV strings. Through case studies and expert evaluation, we verified the usability and effectiveness of PVeSight for PV string anomaly detection.",
+    "doi": "10.1016/j.visinf.2025.100243"
+  },
+  {
+    "id": "codelin",
+    "teaser": "source/projects/codelin/codelin.png",
+    "title": "CodeLin: An in situ visualization method for understanding data transformation scripts",
+    "authors": [
+      "Xiwen Cai",
+      "Kai Xiong",
+      "Zhongsu Luo",
+      "Di Weng",
+      "Shuainan Ye",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2025,
+    "abstract": "Understanding data transformation scripts is an essential task for data analysts who write code to process data. However, this can be challenging, especially when encountering unfamiliar scripts. Comments can help users understand data transformation code, but well-written comments are not always present. Visualization methods have been proposed to help analysts understand data transformations, but they generally require a separate view, which may distract users and entail efforts for connecting visualizations and code. In this work, we explore the use of in situ program visualization to help data analysts understand data transformation scripts. We present CodeLin, a new visualization method that combines word-sized glyphs for presenting transformation semantics and a lineage graph for presenting data lineage in an in situ manner. Through a use case, code pattern demonstrations, and a preliminary user study, we demonstrate the effectiveness and usability of CodeLin. We further discuss how visualization can help users understand data transformation code.",
+    "doi": "10.1016/j.visinf.2025.03.002"
+  },
+  {
+    "id": "dkpvva",
+    "paper": "source/projects/dkpvva/dkpvva.pdf",
+    "teaser": "source/projects/dkpvva/dkpvva.png",
+    "title": "A Domain Knowledge-Driven Visual Analytics System for Photovoltaic Power Time Series Forecasting",
+    "authors": [
+      "Xinjing Yi",
+      "Yurun Yang",
+      "Yin Song",
+      "Baozhu Zhou",
+      "Cheng Li",
+      "Shuhan Liu",
+      "Dazhen Deng",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2025,
+    "abstract": "Accurate forecasting of photovoltaic (PV) power generation plays a critical role in optimizing production schedules for PV power stations and facilitating efficient maintenance and repair of PV equipment. Deep time series forecasting models have emerged as the leading approach in the field of time series prediction. However, the intricate architectures and numerous parameters in these models frequently lead to forecasts that conflict with established domain knowledge. Furthermore, domain experts face significant challenges in leveraging their specialized knowledge to enhance the predictive performance of these models. Additionally, when dealing with PV strings exhibiting diverse characteristics, it becomes particularly challenging to identify discrepancies in the model's predictive accuracy across different strings and pinpointing its performance flaws. To tackle the issues, we propose a domain knowledge-driven forecasting method that combines the deep time series forecasting model with decision tree regression. Empirical evaluations demonstrate that our proposed method yields substantial improvements in forecasting accuracy compared to existing approaches. Furthermore, we have developed and implemented a comprehensive visual analytics system. This system aids experts in forecasting PV string power generation trends by employing multi-perspective model evaluation techniques to assess the rationality of forecasts. It also incorporates domain knowledge through an interactive decision tree construction process, thereby enhancing the model's predictive capabilities. The efficacy of our proposed system is substantiated through in-depth case studies and rigorous user evaluations.",
+    "doi": "10.1007/s12650-025-01067-4"
+  },
+  {
+    "id": "icfinder",
+    "paper": "source/projects/icfinder/icfinder.pdf",
+    "teaser": "source/projects/icfinder/icfinder.png",
+    "title": "Towards Better Illegal Chemical Facility Detection with Hazardous Chemicals Transportation Trajectories",
+    "authors": [
+      "Junxiu Tang",
+      "Huimin Ren",
+      "Zikun Deng",
+      "Di Weng",
+      "Tan Tang",
+      "Lingyun Yu",
+      "Jie Bao",
+      "Yu Zheng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization",
+      "ChinaVis 2024"
+    ],
+    "year": 2025,
+    "abstract": "Unregistered illegal facilities that do not qualify for chemical production pose substantial threats to human lives and the environment. For human safety and environmental protection, the government needs to figure out the illegal facilities and shut them down. A new, convenient, and affordable approach to detect such facilities is to analyze the trajectories of hazardous chemicals transportation (HCT) trucks. The existing study leverages a machine learning model to predict how likely a place is illegal. However, such a model lacks interpretability and cannot provide actionable justifications required for decision-making. In this study, we collaborate with HCT experts and propose an interactive visual analytics approach to explore the suspicious stay points, analyze abnormal HCT truck behaviors, and figure out unregistered illegal chemical facilities. First, experts receive an initial result from the detection model for reference. Then, they are supported to check the detailed information of the suspicious places with three coordinated views. We apply a visualization that tightly encodes the geo-referred movement activities along the timeline to present the HCT truck behaviors, which can help experts finally verify their conclusions. We demonstrate the effectiveness of the system with two case studies on real-world data. We also received experts' positive feedback from an expert interview.",
+    "doi": "10.1007/s12650-025-01055-8"
+  },
+  {
+    "id": "dstc",
+    "paper": "source/projects/dstc/dstc.pdf",
+    "teaser": "source/projects/dstc/dstc.png",
+    "title": "A Deep Spatiotemporal Trajectory Representation Learning Framework for Clustering",
+    "authors": [
+      "Chao Wang",
+      "Jiahui Huang",
+      "Yongheng Wang",
+      "Zhengxuan Lin",
+      "Xiongnan Jin",
+      "Xing Jin",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE TITS"
+    ],
+    "year": 2024,
+    "abstract": "Learning trajectory representations is essential in many Location Based Services (LBS) applications. Most traditional methods extract trajectory representations based on manually defined features, while deep learning-based methods can reduce part of the human effort. We propose a Deep Spatiotemporal Trajectory Clustering (DSTC) framework to tackle the Spatiotemporal Trajectory Representation Learning towards the Clustering-friendly space (STRLC) problem. Solving the STRLC problem is not a trivial task because: (1) Defining a uniform token size for datasets with an uneven density of trajectory data is challenging. (2) Measuring the similarity between trajectories spanning time zero in the time dimension is a problem to be solved. (3) It requires first learning a vector that can represent the overall characteristics of spatiotemporal trajectories and then mapping it to a more suitable space for clustering. To tackle these challenges, we first utilize the density-based clustering method to define tokens representing the trajectory points automatically. Then, we use polar coordinates to represent the temporal dimension of trajectories. Additionally, we improve the learned trajectory representations in a clustering-oriented latent space end to end. Experiments conducted on benchmark datasets demonstrate that DSTC achieves better accuracy than existing methods. Moreover, the representations learned from spatiotemporal trajectory data in the real world can be used to identify popular routes during the day."
+  },
+  {
+    "id": "neighviz",
+    "paper": "source/projects/neighviz/neighviz.pdf",
+    "teaser": "source/projects/neighviz/neighviz.png",
+    "title": "NeighViz: Towards Better Understanding of Neighborhood Effects on Social Groups with Spatial Data",
+    "authors": [
+      "Yue Yu",
+      "Yifang Wang",
+      "Qisen Yang",
+      "Di Weng",
+      "Yongjun Zhang",
+      "Xiaogang Wu",
+      "Yingcai Wu",
+      "Huamin Qu"
+    ],
+    "venue": [
+      "VDS @ IEEE VIS 2023"
+    ],
+    "year": 2023,
+    "abstract": "Understanding how local environments influence individual behaviors, such as voting patterns or suicidal tendencies, is crucial in social science to reveal and reduce spatial disparities and promote social well-being. With the increasing availability of large-scale individual-level census data, new analytical opportunities arise for social scientists to explore human behaviors (e.g., political engagement) among social groups at a fine-grained level. However, traditional statistical methods mostly focus on global, aggregated spatial correlations, which are limited to understanding and comparing the impact of local environments (e.g., neighborhoods) on human behaviors among social groups. In this study, we introduce a new analytical framework for analyzing multi-variate neighborhood effects between social groups. We then propose NeighViz, an interactive visual analytics system that helps social scientists explore, understand, and verify the influence of neighborhood effects on human behaviors. Finally, we use a case study to illustrate the effectiveness and usability of our system."
+  },
+  {
+    "id": "ct3",
+    "paper": "source/projects/ct3/ct3.pdf",
+    "teaser": "source/projects/ct3/ct3.png",
+    "title": "You are experienced: interactive tour planning with crowdsourcing tour data from web",
+    "authors": [
+      "Zikun Deng",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2023,
+    "abstract": "Planning an ideal tour schedule is a tedious process, where the attractions to visit and the order of visits need to be carefully determined. In this paper, we propose a novel interactive approach for tour planning. We first extract prior tourists' experiences from the crowdsourcing tour data on the Web using frequent substring mining. We then design and implement a planning tool equipped with interactive visualizations, enabling users to learn the extracted experiences and plan their own tours. Our approach is evaluated with two usage scenarios on real-world tour data in two cities. Compared with previous methods, our approach strikes a balance between efficiency and reliability. On the one hand, we support the interactive manipulation of attraction sequence (i.e., multiple attractions at a time), thereby ensuring efficiency. On the other hand, we keep humans in the loop of the tour planning process via interactive visualizations. This paper shows the value of tour data published by tourists on the Web for personalized tour planning.",
+    "doi": "10.1007/s12650-022-00884-1"
+  },
+  {
+    "id": "industrial-survey",
+    "paper": "source/projects/industrial-survey/industrial-survey.pdf",
+    "teaser": "source/projects/industrial-survey/industrial-survey.png",
+    "title": "A Review on Industrial Data Visual Analytics",
+    "authors": [
+      "Shuhan Liu",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Integration Technology"
+    ],
+    "year": 2021,
+    "abstract": "Since industry 4.0 was introduced in 2013, industries across the globe have been rushing towards the era of intelligent manufacturing. The advances in data sensing technologies have further helped the collection of massive industrial data, providing an excellent opportunity for innovations in industrial informatization. However, it remains a major challenge to analyze industrial data because of its large scale, high dimensionality, heterogeneity and complexity. Constantly changing application scenarios also lead to strict requirements in the flexibility of analyses, which demand placing domain experts in the analysis loop. Therefore, visualization has been widely applied to analyzing industrial data. This review article first summarizes the data types commonly used in the industrial scenarios based on the production stages and properties. Then, based on the data properties, this paper introduces visualization methods for the temporal, spatial and spatio-temporal types. Further, this paper overviews the applications of visual analytics in the industrial scenarios and discusses the integration of automated analysis methods in the visual analytics systems. Finally, this paper prospects the development of industrial data visual analytics and possible research directions for the future.",
+    "doi": "10.12146/j.issn.2095-3135.20210630003"
+  },
+  {
     "id": "trajgram",
     "titleKey": [
       "Honorable Mention"

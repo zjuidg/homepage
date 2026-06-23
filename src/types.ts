@@ -16,10 +16,14 @@ export const Venue = {
   IMWUT: 'ACM IMWUT',
   CVM: 'Computational Visual Media',
   VisualInformatics: 'Visual Informatics',
+  JournalOfVisualization: 'Journal of Visualization',
+  JCADCG: 'Journal of Computer-Aided Design & Computer Graphics',
+  JournalIntegrationTechnology: 'Journal of Integration Technology',
   InternetResearch: 'Internet Research',
   CommunicationResearch: 'Communication Research',
   // conferences & tracks (year-specific)
   AAAI2024: 'AAAI 2024',
+  ChinaVis2024: 'ChinaVis 2024',
   CHI2018: 'CHI 2018',
   CHI2021: 'CHI 2021',
   CHI2024: 'CHI 2024',
@@ -39,6 +43,7 @@ export const Venue = {
   IEEEVIS2024: 'IEEE VIS 2024',
   IEEEVIS2025: 'IEEE VIS 2025',
   IEEEVR2024: 'IEEE VR 2024',
+  ICML2026: 'ICML 2026',
   KDD2021: 'KDD 2021',
   KDD2025: 'KDD 2025',
   PacificVis2016TVCGJournalTrack: 'PacificVis 2016 TVCG Journal Track',
@@ -53,6 +58,7 @@ export const Venue = {
   UIST2023: 'UIST 2023',
   UIST2024: 'UIST 2024',
   UIST2025: 'UIST 2025',
+  VDSIEEEVIS2023: 'VDS @ IEEE VIS 2023',
 } as const;
 
 export type Venue = (typeof Venue)[keyof typeof Venue];

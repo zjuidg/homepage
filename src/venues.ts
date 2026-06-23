@@ -18,6 +18,11 @@ const FULL_VENUE_NAMES: Partial<Record<Venue, string>> = {
   [Venue.TMM]: 'IEEE Transactions on Multimedia',
   [Venue.IMWUT]:
     'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+  [Venue.JCADCG]: 'Journal of Computer-Aided Design & Computer Graphics',
+  [Venue.JournalIntegrationTechnology]: 'Journal of Integration Technology',
+  [Venue.JournalOfVisualization]: 'Journal of Visualization',
+  [Venue.VisualInformatics]: 'Visual Informatics',
+  [Venue.VDSIEEEVIS2023]: 'Visualization in Data Science (VDS @ IEEE VIS), 2023',
 };
 
 /** Reader-facing venue name. JSON keeps compact labels for filtering and data stability. */
@@ -38,6 +43,7 @@ export function venueDisplayName(label: string): string {
     yearSuffix('EuroVis', 'Eurographics Conference on Visualization') ??
     yearSuffix('IEEE VIS', 'IEEE VIS', ' ') ??
     yearSuffix('IEEE VR', 'IEEE Conference on Virtual Reality and 3D User Interfaces') ??
+    yearSuffix('ICML', 'International Conference on Machine Learning') ??
     yearSuffix('KDD', 'ACM SIGKDD Conference on Knowledge Discovery and Data Mining') ??
     yearSuffix('PacificVis', 'IEEE PacificVis', ' ') ??
     yearSuffix('SIGGRAPH', 'ACM SIGGRAPH', ' ') ??
