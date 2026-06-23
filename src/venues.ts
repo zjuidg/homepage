@@ -9,6 +9,44 @@ const TOP_COLORS = ['#5b8cff', '#2fe6d6', '#b07cff', '#ffb454', '#ff6b9d'];
 export const OTHER_COLOR = '#7a8499';
 export const OTHER_ID = 'other';
 
+const FULL_VENUE_NAMES: Partial<Record<Venue, string>> = {
+  [Venue.TVCG]: 'IEEE Transactions on Visualization and Computer Graphics',
+  [Venue.CGF]: 'Computer Graphics Forum',
+  [Venue.TITS]: 'IEEE Transactions on Intelligent Transportation Systems',
+  [Venue.TIST]: 'ACM Transactions on Intelligent Systems and Technology',
+  [Venue.TBD]: 'IEEE Transactions on Big Data',
+  [Venue.TMM]: 'IEEE Transactions on Multimedia',
+  [Venue.IMWUT]:
+    'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+};
+
+/** Reader-facing venue name. JSON keeps compact labels for filtering and data stability. */
+export function venueDisplayName(label: string): string {
+  const exact = FULL_VENUE_NAMES[label as Venue];
+  if (exact) return exact;
+
+  const yearSuffix = (prefix: string, full: string, separator = ', ') => {
+    const match = label.match(new RegExp(`^${prefix} ((?:19|20)\\d{2})(.*)$`));
+    if (!match) return null;
+    const [, year, suffix] = match;
+    return `${full}${separator}${year}${suffix}`;
+  };
+
+  return (
+    yearSuffix('AAAI', 'AAAI Conference on Artificial Intelligence') ??
+    yearSuffix('CHI', 'ACM CHI Conference on Human Factors in Computing Systems') ??
+    yearSuffix('EuroVis', 'Eurographics Conference on Visualization') ??
+    yearSuffix('IEEE VIS', 'IEEE VIS', ' ') ??
+    yearSuffix('IEEE VR', 'IEEE Conference on Virtual Reality and 3D User Interfaces') ??
+    yearSuffix('KDD', 'ACM SIGKDD Conference on Knowledge Discovery and Data Mining') ??
+    yearSuffix('PacificVis', 'IEEE PacificVis', ' ') ??
+    yearSuffix('SIGGRAPH', 'ACM SIGGRAPH', ' ') ??
+    yearSuffix('SIGSPATIAL', 'ACM SIGSPATIAL', ' ') ??
+    yearSuffix('UIST', 'ACM Symposium on User Interface Software and Technology (UIST)') ??
+    label
+  );
+}
+
 /** Strip a trailing year (and anything after it) from a venue label. */
 function series(label: string): string {
   return label.replace(/\s*(?:19|20)\d{2}.*$/, '').trim() || label;

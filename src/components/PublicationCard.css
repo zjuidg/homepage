@@ -25,18 +25,6 @@
 
 .pcard__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
 
-/* one neutral chip color for all venues — color lives in the masthead, not here */
-.pcard__venue {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.01em;
-  color: var(--text-dim);
-  padding: 3px 9px;
-  border-radius: 6px;
-  border: 1px solid var(--border-strong);
-  background: var(--surface);
-}
-
 .pcard__tag {
   font-family: var(--mono);
   font-size: 0.7rem;
@@ -82,7 +70,12 @@
 .pcard__title button:not(:disabled):hover { color: var(--accent); }
 .pcard__title button:disabled { cursor: default; }
 
-.pcard__authors { margin: 0; color: var(--text-dim); font-size: 0.9rem; }
+.pcard__authors {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
 .pcard__author {
   appearance: none;
   border: 0;
@@ -98,6 +91,16 @@
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
+}
+.pcard__venue-line {
+  margin: 4px 0 0;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text-faint);
+}
+.pcard__also-venue {
+  color: var(--text-faint);
 }
 
 .pcard__abstract {

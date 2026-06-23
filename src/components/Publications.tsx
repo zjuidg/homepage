@@ -1,6 +1,6 @@
 import { createEffect, createMemo, createSignal, For, on, Show } from 'solid-js';
 import type { Publication } from '../types';
-import { venueSeriesList } from '../venues';
+import { venueDisplayName, venueSeriesList } from '../venues';
 import { searchQuery, setSearchQuery, externalTick } from '../search';
 import { reveal } from '../reveal';
 import { t } from '../i18n';
@@ -45,7 +45,13 @@ export default function Publications(props: { pubs: Publication[] }) {
       if (aw && !p.titleKey?.length) return false;
       if (q) {
         const hay = (
-          p.title + ' ' + p.authors.join(' ') + ' ' + p.venue.join(' ')
+          p.title +
+          ' ' +
+          p.authors.join(' ') +
+          ' ' +
+          p.venue.join(' ') +
+          ' ' +
+          p.venue.map(venueDisplayName).join(' ')
         ).toLowerCase();
         if (!hay.includes(q)) return false;
       }

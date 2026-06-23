@@ -67,6 +67,7 @@ export interface Copy {
     system: string;
     abstract: string;
     hideAbstract: string;
+    alsoAppearsIn: (venue: string) => string;
   };
   footer: {
     eyebrow: string;
@@ -171,6 +172,7 @@ const en: Copy = {
     system: 'System',
     abstract: 'Abstract',
     hideAbstract: 'Hide abstract',
+    alsoAppearsIn: (venue) => `(also appears in ${venue})`,
   },
   footer: {
     eyebrow: 'Get in touch',
@@ -273,6 +275,7 @@ const zh: Copy = {
     system: '系统',
     abstract: '摘要',
     hideAbstract: '收起摘要',
+    alsoAppearsIn: (venue) => `（同时发表于 ${venue}）`,
   },
   footer: {
     eyebrow: '联系我们',
