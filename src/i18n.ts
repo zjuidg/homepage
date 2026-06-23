@@ -11,7 +11,7 @@ interface Area {
 
 export interface Copy {
   langLabel: string; // label shown on the switcher (the OTHER language to switch to)
-  nav: { about: string; highlights: string; network: string; publications: string; contact: string };
+  nav: { about: string; highlights: string; map: string; network: string; publications: string; contact: string };
   hero: {
     eyebrow: string;
     title1: string;
@@ -45,6 +45,15 @@ export interface Copy {
     cardMeta: (papers: number, collaborators: number) => string;
     legendSize: string;
     legendLink: string;
+  };
+  map: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    stats: (n: number) => string;
+    hint: string;
+    otherVenues: string;
+    linked: (n: number) => string;
   };
   pubs: {
     eyebrow: string;
@@ -91,6 +100,7 @@ const en: Copy = {
   nav: {
     about: 'About',
     highlights: 'Highlights',
+    map: 'Map',
     network: 'Network',
     publications: 'Publications',
     contact: 'Contact',
@@ -149,6 +159,16 @@ const en: Copy = {
     legendSize: 'Papers authored',
     legendLink: 'Shared papers',
   },
+  map: {
+    eyebrow: 'Paper map',
+    heading: 'A map of our papers',
+    intro:
+      'Every paper, placed by the meaning of its title and abstract — nearby dots are about similar things. Color marks the venue. Hover to inspect, click to find it below.',
+    stats: (n) => `${n} papers · OpenAI embeddings, projected with UMAP`,
+    hint: 'Hover a dot to inspect a paper. Lines join papers sharing three or more authors.',
+    otherVenues: 'Other venues',
+    linked: (n) => `${n} linked paper${n === 1 ? '' : 's'}`,
+  },
   pubs: {
     eyebrow: 'Publications',
     heading: 'Our research',
@@ -196,6 +216,7 @@ const zh: Copy = {
   nav: {
     about: '关于',
     highlights: '近期亮点',
+    map: '论文地图',
     network: '合作网络',
     publications: '学术论文',
     contact: '联系',
@@ -251,6 +272,16 @@ const zh: Copy = {
     cardMeta: (papers, collaborators) => `${papers} 篇论文 · ${collaborators} 位合作者`,
     legendSize: '论文数量',
     legendLink: '合作论文',
+  },
+  map: {
+    eyebrow: '论文地图',
+    heading: '论文的语义地图',
+    intro:
+      '每个圆点代表一篇论文，依据标题与摘要的语义来定位——相邻的点研究主题相近。颜色表示发表会议或期刊。悬停查看详情，点击可在下方列表中定位。',
+    stats: (n) => `${n} 篇论文 · 由 OpenAI 向量嵌入，经 UMAP 降维`,
+    hint: '悬停圆点查看论文。连线表示两篇论文有三位及以上共同作者。',
+    otherVenues: '其他会议',
+    linked: (n) => `${n} 篇关联论文`,
   },
   pubs: {
     eyebrow: '学术论文',

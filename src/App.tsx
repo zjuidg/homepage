@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Carousel from './components/Carousel';
 import CoauthorNetwork from './components/CoauthorNetwork';
+import PaperMap from './components/PaperMap';
 import Publications from './components/Publications';
 import Footer from './components/Footer';
 import { loadPublications, loadSlides } from './data';
@@ -26,6 +27,7 @@ export default function App() {
             <Carousel slides={slides()!} />
           </Show>
           <Show when={pubs()}>
+            <PaperMap pubs={pubs()!} />
             <Publications pubs={pubs()!} />
             <CoauthorNetwork pubs={pubs()!} />
           </Show>

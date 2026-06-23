@@ -111,6 +111,20 @@ Push to `main` → the GitHub Action builds and deploys to Cloudflare Pages. Or 
 manually: `pnpm build && npx wrangler pages deploy dist --project-name=zjuidg-homepage`.
 The build needs `VITE_PAPERS_BASE` set (locally via `.env`; in CI via a repo variable).
 
+### 5. Regenerate the paper map
+The "Paper map" section (`src/components/PaperMap.tsx`) draws one dot per paper at a
+**precomputed** 2D position — there is no API call at page load. A new paper won't appear
+on the map until you re-run the precompute, which embeds each title+abstract with an
+OpenAI embedding model and projects the vectors to 2D with UMAP:
+
+```bash
+node scripts/compute-paper-map.mjs    # reads OPENAI_API_KEY from .env
+```
+
+It writes `public/source/paper-map.json` (committed) and caches embeddings under
+`scripts/.cache/` (git-ignored), so re-runs only embed new/changed papers. Commit the
+updated `paper-map.json`.
+
 ## Adding a carousel highlight (optional)
 
 Add an object to `public/source/slides.json`. Translate the sentence in `titleZh` but keep

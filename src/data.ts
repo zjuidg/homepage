@@ -44,6 +44,18 @@ export async function loadSlides(): Promise<Slide[]> {
 }
 
 /**
+ * Precomputed paper-map layout: publication id → [x, y], each in [-1, 1]. Points
+ * come from `scripts/compute-paper-map.mjs` (OpenAI embeddings + t-SNE), so no
+ * model runs at page load. Papers added without re-running the script are simply
+ * absent from the map.
+ */
+export type PaperMap = Record<string, [number, number]>;
+
+export async function loadPaperMap(): Promise<PaperMap> {
+  return getJSON<PaperMap>('paper-map.json');
+}
+
+/**
  * True when a paper is archived in TVCG. IEEE VIS and the PacificVis journal
  * track carry Venue.TVCG alongside their conference venue (see the migration in
  * Venue), so this is a simple membership check.

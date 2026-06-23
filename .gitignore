@@ -28,6 +28,9 @@ public/source/**/*.PDF
 # wrangler
 .wrangler/
 
+# cached OpenAI embeddings for the paper-map precompute (scripts/compute-paper-map.mjs)
+scripts/.cache/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
