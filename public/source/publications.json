@@ -1,5 +1,38 @@
 [
   {
+    "id": "net-efficiency",
+    "teaser": "source/projects/net-efficiency/net-efficiency.png",
+    "title": "Key indicator for winning soccer matches: net efficiency",
+    "authors": [
+      "Yue Zeng",
+      "Xiao Xie",
+      "Hui Zhang"
+    ],
+    "venue": [
+      "BMC Sports Science, Medicine and Rehabilitation"
+    ],
+    "year": 2026,
+    "abstract": "Current soccer match analysis focuses predominantly on team tactics and technical aspects, such as offensive and defensive strategies and their transitions. However, match efficiency has received limited attention, making it difficult to explain scenarios where a team dominates possession but fails to secure victory.",
+    "doi": "10.1186/s13102-026-01717-6"
+  },
+  {
+    "id": "stroke-performance-fluctuation",
+    "teaser": "source/projects/stroke-performance-fluctuation/stroke-performance-fluctuation.webp",
+    "title": "Stroke-level performance fluctuation analysis in elite table tennis",
+    "authors": [
+      "Wenxuan Yu",
+      "Zheng Zhou",
+      "Hui Zhang",
+      "Xiao Xie"
+    ],
+    "venue": [
+      "BMC Sports Science, Medicine and Rehabilitation"
+    ],
+    "year": 2026,
+    "abstract": "Table tennis is characterized by high intensity and short rallies, where the stability of technical and tactical execution is crucial to performance. Existing research on performance fluctuations has primarily focused on psychological or score-based metrics, neglecting the technical execution of strokes. To address this gap, this study introduces a novel metric: Stroke Performance Fluctuation (SPF).",
+    "doi": "10.1186/s13102-025-01521-8"
+  },
+  {
     "id": "geoauthor",
     "paper": "source/projects/geoauthor/geoauthor.pdf",
     "teaser": "source/projects/geoauthor/geoauthor.png",
@@ -61,6 +94,81 @@
     "demo": "https://github.com/andone-07/Dynamic-TMoE"
   },
   {
+    "id": "StealthGraph",
+    "paper": "source/projects/StealthGraph/StealthGraph.pdf",
+    "teaser": "source/projects/StealthGraph/StealthGraph.png",
+    "title": "StealthGraph: Exposing Domain-Specific Risks in LLMs through Knowledge-Graph-Guided Harmful Prompt Generation",
+    "authors": [
+      "Huawei Zheng",
+      "Xinqi Jiang",
+      "Sen Yang",
+      "Shouling Ji",
+      "Yingcai Wu",
+      "Dazhen Deng"
+    ],
+    "venue": [
+      "ACL 2026 Main"
+    ],
+    "year": 2026,
+    "doi": "10.48550/arXiv.2601.04740",
+    "demo": "https://github.com/huawzheng/StealthGraph"
+  },
+  {
+    "id": "collaborative-crowd-simulation",
+    "teaser": "source/projects/collaborative-crowd-simulation/collaborative-crowd-simulation.png",
+    "title": "Collaborative Small and Large Models for Crowd Simulation With Incomplete Trajectory Data",
+    "authors": [
+      "Zheng Wang",
+      "Chang Li",
+      "Hua Wang",
+      "Dong Chen",
+      "Shuo He",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE TVCG"
+    ],
+    "year": 2026,
+    "abstract": "Crowd simulation plays a crucial role in various domains, including entertainment, urban planning, and safety assessment. Data-driven methods offer significant advantages in simulating natural and diverse crowd behaviors, enabling highly realistic simulations. However, existing methods often face challenges due to incomplete trajectory data and limited generalization to unfamiliar scenarios. To address these limitations, we propose a novel crowd simulation framework based on the collaboration of a small model and a large model. Inspired by the dual-process decision-making mechanism in cognitive psychology, this framework enables efficient handling of familiar scenarios while leveraging the reasoning capabilities of large models in complex or unfamiliar environments. The small model, responsible for generating fast and reactive behaviors, is trained on real-world incomplete trajectory data to learn movement patterns. The large model, which performs simulation correction to refine failed behaviors, leverages past successful and failed experiences to enhance behavior generation in complex scenarios. Experimental results demonstrate that our framework significantly improves simulation accuracy in the presence of missing trajectory segments and enhances cross-scene generalization.",
+    "doi": "10.1109/TVCG.2025.3649986"
+  },
+  {
+    "id": "custmatcher",
+    "teaser": "source/projects/custmatcher/custmatcher.png",
+    "title": "CustMatcher: Enhancing preference-driven people-to-people recommendation",
+    "authors": [
+      "Ji Ma",
+      "Jiachen Wang",
+      "Xiao Xie",
+      "Zheng Zhou",
+      "Hui Zhang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2026,
+    "abstract": "People-to-people recommendation involves suggesting connections or relationships between individuals based on shared interests, skills, or other relevant factors, such as preferred field of study or geographical location. It is a common matching task across various domains, notably in education, where it assists in forming study groups, mentorship programs, and collaborative projects. However, generating people-to-people recommendations that satisfy users' preferences is laborious, requiring extensive profile analysis and thus prompting the need for interactive visualization systems. In this work, we collaborated with experts from various education domains and developed CustMatcher which coordinates automatic matching algorithms and visualizations to enable efficient people-to-people recommendations. We first propose a steerable matching framework considering both the flexibility and the efficiency. A constraint space is defined to allow users to express their explicit preferences and implicit preferences about the matching. Visualizations and interactions are designed based on the framework and the constraint space to help users generate the initial matching result, handle the conflicts between preferences, and improve the matching result progressively. We evaluate the effectiveness and usability of the system with a user study and a case study.",
+    "doi": "10.1016/j.visinf.2025.100298"
+  },
+  {
+    "id": "camouflagevis",
+    "teaser": "source/projects/camouflagevis/camouflagevis.webp",
+    "title": "CamouflageVis: a visual analytics approach for discovering camouflaged malicious entities in e-commerce",
+    "authors": [
+      "Yanhong Wu",
+      "Tan Tang",
+      "Yuhong Li",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2026,
+    "abstract": "Malicious entities are conducting illegal activities that undermine fair competition on e-commerce platforms. However, identifying malicious entities remains challenging because malicious entities always camouflage themselves among the sheer volume of benign entities. Even the most advanced automated approaches have to sacrifice precision to obtain an acceptable recall rate due to the camouflages. To discover camouflaged malicious entities efficiently, we propose CamouflageVis, a visual analytics approach that integrates machine insights with human knowledge. Compared with existing methods, our approach incorporates advanced machine learning models to detect malicious entities against their camouflage behaviors. Moreover, we develop a visualization interface to help domain experts obtain deep insights into the camouflages and identify underlying malicious entities. Specifically, we provide a clustering view to show which entities are similar based on the learned embedding features. We then design a feature view and an annotation view to reveal the feature distribution of both benign and malicious entities. We also introduce a community view and an entity view to manifest single-level and group-level aggregation of entities in multi-relational graphs. Finally, we evaluated our approach with two usage scenarios based on real-world datasets.",
+    "doi": "10.1007/s12650-026-01128-2"
+  },
+  {
     "id": "visualtsc",
     "paper": "source/projects/visualtsc/visualtsc.pdf",
     "teaser": "source/projects/visualtsc/visualtsc.png",
@@ -77,6 +185,68 @@
     "year": 2026,
     "abstract": "Traffic lights have been widely used to alleviate traffic congestion and improve traffic efficiency. However, due to the complex variability of traffic conditions and interactions between intersections, formulating effective traffic signal control strategies for multiple intersections is highly challenging. Aiming at issues in existing optimization methods which are adaptive and fixed-time, this paper proposes a visual analytics method for multi-intersection traffic signal control optimization. Through collaborative interviews with experts, the paper extracts the problems and demands related to identifying and optimizing inefficient traffic signal control strategies, and accordingly constructs a novel visual analytics system, VisualTSC. The implemented trajectory mining process, which integrates the extraction of inefficient intersections and generation of optimization strategies, assists experts to understand the traffic efficiency of intersections and provides feasible alternative control strategies via simulation combined with the visual analytics system. VisualTSC employs a multi-level contour map to visualize intersection relationships, and offers tabular and trajectory views to support optimal strategies decision-making. The effectiveness of VisualTSC is verified via two application scenarios using real-world datasets and follow-up expert interviews, where experts reproduced the cases and provided positive qualitative evaluations on its performance.",
     "doi": "10.3724/SP.J.1089.2025-00260"
+  },
+  {
+    "id": "camh",
+    "paper": "source/projects/camh/camh.pdf",
+    "teaser": "source/projects/camh/camh.png",
+    "title": "CAMH: Advancing Model Hijacking Attack in Machine Learning",
+    "authors": [
+      "Xing He",
+      "Jiahao Chen",
+      "Yuwen Pu",
+      "Qingming Li",
+      "Chunyi Zhou",
+      "Yingcai Wu",
+      "Jinbao Li",
+      "Shouling Ji"
+    ],
+    "venue": [
+      "AAAI 2025"
+    ],
+    "year": 2025,
+    "abstract": "In the burgeoning domain of machine learning, the reliance on third-party services for model training and the adoption of pre-trained models have surged. However, this reliance introduces vulnerabilities to model hijacking attacks, where adversaries manipulate models to perform unintended tasks, leading to significant security and ethical concerns, like turning an ordinary image classifier into a tool for detecting faces in pornographic content, all without the model owner's knowledge. This paper introduces Category-Agnostic Model Hijacking (CAMH), a novel model hijacking attack method capable of addressing the challenges of class number mismatch, data distribution divergence, and performance balance between the original and hijacking tasks. CAMH incorporates synchronized training layers, random noise optimization, and a dual-loop optimization approach to ensure minimal impact on the original task's performance while effectively executing the hijacking task. We evaluate CAMH across multiple benchmark datasets and network architectures, demonstrating its potent attack effectiveness while ensuring minimal degradation in the performance of the original task.",
+    "doi": "10.1609/aaai.v39i16.33884"
+  },
+  {
+    "id": "puzzlesorter",
+    "paper": "source/projects/puzzlesorter/puzzlesorter.pdf",
+    "teaser": "source/projects/puzzlesorter/puzzlesorter.png",
+    "title": "PuzzleSorter: Certainty-Aware Visual Restoration of Multiple Cultural Artifacts",
+    "authors": [
+      "Shuainan Ye",
+      "Jianing Yin",
+      "Buwei Zhou",
+      "Tan Tang",
+      "Lingyun Yu",
+      "Ruohan Yu",
+      "Lu Jiang",
+      "Changyu Diao",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Computational Visual Media"
+    ],
+    "year": 2025,
+    "abstract": "We present PuzzleSorter, a certainty-aware visual analytics system for cultural relic fragment restoration. Restoring cultural objects from broken fragments is a fundamental task in geometry and archaeology. Prior research proposes automatic models to classify fragments by types and assemble matched pairs successively. However, eroded fragments lead to erroneous results, posing two challenges for restorers to correct: (1) numerous fragments conceal errors within an overwhelming number of object appearances, and (2) the unknown difficulty of restoration hinders correction strategy development. To address these challenges, PuzzleSorter provides multi-criteria analysis that helps users identify certainties of current solutions and alternatives at the type, object, and fragment levels. Moreover, our system visualizes these certainties through a relation graph, which implies alternative assembly solutions with geometric context and indicates correction difficulties through neighbor proximity, number of neighbors, and path length. We demonstrate the feasibility and utility of our system through two case studies and expert interviews.",
+    "doi": "10.26599/CVM.2025.9450468"
+  },
+  {
+    "id": "t-foresight",
+    "teaser": "source/projects/t-foresight/t-foresight.png",
+    "title": "T-Foresight: Interpret moving strategies based on context-aware trajectory prediction",
+    "authors": [
+      "Yueqiao Chen",
+      "Jiang Wu",
+      "Yingcai Wu",
+      "Dongyu Liu"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2025,
+    "abstract": "Trajectory prediction and interpretation are crucial in various domains for optimizing movements in complex environments. However, understanding how diverse contextual factors - environmental, physical, and social - influence moving strategies is challenging due to their multifaceted nature, which complicates quantification and the derivation of actionable insights. We introduce an interpretable analytics workflow that addresses these challenges by innovatively leveraging ensemble learning for context-aware trajectory prediction. Multiple base predictors simulate diverse moving strategies, while a decision-making model assesses the suitability of each predictor in specific contexts. This approach quantifies the impact of contextual factors by interpreting the decision-making model's predictions and reveals possible moving strategies through the aggregation of base predictors' outputs. The workflow comes with T-Foresight, an interactive visualization interface that empowers stakeholders to explore predictions, interpret contextual influences, and devise and compare moving strategies effectively. We evaluate our approach in the domain of eSports, specifically MOBA games. Through case studies with professional analysts, we demonstrate T-Foresight's effectiveness in illustrating player moving strategies and providing insights into top-tier tactics. A user study further confirms its usefulness in helping average players uncover and understand advanced strategies.",
+    "doi": "10.1016/j.visinf.2025.100261"
   },
   {
     "id": "pvesight",
@@ -100,6 +270,95 @@
     "year": 2025,
     "abstract": "Efficient and accurate detection of anomalies in photovoltaic (PV) strings is essential for ensuring the normal operation of PV power stations. Most existing studies focus on developing automated anomaly detection models based on temporal abnormalities in PV strings. However, since analyzing anomalies often requires domain knowledge, existing automated methods have significant limitations in assisting experts to understand the causes and impact of these anomalies. In close collaboration with domain experts, this work has summarized the specific user requirements for PV string anomaly detection and designed PVeSight, an interactive visual analysis system to help experts discover and analyze anomalies in PV strings. We use dimensionality reduction techniques to generate string pattern map. These maps are used for anomaly detection, classifying anomalies, comparative analysis between strings, and hierarchical analysis under inverters and combiner boxes. This helps experts trace the causes of anomalies and acquire valuable insights into anomalous PV strings. Through case studies and expert evaluation, we verified the usability and effectiveness of PVeSight for PV string anomaly detection.",
     "doi": "10.1016/j.visinf.2025.100243"
+  },
+  {
+    "id": "multimodal-analysis-survey",
+    "teaser": "source/projects/multimodal-analysis-survey/multimodal-analysis-survey.jpg",
+    "title": "Empowering multimodal analysis with visualization: A survey",
+    "authors": [
+      "Jiachen Wang",
+      "Zikun Deng",
+      "Dazhen Deng",
+      "Xingbo Wang",
+      "Rui Sheng",
+      "Yi Cai",
+      "Huamin Qu"
+    ],
+    "venue": [
+      "Computer Science Review"
+    ],
+    "year": 2025,
+    "abstract": "Multimodal data, which encompasses text, audio, image, and other modalities, is a popular research target in the field of visualization research. Existing visualization techniques for multimodal data are scattered and categorized by application domains, such as multimodal model analysis or online education. It lacks a comprehensive review from the perspective of data that summarizes the methodologies, research gaps, and future trends for researchers and practitioners. In this study, we delve into existing visualization research, identifying their data modalities, applications, strengths, and limitations. Furthermore, we shed light on the potential challenges and opportunities for further research in this domain to advance intelligent visualizations for multimodal data.",
+    "doi": "10.1016/j.cosrev.2025.100748"
+  },
+  {
+    "id": "painting-authentication",
+    "teaser": "source/projects/painting-authentication/painting-authentication.png",
+    "title": "Multi-Modal Visual Analytic Approach for Attributing and Authenticating Ancient Chinese Paintings",
+    "authors": [
+      "Xiaojiao Chen",
+      "Yonghao Chen",
+      "Tan Tang",
+      "Xin Ge",
+      "Ruihan Wang",
+      "Yifan Wang",
+      "Xiaosong Wang"
+    ],
+    "venue": [
+      "Journal of Computer-Aided Design & Computer Graphics"
+    ],
+    "year": 2025,
+    "abstract": "The traditional workflow of authenticating ancient Chinese paintings heavily relies on experts’ reasoning and justification, who need to consider various information, such as inscriptions, seals, and painting content, along with extensive literature materials. Although deep learning-based methods have improved the efficiency of traditional authentication workflow, they predominantly focus on image analysis while the black-box nature of DNNs hampering the effective human-machine collaboration. To address this issue, we propose a visual analysis approach that extract multi-modal semantics to facilitate the easy analysis of ancient Chinese paintings. Firstly, ancient painting images are segmented into three semantic objects: inscriptions, seals, and painting content. Then, an association structure is constructed between the corresponding segments of ancient paintings through image matching and text recognition, as well as with relevant literary references. Finally, experts select segments of ancient paintings to generate a multi-modal semantic network graph for reference and verification. Furthermore, we develop a mixed-initiative system for assisting the visual attribution analysis of ancient Chinese paintings. Through case studies and expert evaluations, the effectiveness and accuracy of ancient painting analysis and authentication were validated using a 5-point Likert scale for expert feedback, with scores ranging from 0.78 to 1.78.",
+    "doi": "10.3724/SP.J.1089.2023-00350"
+  },
+  {
+    "id": "eadetector",
+    "teaser": "source/projects/eadetector/eadetector.png",
+    "title": "Epidemic Amplifier Detection: Finding High-Risk Locations in COVID-19 Cases' Location Sequences via Multi-task Learning",
+    "authors": [
+      "Yue Hu",
+      "Xiaoli Wang",
+      "Huimin Ren",
+      "Tianfu He",
+      "Tan Tang",
+      "Huajun He",
+      "Chuishi Meng",
+      "Boyang Han",
+      "Jie Bao",
+      "Ying Sun",
+      "Gang Li",
+      "Quanyi Wang",
+      "Peng Yang",
+      "Yu Zheng"
+    ],
+    "venue": [
+      "SIGSPATIAL 2023"
+    ],
+    "year": 2024,
+    "abstract": "To contain the transmission of respiratory diseases, such as COVID-19, it is vital to control the locations visited by the cases. However, not all locations pose the same risk, and quarantining all close contacts is costly. Therefore, precise identification of outbreak locations is essential for public health. Fortunately, public health data includes detailed epidemiological surveys, offering a data-driven approach. In this paper, we propose a novel epidemic amplifier detection model, namely EADetector, which extracts spatiotemporal features from candidate locations, and employs a multitask learning-based method to fuse the infected location detection task along with the epidemic location inference task to acquire potential locations. We perform extensive experiments and present a set of case studies based on the real epidemiological surveys collected in Beijing. The proposed model is deployed as a part of the epidemiological survey system in Beijing, China.",
+    "doi": "10.1145/3589132.3625632"
+  },
+  {
+    "id": "TableNarrator",
+    "paper": "source/projects/TableNarrator/TableNarrator.pdf",
+    "teaser": "source/projects/TableNarrator/TableNarrator.jpg",
+    "title": "TableNarrator: Making Image Tables Accessible to Blind and Low Vision People",
+    "authors": [
+      "Ye Mo",
+      "Gang Huang",
+      "Liangcheng Li",
+      "Dazhen Deng",
+      "Zhi Yu",
+      "Yilun Xu",
+      "Kai Ye",
+      "Sheng Zhou",
+      "Jiajun Bu"
+    ],
+    "venue": [
+      "CHI 2025"
+    ],
+    "year": 2025,
+    "doi": "10.1145/3706598.3714329"
   },
   {
     "id": "codelin",
@@ -208,6 +467,29 @@
     ],
     "year": 2023,
     "abstract": "Understanding how local environments influence individual behaviors, such as voting patterns or suicidal tendencies, is crucial in social science to reveal and reduce spatial disparities and promote social well-being. With the increasing availability of large-scale individual-level census data, new analytical opportunities arise for social scientists to explore human behaviors (e.g., political engagement) among social groups at a fine-grained level. However, traditional statistical methods mostly focus on global, aggregated spatial correlations, which are limited to understanding and comparing the impact of local environments (e.g., neighborhoods) on human behaviors among social groups. In this study, we introduce a new analytical framework for analyzing multi-variate neighborhood effects between social groups. We then propose NeighViz, an interactive visual analytics system that helps social scientists explore, understand, and verify the influence of neighborhood effects on human behaviors. Finally, we use a case study to illustrate the effectiveness and usability of our system."
+  },
+  {
+    "id": "GrandChallenges",
+    "paper": "source/projects/GrandChallenges/GrandChallenges.pdf",
+    "teaser": "source/projects/GrandChallenges/GrandChallenges.png",
+    "title": "Grand Challenges in Visual Analytics Applications",
+    "authors": [
+      "Aoyu Wu",
+      "Dazhen Deng",
+      "Min Chen",
+      "Shixia Liu",
+      "Daniel Keim",
+      "Ross Maciejewski",
+      "Silvia Miksch",
+      "Hendrik Strobelt",
+      "Fernanda Viegas",
+      "Martin Wattenberg"
+    ],
+    "venue": [
+      "IEEE CG&A"
+    ],
+    "year": 2023,
+    "doi": "10.1109/MCG.2023.3284620"
   },
   {
     "id": "ct3",
@@ -509,10 +791,16 @@
       "IEEE TVCG",
       "IEEE VIS 2025"
     ],
-    "year": 2025,
+    "year": 2026,
+    "volume": 32,
+    "issue": 1,
+    "page": [
+      35,
+      45
+    ],
     "video": "https://youtu.be/YV1DPzJjJAc",
     "embedVideo": "https://www.youtube.com/embed/YV1DPzJjJAc",
-    "abstract": "Sentiment contagion occurs when attitudes toward one topic are influenced by attitudes toward others. Detecting and understanding this phenomenon is essential for analyzing topic evolution and informing social policies. Prior research has developed models to simulate the contagion process through hypothesis testing and has visualized user–topic correlations to aid comprehension. Nevertheless, the vast volume of topics and the complex interrelationships on social media present two key challenges: (1) efficient construction of large-scale sentiment contagion networks, and (2) in-depth explorations of these networks. To address these challenges, we introduce a causality-based framework that efficiently constructs and explains sentiment contagion. We further propose a map-like visualization technique that encodes time using a horizontal axis, enabling efficient visualization of causality-based sentiment flow while maintaining scalability through limitless spatial segmentation. Based on the visualization, we develop CausalMap, a system that supports analysts in tracing sentiment contagion pathways and assessing the influence of different demographic groups. Furthermore, we conduct comprehensive evaluations——including two use cases, a task-based user study, an expert interview, and an algorithm evaluation——to validate the usability and effectiveness of our approach.",
+    "abstract": "Sentiment contagion occurs when attitudes toward one topic are influenced by attitudes toward others. Detecting and understanding this phenomenon is essential for analyzing topic evolution and informing social policies. Prior research has developed models to simulate the contagion process through hypothesis testing and has visualized user-topic correlations to aid comprehension. Nevertheless, the vast volume of topics and the complex interrelationships on social media present two key challenges: (1) efficient construction of large-scale sentiment contagion networks, and (2) in-depth explorations of these networks. To address these challenges, we introduce a causality-based framework that efficiently constructs and explains sentiment contagion. We further propose a map-like visualization technique that encodes time using a horizontal axis, enabling efficient visualization of causality-based sentiment flow while maintaining scalability through limitless spatial segmentation. Based on the visualization, we develop CausalMap, a system that supports analysts in tracing sentiment contagion pathways and assessing the influence of different demographic groups. Furthermore, we conduct comprehensive evaluations-including two use cases, a task-based user study, an expert interview, and an algorithm evaluation-to validate the usability and effectiveness of our approach.",
     "paper": "source/projects/CausalMap/CausalMap.pdf",
     "doi": "10.1109/TVCG.2025.3633839"
   },
@@ -557,7 +845,13 @@
       "IEEE TVCG",
       "IEEE VIS 2025"
     ],
-    "year": 2025,
+    "year": 2026,
+    "volume": 32,
+    "issue": 1,
+    "page": [
+      791,
+      801
+    ],
     "video": "https://youtu.be/SG4-I3QlfVI",
     "embedVideo": "https://www.youtube.com/embed/SG4-I3QlfVI",
     "abstract": "In sports analytics, tactical visualization is widely used to convey valuable insights. However, due to the complex domain knowledge and contextual information involved in tactical visualizations, it is challenging for users to connect high-level tactical insights to corresponding visual patterns. This requires users to engage in a reasoning process to interpret insights within game contexts, which remains insufficiently supported in existing visual-text linking studies. In this work, we propose InsightChaser, a novel approach to bridge tactical insights and soccer visualizations through visual-text linking and visual reasoning enhancement. InsightChaser constructs knowledge graphs to represent both visual elements and contextual game information. Integrating large language models (LLMs), our approach retrieves relevant visual elements and establishes explicit links with insights. Moreover, InsightChaser utilizes LLMs to enhance these visual-text links by providing reasoning explanations and visual effects. We further develop an interactive visualization system that supports navigation and explanation of enhanced visual-text links. Users can explore linked tactical insights interactively and reason through enhanced visual explanations. We conduct two case studies using real-world soccer data and a user study to demonstrate the effectiveness of our approach.",
@@ -924,15 +1218,15 @@
       "IEEE TVCG",
       "IEEE VIS 2024"
     ],
-    "year": 2024,
+    "year": 2025,
     "abstract": "Large Language Models (LLMs) are powerful but also raise significant security concerns, particularly regarding the harm they can cause, such as generating fake news that manipulates public opinion on social media and providing responses to unethical activities. Traditional red teaming approaches for identifying AI vulnerabilities rely on manual prompt construction and expertise. This paper introduces AdversaFlow, a novel visual analytics system designed to enhance LLM security against adversarial attacks through human-AI collaboration. AdversaFlow involves adversarial training between a target model and a red model, featuring unique multi-level adversarial flow and fluctuation path visualizations. These features provide insights into adversarial dynamics and LLM robustness, enabling experts to identify and mitigate vulnerabilities effectively. We present quantitative evaluations and case studies validating our system's utility and offering insights for future AI security solutions. Our method can enhance LLM security, supporting downstream scenarios like social media regulation by enabling more effective detection, monitoring, and mitigation of harmful content and behaviors.",
     "video": "https://youtu.be/f16uy4e3U34",
     "embedVideo": "https://www.youtube.com/embed/f16uy4e3U34",
-    "volume": 1,
+    "volume": 31,
     "issue": 1,
     "page": [
-      1,
-      11
+      492,
+      502
     ],
     "demo": ""
   },
@@ -957,13 +1251,13 @@
       "IEEE TVCG",
       "IEEE VIS 2024"
     ],
-    "year": 2024,
+    "year": 2025,
     "abstract": "Understanding the input and output of data wrangling scripts is crucial for various tasks like debugging code and onboarding new data. However, existing research on script understanding primarily focuses on revealing the process of data transformations, lacking the ability to analyze the potential scope, i.e., the space of script inputs and outputs. Meanwhile, constructing input/output space during script analysis is challenging, as the wrangling scripts could be semantically complex and diverse, and the association between different data objects is intricate. To facilitate data workers in understanding the input and output space of wrangling scripts, we summarize ten types of constraints to express table space and build a mapping between data transformations and these constraints to guide the construction of the input/output for individual transformations. Then, we propose a constraint generation model for integrating table constraints across multiple transformations. Based on the model, we develop Ferry, an interactive system that extracts and visualizes the data constraints describing the input and output space of data wrangling scripts, thereby enabling users to grasp the high-level semantics of complex scripts and locate the origins of faulty data transformations. Besides, Ferry provides example input and output data to assist users in interpreting the extracted constraints and checking and resolving the conflicts between these constraints and any uploaded dataset. Ferry’s effectiveness and usability are evaluated through two usage scenarios and two case studies, including understanding, debugging, and checking both single and multiple scripts, with and without executable data. Furthermore, an illustrative application is presented to demonstrate Ferry’s flexibility.",
-    "volume": 1,
+    "volume": 31,
     "issue": 1,
     "page": [
-      1,
-      11
+      1202,
+      1212
     ]
   },
   {
@@ -976,7 +1270,7 @@
       "Anqi Cao",
       "Xiao Xie",
       "Runjin Zhang",
-      " Yuxin Tian",
+      "Yuxin Tian",
       "Mu Fan",
       "Hui Zhang",
       "Yingcai Wu"
@@ -985,11 +1279,11 @@
       "IEEE TVCG",
       "IEEE VIS 2024"
     ],
-    "year": 2024,
+    "year": 2025,
     "abstract": "In soccer, player scouting aims to find players suitable for a team to increase the winning chance in future matches. To scout suitable players, coaches and analysts need to consider whether the players will perform well in a new team, which is hard to learn directly from their historical performances. Match simulation methods have been introduced to scout players by estimating their expected contributions to a new team. However, they usually focus on the simulation of match results and hardly support interactive analysis to navigate potential target players and compare them in fine-grained simulated behaviors. In this work, we propose a visual analytics method to assist soccer player scouting based on match simulation. We construct a two-level match simulation framework for estimating both match results and player behaviors when a player comes to a new team. Based on the framework, we develop a visual analytics system, Team-Scouter, to facilitate the simulative-based soccer player scouting process through player navigation, comparison, and investigation. With our system, coaches and analysts can find potential players suitable for the team and compare them on historical and expected performances. For an in-depth investigation of the players' expected performances, the system provides a visual comparison between the simulated behaviors of the player and the actual ones. The usefulness and effectiveness of the system are demonstrated by two case studies on a real-world dataset and an expert interview.",
     "video": "https://youtu.be/iw8TBUmTnVc",
     "embedVideo": "https://www.youtube.com/embed/iw8TBUmTnVc",
-    "volume": 1,
+    "volume": 31,
     "issue": 1,
     "page": [
       1,
@@ -1001,7 +1295,7 @@
     "id": "BloomWind",
     "paper": "source/projects/BloomWind/BloomWind.pdf",
     "teaser": "source/projects/BloomWind/BloomWind.png",
-    "title": "Blowing Seeds across Gardens: Visualizing Implicit Propagation of Cross-Platform Social Media Posts",
+    "title": "Blowing Seeds Across Gardens: Visualizing Implicit Propagation of Cross-Platform Social Media Posts",
     "video": "https://youtu.be/myZ4di4MWMg",
     "embedVideo": "https://www.youtube.com/embed/myZ4di4MWMg",
     "authors": [
@@ -1018,9 +1312,15 @@
       "IEEE TVCG",
       "IEEE VIS 2024"
     ],
-    "year": 2024,
+    "year": 2025,
     "abstract": "Propagation analysis refers to studying how information spreads on social media, a pivotal endeavor for understanding social sentiment and public opinions. Numerous studies contribute to visualizing information spread, but few have considered the implicit and complex diffusion patterns among multiple platforms. To bridge the gap, we summarize cross-platform diffusion patterns with experts and identify significant factors that dissect the mechanisms of cross-platform information spread. Based on that, we propose an information diffusion model that estimates the likelihood of a topic/post spreading among different social media platforms. Moreover, we propose a novel visual metaphor that encapsulates cross-platform propagation in a manner analogous to the spread of seeds across gardens. Specifically, we visualize platforms, posts, implicit cross-platform routes, and salient instances as elements of a virtual ecosystem — gardens, flowers, winds, and seeds, respectively. We further develop a visual analytic system, namely BloomWind, that enables users to quickly identify the cross-platform diffusion patterns and investigate the relevant social media posts. Ultimately, we demonstrate the usage of BloomWind through two case studies and validate its effectiveness using expert interviews.",
-    "DOI": "10.1109/TVCG.2024.3456181"
+    "DOI": "10.1109/TVCG.2024.3456181",
+    "volume": 31,
+    "issue": 1,
+    "page": [
+      185,
+      195
+    ]
   },
   {
     "id": "SmartBoard",
@@ -1043,9 +1343,15 @@
       "IEEE TVCG",
       "IEEE VIS 2024"
     ],
-    "year": 2024,
-    "abstract": "Tactics play an important role in team sports by guiding how players interact on the field. Both sports fans and experts have a demand for analyzing sports tactics. Existing approaches allow users to visually perceive the multivariate tactical effects. However, these approaches require users to experience a complex reasoning process to connect the multiple interactions within each tactic to the final tactical effect. In this work, we collaborate with basketball experts and propose a progressive approach to help users gain a deeper understanding of how each tactic works and customize tactics on demand. Users can progressively sketch on a tactic board, and a coach agent will simulate the possible actions in each step and present the simulation to users with facet visualizations. We develop an extensible framework that integrates large language models (LLMs) and visualizations to help users communicate with the coach agent with multimodal inputs.Based on the framework, we design and develop Smartboard, an agent-based interactive visualization system for fine-grained tactical analysis, especially for play design. Smartboard provides users with a structured process of setup, simulation, and evolution, allowing for iterative exploration of tactics based on specific personalized scenarios. We conduct case studies based on real-world basketball datasets to demonstrate the effectiveness and usefulness of our system.",
-    "DOI": "10.1109/TVCG.2024.3456200"
+    "year": 2025,
+    "abstract": "Tactics play an important role in team sports by guiding how players interact on the field. Both sports fans and experts have a demand for analyzing sports tactics. Existing approaches allow users to visually perceive the multivariate tactical effects. However, these approaches require users to experience a complex reasoning process to connect the multiple interactions within each tactic to the final tactical effect. In this work, we collaborate with basketball experts and propose a progressive approach to help users gain a deeper understanding of how each tactic works and customize tactics on demand. Users can progressively sketch on a tactic board, and a coach agent will simulate the possible actions in each step and present the simulation to users with facet visualizations. We develop an extensible framework that integrates large language models (LLMs) and visualizations to help users communicate with the coach agent with multimodal inputs. Based on the framework, we design and develop Smartboard, an agent-based interactive visualization system for fine-grained tactical analysis, especially for play design. Smartboard provides users with a structured process of setup, simulation, and evolution, allowing for iterative exploration of tactics based on specific personalized scenarios. We conduct case studies based on real-world basketball datasets to demonstrate the effectiveness and usefulness of our system.",
+    "DOI": "10.1109/TVCG.2024.3456200",
+    "volume": 31,
+    "issue": 1,
+    "page": [
+      23,
+      33
+    ]
   },
   {
     "id": "VisCourt",
@@ -1136,15 +1442,15 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2024,
+    "year": 2025,
     "abstract": "To enhance the appeal and informativeness of data news, there is an increasing reliance on data analysis techniques and visualizations, which poses a high demand for journalists' abilities. While numerous visual analytics systems have been developed for deriving insights, few tools specifically support and disseminate viewpoints for journalism. Thus, this work aims to facilitate the automatic creation of sports news from natural language insights. To achieve this, we conducted an extensive preliminary study on the published sports articles. Based on our findings, we propose a workflow - 1) exploring the data space behind insights, 2) generating narrative structures, 3) progressively generating each episode, and 4) mapping data spaces into communicative visualizations. We have implemented a human-AI interaction system called SNIL, which incorporates user input in conjunction with large language models (LLMs). It supports the modification of textual and graphical content within the episode-based structure by adjusting the description. We conduct user studies to demonstrate the usability of SNIL and the benefit of bridging the gap between analysis tasks and communicative tasks through expert and fan feedback.",
     "video": "",
     "embedVideo": "",
-    "volume": 0,
-    "issue": 0,
+    "volume": 31,
+    "issue": 7,
     "page": [
-      1,
-      15
+      3973,
+      3986
     ],
     "demo": ""
   },
@@ -1165,15 +1471,15 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2024,
-    "abstract": "The integration of visualizations and text is commonly found in data news, analytical reports, and interactive documents. For example, financial articles are presented along with interactive charts to show the changes in stock prices on Yahoo Finance. Visualizations enhance the perception of facts in the text while the text reveals insights of visual representation. However, effectively combining text and visualizations is challenging and tedious, which usually involves advanced programming skills. This paper proposes a semi-automatic pipeline that builds links between text and visualization. To resolve the relationship between text and visualizations, we present a method which structures a visualization and the underlying data as a contextual knowledge graph, based on which key phrases in the text are extracted, grouped, and mapped with visual elements. To support flexible customization of text-visualization links, our pipeline incorporates user knowledge to revise the links in a mixed-initiative manner. To demonstrate the usefulness and the versatility of our method, we replicate prior studies or cases in crafting interactive word-sized visualizations, annotating visualizations, and creating text-chart interactions based on a prototype system. We carry out two preliminary model tests and a user study and the results and user feedbacks suggest our method is effective",
+    "year": 2025,
+    "abstract": "The integration of visualizations and text is commonly found in data news, analytical reports, and interactive documents. For example, financial articles are presented along with interactive charts to show the changes in stock prices on Yahoo Finance. Visualizations enhance the perception of facts in the text while the text reveals insights of visual representation. However, effectively combining text and visualizations is challenging and tedious, which usually involves advanced programming skills. This paper proposes a semi-automatic pipeline that builds links between text and visualization. To resolve the relationship between text and visualizations, we present a method which structures a visualization and the underlying data as a contextual knowledge graph, based on which key phrases in the text are extracted, grouped, and mapped with visual elements. To support flexible customization of text-visualization links, our pipeline incorporates user knowledge to revise the links in a mixed-initiative manner. To demonstrate the usefulness and the versatility of our method, we replicate prior studies or cases in crafting interactive word-sized visualizations, annotating visualizations, and creating text-chart interactions based on a prototype system. We carry out two preliminary model tests and a user study and the results and user feedbacks suggest our method is effective.",
     "video": "",
     "embedVideo": "",
-    "volume": 0,
-    "issue": 0,
+    "volume": 31,
+    "issue": 9,
     "page": [
-      1,
-      15
+      4667,
+      4681
     ],
     "demo": ""
   },
@@ -1181,7 +1487,7 @@
     "id": "chartgpt",
     "paper": "source/projects/ChartGPT/ChartGPT.pdf",
     "teaser": "source/projects/ChartGPT/chartgpt.png",
-    "title": "ChartGPT: Leveraging LLMs to Generate Charts from Abstract Natural Language",
+    "title": "ChartGPT: Leveraging LLMs to Generate Charts From Abstract Natural Language",
     "DOI": "10.1109/TVCG.2024.3368621",
     "authors": [
       "Yuan Tian",
@@ -1195,15 +1501,15 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2024,
-    "abstract": "The use of natural language interfaces (NLIs) to create charts is becoming increasingly popular due to the intuitiveness of natural language interactions. One key challenge in this approach is to accurately capture user intents and transform them to proper chart specifications. This obstructs the wide use of NLI in chart generation, as users’ natural language inputs are generally abstract (i.e., ambiguous or under-specified), without a clear specification of visual encodings. Recently, pre-trained large language models (LLMs) have exhibited superior performance in understanding and generating natural language, demonstrating great potential for downstream tasks. Inspired by this major trend, we propose ChartGPT, generating charts from abstract natural language inputs. However, LLMs are struggling to address complex logic problems. To enable the model to accurately specify the complex parameters and perform operations in chart generation, we decompose the generation process into a step-bystep reasoning pipeline, so that the model only needs to reason a single and specific sub-task during each run. Moreover, LLMs are pre-trained on general datasets, which might be biased for the task of chart generation. To provide adequate visualization knowledge, we create a dataset consisting of abstract utterances and charts and improve model performance through fine-tuning. We further design an interactive interface for ChartGPT that allows users to check and modify the intermediate outputs of each step. The effectiveness of the proposed system is evaluated through quantitative evaluations and a user study.",
+    "year": 2025,
+    "abstract": "The use of natural language interfaces (NLIs) to create charts is becoming increasingly popular due to the intuitiveness of natural language interactions. One key challenge in this approach is to accurately capture user intents and transform them to proper chart specifications. This obstructs the wide use of NLI in chart generation, as users’ natural language inputs are generally abstract (i.e., ambiguous or under-specified), without a clear specification of visual encodings. Recently, pre-trained large language models (LLMs) have exhibited superior performance in understanding and generating natural language, demonstrating great potential for downstream tasks. Inspired by this major trend, we propose ChartGPT, generating charts from abstract natural language inputs. However, LLMs are struggling to address complex logic problems. To enable the model to accurately specify the complex parameters and perform operations in chart generation, we decompose the generation process into a step-by-step reasoning pipeline, so that the model only needs to reason a single and specific sub-task during each run. Moreover, LLMs are pre-trained on general datasets, which might be biased for the task of chart generation. To provide adequate visualization knowledge, we create a dataset consisting of abstract utterances and charts and improve model performance through fine-tuning. We further design an interactive interface for ChartGPT that allows users to check and modify the intermediate outputs of each step. The effectiveness of the proposed system is evaluated through quantitative evaluations and a user study.",
     "video": "https://youtu.be/m13XCcBdR-g",
     "embedVideo": "https://www.youtube.com/embed/m13XCcBdR-g",
-    "volume": 0,
-    "issue": 0,
+    "volume": 31,
+    "issue": 3,
     "page": [
-      1,
-      15
+      1731,
+      1745
     ],
     "demo": ""
   },
@@ -1211,7 +1517,7 @@
     "id": "relaq",
     "paper": "source/projects/relaq/relaq.pdf",
     "teaser": "source/projects/relaq/relaq.jpg",
-    "title": "Relation-driven query of multiple time series",
+    "title": "Relation-Driven Query of Multiple Time Series",
     "DOI": "10.1109/TVCG.2024.3397554",
     "authors": [
       "Shuhan Liu",
@@ -1225,15 +1531,15 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2024,
+    "year": 2025,
     "abstract": "Querying time series based on their relations is a crucial part of multiple time series analysis. By retrieving and understanding time series relations, analysts can easily detect anomalies and validate hypotheses in complex time series datasets. However, current relation extraction approaches, including knowledge- and data-driven ones, tend to be laborious and do not support heterogeneous relations. By conducting a formative study with 11 experts, we concluded six time series relations, including correlation, causality, similarity, lag, arithmetic, and meta, and summarized three pain points in querying time series involving these relations. We proposed RelaQ, an interactive system that supports the time series query via relation specifications. RelaQ allows users to intuitively specify heterogeneous relations when querying multiple time series, understand the query results based on a scalable, multi-level visualization, and explore possible relations beyond the existing queries. RelaQ is evaluated with two cases and a user study with 12 participants, showing promising effectiveness and usability.",
     "video": "https://youtu.be/jPkc_zEjNsk",
     "embedVideo": "https://www.youtube.com/embed/jPkc_zEjNsk",
-    "volume": 0,
-    "issue": 0,
+    "volume": 31,
+    "issue": 8,
     "page": [
-      1,
-      15
+      4210,
+      4225
     ],
     "demo": ""
   },
@@ -1434,7 +1740,7 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2023,
+    "year": 2024,
     "abstract": "Tables are a ubiquitous data format for insight communication. However, transforming data into consumable tabular views remains a challenging and time-consuming task. To lower the barrier of such a task, research efforts have been devoted to developing interactive approaches for data transformation, but many approaches still presume that their users have considerable knowledge of various data transformation concepts and functions. In this study, we leverage natural language (NL) as the primary interaction modality to improve the accessibility of average users to performing complex data transformation and facilitate intuitive table generation and editing. Designing an NL-driven data transformation approach introduces two challenges: 1) NL-driven synthesis of interpretable pipelines and 2) incremental refinement of synthesized tables. To address these challenges, we present NL2Rigel, an interactive tool that assists users in synthesizing and improving tables from semi-structured text with NL instructions. Based on a large language model and prompting techniques, NL2Rigel can interpret the given NL instructions into a table synthesis pipeline corresponding to Rigel specifications, a declarative language for tabular data transformation. An intuitive interface is designed to visualize the synthesis pipeline and the generated tables, helping users understand the transformation process and refine the results efficiently with targeted NL instructions. The comprehensiveness of NL2Rigel is demonstrated with an example gallery, and we further confirmed NL2Rigel's usability with a comparative user study by showing that the task completion time with NL2Rigel is significantly shorter than that with the original version of Rigel with comparable completion rates.",
     "video": "https://www.youtube.com/watch?v=qjjKAykyDZU",
     "embedVideo": "https://www.youtube.com/embed/qjjKAykyDZU",
@@ -1493,11 +1799,31 @@
     "DOI": ""
   },
   {
+    "id": "island-of-loneliness",
+    "teaser": "source/projects/island-of-loneliness/island-of-loneliness.png",
+    "title": "Posts with No Response: The Island of Loneliness",
+    "authors": [
+      "Junxiu Tang",
+      "Xinhuan Shu",
+      "Rui Sheng",
+      "Xiaojiao Chen",
+      "Yifang Wang",
+      "Tan Tang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE VISAP 2023"
+    ],
+    "year": 2023,
+    "abstract": "Loneliness and isolation are eternal emotions in human beings. Technological advancements create ample avenues, like social medias, for individuals to articulate themselves and record emotions. However, the sense of loneliness has never vanished, as their expressions are easily buried in the digital stream. We analyze tweets that express loneliness during holiday seasons but receive few responses. By superimposing digital charts on physical models, we visualize these lonely posts and generate the island of loneliness. We aim to reveal the complexities of human emotions in the digital age and reflect on the interconnections between technology, solitude, and social communication.",
+    "doi": "10.1109/VISAP60414.2023.00007"
+  },
+  {
     "id": "GeoChron",
     "paper": "source/projects/GeoChron/GeoChron.pdf",
     "teaser": "source/projects/GeoChron/GeoChron.png",
     "title": "Visualizing Large-Scale Spatial Time Series with GeoChron",
-    "DOI": "",
+    "DOI": "10.1109/TVCG.2023.3327162",
     "authors": [
       "Zikun Deng",
       "Shifu Chen",
@@ -1512,15 +1838,15 @@
       "IEEE TVCG",
       "IEEE VIS 2023"
     ],
-    "year": 2023,
+    "year": 2024,
     "abstract": "In geo-related fields such as urban informatics, atmospheric science, and geography, large-scale spatial time (ST) series (i.e., geo-referred time series) are collected for monitoring and understanding important spatiotemporal phenomena. ST series visualization is an effective means of understanding the data and reviewing spatiotemporal phenomena, which is a prerequisite for in-depth data analysis. However, visualizing these series is challenging due to their large scales, inherent dynamics, and spatiotemporal nature. In this study, we introduce the notion of patterns of evolution in ST series. Each evolution pattern is characterized by 1) a set of ST series that are close in space and 2) a time period when the trends of these ST series are correlated. We then leverage Storyline techniques by considering an analogy between evolution patterns and sessions, and finally design a novel visualization called GeoChron, which is capable of visualizing large-scale ST series in an evolution pattern-aware and narrative-preserving manner. GeoChron includes a mining framework to extract evolution patterns and two-level visualizations to enhance its visual scalability. We evaluate GeoChron with two case studies, an informal user study, an ablation study, parameter analysis, and running time analysis.",
     "video": "https://youtu.be/jc7aeiszPQM",
     "embedVideo": "https://www.youtube.com/embed/jc7aeiszPQM",
-    "volume": 1,
+    "volume": 30,
     "issue": 1,
     "page": [
-      1,
-      11
+      1194,
+      1204
     ],
     "demo": ""
   },
@@ -1546,22 +1872,22 @@
       "IEEE TVCG",
       "IEEE VIS 2023"
     ],
-    "year": 2023,
+    "year": 2024,
     "abstract": "As the final stage of questionnaire analysis, causal reasoning is the key to turning responses into valuable insights and actionable items for decision-makers. During the questionnaire analysis, classical statistical methods (e.g., Differences-in-Differences) have been widely exploited to evaluate causality between questions. However, due to the huge search space and complex causal structure in data, causal reasoning is still extremely challenging and time-consuming, and often conducted in a trial-and-error manner. On the other hand, existing visual methods of causal reasoning face the challenge of bringing scalability and expert knowledge together and can hardly be used in the questionnaire scenario. In this work, we present a systematic solution to help analysts effectively and efficiently explore questionnaire data and derive causality. Based on the association mining algorithm, we dig question combinations with potential inner causality and help analysts interactively explore the causal sub-graph of each question combination. Furthermore, leveraging the requirements collected from the experts, we built a visualization tool and conducted a comparative study with the state-of-the-art system to show the usability and efficiency of our system.",
-    "volume": 1,
+    "volume": 30,
     "issue": 1,
     "page": [
-      1,
-      11
+      638,
+      648
     ],
-    "DOI": ""
+    "DOI": "10.1109/TVCG.2023.3327376"
   },
   {
     "id": "ActionEvaluator",
     "paper": "source/projects/ActionEvaluator/ActionEvaluator.pdf",
     "teaser": "source/projects/ActionEvaluator/ActionEvaluator.png",
     "title": "Action-Evaluator: A Visualization Approach for Player Action Evaluation in Soccer",
-    "DOI": "",
+    "DOI": "10.1109/TVCG.2023.3326524",
     "authors": [
       "Anqi Cao",
       "Xiao Xie",
@@ -1574,15 +1900,15 @@
       "IEEE TVCG",
       "IEEE VIS 2023"
     ],
-    "year": 2023,
+    "year": 2024,
     "abstract": "In soccer, player action evaluation provides a fine-grained method to analyze player performance and plays an important role in improving winning chances in future matches. However, previous studies on action evaluation only provide a score for each action, and hardly support inspecting and comparing player actions integrated with complex match context information such as team tactics and player locations. In this work, we collaborate with soccer analysts and coaches to characterize the domain problems of evaluating player performance based on action scores. We design a tailored visualization of soccer player actions that places the action choice together with the tactic it belongs to as well as the player locations in the same view. Based on the design, we introduce a visual analytics system, Action-Evaluator, to facilitate a comprehensive player action evaluation through player navigation, action investigation, and action explanation. With the system, analysts can find players to be analyzed efficiently, learn how they performed under various match situations, and obtain valuable insights to improve their action choices. The usefulness and effectiveness of this work are demonstrated by two case studies on a real-world dataset and an expert interview.",
     "video": "https://www.youtube.com/watch?v=6FkF-lpMyZg",
     "embedVideo": "https://www.youtube.com/embed/6FkF-lpMyZg",
-    "volume": 1,
+    "volume": 30,
     "issue": 1,
     "page": [
-      1,
-      11
+      880,
+      890
     ],
     "demo": ""
   },
@@ -1602,14 +1928,14 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2023,
-    "abstract": "Mediation analysis is crucial for diagnosing indirect causal relations in many scientific fields. However, mediation analysis of nominal variables requires examining and comparing multiple total effects and their corresponding direct/indirect causal effects derived from mediation models. This process is tedious and challenging to achieve with classical analysis tools such as Excel tables. In this study, we worked closely with experts from two scientific domains to design MediVizor, a visualization system that enables experts to conduct visual mediation analysis of nominal variables.The visualization design allows users to browse and compare multiple total effects together with the direct/indirect effects that compose them. The design also allows users to examine to what extent the positive and negative direct/indirect effects contribute to and reduce the total effects, respectively. We conducted two case studies separately with the experts from the two domains, sports and communication science, and a user study with common users to evaluate the system and design. The positive feedback from experts and common users demonstrates the effectiveness and generalizability of the system. ",
+    "year": 2024,
+    "abstract": "Mediation analysis is crucial for diagnosing indirect causal relations in many scientific fields. However, mediation analysis of nominal variables requires examining and comparing multiple total effects and their corresponding direct/indirect causal effects derived from mediation models. This process is tedious and challenging to achieve with classical analysis tools such as Excel tables. In this study, we worked closely with experts from two scientific domains to design MediVizor, a visualization system that enables experts to conduct visual mediation analysis of nominal variables. The visualization design allows users to browse and compare multiple total effects together with the direct/indirect effects that compose them. The design also allows users to examine to what extent the positive and negative direct/indirect effects contribute to and reduce the total effects, respectively. We conducted two case studies separately with the experts from the two domains, sports and communication science, and a user study with common users to evaluate the system and design. The positive feedback from experts and common users demonstrates the effectiveness and generalizability of the system.",
     "video": "https://youtu.be/CURaue54Uhs",
-    "volume": 1,
-    "issue": 1,
+    "volume": 30,
+    "issue": 8,
     "page": [
-      1,
-      14
+      4853,
+      4866
     ],
     "demo": "",
     "DOI": "10.1109/TVCG.2023.3282801"
@@ -1639,13 +1965,13 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "In a basketball play, players who are not in possession of the ball (i.e., off-ball players) can still effectively contribute to the team's offense, such as making a sudden move to create scoring opportunities. Analyzing the movements of off-ball players can thus facilitate the development of effective strategies for coaches. However, common basketball statistics (e.g., points and assists) primarily focus on what happens around the ball and are mostly result-oriented, making it challenging to objectively assess and fully understand the contributions of off-ball movements. To address these challenges, we collaborate closely with domain experts and summarize the multi-level requirements for off-ball movement analysis in basketball. We first establish an assessment model to quantitatively evaluate the offensive contribution of an off-ball movement considering both the position of players and the team cooperation. Based on the model, we design and develop a visual analytics system called OBTracker to support the multifaceted analysis of off-ball movements. OBTracker enables users to identify the frequency and effectiveness of off-ball movement patterns and learn the performance of different off-ball players. A tailored visualization based on the Voronoi diagram is proposed to help users interpret the contribution of off-ball movements from a temporal perspective. We conduct two case studies based on the tracking data from NBA games and demonstrate the effectiveness and usability of OBTracker through expert feedback.",
-    "volume": 1,
+    "volume": 29,
     "issue": 1,
     "page": [
-      1,
-      11
+      929,
+      939
     ]
   },
   {
@@ -1666,14 +1992,14 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2023,
+    "year": 2024,
     "abstract": "Numerous patterns found in urban phenomena, such as air pollution and human mobility, can be characterized as many directed geospatial networks (geo-networks) that represent spreading processes in urban space. These geo-networks can be analyzed from multiple levels, ranging from the macro-level of summarizing all geo-networks, meso-level of comparing or summarizing parts of geo-networks, and micro-level of inspecting individual geo-networks. Most of the existing visualizations cannot support multilevel analysis well. These techniques work by: 1) showing geo-networks separately with multiple maps leads to heavy context switching costs between different maps; 2) summarizing all geo-networks into a single network can lead to the loss of individual information; 3) drawing all geo-networks onto one map might suffer from the visual scalability issue in distinguishing individual geo-networks. In this study, we propose GeoNetverse, a novel visualization technique for analyzing aggregate geo-networks from multiple levels. Inspired by metro maps, GeoNetverse balances the overview and details of the geo-networks by placing the edges shared between geo-networks in a stacked manner. To enhance the visual scalability, GeoNetverse incorporates a level-of-detail rendering, a progressive crossing minimization, and a coloring technique. A set of evaluations was conducted to evaluate GeoNetverse from multiple perspectives.",
     "video": "https://www.youtube.com/watch?v=-GXWCpf9oqY",
-    "volume": 1,
-    "issue": 1,
+    "volume": 30,
+    "issue": 7,
     "page": [
-      1,
-      16
+      3135,
+      3150
     ],
     "demo": ""
   },
@@ -1697,13 +2023,13 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2022,
-    "abstract": "Composite visualization is a popular design strategy that represents complex datasets by integrating multiple visualizations in a meaningful and aesthetic layout, such as juxtaposition, overlay, and nesting. With this strategy, numerous novel designs have been proposed in visualization publications to accomplish various visual analytic tasks. However, there is a lack of understanding of design patterns of composite visualization, thus failing to provide holistic design space and concrete examples for practical use. In this paper, we opted to revisit the composite visualizations in IEEE VIS publications and answered what and how visualizations of different types are composed together. To achieve this, we first constructed a corpus of composite visualizations from the publications and analyzed common practices, such as the pattern distributions and co-occurrence of visualization types. From the analysis, we obtained insights into different design patterns on the utilities and their potential pros and cons. Furthermore, we discussed usage scenarios of our taxonomy and corpus and how future research on visualization composition can be conducted on the basis of this study.",
-    "volume": 1,
-    "issue": 1,
+    "year": 2023,
+    "abstract": "Composite visualization is a popular design strategy that represents complex datasets by integrating multiple visualizations in a meaningful and aesthetic layout, such as juxtaposition, overlay, and nesting. With this strategy, numerous novel designs have been proposed in visualization publications to accomplish various visual analytic tasks. However, there is a lack of understanding of design patterns of composite visualization, thus failing to provide holistic design space and concrete examples for practical use. In this article, we opted to revisit the composite visualizations in IEEE VIS publications and answered what and how visualizations of different types are composed together. To achieve this, we first constructed a corpus of composite visualizations from the publications and analyzed common practices, such as the pattern distributions and co-occurrence of visualization types. From the analysis, we obtained insights into different design patterns on the utilities and their potential pros and cons. Furthermore, we discussed usage scenarios of our taxonomy and corpus and how future research on visualization composition can be conducted on the basis of this study.",
+    "volume": 29,
+    "issue": 12,
     "page": [
-      1,
-      16
+      5406,
+      5421
     ],
     "demo": "https://composite-visualizations.github.io"
   },
@@ -1730,13 +2056,13 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Improving the efficiency of coal-fired power plants has numerous benefits. The control strategy is one of the major factors affecting such efficiency. However, due to the complex and dynamic environment inside the power plants, it is hard to extract and evaluate control strategies and their cascading impact across massive sensors. Existing manual and data-driven approaches cannot well support the analysis of control strategies because these approaches are time-consuming and do not scale with the complexity of the power plant systems. Three challenges were identified: a) interactive extraction of control strategies from large-scale dynamic sensor data, b) intuitive visual representation of cascading impact among the sensors in a complex power plant system, and c) time-lag-aware analysis of the impact of control strategies on electricity generation efficiency. By collaborating with energy domain experts, we addressed these challenges with ECoalVis, a novel interactive system for experts to visually analyze the control strategies of coal-fired power plants extracted from historical sensor data. The effectiveness of the proposed system is evaluated with two usage scenarios on a real-world historical dataset and received positive feedback from experts.",
-    "volume": 1,
+    "volume": 29,
     "issue": 1,
     "page": [
-      1,
-      11
+      1091,
+      1101
     ]
   },
   {
@@ -1762,11 +2088,11 @@
     ],
     "year": 2022,
     "abstract": "Conventional racket sports training highly relies on coaches' knowledge and experience, leading to biases in the guidance. To solve this problem, smart wearable devices based on Internet of Things technology (IoT) have been extensively investigated to support data-driven training. Considerable studies introduced methods to extract valuable information from the sensor data collected by IoT devices. However, the information cannot provide actionable insights for coaches due to the large data volume and high data dimensions. We proposed an IoT + VA framework, Tac-Trainer, to integrate the sensor data, the information, and coaches' knowledge to facilitate racket sports training. Tac-Trainer consists of four components: device configuration, data interpretation, training optimization, and result visualization. These components collect trainees' kinematic data through IoT devices, transform the data into attributes and indicators, generate training suggestions, and provide an interactive visualization interface for exploration, respectively. We further discuss new research opportunities and challenges inspired by our work from two perspectives, VA for IoT and IoT for VA.",
-    "volume": 1,
+    "volume": 29,
     "issue": 1,
     "page": [
-      1,
-      11
+      951,
+      961
     ]
   },
   {
@@ -1792,11 +2118,11 @@
     ],
     "year": 2022,
     "abstract": "Glyph-based visualization achieves an impressive graphic design when associated with comprehensive visual metaphors, which help audiences effectively grasp the conveyed information through revealing data semantics. However, creating such metaphoric glyph-based visualization (MGV) is not an easy task, as it requires not only a deep understanding of data but also professional design skills. This paper proposes MetaGlyph, an automatic system for generating MGVs from a spreadsheet. To develop MetaGlyph, we first conduct a qualitative analysis to understand the design of current MGVs from the perspectives of metaphor embodiment and glyph design. Based on the results, we introduce a novel framework for generating MGVs by metaphoric image selection and an MGV construction. Specifically, MetaGlyph automatically selects metaphors with corresponding images from online resources based on the input data semantics. We then integrate a Monte Carlo tree search algorithm that explores the design of an MGV by associating visual elements with data dimensions given the data importance, semantic relevance, and glyph non-overlap. The system also provides editing feedback that allows users to customize the MGVs according to their design preferences. We demonstrate the use of MetaGlyph through a set of examples, one usage scenario, and validate its effectiveness through a series of expert interviews.",
-    "volume": 1,
+    "volume": 29,
     "issue": 1,
     "page": [
-      1,
-      11
+      331,
+      341
     ]
   },
   {
@@ -1819,11 +2145,11 @@
     ],
     "year": 2022,
     "abstract": "Analytical dashboards are popular in business intelligence to facilitate insight discovery with multiple charts. However, creating an effective dashboard is highly demanding, which requires users to have adequate data analysis background and be familiar with professional tools, such as Power BI. To create a dashboard, users have to configure charts by selecting data columns and exploring different chart combinations to optimize the communication of insights, which is trial-and-error. Recent research has started to use deep learning methods for dashboard generation to lower the burden of visualization creation. However, such efforts are greatly hindered by the lack of large-scale and high-quality datasets of dashboards. In this work, we propose using deep reinforcement learning to generate analytical dashboards that can use well-established visualization knowledge and the estimation capacity of reinforcement learning. Specifically, we use visualization knowledge to construct a training environment and rewards for agents to explore and imitate human exploration behavior with a well-designed agent network. The usefulness of the deep reinforcement learning model is demonstrated through ablation studies and user studies. In conclusion, our work opens up new opportunities to develop effective ML-based visualization recommenders without beforehand training datasets.",
-    "volume": 1,
+    "volume": 29,
     "issue": 1,
     "page": [
-      1,
-      11
+      690,
+      700
     ],
     "demo": "https://github.com/dengdazhen/DashBot"
   },
@@ -1844,6 +2170,12 @@
     "venue": [
       "IEEE TVCG",
       "IEEE VIS 2022"
+    ],
+    "volume": 29,
+    "issue": 1,
+    "page": [
+      940,
+      950
     ],
     "year": 2022,
     "abstract": "Experts in racket sports like tennis and badminton use tactical analysis to gain insight into competitors' playing styles. Many data-driven methods apply pattern mining to racket sports data - which is often recorded as multivariate event sequences - to uncover sports tactics. However, tactics obtained in this way are often inconsistent with those deduced by experts through their domain knowledge, which can be confusing to those experts. This work introduces RASIPAM, a RAcket-Sports Interactive PAttern Mining system, which allows experts to incorporate their knowledge into data mining algorithms to discover meaningful tactics interactively. RASIPAM consists of a constraint-based pattern mining algorithm that responds to the analysis demands of experts: Experts provide suggestions for finding tactics in intuitive written language, and these suggestions are translated into constraints to run the algorithm. RASIPAM further introduces a tailored visual interface that allows experts to compare the new tactics with the original ones and decide whether to apply a given adjustment. This interactive workflow iteratively progresses until experts are satisfied with all tactics. We conduct a quantitative experiment to show that our algorithm supports real-time interaction. Two case studies in tennis and in badminton respectively, each involving two domain experts, are conducted to show the effectiveness and usefulness of the system.",
@@ -1869,6 +2201,12 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
+    "volume": 29,
+    "issue": 1,
+    "page": [
+      117,
+      127
+    ],
     "year": 2022,
     "abstract": "Data workers usually seek to understand the semantics of data wrangling scripts in various scenarios, such as code debugging, reusing, and maintaining. However, the understanding is challenging for novice data workers due to the variety of programming languages, functions, and parameters. Based on the observation that differences between input and output tables highly relate to the type of data transformation, we outline a design space including 103 characteristics to describe table differences. Then, we develop COMANTICS, a three-step pipeline that automatically detects the semantics of data transformation scripts. The first step focuses on the detection of table differences for each line of wrangling code. Second, we incorporate a characteristic-based component and a Siamese convolutional neural network-based component for the detection of transformation types. Third, we derive the parameters of each data transformation by employing a \"slot filling\" strategy. We design experiments to evaluate the performance of COMANTICS. Further, we assess its flexibility using three example applications in different domains."
   },
@@ -1882,7 +2220,7 @@
     "DOI": "10.1109/TVCG.2022.3209388",
     "authors": [
       "Shuainan Ye",
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Xiangtong Chu",
       "Kang Li",
       "Juntong Luo",
@@ -1896,11 +2234,11 @@
     ],
     "year": 2022,
     "abstract": "We present PuzzleFixer, an immersive interactive system for experts to rectify defective reassembled 3D objects. Reassembling the fragments of a broken object to restore its original state is the prerequisite of many analytical tasks such as cultural relics analysis and forensics reasoning. While existing computer-aided methods can automatically reassemble fragments, they often derive incorrect objects due to the complex and ambiguous fragment shapes. Thus, experts usually need to refine the object manually. Prior advances in immersive technologies provide benefits for realistic perception and direct interactions to visualize and interact with 3D fragments. However, few studies have investigated the reassembled object refinement. The specific challenges include: 1) the fragment combination set is too large to determine the correct matches, and 2) the geometry of the fragments is too complex to align them properly. To tackle the first challenge, PuzzleFixer leverages dimensionality reduction and clustering techniques, allowing users to review possible match categories, select the matches with reasonable shapes, and drill down to shapes to correct the corresponding faces. For the second challenge, PuzzleFixer embeds the object with node-link networks to augment the perception of match relations. Specifically, it instantly visualizes matches with graph edges and provides force feedback to facilitate the efficiency of alignment interactions. To demonstrate the effectiveness of PuzzleFixer, we conducted an expert evaluation based on two cases on real-world artifacts and collected feedback through post-study interviews. The results suggest that our system is suitable and efficient for experts to refine incorrect reassembled objects.",
-    "volume": 0,
-    "issue": 0,
+    "volume": 29,
+    "issue": 1,
     "page": [
-      0,
-      0
+      429,
+      439
     ]
   },
   {
@@ -1924,6 +2262,12 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
+    "volume": 29,
+    "issue": 1,
+    "page": [
+      128,
+      138
+    ],
     "year": 2022,
     "abstract": "We present Rigel, an interactive system for rapid transformation of tabular data. Rigel implements a new declarative mapping approach that formulates the data transformation procedure as direct mappings from data to the row, column, and cell channels of the target table. To construct such mappings, Rigel allows users to directly drag data attributes from input data to these three channels and indirectly drag or type data values in a spreadsheet, and possible mappings that do not contradict these interactions are recommended to achieve efficient and straightforward data transformation. The recommended mappings are generated by enumerating and composing data variables based on the row, column, and cell channels, thereby revealing the possibility of alternative tabular forms and facilitating open-ended exploration in many data transformation scenarios, such as designing tables for presentation. In contrast to existing systems that transform data by composing operations (like transposing and pivoting), Rigel requires less prior knowledge on these operations, and constructing tables from the channels is more efficient and results in less ambiguity than generating operation sequences as done by the traditional by-example approaches. User study results demonstrated that Rigel is significantly less demanding in terms of time and interactions and suits more scenarios compared to the state-of-the-art by-example approach. A gallery of diverse transformation cases is also presented to show the potential of Rigel's expressiveness.",
     "demo": "https://rigel-system.github.io/rigel-system/"
@@ -1933,9 +2277,9 @@
     "paper": "source/projects/Sporthesia/Sporthesia.pdf",
     "teaser": "source/projects/Sporthesia/Sporthesia.png",
     "title": "Sporthesia: Augmenting Sports Videos Using Natural Language",
-    "DOI": "10.1109/TVCG.2022.3207147",
+    "DOI": "10.1109/TVCG.2022.3209497",
     "authors": [
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Qisen Yang",
       "Xiao Xie",
       "Johanna Beyer",
@@ -1949,11 +2293,11 @@
     ],
     "year": 2022,
     "abstract": "Augmented sports videos, which combine visualizations and video effects to present data in actual scenes, can communicate insights engagingly and thus have been increasingly popular for sports enthusiasts around the world. Yet, creating augmented sports videos remains a challenging task, requiring considerable time and video editing skills. On the other hand, sports insights are often communicated using natural language, such as in commentaries, oral presentations, and articles, but usually lack visual cues. Thus, this work aims to facilitate the creation of augmented sports videos by enabling analysts to directly create visualizations embedded in videos using insights expressed in natural language. To achieve this goal, we propose a three-step approach - 1) detecting visualizable entities in the text, 2) mapping these entities into visualizations, and 3) scheduling these visualizations to play with the video - and analyzed 155 sports video clips and the accompanying commentaries for accomplishing these steps. Informed by our analysis, we have designed and implemented Sporthesia, a proof-of-concept system that takes racket-based sports videos and textual commentaries as the input and outputs augmented videos. We demonstrate Sporthesia's applicability in two exemplar scenarios, i.e., authoring augmented sports videos using text and augmenting historical sports videos based on auditory comments. A technical evaluation shows that Sporthesia achieves high accuracy (F1-score of 0.9) in detecting visualizable entities in the text. An expert evaluation with eight sports analysts suggests high utility, effectiveness, and satisfaction with our language-driven authoring method and provides insights for future improvement and opportunities.",
-    "volume": 1,
+    "volume": 29,
     "issue": 1,
     "page": [
-      1,
-      11
+      918,
+      928
     ]
   },
   {
@@ -1978,11 +2322,11 @@
     ],
     "year": 2022,
     "abstract": "Lineup selection is an essential and important task in soccer matches. To win a match, coaches must consider various factors and select appropriate players for a planned formation. Computation-based tools have been proposed to help coaches on this complex task, but they are usually based on over-simplified models on player performances, do not support interactive analysis, and overlook the inputs by coaches. In this paper, we propose a method for visual analytics of soccer lineup selection by tackling two challenges: characterizing essential factors involved in generating optimal lineup, and supporting coach-driven visual analytics of lineup selection. We develop a lineup selection model that integrates such important factors, such as spatial regions of player actions and defensive interactions with opponent players. A visualization system, Team-Builder, is developed to help coaches control the process of lineup generation, explanation, and comparison through multiple coordinated views. The usefulness and effectiveness of our system are demonstrated by two case studies on a real-world soccer event dataset.",
-    "volume": 0,
-    "issue": 0,
+    "volume": 29,
+    "issue": 12,
     "page": [
-      1,
-      16
+      5178,
+      5193
     ]
   },
   {
@@ -2005,11 +2349,11 @@
     ],
     "year": 2022,
     "abstract": "The last decade has witnessed many visual analytics (VA) systems that make successful applications to wide-ranging domains like urban analytics and explainable AI. However, their research rigor and contributions have been extensively challenged within the visualization community. We come in defence of VA systems by contributing two interview studies for gathering critics and responses to those criticisms. First, we interview 24 researchers to collect criticisms the review comments on their VA work. Through an iterative coding and refinement process, the interview feedback is summarized into a list of 36 common criticisms. Second, we interview 17 researchers to validate our list and collect their responses, thereby discussing implications for defending and improving the scientific values and rigor of VA systems. We highlight that the presented knowledge is deep, extensive, but also imperfect, provocative, and controversial, and thus recommend reading with an inclusive and critical eye. We hope our work can provide thoughts and foundations for conducting VA research and spark discussions to promote the research field forward more rigorously and vibrantly.",
-    "volume": 1,
+    "volume": 29,
     "issue": 1,
     "page": [
-      1,
-      11
+      1026,
+      1036
     ],
     "demo": "https://re-vast.github.io/"
   },
@@ -2056,6 +2400,12 @@
     "venue": [
       "IEEE TVCG"
     ],
+    "volume": 29,
+    "issue": 7,
+    "page": [
+      3298,
+      3311
+    ],
     "year": 2022,
     "demo": "https://visimages.github.io/",
     "paper": "source/projects/visimages/visimages.pdf",
@@ -2079,6 +2429,12 @@
     "venue": [
       "IEEE TVCG"
     ],
+    "volume": 29,
+    "issue": 6,
+    "page": [
+      2950,
+      2964
+    ],
     "year": 2022,
     "paper": "source/projects/Somnus/Somnus.pdf",
     "video": "https://youtu.be/fQ-eN_4vhso",
@@ -2087,7 +2443,7 @@
   },
   {
     "id": "SimuExplorer",
-    "title": "SimuExplorer: Visual Exploration of GameSimulation in Table Tennis",
+    "title": "SimuExplorer: Visual Exploration of Game Simulation in Table Tennis",
     "DOI": "10.1109/TVCG.2021.3130422",
     "teaser": "source/projects/SimuExplorer/SimuExplorer.png",
     "authors": [
@@ -2101,6 +2457,12 @@
     "venue": [
       "IEEE TVCG"
     ],
+    "volume": 29,
+    "issue": 3,
+    "page": [
+      1719,
+      1732
+    ],
     "year": 2021,
     "paper": "source/projects/SimuExplorer/SimuExplorer.pdf",
     "abstract": "We propose SimuExplorer, a visualization system to help analysts explore how player behaviors impact scoring rates intable tennis. Such analysis is indispensable for analysts and coaches, who aim to formulate training plans that can help playersimprove. However, it is challenging to identify the impacts of individual behaviors, as well as to understand how these impacts aregenerated and accumulated gradually over the course of a game. To address these challenges, we worked closely with experts whowork for a top national table tennis team to design SimuExplorer. The SimuExplorer system integrates a Markov chain model tosimulate individual and cumulative impacts of particular behaviors. It then provides flow and matrix views to help users visualize andinterpret these impacts. We demonstrate the usefulness of the system with case studies and expert interviews. The experts think highlyof the system and have obtained insights into players’ behaviors using it."
@@ -2108,6 +2470,7 @@
   {
     "id": "Compass",
     "title": "Compass: Towards Better Causal Analysis of Urban Time Series",
+    "DOI": "10.1109/TVCG.2021.3114875",
     "teaser": "source/projects/compass/compass.png",
     "authors": [
       "Zikun Deng",
@@ -2123,6 +2486,12 @@
       "IEEE TVCG",
       "IEEE VIS 2021"
     ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      1051,
+      1061
+    ],
     "year": 2021,
     "video": "https://youtu.be/QxvGC9F9PaY",
     "embedVideo": "https://www.youtube.com/embed/QxvGC9F9PaY",
@@ -2132,6 +2501,7 @@
   {
     "id": "OrderMonitor",
     "title": "A Visualization Approach for Monitoring Order Processing in E-Commerce Warehouse",
+    "DOI": "10.1109/TVCG.2021.3114878",
     "teaser": "source/projects/warehouse/warehouse.png",
     "authors": [
       "Junxiu Tang",
@@ -2147,6 +2517,12 @@
       "IEEE TVCG",
       "IEEE VIS 2021"
     ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      857,
+      867
+    ],
     "year": 2021,
     "video": "https://youtu.be/IanZbNr04EE",
     "embedVideo": "https://www.youtube.com/embed/IanZbNr04EE",
@@ -2156,6 +2532,7 @@
   {
     "id": "TIVEE",
     "title": "TIVEE: Visual Exploration and Explanation of Badminton Tactics in Immersive Visualizations",
+    "DOI": "10.1109/TVCG.2021.3114861",
     "teaser": "source/projects/TIVEE/TIVEE.png",
     "authors": [
       "Xiangtong Chu",
@@ -2164,13 +2541,19 @@
       "Haolin Lu",
       "Hongguang Xiao",
       "Zeqing Yuan",
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Hui Zhang",
       "Yingcai Wu"
     ],
     "venue": [
       "IEEE TVCG",
       "IEEE VIS 2021"
+    ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      118,
+      128
     ],
     "year": 2021,
     "paper": "source/projects/TIVEE/TIVEE.pdf",
@@ -2181,6 +2564,7 @@
   {
     "id": "HVSM",
     "title": "Real-Time Visual Analysis of High-Volume Social Media Posts",
+    "DOI": "10.1109/TVCG.2021.3114800",
     "titleKey": [
       "Honorable Mention"
     ],
@@ -2198,17 +2582,24 @@
       "IEEE TVCG",
       "IEEE VIS 2021"
     ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      879,
+      889
+    ],
     "year": 2021,
     "abstract": "Breaking news and first-hand reports often trend on social media platforms before traditional news outlets cover them. The real-time analysis of posts on such platforms can reveal valuable and timely insights for journalists, politicians, business analysts, and first responders, but the high number and diversity of new posts pose a challenge. In this work, we present an interactive system that enables the visual analysis of streaming social media data on a large scale in real-time. We propose an efficient and explainable dynamic clustering algorithm that powers a continuously updated visualization of the current thematic landscape as well as detailed visual summaries of specific topics of interest. Our parallel clustering strategy provides an adaptive stream with a digestible but diverse selection of recent posts related to relevant topics. We also integrate familiar visual metaphors that are highly interlinked for enabling both explorative and more focused monitoring tasks. Analysts can gradually increase the resolution to dive deeper into particular topics. In contrast to previous work, our system also works with non-geolocated posts and avoids extensive preprocessing such as detecting events. We evaluated our dynamic clustering algorithm and discuss several use cases that show the utility of our system."
   },
   {
     "id": "GlyphCreator",
     "title": "GlyphCreator: Towards Example-based Automatic Generation of Circular Glyphs",
+    "DOI": "10.1109/TVCG.2021.3114877",
     "teaser": "source/projects/glyphcreator/glyphcreator.png",
     "authors": [
       "Lu Ying",
       "Tan Tang",
-      "Luzhe Luo",
+      "Yuzhe Luo",
       "Lvkeshen Shen",
       "Xiao Xie",
       "Lingyun Yu",
@@ -2217,6 +2608,12 @@
     "venue": [
       "IEEE TVCG",
       "IEEE VIS 2021"
+    ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      400,
+      410
     ],
     "year": 2021,
     "video": "https://youtu.be/uNGJtuyniyM",
@@ -2227,17 +2624,24 @@
   {
     "id": "VideoModerator",
     "title": "VideoModerator: A Risk-aware Framework for Multimodal Video Moderation in E-Commerce",
+    "DOI": "10.1109/TVCG.2021.3114781",
     "teaser": "source/projects/videomoderator/videomoderator.png",
     "authors": [
       "Tan Tang",
       "Yanhong Wu",
+      "Yingcai Wu",
       "Lingyun Yu",
-      "Hongyu Li",
-      "Yingcai Wu"
+      "Yuhong Li"
     ],
     "venue": [
       "IEEE TVCG",
       "IEEE VIS 2021"
+    ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      846,
+      856
     ],
     "year": 2021,
     "paper": "source/projects/videomoderator/VideoModerator.pdf",
@@ -2247,6 +2651,7 @@
   {
     "id": "AcademicCareerSuccess",
     "title": "Seek for Success: A Visualization Approach for Understanding the Dynamics of Academic Careers",
+    "DOI": "10.1109/TVCG.2021.3114790",
     "teaser": "source/projects/ssuccess/ssuccess.png",
     "authors": [
       "Yifang Wang",
@@ -2261,6 +2666,12 @@
       "IEEE TVCG",
       "IEEE VIS 2021"
     ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      475,
+      485
+    ],
     "year": 2021,
     "video": "https://youtu.be/S-_JopzBY6g",
     "embedVideo": "https://www.youtube.com/embed/S-_JopzBY6g",
@@ -2270,13 +2681,14 @@
   {
     "id": "VisCommentator",
     "title": "Augmenting Sports Videos with VisCommentator",
+    "DOI": "10.1109/TVCG.2021.3114806",
     "titleKey": [
       "Honorable Mention"
     ],
     "teaser": "source/projects/viscommentator/viscommentator.PNG",
     "paper": "source/projects/viscommentator/viscommentator.pdf",
     "authors": [
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Shuainan Ye",
       "Xiangtong Chu",
       "Haijun Xia",
@@ -2288,6 +2700,12 @@
       "IEEE TVCG",
       "IEEE VIS 2021"
     ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      824,
+      834
+    ],
     "year": 2021,
     "video": "https://youtu.be/bjDKygYBnPw",
     "embedVideo": "https://www.youtube.com/embed/bjDKygYBnPw",
@@ -2296,6 +2714,7 @@
   {
     "id": "TacticFlow",
     "title": "TacticFlow: Visual Analytics of Ever-Changing Tactics in Racket Sports",
+    "DOI": "10.1109/TVCG.2021.3114832",
     "teaser": "source/projects/tacticflow/tacticflow.jpg",
     "authors": [
       "Jiang Wu",
@@ -2308,6 +2727,12 @@
       "IEEE TVCG",
       "IEEE VIS 2021"
     ],
+    "volume": 28,
+    "issue": 1,
+    "page": [
+      835,
+      845
+    ],
     "year": 2021,
     "video": "https://youtu.be/gzB4w9M7AFE",
     "embedVideo": "https://www.youtube.com/embed/gzB4w9M7AFE",
@@ -2317,6 +2742,7 @@
   {
     "id": "Nebula",
     "title": "Nebula: A Coordinating Grammar of Graphics",
+    "DOI": "10.1109/TVCG.2021.3076222",
     "teaser": "source/projects/nebula/nebula.png",
     "authors": [
       "Ran Chen",
@@ -2329,6 +2755,12 @@
     ],
     "venue": [
       "IEEE TVCG"
+    ],
+    "volume": 28,
+    "issue": 12,
+    "page": [
+      4127,
+      4140
     ],
     "year": 2021,
     "video": "https://youtu.be/oMgO0BVX8rY",
@@ -2363,6 +2795,7 @@
   {
     "id": "CareerLens",
     "title": "Interactive Visual Exploration of Longitudinal Historical Career Mobility Data",
+    "DOI": "10.1109/TVCG.2021.3067200",
     "teaser": "source/projects/CareerLens/teaser.png",
     "authors": [
       "Yifang Wang",
@@ -2379,8 +2812,12 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "volume": 0,
-    "issue": 0,
+    "page": [
+      3441,
+      3455
+    ],
+    "volume": 28,
+    "issue": 10,
     "year": 2021,
     "video": "https://youtu.be/2IDCtCMpVZw",
     "embedVideo": "https://www.youtube.com/embed/2IDCtCMpVZw",
@@ -2390,6 +2827,7 @@
   {
     "id": "VisCas",
     "title": "Visual Cascade Analytics of Large-scale Spatiotemporal Data",
+    "DOI": "10.1109/TVCG.2021.3071387",
     "teaser": "source/projects/VisCas/VisCas.png",
     "authors": [
       "Zikun Deng",
@@ -2404,8 +2842,12 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "volume": 0,
-    "issue": 1,
+    "page": [
+      2486,
+      2499
+    ],
+    "volume": 28,
+    "issue": 6,
     "year": 2021,
     "video": "https://www.youtube.com/watch?v=IVSf0BNRC_c",
     "embedVideo": "https://www.youtube.com/embed/IVSf0BNRC_c",
@@ -2466,6 +2908,7 @@
   {
     "id": "PlotThread",
     "title": "PlotThread: Creating Expressive Storyline Visualizations using Reinforcement Learning",
+    "DOI": "10.1109/TVCG.2020.3030467",
     "teaser": "source/projects/plotthread/plotthread.png",
     "authors": [
       "Tan Tang",
@@ -2483,8 +2926,12 @@
       "IEEE TVCG",
       "IEEE VIS 2020"
     ],
+    "page": [
+      294,
+      303
+    ],
     "volume": 27,
-    "issue": 1,
+    "issue": 2,
     "year": 2020,
     "video": "https://youtu.be/OZkAvNPHu7Y",
     "embedVideo": "https://www.youtube.com/embed/OZkAvNPHu7Y",
@@ -2494,6 +2941,7 @@
   {
     "id": "BusNet",
     "title": "Towards Better Bus Networks: A Visual Analytics Approach",
+    "DOI": "10.1109/TVCG.2020.3030458",
     "teaser": "source/projects/busnet/busnet.png",
     "authors": [
       "Di Weng",
@@ -2509,8 +2957,12 @@
       "IEEE TVCG",
       "IEEE VIS 2020"
     ],
+    "page": [
+      817,
+      827
+    ],
     "volume": 27,
-    "issue": 1,
+    "issue": 2,
     "year": 2020,
     "video": "https://youtu.be/vBSwbbPRd_g",
     "embedVideo": "https://www.youtube.com/embed/vBSwbbPRd_g",
@@ -2520,6 +2972,7 @@
   {
     "id": "PassVizor",
     "title": "PassVizor: Toward Better Understanding of the Dynamics of Soccer Passes",
+    "DOI": "10.1109/TVCG.2020.3030359",
     "teaser": "source/projects/passvizor/passvizor.png",
     "authors": [
       "Xiao Xie",
@@ -2535,8 +2988,12 @@
       "IEEE TVCG",
       "IEEE VIS 2020"
     ],
+    "page": [
+      1322,
+      1331
+    ],
     "volume": 27,
-    "issue": 1,
+    "issue": 2,
     "year": 2020,
     "video": "https://youtu.be/Lr6yuBBrMQw",
     "embedVideo": "https://www.youtube.com/embed/Lr6yuBBrMQw",
@@ -2546,10 +3003,11 @@
   {
     "id": "ShuttleSpace",
     "title": "ShuttleSpace: Exploring and Analyzing Movement Trajectory in Immersive Visualization",
+    "DOI": "10.1109/TVCG.2020.3030392",
     "teaser": "source/projects/shuttlespace/shuttlespace.png",
     "authors": [
       "Shuainan Ye",
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Xiangtong Chu",
       "Yifan Wang",
       "Siwei Fu",
@@ -2561,8 +3019,12 @@
       "IEEE TVCG",
       "IEEE VIS 2020"
     ],
+    "page": [
+      860,
+      869
+    ],
     "volume": 27,
-    "issue": 1,
+    "issue": 2,
     "year": 2020,
     "video": "https://youtu.be/-yJi-4OleDk",
     "embedVideo": "https://www.youtube.com/embed/-yJi-4OleDk",
@@ -2572,6 +3034,7 @@
   {
     "id": "Fine-tuning Layout",
     "title": "Exemplar-based Layout Fine-tuning for Node-link Diagrams",
+    "DOI": "10.1109/TVCG.2020.3030393",
     "teaser": "source/projects/finetuninglayout/finetuninglayout.png",
     "authors": [
       "Jiacheng Pan",
@@ -2588,8 +3051,12 @@
       "IEEE TVCG",
       "IEEE VIS 2020"
     ],
+    "page": [
+      1655,
+      1665
+    ],
     "volume": 27,
-    "issue": 1,
+    "issue": 2,
     "year": 2020,
     "video": "http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/8/19/29b5e20e480a3e49d58e60aeac01a005ab8f0d32.mp4",
     "embedVideo": "http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/8/19/29b5e20e480a3e49d58e60aeac01a005ab8f0d32.mp4",
@@ -2599,6 +3066,7 @@
   {
     "id": "CausalExplorer",
     "title": "A Visual Analytics Approach for Exploratory Causal Analysis: Exploration, Validation, and Applications",
+    "DOI": "10.1109/TVCG.2020.3028957",
     "teaser": "source/projects/CausalExplorer/CausalExplorer.png",
     "authors": [
       "Xiao Xie",
@@ -2609,8 +3077,12 @@
       "IEEE TVCG",
       "IEEE VIS 2020"
     ],
+    "page": [
+      1448,
+      1458
+    ],
     "volume": 27,
-    "issue": 1,
+    "issue": 2,
     "year": 2020,
     "abstract": "Using causal relations to guide decision making has become an essential analytical task across various domains, frommarketing and medicine to education and social science. While powerful statistical models have been developed for inferring causalrelations from data, domain practitioners still lack effective visual interface for interpreting the causal relations and applying them in theirdecision-making process. Through interview studies with domain experts, we characterize their current decision-making workflows,challenges, and needs. Through an iterative design process, we developed a visualization tool that allows analysts to explore, validate, and apply causal relations in real-world decision-making scenarios. The tool provides an uncertainty-aware causal graph visualizationfor presenting a large set of causal relations inferred from high-dimensional data. On top of the causal graph, it supports a set ofintuitive user controls for performing what-if analyses and making action plans. We report on two case studies in marketing and studentadvising to demonstrate that users can effectively explore causal relations and design action plans for reaching their goals.",
     "paper": "source/projects/CausalExplorer/CausalExplorer.pdf"
@@ -2618,6 +3090,7 @@
   {
     "id": "Data-GIF",
     "title": "What Makes a Data-GIF Understandable?",
+    "DOI": "10.1109/TVCG.2020.3030396",
     "teaser": "source/projects/datagif/datagif.png",
     "authors": [
       "Xinhuan Shu",
@@ -2631,8 +3104,12 @@
       "IEEE TVCG",
       "IEEE VIS 2020"
     ],
+    "page": [
+      1492,
+      1502
+    ],
     "volume": 27,
-    "issue": 1,
+    "issue": 2,
     "year": 2020,
     "abstract": "GIFs are enjoying increasing popularity on social media as a format for data-driven storytelling with visualization; simplevisual messages are embedded in short animations that usually last less than 15 seconds and are played in automatic repetition. Inthis paper, we ask the question,“What makes a data-GIF understandable?”While other storytelling formats such as data videos, infographics, or data comics are relatively well studied, we have little knowledge about the design factors and principles for “data-GIFs”. To close this gap, we provide results from semi-structured interviews and an online study with a total of 118 participants investigating theimpact of design decisions on the understandability of data-GIFs. The study and our consequent analysis are informed by a systematicreview and structured design space of 108 data-GIFs that we found online. Our results show the impact of design dimensions from ourdesign space such as animation encoding, context preservation, or repetition on viewers understanding of the GIF’s core message. The paper concludes with a list of suggestions for creating more effective Data-GIFs.",
     "paper": "source/projects/datagif/datagif.pdf",
@@ -2896,38 +3373,39 @@
   },
   {
     "id": "VA in MMORPGs",
-    "title": "Visual Analytics of Dynamic Interplay Between Behaviors in MMORPGs",
+    "title": "BeXplorer: Visual analytics of dynamic interplay between communication and purchase behaviors in MMORPGs",
     "teaser": "source/projects/bexplorer/bexplorer.png",
     "authors": [
       "Junhua Lu",
       "Xiao Xie",
       "Ji Lan",
       "Tai-Quan Peng",
-      "Wei Chen",
-      "Yingcai Wu"
+      "Yingcai Wu",
+      "Wei Chen"
     ],
     "venue": [
+      "Visual Informatics",
       "PacificVis 2019 Conference Track"
     ],
-    "volume": 0,
-    "issue": 0,
+    "volume": 3,
+    "issue": 2,
     "page": [
-      112,
-      121
+      87,
+      101
     ],
     "year": 2019,
     "abstract": "With the rapid development of massively multiplayer online role-playing games (MMORPGs), a huge amount of fine-grained data on the in-game activities of players have been recorded by MMORPGs operators. These data provide considerable opportunities with which to study the dynamic interplay between player behaviors and investigate the roles of various social structures that underlie such interplay. However, it is challenging to model and visualize these behavioral data. This study proposes a novel influence-susceptible model to measure the dynamic interplay between behaviors. Based on this model, we introduce a new visual analytics system called BeXplorer. This system enables analysts to interactively explore the dynamic interplay between player purchase and communication behaviors and to examine the manner in which this interplay is bound by social structures where players are embedded. Three case studies and a task-based evaluation are conducted to demonstrate the effectiveness and applicability of our method.",
     "paper": "source/projects/bexplorer/bexplorer-pvis2019.pdf",
     "video": "https://youtu.be/rF45T48L--8",
     "embedVideo": "https://www.youtube.com/embed/rF45T48L--8",
-    "DOI": "10.1109/PacificVis.2019.00021"
+    "DOI": "10.1016/j.visinf.2019.06.002"
   },
   {
     "id": "MARVisT",
     "title": "MARVisT: Authoring Glyph-based Visualization in Mobile Augmented Reality",
     "teaser": "source/projects/MarVisT/MarVisT.png",
     "authors": [
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Yijia Su",
       "Yifang Wang",
       "Qianwen Wang",
@@ -2937,11 +3415,11 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "volume": 0,
-    "issue": 0,
+    "volume": 26,
+    "issue": 8,
     "page": [
-      1,
-      1
+      2645,
+      2658
     ],
     "year": 2019,
     "abstract": "Recent advances in mobile augmented reality (AR) techniques have shed new light on personal visualization for their advantages of fitting visualization within personal routines, situating visualization in a real-world context, and arousing users' interests. However, enabling non-experts to create data visualization in mobile AR environments is challenging given the lack of tools that allow in-situ design while supporting the binding of data to AR content. Most existing AR authoring tools require working on personal computers or manually creating each virtual object and modifying its visual attributes. We systematically study this issue by identifying the specificity of AR glyph-based visualization authoring tool and distill four design considerations. Following these design considerations, we design and implement MARVisT, a mobile authoring tool that leverages information from reality to assist non-experts in addressing relationships between data and virtual glyphs, real objects and virtual glyphs, and real objects and data. With MARVisT, users without visualization expertise can bind data to real-world objects to create expressive AR glyph-based visualizations rapidly and effortlessly, reshaping the representation of the real world with data. We use several examples to demonstrate the expressiveness of MARVisT. A user study with non-experts is also conducted to evaluate the authoring experience of MARVisT.",
@@ -3072,7 +3550,7 @@
     "teaser": "source/projects/streamexplorer/streamexplorer.png",
     "authors": [
       "Yingcai Wu",
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Guodao Sun",
       "Xiao Xie",
       "Nan Cao",
@@ -3309,7 +3787,7 @@
     "title": "Exploring the design space of immersive urban analytics",
     "teaser": "source/projects/arvis/arvis.png",
     "authors": [
-      "Chen Zhu-Tian",
+      "Zhutian Chen",
       "Yifang Wang",
       "Tianchen Sun",
       "Xiang Gao",
@@ -3451,7 +3929,7 @@
     ],
     "venue": [
       "IEEE TVCG",
-      "PacificVis 2016 TVCG Journal Track"
+      "PacificVis 2016"
     ],
     "volume": 22,
     "issue": 6,
@@ -3460,6 +3938,9 @@
       1651
     ],
     "year": 2016,
+    "titleKey": [
+      "Honorable Mention"
+    ],
     "abstract": "Stacked graphs have been widely adopted in various fields, because they are capable of hierarchically visualizing a set of temporal sequences as well as their aggregation. However, because of visual illusion issues, connections between overly-detailed individual layers and overly-generalized aggregation are intercepted. Consequently, information in this area has yet to be fully excavated. Thus, we present PieceStack in this paper, to reveal the relevance of stacked graphs in understanding intrinsic details of their displayed shapes. This new visual analytic design interprets the ways through which aggregations are generated with individual layers by interactively splitting and re-constructing the stacked graphs. A clustering algorithm is designed to partition stacked graphs into sub-aggregated pieces based on trend similarities of layers. We then visualize the pieces with augmented encoding to help analysts decompose and explore the graphs with respect to their interests. Case studies and a user study are conducted to demonstrate the usefulness of our technique in understanding the formation of stacked graphs.",
     "paper": "source/projects/piecestack/piecestack.pdf"
   },
@@ -3491,8 +3972,8 @@
   },
   {
     "id": "Follower-followee",
-    "title": "Follower-followee Network, Communication Networks and Vote Agreement of U.S. Members of Congress",
-    "teaser": "source/projects/Follower-followee/Follower-followee.jpg",
+    "title": "Follower-Followee Network, Communication Networks, and Vote Agreement of the U.S. Members of Congress",
+    "teaser": "source/projects/Follower-followee/Follower-followee.png",
     "DOI": "10.1177/0093650214559601",
     "authors": [
       "Tai-Quan Peng",
@@ -3512,5 +3993,832 @@
     "year": 2016,
     "abstract": "The digital traces of U.S. members of congress on Twitter enable researchers to observe how these public officials interact with one another in a direct and unobtrusive manner. Using data from Twitter and other sources (e.g., roll-call vote data), this study aims to examine how members of congress connect and communicate with one another on Twitter, why they will connect and communicate with one another in such a way, and what effects such connection and communication among members of congress have on their floor vote behavior. The follower-followee and communication networks of members of congress on Twitter demonstrate a high degree of partisan homogeneity. Members of congress prefer to follow or communicate with other members who are similar to them in terms of partisanship, home state, chamber, and public concern. This condition is known as the homophily effect in social network research. However, the magnitude of the homophily effect is mitigated when the effects of endogenous networking mechanisms (i.e., reciprocity and triadic closure) in such networks are controlled. Follower-followee ties can facilitate political discourse among members of congress on Twitter, whereas both follower-followee and communication ties on Twitter increase the likelihood of vote agreement among members of congress. The theoretical, methodological, and practical implications of the findings are addressed.",
     "paper": "source/projects/Follower-followee/Follower-followee.pdf"
+  },
+  {
+    "id": "visarena",
+    "teaser": "source/projects/visarena/visarena.png",
+    "title": "VisArena: A testbed for visualization with synthetic data tables",
+    "authors": [
+      "Siwei Fu",
+      "Junjie Jin",
+      "Qi Ma",
+      "Zhongsu Luo",
+      "Kai Xiong",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2025,
+    "abstract": "Evaluation appears in every corner of the visualization community. Researchers and engineers usually need to create synthetic data tables to validate and evaluate the characteristics of visualization techniques. However, due to the large space and interaction of data characteristics, generating data with various requirements is tedious and challenging. Situated in the domain of multivariate data visualization, we present a design study to develop VisArena, a system for visualization evaluation with synthetic data tables. Based on prompt engineering for generative pre-trained transformers, VisArena features a data generation pipeline that is extensible in the number of constraints. At the same time, to ensure reliability, the system borrows a satisfiability modulo theories (SMT) solver to ensure that all constraints are satisfied in the resulting data tables. For better usability, the interface of VisArena is designed in an iterative manner with three visualization practitioners and offers the ability to specify data attributes, inspect visualization results, and customize evaluation metrics. To demonstrate the effectiveness of VisArena, we report an in-depth case study with expert users. Further, we show how VisArena can serve as a testbed for hierarchical data visualization with an algorithmic study.",
+    "doi": "10.1007/s12650-025-01069-2"
+  },
+  {
+    "id": "hoopscouter",
+    "paper": "source/projects/hoopscouter/hoopscouter.pdf",
+    "teaser": "source/projects/hoopscouter/hoopscouter.png",
+    "title": "HoopScouter: Visual Analytics of Ball Handlers’ Decisions in Basketball Games",
+    "authors": [
+      "Yihong Wu",
+      "Ziao Liu",
+      "Liqi Cheng",
+      "Moqi He",
+      "Dazhen Deng",
+      "Xiao Xie"
+    ],
+    "venue": [
+      "PacificVis 2025 Conference Track"
+    ],
+    "year": 2025,
+    "abstract": "In basketball, decision-making is one of the core skills for players. For example, when a player is holding the ball, the success of the team’s offense is primarily determined by her/his decisions (i.e., pass, shoot, or dribble) in response to the dynamics of the game. Understanding players’ decision-making processes in changing game situations can help coaches develop effective strategies, which is critical for the success of a team. However, the decision-making process is influenced by various factors (e.g., player’s playing style, opponents’ defense, and time remaining), making understanding a challenging problem. In this study, we propose HoopScouter, a visual analytics system to help understand ball handlers’ decisions in basketball games. Based on a careful investigation of the analysis requirements, we first introduce a representation learning method that characterizes ball handlers’ decision-making styles. We then design a sketch panel with integrated time information to support exploration of player decisions under similar game scenarios. Facet views and coordinated interactions are also provided to identify the strengths and weaknesses of the ball handler’s decision-making, and to understand when and why ball handlers would make certain decisions. To validate the effectiveness of HoopScouter, we conduct two case studies on real-world basketball games and receive positive feedback from domain experts.",
+    "doi": "10.1109/PacificVis64226.2025.00034"
+  },
+  {
+    "id": "arteyer",
+    "paper": "source/projects/arteyer/arteyer.pdf",
+    "teaser": "source/projects/arteyer/arteyer.png",
+    "title": "ArtEyer: Enriching GPT-based agents with contextual data visualizations for fine art authentication",
+    "authors": [
+      "Tan Tang",
+      "Yanhong Wu",
+      "Junming Gao",
+      "Kejia Ruan",
+      "Yanjie Zhang",
+      "Shuainan Ye",
+      "Yingcai Wu",
+      "Xiaojiao Chen"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2024,
+    "abstract": "Fine art authentication plays a significant role in protecting cultural heritage and ensuring the integrity of artworks. Traditional authentication methods require professionals to collect many reference materials and conduct detailed analyses. To ease the difficulty, we collaborate with domain experts to develop a GPT-based agent, namely ArtEyer, that offers accurate attributions, determines the origin and authorship, and executes visual analytics. Despite the convenience of the conversational user interface, novice users may still face challenges due to the hallucination issue and the steep learning curve associated with prompting. To face these obstacles, we propose a novel solution that places interactive data visualizations into the conversations. We create contextual visualizations from an external domain-dependent database to ensure data trustworthiness and allow users to provide precise instructions to the agent by interacting directly with these visualizations, thus overcoming the vagueness inherent in natural language-based prompting. We evaluate ArtEyer through an in-lab user study and demonstrate its usage with a real-world case.",
+    "doi": "10.1016/j.visinf.2024.11.001"
+  },
+  {
+    "id": "graphgesture",
+    "teaser": "source/projects/graphgesture/graphgesture.png",
+    "title": "Audio-visual training and feedback to learn touch-based gestures",
+    "authors": [
+      "Sadia Rubab",
+      "Muhammad Wajeeh Uz Zaman",
+      "Umer Rashid",
+      "Lingyun Yu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2024,
+    "abstract": "To help people learn the touch-based gestures needed to perform various tasks, researchers commonly use training from an experimenter. However, it leads to dependence on a person, as well as memory problems with increasing number and complexity of gestures. Several on-demand training and feedback methods have been proposed that provide constant support and help people learn novel gestures without human assistance. Non-speech audio with the visual clue, a gesture training/feedback method, could be extended in the interactive visualization tools. However, the literature offers several options in the non-speech audio and visual clues but no comparisons. We conducted an online study to identify suitable non-speech audio representations with the visual clues of 12 touch-based gestures. For each audiovisual combination, we evaluated the thinking, time demand, frustration, understanding, and learnability of 45 participants. We found that the visual clue of a gesture, either iconic or ghost, did not affect the suitability of an audio representation. However, the preferences in audio channels and audio patterns differed for the different gestures and their directions. We implemented the training/feedback method in an Infovis tool. The evaluation showed significant use of the method by the participants to explore the tool.",
+    "doi": "10.1007/s12650-024-01012-x"
+  },
+  {
+    "id": "nuwa",
+    "teaser": "source/projects/nuwa/nuwa.png",
+    "title": "Nuwa: An Authoring Tool for Graph Visualizations",
+    "authors": [
+      "Dongming Han",
+      "Haiyang Zhu",
+      "Wei Chen",
+      "Jiacheng Pan",
+      "Ran Chen",
+      "Xumeng Wang"
+    ],
+    "venue": [
+      "PacificVis 2024 Conference Track"
+    ],
+    "year": 2024,
+    "abstract": "Authoring graph visualization requires advanced programming skills, expert domain knowledge, and significant workload. Existing authoring tools either support limited templates of graph visualization, or suffer from a high learning cost. We analyze the design requirements on a tool for graph visualizations, and contribute Nuwa, a user-friendly declarative authoring tool for the interactive specification of graph visualizations in terms of data, entity, change, and encoding. Our implementation empowers users to conveniently create, compare, and modulate comprehensive graph visualizations with a wide range of styles. We showcase various examples to verify the expressiveness of Nuwa. Via an expert interview and the analysis on cognitive dimensions we evaluate the usability of Nuwa.",
+    "doi": "10.1109/PacificVis60374.2024.00024"
+  },
+  {
+    "id": "subplay",
+    "teaser": "source/projects/subplay/subplay.png",
+    "paper": "source/projects/subplay/subplay.pdf",
+    "title": "SUB-PLAY: Adversarial Policies against Partially Observed Multi-Agent Reinforcement Learning Systems",
+    "authors": [
+      "Oubo Ma",
+      "Yuwen Pu",
+      "Linkang Du",
+      "Yang Dai",
+      "Ruo Wang",
+      "Xiaolei Liu",
+      "Yingcai Wu",
+      "Shouling Ji"
+    ],
+    "venue": [
+      "CCS 2024"
+    ],
+    "year": 2024,
+    "abstract": "Recent advancements in multi-agent reinforcement learning (MARL) have opened up vast application prospects, such as swarm control of drones, collaborative manipulation by robotic arms, and multi-target encirclement. However, potential security threats during the MARL deployment need more attention and thorough investigation. Recent research reveals that attackers can rapidly exploit the victim's vulnerabilities, generating adversarial policies that result in the failure of specific tasks. For instance, reducing the winning rate of a superhuman-level Go AI to around 20%. Existing studies predominantly focus on two-player competitive environments, assuming attackers possess complete global state observation. In this study, we unveil, for the first time, the capability of attackers to generate adversarial policies even when restricted to partial observations of the victims in multi-agent competitive environments. Specifically, we propose a novel black-box attack (SUB-PLAY) that incorporates the concept of constructing multiple subgames to mitigate the impact of partial observability and suggests sharing transitions among subpolicies to improve attackers' exploitative ability. Extensive evaluations demonstrate the effectiveness of SUB-PLAY under three typical partial observability limitations. Visualization results indicate that adversarial policies induce significantly different activations of the victims' policy networks. Furthermore, we evaluate three potential defenses aimed at exploring ways to mitigate security threats posed by adversarial policies, providing constructive recommendations for deploying MARL in competitive environments.",
+    "doi": "10.1145/3658644.3670293"
+  },
+  {
+    "id": "visualinsights",
+    "teaser": "source/projects/visualinsights/visualinsights.png",
+    "title": "An intelligent approach to automatically discovering visual insights",
+    "authors": [
+      "Yuhua Zhou",
+      "Xiyu Meng",
+      "Yanhong Wu",
+      "Tan Tang",
+      "Yongheng Wang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2023,
+    "abstract": "Data charts are widely used in practices to display insights in complex data. Due to ineffective designs, novice readers may require descriptive content (e.g., chart captions) to understand the implying data stories that may not be accessible in some situations. This problem hinders the usage of data charts for the mass, which has raised deep concerns for visualization researchers. Recently, researchers have proposed deep-learning-based methods to automatically provide text context for data charts. However, these methods ignore the visual links between textual content and visual figures. Moreover, some of them are mainly applied in scalable vector graphics and cannot be easily extended to Internet pictures that are in raster format (e.g., PNG or JPEG). To overcome these limitations, we propose a novel deep-learning-based framework to automatically discover visual insights and generate corresponding text descriptions for chart figures. Specifically, we train a saliency detection model to reveal the salient area that presents the most important data insights and employ an image captioning model to generate the corresponding descriptive text. Meanwhile, we propose a novel method to optimize the saliency map to enable viewers to be aware of visual insights easily. Finally, we develop an interactive system that supports users to upload chart figures and then display chart insights as well as the related descriptions. We evaluate our saliency detection model and image captioning model through quantitative and qualitative experiments and conduct a user study to demonstrate the usage of our system.",
+    "doi": "10.1007/s12650-022-00894-z"
+  },
+  {
+    "id": "visaudio",
+    "teaser": "source/projects/visaudio/visaudio.png",
+    "title": "Exploring Effective Relationships Between Visual-Audio Channels in Data Visualization",
+    "authors": [
+      "Sadia Rubab",
+      "Lingyun Yu",
+      "Junxiu Tang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2023,
+    "abstract": "In recent years, there has been a growing trend towards taking advantage of audio--visual representations. Previous research has aimed at improving users' performance and engagement with these representations. The attainment of these benefits primarily depends on the effectiveness of audio--visual relationships used to represent the data. However, the visualization field yet lacks an empirical study that guides the effective relationships. Given the compatibility effect between visual and auditory channels, this research presents the effectiveness of four audio channels (timbre, pitch, loudness, and tempo) with six visual channels (spatial position, color, position, length, angle, and area). In six experiments, one per visual channel, we observed how each audio channel, when used with a visual channel, impacted users' ability to perform the differentiation or similarity task accurately. Each experiment provided the ranking of audio channels along a visual channel. Central to our experiments was the evaluation at two stages, and accordingly, we identified the effectiveness. Our results showed that timbre, with spatial position and color, aided in more accurate target identification than the three other audio channels. With position and length, pitch allowed a more accurate judgment of the magnitude of data than loudness and tempo but was less accurate than the other two channels along angle and area. Overall, our experiments showed that the choice of representation methods and tasks had impacted the effectiveness of audio channels.",
+    "doi": "10.1007/s12650-023-00909-3"
+  },
+  {
+    "id": "notable",
+    "teaser": "source/projects/notable/notable.png",
+    "paper": "source/projects/notable/notable.pdf",
+    "title": "Notable: On-the-fly Assistant for Data Storytelling in Computational Notebooks",
+    "authors": [
+      "Haotian Li",
+      "Lu Ying",
+      "Haidong Zhang",
+      "Yingcai Wu",
+      "Huamin Qu",
+      "Yun Wang"
+    ],
+    "venue": [
+      "CHI 2023"
+    ],
+    "year": 2023,
+    "abstract": "Computational notebooks are widely used for data analysis. Their interleaved displays of code and execution results (e.g., visualizations) are welcomed since they enable iterative analysis and preserve the exploration process. However, the communication of data findings remains challenging in computational notebooks. Users have to carefully identify useful findings from useless ones, document them with texts and visual embellishments, and then organize them in different tools. Such workflow greatly increases their workload, according to our interviews with practitioners. To address the challenge, we designed Notable to offer on-the-fly assistance for data storytelling in computational notebooks. It provides intelligent support to minimize the work of documenting and organizing data findings and diminishes the cost of switching between data exploration and storytelling. To evaluate Notable, we conducted a user study with 12 data workers. The feedback from user study participants verifies its effectiveness and usability.",
+    "doi": "10.1145/3544548.3580965"
+  },
+  {
+    "id": "tac-anticipator",
+    "teaser": "source/projects/tac-anticipator/tac-anticipator.png",
+    "title": "Tac-Anticipator: Visual Analytics of Anticipation Behaviors in Table Tennis Matches",
+    "authors": [
+      "Jiachen Wang",
+      "Yihong Wu",
+      "Xiaolong Zhang",
+      "Yixin Zeng",
+      "Zheng Zhou",
+      "Hui Zhang",
+      "Xiao Xie",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Computer Graphics Forum",
+      "EuroVis 2023"
+    ],
+    "year": 2023,
+    "abstract": "Anticipation skill is important for elite racquet sports players. Successful anticipation allows them to predict the actions of the opponent better and take early actions in matches. Existing studies of anticipation behaviors, largely based on the analysis of in-lab behaviors, failed to capture the characteristics of in-situ anticipation behaviors in real matches. This research proposes a data-driven approach for research on anticipation behaviors to gain more accurate and reliable insight into anticipation skills. Collaborating with domain experts in table tennis, we develop a complete solution that includes data collection, the development of a model to evaluate anticipation behaviors, and the design of a visual analytics system called Tac-Anticipator. Our case study reveals the strengths and weaknesses of top table tennis players' anticipation behaviors. In a word, our work enriches the research methods and guidelines for visual analytics of anticipation behaviors.",
+    "doi": "10.1111/cgf.14825"
+  },
+  {
+    "id": "sportsxr",
+    "teaser": "source/projects/sportsxr/sportsxr.png",
+    "title": "The Ball is in Our Court: Conducting Visualization Research With Sports Experts",
+    "authors": [
+      "Tica Lin",
+      "Zhutian Chen",
+      "Johanna Beyer",
+      "Yingcai Wu",
+      "Hanspeter Pfister",
+      "Yalong Yang"
+    ],
+    "venue": [
+      "IEEE CG&A"
+    ],
+    "year": 2023,
+    "abstract": "Most sports visualizations rely on a combination of spatial, highly temporal, and user-centric data, making sports a challenging target for visualization. Emerging technologies, such as augmented and mixed reality (AR/XR), have brought exciting opportunities along with new challenges for sports visualization. We share our experience working with sports domain experts and present lessons learned from conducting visualization research in SportsXR. In our previous work, we have targeted different types of users in sports, including athletes, game analysts, and fans. Each user group has unique design constraints and requirements, such as obtaining real-time visual feedback in training, automating the low-level video analysis workflow, or personalizing embedded visualizations for live game data analysis. In this article, we synthesize our best practices and pitfalls we identified while working on SportsXR. We highlight lessons learned in working with sports domain experts in designing and evaluating sports visualizations and in working with emerging AR/XR technologies. We envision that sports visualization research will benefit the larger visualization community through its unique challenges and opportunities for immersive and situated analytics.",
+    "doi": "10.1109/MCG.2022.3222042"
+  },
+  {
+    "id": "rallycomparator",
+    "teaser": "source/projects/rallycomparator/rallycomparator.png",
+    "title": "RallyComparator: visual comparison of the multivariate and spatial stroke sequence in table tennis rally",
+    "authors": [
+      "Ji Lan",
+      "Jiachen Wang",
+      "Xinhuan Shu",
+      "Zheng Zhou",
+      "Hui Zhang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2022,
+    "abstract": "Table tennis matches consist of many stroke sequences where two players hit the ball interactively and consecutively until one fails to hit the ball. Players usually employ many complicated playing techniques at each stroke in highly antagonistic, variable, and flexible matches. In-depth comparative analyses of players' stroke sequences are necessary to obtain insights into the technical playing patterns of players. Experts commonly use spreadsheets to browse and compare strokes one by one, and this process is tedious and prone to errors. Statistical analyses are limited to well-defined patterns (e.g., value distribution and relation significance) and fail to present complex and peculiar patterns. We collaborated with experts to dig out soft patterns of stroke sequences and proposed a novel interactive visualization system to present and compare the patterns. The main visualization challenge is to display the multivariate stroke sequence and the spatial variation patterns. We designed a glyph-based pattern view to solve the challenge. These comprehensible visualizations and coordinated views in the system allow efficient comparative analysis of stroke sequence patterns and are highly commended by domain experts, who have identified several new and interesting patterns using the system. We demonstrated the effectiveness and usability of the visualization system through case studies with table tennis experts.",
+    "doi": "10.1007/s12650-021-00772-0"
+  },
+  {
+    "id": "smartshots",
+    "teaser": "source/projects/smartshots/smartshots.png",
+    "title": "SmartShots: An Optimization Approach for Generating Videos with Data Visualizations Embedded",
+    "authors": [
+      "Tan Tang",
+      "Junxiu Tang",
+      "Jiewen Lai",
+      "Lu Ying",
+      "Yingcai Wu",
+      "Lingyun Yu",
+      "Peiran Ren"
+    ],
+    "venue": [
+      "ACM TiiS"
+    ],
+    "year": 2022,
+    "abstract": "Videos are well-received methods for storytellers to communicate various narratives. To further engage viewers, we introduce a novel visual medium where data visualizations are embedded into videos to present data insights. However, creating such data-driven videos requires professional video editing skills, data visualization knowledge, and even design talents. To ease the difficulty, we propose an optimization method and develop SmartShots, which facilitates the automatic integration of in-video visualizations. For its development, we first collaborated with experts from different backgrounds, including information visualization, design, and video production. Our discussions led to a design space that summarizes crucial design considerations along three dimensions: visualization, embedded layout, and rhythm. Based on that, we formulated an optimization problem that aims to address two challenges: (1) embedding visualizations while considering both contextual relevance and aesthetic principles and (2) generating videos by assembling multi-media materials. We show how SmartShots solves this optimization problem and demonstrate its usage in three cases. Finally, we report the results of semi-structured interviews with experts and amateur users on the usability of SmartShots.",
+    "doi": "10.1145/3484506"
+  },
+  {
+    "id": "scatterplot-comprehension",
+    "teaser": "source/projects/scatterplot-comprehension/scatterplot-comprehension.png",
+    "title": "What makes a scatterplot hard to comprehend: data size and pattern salience matter",
+    "authors": [
+      "Jiachen Wang",
+      "Xiwen Cai",
+      "Jiajie Su",
+      "Yu Liao",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2022,
+    "abstract": "With the growing popularity of visualizations in various fields, visualization comprehension has gained considerable attention. In this work, we focus on the effect of data size and pattern salience on comprehension of scatterplot, a popular visualization type. We began with a preliminary study in which we interviewed 50 people in terms of comprehension difficulties of 90 different visualizations. The results reveal that data size is one of the top three factors affecting visualization comprehension. Besides, the effect of data size probably depends on the pattern salience within the data. Therefore, we carried out our experiment on the effect of data size and data-related pattern salience on three intermediate-level comprehension tasks, namely finding anomalies, judging correlation, and identifying clusters. The tasks were conducted on the scatterplot due to its familiarity to users and ability to support diverse tasks. Through the experiment, we found a significant interaction effect of data size and pattern salience on the comprehension of the trends in scatterplots. In specific conditions of pattern salience, data size impacts the judgment of anomalies and cluster centers. We discussed the findings in our experiment and further summarized the factors in visualization comprehension.",
+    "doi": "10.1007/s12650-021-00778-8"
+  },
+  {
+    "id": "scrollytelling",
+    "teaser": "source/projects/scrollytelling/scrollytelling.png",
+    "title": "Automatic Generation of Unit Visualization-based Scrollytelling for Impromptu Data Facts Delivery",
+    "authors": [
+      "Junhua Lu",
+      "Wei Chen",
+      "Hui Ye",
+      "Jie Wang",
+      "Honghui Mei",
+      "Yuhui Gu",
+      "Yingcai Wu",
+      "Xiaolong Luke Zhang",
+      "Kwan-Liu Ma"
+    ],
+    "venue": [
+      "PacificVis 2021 Conference Track"
+    ],
+    "year": 2021,
+    "abstract": "Data-driven scrollytelling has become a prevalent way of visual communication because of its comprehensive delivery of perspectives derived from the data. However, creating an expressive scrollytelling story requires both data and design literacy and is time-consuming. As a result, scrollytelling has been mainly used only by professional journalists to disseminate opinions. In this paper, we present an automatic method to generate expressive scrollytelling visualization, which can present easy-to-understand data facts through a carefully arranged sequence of views. The method first enumerates data facts of a given dataset, and scores and organizes them. The facts are further assembled, sequenced into a story, with reader input taken into consideration. Finally, visual graphs, transitions, and text descriptions are generated to synthesize the scrollytelling visualization. In this way, non-professionals can easily explore and share interesting perspectives from selected data attributes and fact types. We demonstrate the effectiveness and usability of our method through both use cases and an in-lab user study.",
+    "doi": "10.1109/PacificVis52677.2021.00011"
+  },
+  {
+    "id": "dancingwords",
+    "teaser": "source/projects/dancingwords/dancingwords.png",
+    "title": "DancingWords: exploring animated word clouds to tell stories",
+    "authors": [
+      "Xinhuan Shu",
+      "Jiang Wu",
+      "Xinke Wu",
+      "Hongye Liang",
+      "Weiwei Cui",
+      "Yingcai Wu",
+      "Huamin Qu"
+    ],
+    "venue": [
+      "Journal of Visualization",
+      "ChinaVis 2020"
+    ],
+    "year": 2021,
+    "titleKey": [
+      "Honorable Mention"
+    ],
+    "abstract": "By encoding semantic relations into relative positions, word clouds have shown the capability to deliver richer messages than purely visualizing word frequencies. Existing studies mainly focus on layout algorithms that cluster related words, preserve temporal coherence, and optimize spatial shapes. However, they cannot fully convey multiple relations among words and their evolvement through relative positions and static representations. In this paper, we explore animated word clouds that take advantage of storytelling strategies to present interactions between words and show the dynamic process of content changes, thus communicating the underlying stories. We initially create several exemplars of animated word clouds with designers through a structured iterative design process. These exemplars lead to a preliminary design space that distills essential narrative elements with design choices. Based on the design space, we develop a prototype tool, DancingWords, which provides story-oriented interactions and automatic layouts for users to generate animated word clouds. We evaluate the expressiveness and usefulness of our system through several example animated stories and a usability study with general users. The results show that DancingWords allows users to produce appealing storytelling videos easily and quickly for communication.",
+    "doi": "10.1007/s12650-020-00689-0"
+  },
+  {
+    "id": "ecolens",
+    "teaser": "source/projects/ecolens/ecolens.png",
+    "title": "EcoLens: visual analysis of ecological regions in urban contexts using traffic data",
+    "authors": [
+      "Zhuochen Jin",
+      "Nan Cao",
+      "Yang Shi",
+      "Wenchao Wu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization",
+      "ChinaVis 2020"
+    ],
+    "year": 2021,
+    "titleKey": [
+      "Best Paper"
+    ],
+    "abstract": "The increasing availability of spatiotemporal data provides unprecedented opportunities for understanding the structure of an urban area in terms of people's activity pattern and how they form the latent regions over time. However, existing solutions are limited in their capacity of capturing the evolutionary patterns of dynamic latent regions within urban context. In this work, we introduce an interactive visual analysis approach, EcoLens, that allows analysts to progressively explore and analyze the complex dynamic segmentation patterns of a city using traffic data. We propose an extended nonnegative matrix factorization-based algorithm smoothed over both spatial and temporal dimensions to capture the spatiotemporal dynamics of the city. The algorithm also ensures the orthogonality of its result to facilitate the interpretation of different patterns. A suite of visualizations is designed to illustrate the dynamics of city segmentation and the corresponding interactions are added to support the exploration of the segmentation patterns over time. We evaluate the effectiveness of our system via case studies using a real-world dataset and a qualitative interview with the domain expert.",
+    "doi": "10.1007/s12650-020-00707-1"
+  },
+  {
+    "id": "interaction-survey",
+    "teaser": "source/projects/interaction-survey/interaction-survey.png",
+    "title": "Examining interaction techniques in data visualization authoring tools from the perspective of goals and human cognition: a survey",
+    "authors": [
+      "Sadia Rubab",
+      "Junxiu Tang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2021,
+    "abstract": "We review the state-of-the-art interaction techniques of visualization authoring tools. The visualization tools tend to help users in the creation, exploration, or presentation of visualizations. Also, they allow users to craft expressive designs or extract data from visualizations. The review presents the interaction techniques integrated into the tools for those mentioned above five high-level goals. We cover each goal's tools and summarize how a sequence in the independent interaction techniques leads to the goal. We also discuss how well researchers had evaluated the usability and intuitiveness of interaction techniques. We aimed to reflect on the strengths and weaknesses of the evaluations. To that end, from the perspective of human cognition, we reviewed the goals, procedures, and findings of evaluations. Principally, human cognition is engaged when they perform tasks in a tool. The interaction techniques bridge the gap between human cognition and the goals they want to achieve from the tool. To sum up, in this review, we present a novel triad 'goals-interaction techniques-cognition' taxonomy. Besides, the review suggests the need for further work to enhance tools and understand users.",
+    "doi": "10.1007/s12650-020-00705-3"
+  },
+  {
+    "id": "mig-viewer",
+    "teaser": "source/projects/mig-viewer/mig-viewer.jpg",
+    "title": "MIG-Viewer: Visual analytics of soccer player migration",
+    "authors": [
+      "Anqi Cao",
+      "Xiao Xie",
+      "Ji Lan",
+      "Huihua Lu",
+      "Xinli Hou",
+      "Jiachen Wang",
+      "Hui Zhang",
+      "Dongyu Liu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2021,
+    "abstract": "How could soccer player migration impact national team performance, or vice versa? The answer to this question could play an essential role in making appropriate decisions and policies regarding the international mobility of soccer players. However, answering such a question faces two main challenges, including the complex relationship between variables in multi-attribute temporal data describing migrated players and national team performance, and the interpretation of analysis results in policymaking scenarios. In this work, we have closely collaborated with domain experts and characterized the problems of soccer player migration analysis. To address the first challenge, we adapt a cross-lagged panel analysis model into the player migration analysis problem. This cross-lagged panel analysis model is effective to evaluate the impact strength between player migration and national team performance, and straightforward to reveal the causal relationship. To address the second challenge, we design and develop a visual analytics system, MIG-Viewer, to help the experts to interpret the results of the proposed model efficiently. With MIG-Viewer, the experts can navigate the countries of interest in accordance with migration strategy, conduct comprehensive analysis with the comparison of impact strength, and adjust player migration and inspect further details of a specific country. We present two case studies using global player migration data since 1992 with three soccer analysis experts to demonstrate the effectiveness and usefulness of the system.",
+    "doi": "10.1016/j.visinf.2021.09.002"
+  },
+  {
+    "id": "shortvideo-guidelines",
+    "teaser": "source/projects/shortvideo-guidelines/shortvideo-guidelines.png",
+    "title": "Design guidelines for augmenting short-form videos using animated data visualizations",
+    "authors": [
+      "Tan Tang",
+      "Junxiu Tang",
+      "Jiayi Hong",
+      "Lingyun Yu",
+      "Peiran Ren",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2020,
+    "abstract": "Short-form videos are an increasingly prevalent medium for storytelling in journalism and marketing, of which information can be greatly enhanced by animated data visualizations. However, there is no prior research that systematically investigates how to augment such short videos with data visualizations in an effective way. We conducted a design workshop with experienced video, animation designers and visualization experts to discuss principles and practices for augmenting short-form videos with data visualizations. After the workshop, we summarized the participants' design considerations and proposed 20 design guidelines. We further collected design purposes of the participants and associated these purposes with the guidelines. Finally, we conducted a crowd-sourcing study and a task-based evaluation to validate the effectiveness and usability of the guidelines. Results indicate that our guidelines can significantly improve the videos accompanied with data visualizations and help novices easily obtain desired knowledge when augmenting videos.",
+    "doi": "10.1007/s12650-020-00644-z"
+  },
+  {
+    "id": "smartshots-demo",
+    "teaser": "source/projects/smartshots-demo/smartshots-demo.png",
+    "title": "SmartShots: Enabling Automatic Generation of Videos with Data Visualizations Embedded",
+    "authors": [
+      "Tan Tang",
+      "Junxiu Tang",
+      "Jiewen Lai",
+      "Lu Ying",
+      "Peiran Ren",
+      "Lingyun Yu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "ACM MM 2020 Demo"
+    ],
+    "year": 2020,
+    "abstract": "Videos become prevalent for storytellers to inspire viewers' interests. To further enhance narrations, visualizations are integrated into videos to present data-driven insights. However, manually crafting such data-driven videos is difficult and time-consuming. Thus, we present SmartShots, a system that facilitates the automatic integration of in-video visualizations. Specifically, we propose a computational framework that integrates non-verbal video clips, images, a melody, and a data table to create a video with data visualizations embedded. The system automatically translates the multi-media material into shots and then combines the shots into a compelling video. In addition, we develop a set of post-editing interactions to incorporate users' design knowledge and help them re-edit the automatically-generated videos.",
+    "doi": "10.1145/3394171.3414356"
+  },
+  {
+    "id": "uncertainty-streaming",
+    "title": "Toward the better modeling and visualization of uncertainty for streaming data",
+    "authors": [
+      "Tan Tang",
+      "Kaijuan Yuan",
+      "Junxiu Tang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2019,
+    "abstract": "Streaming data can be found in many different scenarios, in which data are generated and arriving continuously. Sampling approaches have been proven as an effective means to cope with the sheer volume of the streaming data. However, sampling methods also introduce uncertainty, which can affect the reliability of subsequent analysis and visualization. In this paper, we propose a novel model called PDm and visualization named uncertainty tree to present uncertainty that arises from sampling streaming data. PDm is first introduced to characterize uncertainty of streaming data, and an optimization method is then proposed to minimize uncertainty. Uncertainty tree is further developed to enhance data understanding by visualizing uncertainty and revealing temporal patterns of streaming data. Lastly, a quantitative evaluation and real-world examples have been conducted to demonstrate the effectiveness and efficacy of the proposed techniques.",
+    "teaser": "source/projects/uncertainty-streaming/uncertainty-streaming.jpg",
+    "doi": "10.1007/s12650-018-0518-y"
+  },
+  {
+    "id": "rankbrushers",
+    "title": "RankBrushers: interactive analysis of temporal ranking ensembles",
+    "authors": [
+      "Dongming Han",
+      "Jiacheng Pan",
+      "Fangzhou Guo",
+      "Xiaonan Luo",
+      "Yingcai Wu",
+      "Wenting Zheng",
+      "Wei Chen"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2019,
+    "abstract": "Temporal ranking ensembles indicate time-evolving multivariate rankings. Such data can be commonly found in our daily life, for example, different rankings of universities (QS, ARWU, THE, and USNews) over year and those of NBA players over season. Effective analysis and tracking of rankings allow users to gain insights into the overall ranking change over time and seek the explanation for the change. This paper introduces a novel visual analytics approach for characterizing and visualizing the uncertainty, dynamics, and differences of ranking ensemble data. A novel visual design is proposed to characterize the evolution pattern, distribution, and uncertainty of a large number of temporal ranking ensembles. The evolutionary ranking ensembles are progressively explored, tracked, and compared by means of an intuitive visualization system. Two case studies and a task-driven user study conducted on real datasets demonstrate the effectiveness and feasibility of the implemented system.",
+    "teaser": "source/projects/rankbrushers/rankbrushers.jpg",
+    "doi": "10.1007/s12650-019-00598-x"
+  },
+  {
+    "id": "steering-data-quality",
+    "title": "Steering data quality with visual analytics: The complexity challenge",
+    "authors": [
+      "Shixia Liu",
+      "Gennady Andrienko",
+      "Yingcai Wu",
+      "Nan Cao",
+      "Liu Jiang",
+      "Conglei Shi",
+      "Yu-Shuen Wang",
+      "Seokhee Hong"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2018,
+    "abstract": "Data quality management, especially data cleansing, has been extensively studied for many years in the areas of data management and visual analytics. In the paper, we first review and explore the relevant work from the research areas of data management, visual analytics and human-computer interaction. Then for different types of data such as multimedia data, textual data, trajectory data, and graph data, we summarize the common methods for improving data quality by leveraging data cleansing techniques at different analysis stages. Based on a thorough analysis, we propose a general visual analytics framework for interactively cleansing data. Finally, the challenges and opportunities are analyzed and discussed in the context of data and humans.",
+    "teaser": "source/projects/steering-data-quality/steering-data-quality.jpg",
+    "doi": "10.1016/j.visinf.2018.12.001"
+  },
+  {
+    "id": "egocomp",
+    "title": "egoComp: A node-link-based technique for visual comparison of ego-networks",
+    "authors": [
+      "Dongyu Liu",
+      "Fangzhou Guo",
+      "Bowen Deng",
+      "Huamin Qu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Information Visualization"
+    ],
+    "year": 2017,
+    "abstract": "Analysis of ego-networks is a critical research problem when analyzing large-scale social networks, as an ego-network represents the social circle a person actually contacts with. One of the core tasks in ego-network analysis is visual comparison, which includes edge comparison and node comparison. Although various works have been done to support comparing normal networks and ego-networks, intuitive node comparison of two ego-networks is still challenging. In this article, we propose egoComp, an intuitive and expressive visualization technique, to analyze the node difference between two ego-networks. To preserve the latent structure of ego-network and lay emphasis on intuitiveness, our design is node-link-based (radial tree layout) and uses a side-by-side method to compare ego-networks. We design a novel storyflow-like graph layout to reveal the relationship of two ego-networks at the individual node level. Furthermore, three different layout algorithms, including origin, greedy, and assignment algorithms, are proposed to meet different user requirements. We demonstrate the effectiveness of our system through case studies and a user study and then discuss the limitations thoroughly as well as the possible solutions and potential future work.",
+    "teaser": "source/projects/egocomp/egocomp.png",
+    "doi": "10.1177/1473871616667632"
+  },
+  {
+    "id": "gamelifevis",
+    "title": "GameLifeVis: visual analysis of behavior evolutions in multiplayer online games",
+    "authors": [
+      "Wei Chen",
+      "Junhua Lu",
+      "Dingke Kong",
+      "Zhiqi Liu",
+      "Yandi Shen",
+      "Yinyin Chen",
+      "Jingxuan He",
+      "Shu Liu",
+      "Ye Qi",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visualization"
+    ],
+    "year": 2017,
+    "abstract": "Analyzing the user behaviors of multiplayer online games can help understand the sociality and characteristics of players in the virtual world. The primary task is to characterize the game life and its evolution within the game. We propose a novel network-based representation, EvolutionLine Graph, which illustrates the evolving behavior of massive game players as a sequence of time-oriented transitions among various status. We design and implement a novel visual analytics system, GameLifeVis, that supports the visualization, exploration, and analysis of multi-level user behaviors in an integrated visual interface. We exemplify the efficiency of our approach with case studies on a multi-faceted dataset collected within a popular online game (15 million players) in 18 months.",
+    "teaser": "source/projects/gamelifevis/gamelifevis.png",
+    "doi": "10.1007/s12650-016-0416-0"
+  },
+  {
+    "id": "tievis",
+    "title": "TieVis: visual analytics of evolution of interpersonal ties",
+    "authors": [
+      "Fangzhou Guo",
+      "Wei Chen",
+      "Tao Lin",
+      "Biao Zhu",
+      "Fan Zhang",
+      "Yingcai Wu",
+      "Huamin Qu"
+    ],
+    "venue": [
+      "Journal of Visualization",
+      "Edutainment 2016"
+    ],
+    "year": 2017,
+    "abstract": "Interpersonal ties, such as strong ties and weak ties, describe the information carried by an edge in social network. Tracking the dynamic changes of interpersonal ties can thus enhance our understanding of the evolution of a complex network. Nevertheless, existing studies in dynamic network visualization mostly focus on the temporal changes of nodes or structures of the network without an adequate support of analysis and exploration of the temporal changes of interpersonal ties. In this paper, we introduce a new visual analytics method that enables interactive analysis and exploration of the dynamic changes of interpersonal ties. The method integrates four well-linked visualizations, including a scatterplot, a pixelbar chart, a layered graph, and a node–link diagram, to allow for multi-perspective analysis of the evolution of interpersonal ties. The scatterplot created by multi-dimensional scaling can help reveal the clusters of ties and detect abnormal ties, while other visualizations allow users to explore the clusters of ties interactively from different perspectives. Two case studies have been conducted to demonstrate the effectiveness of our approach.",
+    "teaser": "source/projects/tievis/tievis.jpg",
+    "doi": "10.1007/s12650-017-0430-x"
+  },
+  {
+    "id": "unmat",
+    "title": "UNMAT: Visual comparison and exploration of uncertainty in large graph sampling",
+    "authors": [
+      "Tan Tang",
+      "Sufei Wang",
+      "Yunfeng Li",
+      "Bohan Li",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Visual Languages & Computing"
+    ],
+    "year": 2017,
+    "abstract": "Graph sampling, simplying the networks while preserving primary graph characteristics, provides a convenient means for exploring large network. During the last few years a variety of graph sampling algorithms have been proposed, and the evaluation and comparison of the algorithms has witnessed a growing interest. Although different tests have been conducted, an important aspect of graph sampling, namely, uncertainty in graph sampling, has been ignored so far. Additionally, existing studies mainly rely on simple statistical analysis and a few relatively small datasets. They may not be applicable to other more complicated graphs with much larger numbers of nodes and edges. Furthermore, while graph clustering is becoming increasingly important, it is still unknown how different sampling algorithms and their associated uncertainty can impact the subsequent graph analysis, such as graph clustering. In this work, we propose an efficient visual analytics framework for measuring the uncertainty from different graph sampling methods and quantifying the influence of the uncertainty in general graph analysis procedures. A spreadsheet-style visualization with rich user interactions is presented to facilitate visual comparison and analysis of multiple graph sampling algorithms. Our framework helps users gain a better understanding of the graph sampling methods in producing uncertainty information. The framework also makes it possible for users to quickly evaluate graph sampling algorithms and select the most appropriate one for their applications.",
+    "teaser": "source/projects/unmat/unmat.jpg",
+    "doi": "10.1016/j.jvlc.2017.05.006"
+  },
+  {
+    "id": "visual-voting",
+    "title": "A visual voting framework for weather forecast calibration",
+    "authors": [
+      "Hongsen Liao",
+      "Yingcai Wu",
+      "Li Chen",
+      "Thomas M. Hamill",
+      "Yunhai Wang",
+      "Kan Dai",
+      "Hui Zhang",
+      "Wei Chen"
+    ],
+    "venue": [
+      "IEEE SciVis 2015"
+    ],
+    "year": 2015,
+    "abstract": "Numerical weather predictions have been widely used for weather forecasting. Many large meteorological centers are producing highly accurate ensemble forecasts routinely to provide effective weather forecast services. However, biases frequently exist in forecast products because of various reasons, such as the imperfection of the weather forecast models. Failure to identify and neutralize the biases would result in unreliable forecast products that might mislead analysts; consequently, unreliable weather predictions are produced. The analog method has been commonly used to overcome the biases. Nevertheless, this method has some serious limitations including the difficulties in finding effective similar past forecasts, the large search space for proper parameters and the lack of support for interactive, real-time analysis. In this study, we develop a visual analytics system based on a novel voting framework to circumvent the problems. The framework adopts the idea of majority voting to combine judiciously the different variants of analog methods towards effective retrieval of the proper analogs for calibration. The system seamlessly integrates the analog methods into an interactive visualization pipeline with a set of coordinated views that characterizes the different methods. Instant visual hints are provided in the views to guide users in finding and refining analogs. We have worked closely with the domain experts in the meteorological research to develop the system. The effectiveness of the system is demonstrated using two case studies. An informal evaluation with the experts proves the usability and usefulness of the system.",
+    "teaser": "source/projects/visual-voting/visual-voting.png",
+    "doi": "10.1109/SciVis.2015.7429488"
+  },
+  {
+    "id": "tt-performance-optimization",
+    "title": "The performance optimization model of adjusting technical and tactical decisions with ideal usages for elite female table tennis players",
+    "authors": [
+      "Xiangtong Chu",
+      "Wenxuan Yu",
+      "Xiao Xie",
+      "Yingcai Wu",
+      "Hui Zhang"
+    ],
+    "venue": [
+      "BMC Sports Science, Medicine and Rehabilitation"
+    ],
+    "year": 2025,
+    "abstract": "Analyzing technical and tactical behaviors in table tennis and developing optimization strategies are essential for improving player performance. However, most existing studies focus on evaluating the effectiveness of individual behaviors, but offer limited insight into how these behaviors should be strategically used. This highlights the need for data-driven methods that guide practical usage decisions.",
+    "teaser": "source/projects/tt-performance-optimization/tt-performance-optimization.jpg",
+    "doi": "10.1186/s13102-025-01347-4"
+  },
+  {
+    "id": "eeg-ictal-mtle",
+    "title": "EEG signature orchestrating expression of ictal behavior in mesial temporal lobe epilepsy",
+    "authors": [
+      "Chenmin He",
+      "Wenhan Hu",
+      "Kai Xiong",
+      "Lingqi Ye",
+      "Hongyi Ye",
+      "Lingli Hu",
+      "Yi Ge",
+      "Meng Wang",
+      "Cong Chen",
+      "Bo Jin",
+      "Cenglin Xu",
+      "Yi Wang",
+      "Sha Xu",
+      "Yao Ding",
+      "Yingcai Wu",
+      "Hongjie Jiang",
+      "Junming Zhu",
+      "Meiping Ding",
+      "Wenling Li",
+      "Kai Zhang",
+      "Shuang Wang",
+      "Shan Wang"
+    ],
+    "venue": [
+      "Clinical Neurophysiology"
+    ],
+    "year": 2025,
+    "abstract": "Objectives: We investigated EEG features differentiating clinical seizures (CSs) from subclinical seizures (SCSs) to explore the mechanisms underlying the generation of ictal behavior in mesial temporal lobe epilepsy (mTLE). Methods: Peri-ictal state of power spectral density (PSD) within seizure onset zone (SOZ) and propagation zone (PZ) were compared between SCSs and CSs. Functional connectivity was analyzed using the nonlinear correlation coefficient h2, outgoing links (OUT) and ingoing links (IN). The EEG epochs of CSs-early part and SCSs were equally divided into four segments to reveal dynamic EEG changes. Results: During pre-ictal state, PSD at 30–80 Hz in SOZ was higher in CSs than in SCSs. The preictal OUT and IN values in SOZ at 30–80 Hz were greater in CSs than in SCSs. During CSs-early part, PSD displayed an initial increase in SOZ but a late increase in PZ, with enhanced high-frequency activity in temporal regions and increased low-frequency activity in insula. Conclusion: The enhanced pre-ictal gamma activity within the epileptic network was able to distinguish CSs from SCSs. The unique temporospatial alterations within the epileptic network drive the expression of ictal behavior in mTLE. Significance: The distinct EEG features between SCSs and CSs offer transformative insights into the mechanisms driving ictal behavior.",
+    "teaser": "source/projects/eeg-ictal-mtle/eeg-ictal-mtle.jpg",
+    "doi": "10.1016/j.clinph.2024.12.029"
+  },
+  {
+    "id": "intelligent-cad-2",
+    "title": "Intelligent CAD 2.0",
+    "authors": [
+      "Qiang Zou",
+      "Yingcai Wu",
+      "Zhenyu Liu",
+      "Weiwei Xu",
+      "Shuming Gao"
+    ],
+    "venue": [
+      "Visual Informatics"
+    ],
+    "year": 2024,
+    "abstract": "Integrating modern artificial intelligence (AI) techniques, particularly generative AI, holds the promise of revolutionizing computer-aided design (CAD) tools and the engineering design process. However, the direction of “AI+CAD” remains unclear: how will the current generation of intelligent CAD (ICAD) differ from its predecessor in the 1980s and 1990s, what strategic pathways should researchers and engineers pursue for its implementation, and what potential technical challenges might arise? As an attempt to address these questions, this paper investigates the transformative role of modern AI techniques in advancing CAD towards ICAD. It first analyzes the design process and reconsiders the roles AI techniques can assume in this process, highlighting how they can restructure the path humans, computers, and designs interact with each other. The primary conclusion is that ICAD systems should assume an intensional rather than an extensional role in the design process. This offers insights into the evaluation of the previous generation of ICAD (ICAD 1.0) and outlines a prospective framework and trajectory for the next generation of ICAD (ICAD 2.0).",
+    "teaser": "source/projects/intelligent-cad-2/intelligent-cad-2.jpg",
+    "doi": "10.1016/j.visinf.2024.10.001"
+  },
+  {
+    "id": "eeg-va-epilepsy",
+    "title": "An Electroencephalogram Visual Analytics Approach for Epilepsy",
+    "authors": [
+      "Guoming Ding",
+      "Xiao Xie",
+      "Lingli Hu",
+      "Yingcai Wu",
+      "Shuang Wang"
+    ],
+    "venue": [
+      "Journal of Computer-Aided Design & Computer Graphics"
+    ],
+    "year": 2024,
+    "abstract": "In order to efficiently detect and analyze epileptiform discharges in electroencephalogram of epilepsy patients, an electroencephalogram visual analytics approach for epilepsy is proposed. Firstly, using the electroencephalogram data accumulated by the Second Affiliated Hospital of Zhejiang University School of Medicine during epilepsy treatment, a convolutional neural network model based on the perspective of time domain and time-frequency domain is established for the automatic classification of epileptiform discharges, and Focal Loss is used as the loss function to evaluate the unbalanced distribution of discharge categories. Secondly, based on the classification model and combined with the needs of doctors, an interactive multi-view visual analysis system is designed, which consists of three cooperative modules: waveform classification view, outlier detection view and waveform inspection view. Then, 10 participants and 2 experts were recruited to verify the effectiveness and usability of the system in epilepsy diagnosis by evaluating experiments. The results show that the average F1 score of the established classification model on the dataset used is 0.88, which is better than other classification models and has good robustness. The system is designed with good usability and effectiveness, which can assist doctors in epilepsy diagnosis.",
+    "teaser": "source/projects/eeg-va-epilepsy/eeg-va-epilepsy.png",
+    "doi": "10.3724/SP.J.1089.2024.19839"
+  },
+  {
+    "id": "changevis",
+    "title": "Visualizing the Semantics of Data Wrangling Scripts",
+    "authors": [
+      "Zhongsu Luo",
+      "Kai Xiong",
+      "Siwei Fu",
+      "Yongheng Wang",
+      "Hujun Bao",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Computer-Aided Design & Computer Graphics"
+    ],
+    "year": 2024,
+    "abstract": "Understanding the semantics of data wrangling scripts is a common requirement for data workers. However, due to the complexity and diversity of the types of data transformations and their parameters, understanding the semantics of wrangling scripts is time-consuming and laborious. We worked with four data workers and developed an interactive visualization system, called ChangeVis, to help data workers understand the changes of tables in the process of data wrangling. Based on the Focus+Context technique, ChangeVis scales well and illustrates the changes of table structure, the semantics of data transformations, the changes of column information, and the changes of cell data on a selected code snippet. We used two use cases and a semi-structured user study to demonstrate the usability and effectiveness of ChangeVis.",
+    "teaser": "source/projects/changevis/changevis.png",
+    "doi": "10.3724/SP.J.1089.2024.19901"
+  },
+  {
+    "id": "pre-ictal-fc-mtle",
+    "title": "Pre-ictal fluctuation of EEG functional connectivity discriminates seizure phenotypes in mesial temporal lobe epilepsy",
+    "authors": [
+      "Hongyi Ye",
+      "Chenmin He",
+      "Wenhan Hu",
+      "Kai Xiong",
+      "Lingli Hu",
+      "Cong Chen",
+      "Sha Xu",
+      "Cenglin Xu",
+      "Yi Wang",
+      "Yao Ding",
+      "Yingcai Wu",
+      "Kai Zhang",
+      "Shan Wang",
+      "Shuang Wang"
+    ],
+    "venue": [
+      "Clinical Neurophysiology"
+    ],
+    "year": 2023,
+    "abstract": "Objective: We explored whether quantifiable differences between clinical seizures (CSs) and subclinical seizures (SCSs) occur in the pre-ictal state. Methods: We analyzed pre-ictal stereo-electroencephalography (SEEG) retrospectively across mesial temporal lobe epilepsy patients with recorded CSs and SCSs. Power spectral density and functional connectivity (FC) were quantified within and between the seizure onset zone (SOZ) and the early propagation zone (PZ), respectively. To evaluate the fluctuation of neural connectivity, FC variability was computed. Measures were further verified by a logistic regression model to evaluate their classification potentiality through the area under the receiver-operating-characteristics curve (AUC). Results: Fifty-four pre-ictal SEEG epochs (27 CSs and 27 SCSs) were selected among 14 patients. Within the SOZ, pre-ictal FC variability of CSs was larger than SCSs in 1-45 Hz during 30 seconds before seizure onset. Pre-ictal FC variability between the SOZ and PZ was larger in SCSs than CSs in 55-80 Hz within 1 minute before onset. Using these two variables, the logistic regression model achieved an AUC of 0.79 when classifying CSs and SCSs. Conclusions: Pre-ictal FC variability within/between epileptic zones, not signal power or FC value, distinguished SCSs from CSs. Significance: Pre-ictal epileptic network stability possibly marks seizure phenotypes, contributing insights into ictogenesis and potentially helping seizure prediction.",
+    "teaser": "source/projects/pre-ictal-fc-mtle/pre-ictal-fc-mtle.jpg",
+    "doi": "10.1016/j.clinph.2023.05.004"
+  },
+  {
+    "id": "ictal-eeg-lvfa",
+    "title": "Ictal EEG desynchronization during low-voltage fast activity for prediction of surgical outcomes in focal epilepsy",
+    "authors": [
+      "Lingli Hu",
+      "Kai Xiong",
+      "Lingqi Ye",
+      "Yuyu Yang",
+      "Cong Chen",
+      "Shan Wang",
+      "Yao Ding",
+      "Zhongjin Wang",
+      "Wenjie Ming",
+      "Zhe Zheng",
+      "Hongjie Jiang",
+      "Hong Li",
+      "Junming Zhu",
+      "Cenglin Xu",
+      "Yi Wang",
+      "Meiping Ding",
+      "Zhong Chen",
+      "Yingcai Wu",
+      "Shuang Wang"
+    ],
+    "venue": [
+      "Journal of Neurosurgery"
+    ],
+    "year": 2023,
+    "abstract": "Objective: The authors investigated alterations in functional connectivity (FC) and EEG power during ictal onset patterns of low-voltage fast activity (LVFA) in drug-resistant focal epilepsy. They hypothesized that such changes would be useful to classify epilepsy surgical outcomes. Methods: In a cohort of 79 patients with drug-resistant focal epilepsy who underwent stereoelectroencephalography (SEEG) evaluation as well as resective surgery, FC changes during the peri-LVFA period were measured using nonlinear regression (h2) and power spectral properties within/between three regions: the seizure onset zone (SOZ), early propagation zone (PZ), and noninvolved zone (NIZ). Desynchronization and power desynchronization h2 indices were calculated to assess the degree of EEG desynchronization during LVFA. Multivariate logistic regression was employed to control for confounding factors. Finally, receiver operating characteristic curves were generated to evaluate the performance of desynchronization indices in predicting surgical outcome. Results: Fifty-three patients showed ictal LVFA and distinct zones of the SOZ, PZ, and NIZ. Among them, 39 patients (73.6%) achieved seizure freedom by the final follow-up. EEG desynchronization, measured by h2 analysis, was found in the seizure-free group during LVFA: FC decreased within the SOZ and between regions compared with the pre-LVFA and post-LVFA periods. In contrast, the non-seizure-free group showed no prominent EEG desynchronization. The h2 desynchronization index, but not the power desynchronization index, enabled classification of seizure-free versus non-seizure-free patients after resective surgery. Conclusions: EEG desynchronization during the peri-LVFA period, measured by within-zone and between-zone h2 analysis, may be helpful for identifying patients with favorable postsurgical outcomes and also may potentially improve epileptogenic zone identification in the future.",
+    "teaser": "source/projects/ictal-eeg-lvfa/ictal-eeg-lvfa.jpg",
+    "doi": "10.3171/2022.11.JNS221469"
+  },
+  {
+    "id": "mindfulness-book-of-songs",
+    "title": "Explore Mindfulness Without Deflection: A Data Art Based On The Book Of Songs",
+    "authors": [
+      "Yifang Wang",
+      "Yang Wang",
+      "Yifan Cao",
+      "Huamin Qu",
+      "Junxiu Tang",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE VISAP 2021"
+    ],
+    "year": 2021,
+    "abstract": "The Book of Songs is regarded as the origin of Chinese literature and has a prolonged impact on Chinese culture, aesthetics, and morality. In this work, we have analyzed the 305 poems in The Book of Songs from different dimensions. We aim to learn how various poetic imageries connect abstract themes and subjective emotions at the micro level, and how the poems connect people today and ancestors to understand the universal, everlasting, and poetical human lives at the macro level.",
+    "teaser": "source/projects/mindfulness-book-of-songs/mindfulness-book-of-songs.webp",
+    "doi": "10.1109/VISAP52981.2021.00014"
+  },
+  {
+    "id": "immersive-visualization-survey",
+    "title": "A Survey on Immersive Visualization",
+    "authors": [
+      "Shuainan Ye",
+      "Xiangtong Chu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Computer-Aided Design & Computer Graphics"
+    ],
+    "year": 2021,
+    "abstract": "Immersive visualization is an emerging research field. It aims to make full use of human perception and operation capabilities through the immersion and engagement offered by the immersive interface to support data analysis, reasoning, and decision-making. The latest research on immersive visualization is reviewed. Firstly, the design and evaluation of the visual and non-visual perception in information visualization are introduced. Secondly, the newest interaction methods from the aspects of touch, gesture, gaze, and navigation are summarized. Afterward, the visualization authoring toolkit in terms of desktop, mobile, and mix terminals is overviewed. Finally, the industry trends, applications, and challenges of immersive visualization are discussed.",
+    "teaser": "source/projects/immersive-visualization-survey/immersive-visualization-survey.png",
+    "doi": "10.3724/SP.J.1089.2021.18809"
+  },
+  {
+    "id": "dynamic-graphs-evolution",
+    "title": "Understanding Evolution Patterns in Multiple Sequences of Dynamic Graphs",
+    "authors": [
+      "Kaijuan Yuan",
+      "Siwei Fu",
+      "Xiaodong Ge",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Journal of Computer-Aided Design & Computer Graphics"
+    ],
+    "year": 2020,
+    "abstract": "The analysis of a sequence of dynamic graphs plays an important role in many fields. With data accumulated, analysts are able to investigate evolution patterns in multiple sequences of dynamic graphs, which reveals profound principles in such dataset. However, the complex structures, massive graphs, and particular evolution process bring great challenges to understand the evolution patterns. To extract leading evolutionary patterns in large volume of dynamic graphs, a new pipeline is proposed. First, we transform graph sequences into a series of event sequences, based on which frequent graph sequences are extracted. Besides, an interactive visual prototype integrating the new pipeline is developed to support top-down exploration of massive dynamic graphs. Finally, two case studies are performed to demonstrate the usability and effectiveness of our method in real-world applications, including kinship network and co-authorship analysis.",
+    "teaser": "source/projects/dynamic-graphs-evolution/dynamic-graphs-evolution.png",
+    "doi": "10.3724/SP.J.1089.2020.18463"
+  },
+  {
+    "id": "public-attention-emotion-twitter",
+    "title": "Interplay between Public Attention and Public Emotion toward Multiple Social Issues on Twitter",
+    "authors": [
+      "Tai-Quan Peng",
+      "Guodao Sun",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "PLOS ONE"
+    ],
+    "year": 2017,
+    "abstract": "This study aims to elucidate the intricate interplay between public attention and public emotion toward multiple social issues. A theoretical framework is developed based on three perspectives including endogenous affect hypothesis, affect transfer hypothesis, and affective intelligence theory. Large-scale longitudinal data with 265 million tweets on five social issues are analyzed using a time series analytical approach. Public attention on social issues can influence public emotion on the issue per se. Social issues interact with one another to attract public attention in both cooperative and competitive ways. Instead of a direct transfer from public emotion to public attention, the public emotion toward a social issue moderates the interaction between the issue and other issue(s).",
+    "teaser": "source/projects/public-attention-emotion-twitter/public-attention-emotion-twitter.png",
+    "doi": "10.1371/journal.pone.0167896"
+  },
+  {
+    "id": "immersive-urban-analytics-exploded-views",
+    "title": "Immersive urban analytics through exploded views",
+    "authors": [
+      "Zhutian Chen",
+      "Huamin Qu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "Immersive Analytics 2017"
+    ],
+    "year": 2017,
+    "teaser": "source/projects/immersive-urban-analytics-exploded-views/immersive-urban-analytics-exploded-views.png"
   }
 ]

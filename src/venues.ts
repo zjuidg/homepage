@@ -11,18 +11,49 @@ export const OTHER_ID = 'other';
 
 const FULL_VENUE_NAMES: Partial<Record<Venue, string>> = {
   [Venue.TVCG]: 'IEEE Transactions on Visualization and Computer Graphics',
+  [Venue.CGA]: 'IEEE Computer Graphics and Applications',
   [Venue.CGF]: 'Computer Graphics Forum',
   [Venue.TITS]: 'IEEE Transactions on Intelligent Transportation Systems',
   [Venue.TIST]: 'ACM Transactions on Intelligent Systems and Technology',
+  [Venue.TiiS]: 'ACM Transactions on Interactive Intelligent Systems',
   [Venue.TBD]: 'IEEE Transactions on Big Data',
   [Venue.TMM]: 'IEEE Transactions on Multimedia',
   [Venue.IMWUT]:
     'Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies',
+  [Venue.ComputerScienceReview]: 'Computer Science Review',
   [Venue.JCADCG]: 'Journal of Computer-Aided Design & Computer Graphics',
   [Venue.JournalIntegrationTechnology]: 'Journal of Integration Technology',
   [Venue.JournalOfVisualization]: 'Journal of Visualization',
   [Venue.VisualInformatics]: 'Visual Informatics',
+  [Venue.InformationVisualization]: 'Information Visualization',
+  [Venue.JVLC]: 'Journal of Visual Languages & Computing',
+  [Venue.ACL2026Main]:
+    'Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026 Main)',
+  [Venue.ImmersiveAnalytics2017]:
+    'Workshop on Immersive Analytics, colocated with IEEE VIS 2017',
+  [Venue.IEEEVISAP2021]: 'IEEE VIS Arts Program (VISAP), 2021',
+  [Venue.IEEEVISAP2023]: 'IEEE VIS Arts Program (VISAP), 2023',
   [Venue.VDSIEEEVIS2023]: 'Visualization in Data Science (VDS @ IEEE VIS), 2023',
+};
+
+const CHIP_VENUE_NAMES: Partial<Record<Venue, string>> = {
+  [Venue.CGA]: 'CG&A',
+  [Venue.CGF]: 'CGF',
+  [Venue.ComputerScienceReview]: 'CSR',
+  [Venue.CVM]: 'CVM',
+  [Venue.IMWUT]: 'IMWUT',
+  [Venue.JCADCG]: 'JCAD',
+  [Venue.JournalIntegrationTechnology]: 'JIT',
+  [Venue.JournalOfVisualization]: 'JoV',
+  [Venue.JVLC]: 'JVLC',
+  [Venue.TBD]: 'IEEE TBD',
+  [Venue.TIST]: 'ACM TIST',
+  [Venue.TITS]: 'IEEE TITS',
+  [Venue.TMM]: 'IEEE TMM',
+  [Venue.PLOSOne]: 'PLOS ONE',
+  [Venue.VisualInformatics]: 'VI',
+  [Venue.BMCSportsScienceMedicineRehabilitation]: 'BMC Sports Sci Med Rehabil',
+  [Venue.JournalOfNeurosurgery]: 'J Neurosurg',
 };
 
 /** Reader-facing venue name. JSON keeps compact labels for filtering and data stability. */
@@ -38,9 +69,14 @@ export function venueDisplayName(label: string): string {
   };
 
   return (
+    yearSuffix('ACL', 'Annual Meeting of the Association for Computational Linguistics') ??
     yearSuffix('AAAI', 'AAAI Conference on Artificial Intelligence') ??
+    yearSuffix('ACM MM', 'ACM International Conference on Multimedia', ' ') ??
+    yearSuffix('CCS', 'ACM SIGSAC Conference on Computer and Communications Security') ??
     yearSuffix('CHI', 'ACM CHI Conference on Human Factors in Computing Systems') ??
+    yearSuffix('Edutainment', 'International Conference on E-Learning and Games (Edutainment)') ??
     yearSuffix('EuroVis', 'Eurographics Conference on Visualization') ??
+    yearSuffix('IEEE SciVis', 'IEEE Scientific Visualization Conference', ' ') ??
     yearSuffix('IEEE VIS', 'IEEE VIS', ' ') ??
     yearSuffix('IEEE VR', 'IEEE Conference on Virtual Reality and 3D User Interfaces') ??
     yearSuffix('ICML', 'International Conference on Machine Learning') ??
@@ -56,6 +92,11 @@ export function venueDisplayName(label: string): string {
 /** Strip a trailing year (and anything after it) from a venue label. */
 function series(label: string): string {
   return label.replace(/\s*(?:19|20)\d{2}.*$/, '').trim() || label;
+}
+
+/** Compact label for publication-card venue chips. */
+export function venueChipLabel(label: string): string {
+  return CHIP_VENUE_NAMES[label as Venue] ?? series(label);
 }
 
 /**

@@ -83,8 +83,9 @@ export default function Hero(props: Props) {
         <p class="eyebrow hero__eyebrow">{t().hero.eyebrow}</p>
 
         <h1 class="hero__title">
-          <span>{t().hero.title1}</span>
-          <span class="hero__title-em">{t().hero.title2}</span>
+          <img style="max-width: 600px; width: 100%; height: auto;" src="/logo.png" alt="" class="hero__logo" />
+          {/* <span>{t().hero.title1}</span>
+          <span class="hero__title-em">{t().hero.title2}</span> */}
         </h1>
 
         <p class="hero__lead">{t().hero.lead}</p>
@@ -92,7 +93,7 @@ export default function Hero(props: Props) {
         <div class="hero__actions">
           <a class="btn btn--primary" href="#publications">
             {t().hero.explore}
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg>
           </a>
           <a class="btn btn--ghost" href="#about">{t().hero.aboutCta}</a>
         </div>

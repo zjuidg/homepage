@@ -2,7 +2,7 @@ import { createSignal, Show, For } from 'solid-js';
 import type { Publication } from '../types';
 import { asset, doiUrl, paperUrl } from '../data';
 import { searchPublications } from '../search';
-import { venueDisplayName } from '../venues';
+import { venueChipLabel, venueDisplayName } from '../venues';
 import { t } from '../i18n';
 import './PublicationCard.css';
 
@@ -40,6 +40,17 @@ export default function PublicationCard(props: { pub: Publication; index: number
 
       <div class="pcard__main">
         <div class="pcard__meta">
+          <Show when={p.venue.length}>
+            <div class="pcard__venues" aria-label="Publication venues">
+              <For each={p.venue}>
+                {(venue) => (
+                  <span class="pcard__venue-chip" title={venueDisplayName(venue)}>
+                    {venueChipLabel(venue)}
+                  </span>
+                )}
+              </For>
+            </div>
+          </Show>
           <span class="pcard__tag pcard__year">{p.year}</span>
           <Show when={p.titleKey?.length}>
             <For each={p.titleKey}>
