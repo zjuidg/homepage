@@ -9,6 +9,7 @@ const ICONS: Record<string, string> = {
   doi: 'M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1 M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1',
   video: 'M23 7l-7 5 7 5V7z M1 5h15v14H1z',
   demo: 'M5 3l14 9-14 9V3z',
+  abstract: 'M4 6h16 M4 12h12 M4 18h8',
 };
 
 function LinkBtn(props: { kind: keyof typeof ICONS; label: string; href: string }) {
@@ -40,7 +41,16 @@ export default function PublicationCard(props: { pub: Publication; index: number
           <For each={p.venue}>{(v) => <span class="pcard__venue">{v}</span>}</For>
           <span class="pcard__tag pcard__year">{p.year}</span>
           <Show when={p.titleKey?.length}>
-            <For each={p.titleKey}>{(k) => <span class="pcard__award">★ {k}</span>}</For>
+            <For each={p.titleKey}>
+              {(k) => (
+                <span class="pcard__award">
+                  <svg class="pcard__award-star" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                  </svg>
+                  {k}
+                </span>
+              )}
+            </For>
           </Show>
         </div>
 
@@ -62,16 +72,23 @@ export default function PublicationCard(props: { pub: Publication; index: number
         </Show>
 
         <div class="pcard__links">
+          <Show when={p.abstract}>
+            <button
+              class="pcard__link pcard__abstract-toggle"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open()}
+            >
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d={ICONS.abstract} />
+              </svg>
+              {open() ? t().card.hideAbstract : t().card.abstract}
+            </button>
+          </Show>
           <Show when={p.paper}><LinkBtn kind="paper" label={t().card.paper} href={paperUrl(p.paper)} /></Show>
           <Show when={doi}><LinkBtn kind="doi" label={t().card.doi} href={doi} /></Show>
           <Show when={p.video}><LinkBtn kind="video" label={t().card.video} href={p.video!} /></Show>
           <Show when={p.demo}><LinkBtn kind="demo" label={t().card.demo} href={p.demo!} /></Show>
           <Show when={p.system}><LinkBtn kind="demo" label={t().card.system} href={p.system!} /></Show>
-          <Show when={p.abstract}>
-            <button class="pcard__link pcard__abstract-toggle" onClick={() => setOpen((v) => !v)}>
-              {open() ? t().card.hideAbstract : t().card.abstract}
-            </button>
-          </Show>
         </div>
       </div>
     </article>

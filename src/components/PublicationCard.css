@@ -61,6 +61,7 @@
   border-radius: 6px;
   box-shadow: 0 2px 12px -2px color-mix(in srgb, var(--award) 60%, transparent);
 }
+.pcard__award-star { flex: none; }
 
 .pcard__title { margin: 0 0 8px; }
 .pcard__title button {
