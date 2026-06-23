@@ -1,6 +1,7 @@
 import { createSignal, Show, For } from 'solid-js';
 import type { Publication } from '../types';
 import { asset, doiUrl, paperUrl } from '../data';
+import { searchPublications } from '../search';
 import { t } from '../i18n';
 import './PublicationCard.css';
 
@@ -65,7 +66,18 @@ export default function PublicationCard(props: { pub: Publication; index: number
           </button>
         </h3>
 
-        <p class="pcard__authors">{p.authors.join(', ')}</p>
+        <p class="pcard__authors">
+          <For each={p.authors}>
+            {(author, i) => (
+              <>
+                <button type="button" class="pcard__author" onClick={() => searchPublications(author)}>
+                  {author}
+                </button>
+                <Show when={i() < p.authors.length - 1}>, </Show>
+              </>
+            )}
+          </For>
+        </p>
 
         <Show when={open() && p.abstract}>
           <p class="pcard__abstract">{p.abstract}</p>

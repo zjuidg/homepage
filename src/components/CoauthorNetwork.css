@@ -93,7 +93,7 @@
 
 /* ---- nodes ---- */
 .net__node {
-  cursor: grab;
+  cursor: pointer;
 }
 .net__node:active {
   cursor: grabbing;
@@ -104,7 +104,7 @@
   /* the single, stable hit target for the whole node (bigger than the dot, so
      small pointer movements near the edge don't thrash enter/leave) */
   pointer-events: all;
-  transition: fill 0.25s;
+  transition: fill 0.25s, stroke 0.25s;
 }
 .net__dot {
   fill: var(--accent);
@@ -115,6 +115,14 @@
 }
 .net__node:hover .net__halo {
   fill: rgba(255, 255, 255, 0.06);
+}
+.net__node:focus-visible {
+  outline: none;
+}
+.net__node:focus-visible .net__halo {
+  fill: rgba(91, 140, 255, 0.12);
+  stroke: var(--accent);
+  stroke-width: 2;
 }
 
 .net__label {
