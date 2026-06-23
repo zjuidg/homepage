@@ -46,8 +46,8 @@
   color: var(--text);
 }
 .net__threshold button.active {
-  color: #06070d;
-  background: var(--gradient);
+  color: #07070d;
+  background: var(--accent);
 }
 
 .net__stats {
