@@ -37,12 +37,26 @@
   font-size: 0.95rem;
   cursor: pointer;
   appearance: none;
+  /* A native select grows to fit its widest option; some venue labels are long,
+     so pin a compact width and let the closed-value text truncate instead of
+     stretching the control (and overflowing the viewport on mobile). */
+  flex: 0 0 auto;
+  width: 180px;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236b7390' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   transition: border-color 0.25s;
 }
 .pubs__select:focus { outline: none; border-color: var(--accent); }
+@media (max-width: 620px) {
+  /* Fill the row on mobile, where the select wraps onto its own line. */
+  .pubs__select { flex: 1 1 auto; width: auto; }
+}
 .pubs__select option { background: var(--option-bg); color: var(--text); }
 
 .pubs__award-filter {
