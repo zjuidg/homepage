@@ -15,7 +15,7 @@
 .carousel__slide {
   position: relative;
   flex: 0 0 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   display: block;
   overflow: hidden;
 }
