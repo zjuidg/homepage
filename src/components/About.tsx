@@ -15,6 +15,10 @@ const recent: string[][] = [
   ['AdversaFlow', 'KEditVis', 'Smartboard'],
 ];
 
+const TIP_WIDTH = 280;
+const TIP_MARGIN = 12;
+const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
+
 export default function About(props: { pubs?: Publication[] }) {
   const [tip, setTip] = createSignal<{ x: number; y: number; title: string; venue: string } | null>(null);
   let gridEl: HTMLDivElement | undefined;
@@ -36,7 +40,12 @@ export default function About(props: { pubs?: Publication[] }) {
     const info = tagInfo().get(name);
     if (!info || !gridEl) return;
     const r = gridEl.getBoundingClientRect();
-    setTip({ x: e.clientX - r.left, y: e.clientY - r.top, title: info.title, venue: info.venue });
+    const tipWidth = Math.min(TIP_WIDTH, Math.max(0, r.width - TIP_MARGIN * 2));
+    const minX = TIP_MARGIN + tipWidth / 2;
+    const maxX = r.width - TIP_MARGIN - tipWidth / 2;
+    const rawX = e.clientX - r.left;
+    const x = minX <= maxX ? clamp(rawX, minX, maxX) : r.width / 2;
+    setTip({ x, y: e.clientY - r.top, title: info.title, venue: info.venue });
   };
 
   return (
