@@ -18,6 +18,16 @@
   aspect-ratio: 4 / 3;
   display: block;
   overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+.carousel__slide:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
 }
 .carousel__slide img {
   width: 100%;

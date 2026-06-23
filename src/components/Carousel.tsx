@@ -2,6 +2,7 @@ import { createSignal, For, onCleanup, onMount, Show } from 'solid-js';
 import type { Slide } from '../types';
 import { asset } from '../data';
 import { reveal } from '../reveal';
+import { searchPublications } from '../search';
 import { lang, t } from '../i18n';
 import './Carousel.css';
 
@@ -46,10 +47,11 @@ export default function Carousel(props: { slides: Slide[] }) {
             <div class="carousel__track" style={{ transform: `translateX(-${active() * 100}%)` }}>
               <For each={props.slides}>
                 {(s) => (
-                  <a
+                  <button
+                    type="button"
                     class="carousel__slide"
-                    href="#publications"
                     aria-label={caption(s)}
+                    onClick={() => searchPublications(s.subtitle || caption(s))}
                   >
                     <img src={asset(s.imgSrc)} alt="" loading="lazy" />
                     <div class="carousel__caption">
@@ -58,7 +60,7 @@ export default function Carousel(props: { slides: Slide[] }) {
                         <p class="carousel__subtitle">{s.subtitle}</p>
                       </Show>
                     </div>
-                  </a>
+                  </button>
                 )}
               </For>
             </div>
