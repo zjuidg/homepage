@@ -107,9 +107,9 @@ Field behavior worth knowing:
   a full URL is used as-is.
 
 ### 4. Deploy
-Push to `main` → the GitHub Action builds and deploys to Cloudflare Pages. Or deploy
-manually: `pnpm build && npx wrangler pages deploy dist --project-name=zjuidg-homepage`.
-The build needs `VITE_PAPERS_BASE` set (locally via `.env`; in CI via a repo variable).
+Push to `main` → the GitHub Action (`.github/workflows/deploy.yml`) builds and publishes
+to GitHub Pages. The build needs `VITE_PAPERS_BASE` set (locally via `.env`; in CI via a
+repo variable). No manual deploy step — pushing is the deploy.
 
 ### 5. Regenerate the paper map
 The "Paper map" section (`src/components/PaperMap.tsx`) draws one dot per paper at a
@@ -135,18 +135,27 @@ system/paper names verbatim; leave `subtitle` (the paper title) untranslated:
   "title":   "Foo Bar presented BazSystem at ACM CHI 2026!",
   "titleZh": "Foo Bar 在 ACM CHI 2026 上汇报了 BazSystem！",
   "subtitle":"Full Paper Title",
-  "imgSrc":  "source/slides/baz.jpg",          // committed image
-  "link":    "/publications/foo"
+  "imgSrc":  "source/slides/baz.jpg"           // committed image
 }
 ```
 
+Clicking a slide searches the publication list for `subtitle` (the paper title) and scrolls
+to it — see `searchPublications()` in `src/components/Carousel.tsx`. Make `subtitle` match
+the publication's `title` exactly so the search resolves to a single card.
+
 ## Deployment quick reference
 
-- **Hosting:** Cloudflare Pages, project `zjuidg-homepage` → https://zjuidg-homepage.pages.dev
+- **Hosting:** GitHub Pages, served at the custom domain https://zjuidg.org (apex, no
+  subpath). The domain is pinned by `public/CNAME` (→ `dist/CNAME` at build), so Vite's
+  `base` stays `/`. Repo Settings → Pages → Source must be **"GitHub Actions"**.
+- **DNS (apex `zjuidg.org`):** A records → `185.199.108.153`, `185.199.109.153`,
+  `185.199.110.153`, `185.199.111.153`; optional `www` → CNAME `zjuidg.github.io`.
 - **Paper PDFs:** Cloudflare R2 bucket `zjuidg-papers`, public origin
-  `https://pub-b17d7d2288df4942a00824c4394886f8.r2.dev` (`VITE_PAPERS_BASE`).
-- **CI:** `.github/workflows/deploy.yml` deploys on push to `main`. Requires repo secrets
-  `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` and variable `VITE_PAPERS_BASE`.
+  `https://pub-b17d7d2288df4942a00824c4394886f8.r2.dev` (`VITE_PAPERS_BASE`). (R2 is still
+  used for PDFs even though the site itself is on GitHub Pages.)
+- **CI:** `.github/workflows/deploy.yml` builds and deploys on push to `main` using the
+  built-in `GITHUB_TOKEN` (no Cloudflare secrets). Requires only the repo variable
+  `VITE_PAPERS_BASE`.
 
 ## Conventions
 
