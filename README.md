@@ -68,24 +68,30 @@ pnpm preview    # preview the production build
 For local builds, copy `.env.example` to `.env` and set `VITE_PAPERS_BASE` to the R2 origin
 (without it, `Paper` links fall back to local files if present).
 
-## Deployment (Cloudflare Pages)
+## Deployment (GitHub Pages)
 
-The site deploys to **Cloudflare Pages** (project `zjuidg-homepage`). A GitHub Action
-([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) builds and deploys on every
-push to `main`. Configure these in the GitHub repo (Settings → Secrets and variables → Actions):
+The site deploys to **GitHub Pages** at the custom domain **https://zjuidg.org** (apex, no
+subpath). A GitHub Action ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml))
+builds and publishes on every push to `main` using the built-in `GITHUB_TOKEN` — no cloud
+provider secrets required.
+
+One-time setup:
+
+1. **Settings → Pages → Source:** select **"GitHub Actions"**.
+2. **Settings → Pages → Custom domain:** `zjuidg.org` (also pinned by
+   [`public/CNAME`](public/CNAME), which ships to `dist/CNAME` at build, so Vite's `base`
+   stays `/`). Enable *Enforce HTTPS* once DNS resolves.
+3. **DNS** for the apex `zjuidg.org`: `A` records →
+   `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   (optional `www` → `CNAME` `zjuidg.github.io`).
+4. **Settings → Secrets and variables → Actions:** add the repo variable below.
 
 | Kind | Name | Value |
 | --- | --- | --- |
-| Secret | `CLOUDFLARE_API_TOKEN` | token with *Cloudflare Pages: Edit* (and *Workers R2 Storage: Edit*) |
-| Secret | `CLOUDFLARE_ACCOUNT_ID` | your Cloudflare account ID |
 | Variable | `VITE_PAPERS_BASE` | the public R2 origin, e.g. `https://pub-XXXX.r2.dev` |
 
-To deploy manually:
-
-```bash
-pnpm build
-npx wrangler pages deploy dist --project-name=zjuidg-homepage --branch=main
-```
+The site is hosted on GitHub Pages, but paper PDFs are still served from Cloudflare R2 (see
+above) — the two are independent.
 
 ## Project structure
 
