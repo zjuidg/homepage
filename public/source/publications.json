@@ -2086,7 +2086,7 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Conventional racket sports training highly relies on coaches' knowledge and experience, leading to biases in the guidance. To solve this problem, smart wearable devices based on Internet of Things technology (IoT) have been extensively investigated to support data-driven training. Considerable studies introduced methods to extract valuable information from the sensor data collected by IoT devices. However, the information cannot provide actionable insights for coaches due to the large data volume and high data dimensions. We proposed an IoT + VA framework, Tac-Trainer, to integrate the sensor data, the information, and coaches' knowledge to facilitate racket sports training. Tac-Trainer consists of four components: device configuration, data interpretation, training optimization, and result visualization. These components collect trainees' kinematic data through IoT devices, transform the data into attributes and indicators, generate training suggestions, and provide an interactive visualization interface for exploration, respectively. We further discuss new research opportunities and challenges inspired by our work from two perspectives, VA for IoT and IoT for VA.",
     "volume": 29,
     "issue": 1,
@@ -2116,7 +2116,7 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Glyph-based visualization achieves an impressive graphic design when associated with comprehensive visual metaphors, which help audiences effectively grasp the conveyed information through revealing data semantics. However, creating such metaphoric glyph-based visualization (MGV) is not an easy task, as it requires not only a deep understanding of data but also professional design skills. This paper proposes MetaGlyph, an automatic system for generating MGVs from a spreadsheet. To develop MetaGlyph, we first conduct a qualitative analysis to understand the design of current MGVs from the perspectives of metaphor embodiment and glyph design. Based on the results, we introduce a novel framework for generating MGVs by metaphoric image selection and an MGV construction. Specifically, MetaGlyph automatically selects metaphors with corresponding images from online resources based on the input data semantics. We then integrate a Monte Carlo tree search algorithm that explores the design of an MGV by associating visual elements with data dimensions given the data importance, semantic relevance, and glyph non-overlap. The system also provides editing feedback that allows users to customize the MGVs according to their design preferences. We demonstrate the use of MetaGlyph through a set of examples, one usage scenario, and validate its effectiveness through a series of expert interviews.",
     "volume": 29,
     "issue": 1,
@@ -2143,7 +2143,7 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Analytical dashboards are popular in business intelligence to facilitate insight discovery with multiple charts. However, creating an effective dashboard is highly demanding, which requires users to have adequate data analysis background and be familiar with professional tools, such as Power BI. To create a dashboard, users have to configure charts by selecting data columns and exploring different chart combinations to optimize the communication of insights, which is trial-and-error. Recent research has started to use deep learning methods for dashboard generation to lower the burden of visualization creation. However, such efforts are greatly hindered by the lack of large-scale and high-quality datasets of dashboards. In this work, we propose using deep reinforcement learning to generate analytical dashboards that can use well-established visualization knowledge and the estimation capacity of reinforcement learning. Specifically, we use visualization knowledge to construct a training environment and rewards for agents to explore and imitate human exploration behavior with a well-designed agent network. The usefulness of the deep reinforcement learning model is demonstrated through ablation studies and user studies. In conclusion, our work opens up new opportunities to develop effective ML-based visualization recommenders without beforehand training datasets.",
     "volume": 29,
     "issue": 1,
@@ -2177,7 +2177,7 @@
       940,
       950
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Experts in racket sports like tennis and badminton use tactical analysis to gain insight into competitors' playing styles. Many data-driven methods apply pattern mining to racket sports data - which is often recorded as multivariate event sequences - to uncover sports tactics. However, tactics obtained in this way are often inconsistent with those deduced by experts through their domain knowledge, which can be confusing to those experts. This work introduces RASIPAM, a RAcket-Sports Interactive PAttern Mining system, which allows experts to incorporate their knowledge into data mining algorithms to discover meaningful tactics interactively. RASIPAM consists of a constraint-based pattern mining algorithm that responds to the analysis demands of experts: Experts provide suggestions for finding tactics in intuitive written language, and these suggestions are translated into constraints to run the algorithm. RASIPAM further introduces a tailored visual interface that allows experts to compare the new tactics with the original ones and decide whether to apply a given adjustment. This interactive workflow iteratively progresses until experts are satisfied with all tactics. We conduct a quantitative experiment to show that our algorithm supports real-time interaction. Two case studies in tennis and in badminton respectively, each involving two domain experts, are conducted to show the effectiveness and usefulness of the system.",
     "demo": "https://github.com/Rasipam/Rasipam"
   },
@@ -2207,7 +2207,7 @@
       117,
       127
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Data workers usually seek to understand the semantics of data wrangling scripts in various scenarios, such as code debugging, reusing, and maintaining. However, the understanding is challenging for novice data workers due to the variety of programming languages, functions, and parameters. Based on the observation that differences between input and output tables highly relate to the type of data transformation, we outline a design space including 103 characteristics to describe table differences. Then, we develop COMANTICS, a three-step pipeline that automatically detects the semantics of data transformation scripts. The first step focuses on the detection of table differences for each line of wrangling code. Second, we incorporate a characteristic-based component and a Siamese convolutional neural network-based component for the detection of transformation types. Third, we derive the parameters of each data transformation by employing a \"slot filling\" strategy. We design experiments to evaluate the performance of COMANTICS. Further, we assess its flexibility using three example applications in different domains."
   },
   {
@@ -2232,7 +2232,7 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "We present PuzzleFixer, an immersive interactive system for experts to rectify defective reassembled 3D objects. Reassembling the fragments of a broken object to restore its original state is the prerequisite of many analytical tasks such as cultural relics analysis and forensics reasoning. While existing computer-aided methods can automatically reassemble fragments, they often derive incorrect objects due to the complex and ambiguous fragment shapes. Thus, experts usually need to refine the object manually. Prior advances in immersive technologies provide benefits for realistic perception and direct interactions to visualize and interact with 3D fragments. However, few studies have investigated the reassembled object refinement. The specific challenges include: 1) the fragment combination set is too large to determine the correct matches, and 2) the geometry of the fragments is too complex to align them properly. To tackle the first challenge, PuzzleFixer leverages dimensionality reduction and clustering techniques, allowing users to review possible match categories, select the matches with reasonable shapes, and drill down to shapes to correct the corresponding faces. For the second challenge, PuzzleFixer embeds the object with node-link networks to augment the perception of match relations. Specifically, it instantly visualizes matches with graph edges and provides force feedback to facilitate the efficiency of alignment interactions. To demonstrate the effectiveness of PuzzleFixer, we conducted an expert evaluation based on two cases on real-world artifacts and collected feedback through post-study interviews. The results suggest that our system is suitable and efficient for experts to refine incorrect reassembled objects.",
     "volume": 29,
     "issue": 1,
@@ -2268,7 +2268,7 @@
       128,
       138
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "We present Rigel, an interactive system for rapid transformation of tabular data. Rigel implements a new declarative mapping approach that formulates the data transformation procedure as direct mappings from data to the row, column, and cell channels of the target table. To construct such mappings, Rigel allows users to directly drag data attributes from input data to these three channels and indirectly drag or type data values in a spreadsheet, and possible mappings that do not contradict these interactions are recommended to achieve efficient and straightforward data transformation. The recommended mappings are generated by enumerating and composing data variables based on the row, column, and cell channels, thereby revealing the possibility of alternative tabular forms and facilitating open-ended exploration in many data transformation scenarios, such as designing tables for presentation. In contrast to existing systems that transform data by composing operations (like transposing and pivoting), Rigel requires less prior knowledge on these operations, and constructing tables from the channels is more efficient and results in less ambiguity than generating operation sequences as done by the traditional by-example approaches. User study results demonstrated that Rigel is significantly less demanding in terms of time and interactions and suits more scenarios compared to the state-of-the-art by-example approach. A gallery of diverse transformation cases is also presented to show the potential of Rigel's expressiveness.",
     "demo": "https://rigel-system.github.io/rigel-system/"
   },
@@ -2291,7 +2291,7 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Augmented sports videos, which combine visualizations and video effects to present data in actual scenes, can communicate insights engagingly and thus have been increasingly popular for sports enthusiasts around the world. Yet, creating augmented sports videos remains a challenging task, requiring considerable time and video editing skills. On the other hand, sports insights are often communicated using natural language, such as in commentaries, oral presentations, and articles, but usually lack visual cues. Thus, this work aims to facilitate the creation of augmented sports videos by enabling analysts to directly create visualizations embedded in videos using insights expressed in natural language. To achieve this goal, we propose a three-step approach - 1) detecting visualizable entities in the text, 2) mapping these entities into visualizations, and 3) scheduling these visualizations to play with the video - and analyzed 155 sports video clips and the accompanying commentaries for accomplishing these steps. Informed by our analysis, we have designed and implemented Sporthesia, a proof-of-concept system that takes racket-based sports videos and textual commentaries as the input and outputs augmented videos. We demonstrate Sporthesia's applicability in two exemplar scenarios, i.e., authoring augmented sports videos using text and augmenting historical sports videos based on auditory comments. A technical evaluation shows that Sporthesia achieves high accuracy (F1-score of 0.9) in detecting visualizable entities in the text. An expert evaluation with eight sports analysts suggests high utility, effectiveness, and satisfaction with our language-driven authoring method and provides insights for future improvement and opportunities.",
     "volume": 29,
     "issue": 1,
@@ -2320,7 +2320,7 @@
     "venue": [
       "IEEE TVCG"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "Lineup selection is an essential and important task in soccer matches. To win a match, coaches must consider various factors and select appropriate players for a planned formation. Computation-based tools have been proposed to help coaches on this complex task, but they are usually based on over-simplified models on player performances, do not support interactive analysis, and overlook the inputs by coaches. In this paper, we propose a method for visual analytics of soccer lineup selection by tackling two challenges: characterizing essential factors involved in generating optimal lineup, and supporting coach-driven visual analytics of lineup selection. We develop a lineup selection model that integrates such important factors, such as spatial regions of player actions and defensive interactions with opponent players. A visualization system, Team-Builder, is developed to help coaches control the process of lineup generation, explanation, and comparison through multiple coordinated views. The usefulness and effectiveness of our system are demonstrated by two case studies on a real-world soccer event dataset.",
     "volume": 29,
     "issue": 12,
@@ -2347,7 +2347,7 @@
       "IEEE TVCG",
       "IEEE VIS 2022"
     ],
-    "year": 2022,
+    "year": 2023,
     "abstract": "The last decade has witnessed many visual analytics (VA) systems that make successful applications to wide-ranging domains like urban analytics and explainable AI. However, their research rigor and contributions have been extensively challenged within the visualization community. We come in defence of VA systems by contributing two interview studies for gathering critics and responses to those criticisms. First, we interview 24 researchers to collect criticisms the review comments on their VA work. Through an iterative coding and refinement process, the interview feedback is summarized into a list of 36 common criticisms. Second, we interview 17 researchers to validate our list and collect their responses, thereby discussing implications for defending and improving the scientific values and rigor of VA systems. We highlight that the presented knowledge is deep, extensive, but also imperfect, provocative, and controversial, and thus recommend reading with an inclusive and critical eye. We hope our work can provide thoughts and foundations for conducting VA research and spark discussions to promote the research field forward more rigorously and vibrantly.",
     "volume": 29,
     "issue": 1,
@@ -2406,7 +2406,7 @@
       3298,
       3311
     ],
-    "year": 2022,
+    "year": 2023,
     "demo": "https://visimages.github.io/",
     "paper": "source/projects/visimages/visimages.pdf",
     "abstract": "Images in visualization publications contain rich information, e.g., novel visualization designs and implicit design patterns of visualizations. A systematic collection of these images can contribute to the community in many aspects, such as literature analysis and automated tasks for visualization. In this paper, we build and make public a dataset, VisImages, which collects 12,267 images with captions from 1,397 papers in IEEE InfoVis and VAST. Built upon a comprehensive visualization taxonomy, the dataset includes 35,096 visualizations and their bounding boxes in the images. We demonstrate the usefulness of VisImages through three use cases: 1) investigating the use of visualizations in the publications with VisImages Explorer, 2) training and benchmarking models for visualization classification, and 3) localizing visualizations in the visual analytics systems automatically."
@@ -2435,7 +2435,7 @@
       2950,
       2964
     ],
-    "year": 2022,
+    "year": 2023,
     "paper": "source/projects/Somnus/Somnus.pdf",
     "video": "https://youtu.be/fQ-eN_4vhso",
     "embedVideo": "https://www.youtube.com/embed/fQ-eN_4vhso",
@@ -2463,7 +2463,7 @@
       1719,
       1732
     ],
-    "year": 2021,
+    "year": 2023,
     "paper": "source/projects/SimuExplorer/SimuExplorer.pdf",
     "abstract": "We propose SimuExplorer, a visualization system to help analysts explore how player behaviors impact scoring rates intable tennis. Such analysis is indispensable for analysts and coaches, who aim to formulate training plans that can help playersimprove. However, it is challenging to identify the impacts of individual behaviors, as well as to understand how these impacts aregenerated and accumulated gradually over the course of a game. To address these challenges, we worked closely with experts whowork for a top national table tennis team to design SimuExplorer. The SimuExplorer system integrates a Markov chain model tosimulate individual and cumulative impacts of particular behaviors. It then provides flow and matrix views to help users visualize andinterpret these impacts. We demonstrate the usefulness of the system with case studies and expert interviews. The experts think highlyof the system and have obtained insights into players’ behaviors using it."
   },
@@ -2492,7 +2492,7 @@
       1051,
       1061
     ],
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/QxvGC9F9PaY",
     "embedVideo": "https://www.youtube.com/embed/QxvGC9F9PaY",
     "paper": "source/projects/compass/compass.pdf",
@@ -2523,7 +2523,7 @@
       857,
       867
     ],
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/IanZbNr04EE",
     "embedVideo": "https://www.youtube.com/embed/IanZbNr04EE",
     "paper": "source/projects/warehouse/OrderMonitor.pdf",
@@ -2555,7 +2555,7 @@
       118,
       128
     ],
-    "year": 2021,
+    "year": 2022,
     "paper": "source/projects/TIVEE/TIVEE.pdf",
     "video": "https://youtu.be/4j5CL5HamQQ",
     "embedVideo": "https://www.youtube.com/embed/4j5CL5HamQQ",
@@ -2588,7 +2588,7 @@
       879,
       889
     ],
-    "year": 2021,
+    "year": 2022,
     "abstract": "Breaking news and first-hand reports often trend on social media platforms before traditional news outlets cover them. The real-time analysis of posts on such platforms can reveal valuable and timely insights for journalists, politicians, business analysts, and first responders, but the high number and diversity of new posts pose a challenge. In this work, we present an interactive system that enables the visual analysis of streaming social media data on a large scale in real-time. We propose an efficient and explainable dynamic clustering algorithm that powers a continuously updated visualization of the current thematic landscape as well as detailed visual summaries of specific topics of interest. Our parallel clustering strategy provides an adaptive stream with a digestible but diverse selection of recent posts related to relevant topics. We also integrate familiar visual metaphors that are highly interlinked for enabling both explorative and more focused monitoring tasks. Analysts can gradually increase the resolution to dive deeper into particular topics. In contrast to previous work, our system also works with non-geolocated posts and avoids extensive preprocessing such as detecting events. We evaluated our dynamic clustering algorithm and discuss several use cases that show the utility of our system."
   },
   {
@@ -2615,7 +2615,7 @@
       400,
       410
     ],
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/uNGJtuyniyM",
     "embedVideo": "https://www.youtube.com/embed/uNGJtuyniyM",
     "paper": "source/projects/glyphcreator/GlyphCreator.pdf",
@@ -2643,7 +2643,7 @@
       846,
       856
     ],
-    "year": 2021,
+    "year": 2022,
     "paper": "source/projects/videomoderator/VideoModerator.pdf",
     "demo": "https://videomoderator.github.io/",
     "abstract": "Video moderation, which refers to remove deviant or explicit content from e-commerce livestreams, has become prevalent owing to social and engaging features. However, this task is tedious and time consuming due to the difficulties associated with watching and reviewing multimodal video content, including video frames and audio clips. To ensure effective video moderation, we propose VideoModerator, a risk-aware framework that seamlessly integrates human knowledge with machine insights. This framework incorporates a set of advanced machine learning models to extract the risk-aware features from multimodal video content and discover potentially deviant videos. Moreover, this framework introduces an interactive visualization interface with three views, namely, a video view, a frame view, and an audio view. In the video view, we adopt a segmented timeline and highlight high-risk periods that may contain deviant information. In the frame view, we present a novel visual summarization method that combines risk-aware features and video context to enable quick video navigation. In the audio view, we employ a storyline-based design to provide a multi-faceted overview which can be used to explore audio content. Furthermore, we report the usage of VideoModerator through a case scenario and conduct experiments and a controlled user study to validate its effectiveness."
@@ -2672,7 +2672,7 @@
       475,
       485
     ],
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/S-_JopzBY6g",
     "embedVideo": "https://www.youtube.com/embed/S-_JopzBY6g",
     "paper": "source/projects/ssuccess/acseeker.pdf",
@@ -2706,7 +2706,7 @@
       824,
       834
     ],
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/bjDKygYBnPw",
     "embedVideo": "https://www.youtube.com/embed/bjDKygYBnPw",
     "abstract": "Visualizing data in sports videos is gaining traction in sports analytics, given its ability to communicate insights and explicate player strategies engagingly. However, augmenting sports videos with such data visualizations is challenging, especially for sports analysts, as it requires considerable expertise in video editing. To ease the creation process, we present a design space that characterizes augmented sports videos at an element-level (what the constituents are) and clip-level (how those constituents are organized). We do so by systematically reviewing 233 examples of augmented sports videos collected from TV channels, teams, and leagues. The design space guides selection of data insights and visualizations for various purposes. Informed by the design space and close collaboration with domain experts, we design VisCommentator, a fast prototyping tool, to eases the creation of augmented table tennis videos by leveraging machine learning-based data extractors and design space-based visualization recommendations. With VisCommentator, sports analysts can create an augmented video by selecting the data to visualize instead of manually drawing the graphical marks. Our system can be generalized to other racket sports (e.g., tennis, badminton) once the underlying datasets and models are available. A user study with seven domain experts shows high satisfaction with our system, confirms that the participants can reproduce augmented sports videos in a short period, and provides insightful implications into future improvements and opportunities."
@@ -2733,7 +2733,7 @@
       835,
       845
     ],
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/gzB4w9M7AFE",
     "embedVideo": "https://www.youtube.com/embed/gzB4w9M7AFE",
     "paper": "source/projects/tacticflow/tacticflow.pdf",
@@ -2762,7 +2762,7 @@
       4127,
       4140
     ],
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/oMgO0BVX8rY",
     "embedVideo": "https://www.youtube.com/embed/oMgO0BVX8rY",
     "abstract": "In multiple coordinated views (MCVs),visualizations across views update their content in response to users interactions in other views. Interactive systems provide direct manipulation to create coordination between views, but are restricted to limited types of predefined templates. By contrast, textual specification languages enable flexible coordination but expose technical burden. To bridge the gap, we contribute Nebula, a grammar based on natural language for coordinating visualizations in MCVs. The grammar design is informed by a novel framework based on a systematic review of 176 coordinations from existing theories and applications, which describes coordination by demonstration, i.e., how coordination is performed by users. With the framework, Nebula specification formalizes coordination as a composition of user- and coordination-triggered interactions in origin and destination views, respectively, along with potential data transformation between the interactions. We evaluate Nebula by demonstrating its expressiveness with a gallery of diverse examples and analyzing its usability on cognitive dimensions.",
@@ -2818,7 +2818,7 @@
     ],
     "volume": 28,
     "issue": 10,
-    "year": 2021,
+    "year": 2022,
     "video": "https://youtu.be/2IDCtCMpVZw",
     "embedVideo": "https://www.youtube.com/embed/2IDCtCMpVZw",
     "abstract": "The increased availability of quantitative historical datasets has provided new research opportunities for multiple disciplines in social science. In this paper, we work closely with the constructors of a new dataset, CGED-Q (China Government Employee Database-Qing), that records the career trajectories of over 340,000 government officials in the Qing bureaucracy in China from 1760 to 1912. We use these data to study career mobility from a historical perspective and understand social mobility and inequality. However, existing statistical approaches are inadequate for analyzing career mobility in this historical dataset with its fine-grained attributes and long time span, since they are mostly hypothesis-driven and require substantial effort. We propose CareerLens, an interactive visual analytics system for assisting experts in exploring, understanding, and reasoning from historical career data. With CareerLens, experts examine mobility patterns in three levels-of-detail, namely, the macro-level providing a summary of overall mobility, the meso-level extracting latent group mobility patterns, and the micro-level revealing social relationships of individuals. We demonstrate the effectiveness and usability of CareerLens through two case studies and receive encouraging feedback from follow-up interviews with domain experts.",
@@ -2848,7 +2848,7 @@
     ],
     "volume": 28,
     "issue": 6,
-    "year": 2021,
+    "year": 2022,
     "video": "https://www.youtube.com/watch?v=IVSf0BNRC_c",
     "embedVideo": "https://www.youtube.com/embed/IVSf0BNRC_c",
     "abstract": "Many spatiotemporal events can be viewed as contagions. These events implicitly propagate across space and time by following cascading patterns, expanding their influence, and generating event cascades that involve multiple locations. Analyzing such cascading processes presents valuable implications in various urban applications, such as traffic planning and pollution diagnostics. Motivated by the limited capability of the existing approaches in mining and interpreting cascading patterns, we propose a visual analytics system called VisCas. VisCas combines an inference model with interactive visualizations and empowers analysts to infer and interpret the latent cascading patterns in the spatiotemporal context. To develop VisCas, we address three major challenges, 1) generalized pattern inference, 2) implicit influence visualization, and 3) multifaceted cascade analysis. For the first challenge, we adapt the state-of-the-art cascading network inference technique to general urban scenarios, where cascading patterns can be reliably inferred from large-scale spatiotemporal data. For the second and third challenges, we assemble a set of effective visualizations to support location navigation, influence inspection, and cascading exploration, and facilitate the in-depth cascade analysis. We design a novel influence view based on a three-fold optimization strategy for analyzing the implicit influences of the inferred patterns. We demonstrate the capability and effectiveness of VisCas with two case studies conducted on real-world traffic congestion and air pollution datasets with domain experts.",
@@ -2932,7 +2932,7 @@
     ],
     "volume": 27,
     "issue": 2,
-    "year": 2020,
+    "year": 2021,
     "video": "https://youtu.be/OZkAvNPHu7Y",
     "embedVideo": "https://www.youtube.com/embed/OZkAvNPHu7Y",
     "abstract": "Storyline visualizations are an effective means to present the evolution of plots and reveal the scenic interactions amongcharacters. However, the design of storyline visualizations is a difficult task as users need to balance between aesthetic goals andnarrative constraints. Despite that the optimization-based methods have been improved significantly in terms of producing aestheticand legible layouts, the existing (semi-) automatic methods are still limited regarding 1) efficient exploration of the storyline designspace and 2) flexible customization of storyline layouts. In this work, we propose a reinforcement learning framework to train an AIagent that assists users in exploring the design space efficiently and generating well-optimized storylines. Based on the framework, we introduce PlotThread, an authoring tool that integrates a set of flexible interactions to support easy customization of storylinevisualizations. To seamlessly integrate the AI agent into the authoring process, we employ a mixed-initiative approach where both theagent and designers work on the same canvas to boost the collaborative design of storylines. We evaluate the reinforcement learningmodel through qualitative and quantitative experiments and demonstrate the usage of PlotThread using a collection of use cases",
@@ -2963,7 +2963,7 @@
     ],
     "volume": 27,
     "issue": 2,
-    "year": 2020,
+    "year": 2021,
     "video": "https://youtu.be/vBSwbbPRd_g",
     "embedVideo": "https://www.youtube.com/embed/vBSwbbPRd_g",
     "abstract": "Bus routes are typically updated every 3–5 years to meet constantly changing travel demands. However, identifying deficientbus routes and finding their optimal replacements remain challenging due to the difficulties in analyzing a complex bus network and thelarge solution space comprising alternative routes. Most of the automated approaches cannot produce satisfactory results in real-worldsettings without laborious inspection and evaluation of the candidates. The limitations observed in these approaches motivate us tocollaborate with domain experts and propose a visual analytics solution for the performance analysis and incremental planning ofbus routes based on an existing bus network. Developing such a solution involves three major challenges, namely, a) the in-depthanalysis of complex bus route networks, b) the interactive generation of improved route candidates, and c) the effective evaluation ofalternative bus routes. For challenge a, we employ an overview-to-detail approach by dividing the analysis of a complex bus networkinto three levels to facilitate the efficient identification of deficient routes. For challenge b, we improve a route generation model andinterpret the performance of the generation with tailored visualizations. For challenge c, we incorporate a conflict resolution strategy inthe progressive decision-making process to assist users in evaluating the alternative routes and finding the most optimal one. Theproposed system is evaluated with two usage scenarios based on real-world data and received positive feedback from the experts.",
@@ -2994,7 +2994,7 @@
     ],
     "volume": 27,
     "issue": 2,
-    "year": 2020,
+    "year": 2021,
     "video": "https://youtu.be/Lr6yuBBrMQw",
     "embedVideo": "https://www.youtube.com/embed/Lr6yuBBrMQw",
     "abstract": "In soccer, passing is the most frequent interaction between players and plays a significant role in creating scoring chances. Experts are interested in analyzing players’ passing behavior to learn passing tactics, i.e., how players build up an attack with passing. Various approaches have been proposed to facilitate the analysis of passing tactics. However, the dynamic changes of a team’semployed tactics over a match have not been comprehensively investigated. To address the problem, we closely collaborate withdomain experts and characterize requirements to analyze the dynamic changes of a team’s passing tactics. To characterize thepassing tactic employed for each attack, we propose a topic-based approach that provides a high-level abstraction of complex passingbehaviors. Based on the model, we propose a glyph-based design to reveal the multi-variate information of passing tactics withindifferent phases of attacks, including player identity, spatial context, and formation. We further design and develop PassVizor, a visualanalytics system, to support the comprehensive analysis of passing dynamics. With the system, users can detect the changing patternsof passing tactics and examine the detailed passing process for evaluating passing tactics. We invite experts to conduct analysis withPassVizor and demonstrate the usability of the system through an expert interview.",
@@ -3025,7 +3025,7 @@
     ],
     "volume": 27,
     "issue": 2,
-    "year": 2020,
+    "year": 2021,
     "video": "https://youtu.be/-yJi-4OleDk",
     "embedVideo": "https://www.youtube.com/embed/-yJi-4OleDk",
     "abstract": "We present ShuttleSpace, an immersive analytics system to assist experts in analyzing trajectory data in badminton. Trajectories in sports, such as the movement of players and balls, contain rich information on player behavior and thus have beenwidely analyzed by coaches and analysts to improve the players’ performance. However, existing visual analytics systems often presentthe trajectories in court diagrams that are abstractions of reality, thereby causing difficulty for the experts to imagine the situation on thecourt and understand why the player acted in a certain way. With recent developments in immersive technologies, such as virtual reality(VR), experts gradually have the opportunity to see, feel, explore, and understand these 3D trajectories from the player’s perspective. Yet, few research has studied how to support immersive analysis of sports data from such a perspective. Specific challenges are rootedin data presentation (e.g., how to seamlessly combine 2D and 3D visualizations) and interaction (e.g., how to naturally interact withdata without keyboard and mouse) in VR. To address these challenges, we have worked closely with domain experts who have workedfor a top national badminton team to design ShuttleSpace. Our system leverages 1) the peripheral vision to combine the 2D and 3Dvisualizations and 2) the VR controller to support natural interactions via a stroke metaphor. We demonstrate the effectiveness ofShuttleSpace through three case studies conducted by the experts with useful insights. We further conduct interviews with the expertswhose feedback confirms that our first-person immersive analytics system is suitable and useful for analyzing badminton data.",
@@ -3057,7 +3057,7 @@
     ],
     "volume": 27,
     "issue": 2,
-    "year": 2020,
+    "year": 2021,
     "video": "http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/8/19/29b5e20e480a3e49d58e60aeac01a005ab8f0d32.mp4",
     "embedVideo": "http://www.cad.zju.edu.cn/home/vagblog/images/photo_bed/2020/8/19/29b5e20e480a3e49d58e60aeac01a005ab8f0d32.mp4",
     "abstract": "We design and evaluate a novel layout fine-tuning technique for node-link diagrams that facilitates exemplar-based adjustment of a group of substructures in batching mode. The key idea is to transfer user modifications on a local substructure to other substructures in the whole graph that are topologically similar to the exemplar. We first precompute a canonical representation for each substructure with node embedding techniques and then use it for on-the-fly substructure retrieval. We design and develop a light-weight interactive system to enable intuitive adjustment, modification transfer, and visual graph exploration. We also report some results of quantitative comparisons, three case studies, and a within-participant user study.",
@@ -3083,7 +3083,7 @@
     ],
     "volume": 27,
     "issue": 2,
-    "year": 2020,
+    "year": 2021,
     "abstract": "Using causal relations to guide decision making has become an essential analytical task across various domains, frommarketing and medicine to education and social science. While powerful statistical models have been developed for inferring causalrelations from data, domain practitioners still lack effective visual interface for interpreting the causal relations and applying them in theirdecision-making process. Through interview studies with domain experts, we characterize their current decision-making workflows,challenges, and needs. Through an iterative design process, we developed a visualization tool that allows analysts to explore, validate, and apply causal relations in real-world decision-making scenarios. The tool provides an uncertainty-aware causal graph visualizationfor presenting a large set of causal relations inferred from high-dimensional data. On top of the causal graph, it supports a set ofintuitive user controls for performing what-if analyses and making action plans. We report on two case studies in marketing and studentadvising to demonstrate that users can effectively explore causal relations and design action plans for reaching their goals.",
     "paper": "source/projects/CausalExplorer/CausalExplorer.pdf"
   },
@@ -3110,7 +3110,7 @@
     ],
     "volume": 27,
     "issue": 2,
-    "year": 2020,
+    "year": 2021,
     "abstract": "GIFs are enjoying increasing popularity on social media as a format for data-driven storytelling with visualization; simplevisual messages are embedded in short animations that usually last less than 15 seconds and are played in automatic repetition. Inthis paper, we ask the question,“What makes a data-GIF understandable?”While other storytelling formats such as data videos, infographics, or data comics are relatively well studied, we have little knowledge about the design factors and principles for “data-GIFs”. To close this gap, we provide results from semi-structured interviews and an online study with a total of 118 participants investigating theimpact of design decisions on the understandability of data-GIFs. The study and our consequent analysis are informed by a systematicreview and structured design space of 108 data-GIFs that we found online. Our results show the impact of design dimensions from ourdesign space such as animation encoding, context preservation, or repetition on viewers understanding of the GIF’s core message. The paper concludes with a list of suggestions for creating more effective Data-GIFs.",
     "paper": "source/projects/datagif/datagif.pdf",
     "video": "https://youtu.be/PFLrrK_4jj0",
@@ -3333,7 +3333,7 @@
       800,
       810
     ],
-    "year": 2019,
+    "year": 2020,
     "abstract": "Air pollution has become a serious public health problem for many cities around the world. To find the causes of air pollution, the propagation processes of air pollutants must be studied at a large spatial scale. However, the complex and dynamic wind fields lead to highly uncertain pollutant transportation. The state-of-the-art data mining approaches cannot fully support the extensive analysis of such uncertain spatiotemporal propagation processes across multiple districts without the integration of domain knowledge. The limitation of these automated approaches motivates us to design and develop AirVis, a novel visual analytics system that assists domain experts in efficiently capturing and interpreting the uncertain propagation patterns of air pollution based on graph visualizations. Designing such a system poses three challenges: a) the extraction of propagation patterns; b) the scalability of pattern presentations; and c) the analysis of propagation processes. To address these challenges, we develop a novel pattern mining framework to model pollutant transportation and extract frequent propagation patterns efficiently from large-scale atmospheric data. Furthermore, we organize the extracted patterns hierarchically based on the minimum description length (MDL) principle and empower expert users to explore and analyze these patterns effectively on the basis of pattern topologies. We demonstrated the effectiveness of our approach through two case studies conducted with a real-world dataset and positive feedback from domain experts.",
     "paper": "source/projects/airvis/AirVis.pdf",
     "video": "https://youtu.be/XDehEF7dxu0",
@@ -3365,7 +3365,7 @@
       407,
       417
     ],
-    "year": 2019,
+    "year": 2020,
     "abstract": "Simulative analysis in competitive sports can provide prospective insights, which can help improve the performance of players in future matches. However, adequately simulating the complex competition process and effectively explaining the simulation result to domain experts are typically challenging. This work presents a design study to address these challenges in table tennis. We propose a well-established hybrid second-order Markov chain model to characterize and simulate the competition process in table tennis. Compared with existing methods, our approach is the first to support the effective simulation of tactics, which represent high-level competition strategies in table tennis. Furthermore, we introduce a visual analytics system called Tac-Simur based on the proposed model for simulative visual analytics. Tac-Simur enables users to easily navigate different players and their tactics based on their respective performance in matches to identify the player and the tactics of interest for further analysis. Then, users can utilize the system to interactively explore diverse simulation tasks and visually explain the simulation results. The effectiveness and usefulness of this work are demonstrated by two case studies, in which domain experts utilize Tac-Simur to find interesting and valuable insights. The domain experts also provide positive feedback on the usability of Tac-Simur. Our work can be extended to other similar sports such as tennis and badminton.",
     "paper": "source/projects/tacSimur/Tac-Simur.pdf",
     "video": "https://youtu.be/_I6cne3Wd4U",
@@ -3421,7 +3421,7 @@
       2645,
       2658
     ],
-    "year": 2019,
+    "year": 2020,
     "abstract": "Recent advances in mobile augmented reality (AR) techniques have shed new light on personal visualization for their advantages of fitting visualization within personal routines, situating visualization in a real-world context, and arousing users' interests. However, enabling non-experts to create data visualization in mobile AR environments is challenging given the lack of tools that allow in-situ design while supporting the binding of data to AR content. Most existing AR authoring tools require working on personal computers or manually creating each virtual object and modifying its visual attributes. We systematically study this issue by identifying the specificity of AR glyph-based visualization authoring tool and distill four design considerations. Following these design considerations, we design and implement MARVisT, a mobile authoring tool that leverages information from reality to assist non-experts in addressing relationships between data and virtual glyphs, real objects and virtual glyphs, and real objects and data. With MARVisT, users without visualization expertise can bind data to real-world objects to create expressive AR glyph-based visualizations rapidly and effortlessly, reshaping the representation of the real world with data. We use several examples to demonstrate the expressiveness of MARVisT. A user study with non-experts is also conducted to evaluate the authoring experience of MARVisT.",
     "paper": "source/projects/MarVisT/MarVisT.pdf",
     "video": "https://youtu.be/cbtbJXwpwdk",
@@ -3452,7 +3452,7 @@
       65,
       75
     ],
-    "year": 2018,
+    "year": 2019,
     "abstract": "Regarded as a high-level tactic in soccer, a team formation assigns players different tasks and indicates their active regions on the pitch, thereby influencing the team performance significantly. Analysis of formations in soccer has become particularly indispensable for soccer analysts. However, formations of a team are intrinsically time-varying and contain inherent spatial information. The spatio-temporal nature of formations and other characteristics of soccer data, such as multivariate features, make analysis of formations in soccer a challenging problem. In this study, we closely worked with domain experts to characterize domain problems of formation analysis in soccer and formulated several design goals. We design a novel spatio-temporal visual representation of changes in team formation, allowing analysts to visually analyze the evolution of formations and track the spatial flow of players within formations over time. Based on the new design, we further design and develop ForVizor, a visual analytics system, which empowers users to track the spatio-temporal changes in formation and understand how and why such changes occur. With ForVizor, domain experts conduct formation analysis of two games. Analysis results with insights and useful feedback are summarized in two case studies.",
     "paper": "source/projects/forvizor/forvizor.pdf",
     "video": "https://www.youtube.com/watch?v=03U7PESGkOQ",
@@ -3481,7 +3481,7 @@
       459,
       469
     ],
-    "year": 2018,
+    "year": 2019,
     "abstract": "Interactive ranking techniques have substantially promoted analysts' ability in making judicious and informed decisions effectively based on multiple criteria. However, the existing techniques cannot satisfactorily support the analysis tasks involved in ranking large-scale spatial alternatives, such as selecting optimal locations for chain stores, where the complex spatial contexts involved are essential to the decision-making process. Limitations observed in the prior attempts of integrating rankings with spatial contexts motivate us to develop a context-integrated visual ranking technique. Based on a set of generic design requirements we summarized by collaborating with domain experts, we propose SRVis, a novel spatial ranking visualization technique that supports efficient spatial multi-criteria decision-making processes by addressing three major challenges in the aforementioned context integration, namely, a) the presentation of spatial rankings and contexts, b) the scalability of rankings' visual representations, and c) the analysis of context-integrated spatial rankings. Specifically, we encode massive rankings and their cause with scalable matrix-based visualizations and stacked bar charts based on a novel two-phase optimization framework that minimizes the information loss, and the flexible spatial filtering and intuitive comparative analysis are adopted to enable the in-depth evaluation of the rankings and assist users in selecting the best spatial alternative. The effectiveness of the proposed technique has been evaluated and demonstrated with an empirical study of optimization methods, two case studies, and expert interviews.",
     "paper": "source/projects/srvis/srvis.pdf",
     "video": "https://www.youtube.com/watch?v=lenSZci4gy4",
@@ -3510,7 +3510,7 @@
       769,
       778
     ],
-    "year": 2018,
+    "year": 2019,
     "abstract": "Storyline visualization techniques have progressed significantly to generate illustrations of complex stories automatically. However, the visual layouts of storylines are not enhanced accordingly despite the improvement in the performance and extension of its application area. Existing methods attempt to achieve several shared optimization goals, such as reducing empty space and minimizing line crossings and wiggles. However, these goals do not always produce optimal results when compared to hand-drawn storylines. We conducted a preliminary study to learn how users translate a narrative into a hand-drawn storyline and check whether the visual elements in hand-drawn illustrations can be mapped back to appropriate narrative contexts. We also compared the hand-drawn storylines with storylines generated by the state-of-the-art methods and found they have significant differences. Our findings led to a design space that summarizes (1) how artists utilize narrative elements and (2) the sequence of actions artists follow to portray expressive and attractive storylines. We developed iStoryline, an authoring tool for integrating high-level user interactions into optimization algorithms and achieving a balance between hand-drawn storylines and automatic layouts. iStoryline allows users to create novel storyline visualizations easily according to their preferences by modifying the automatically generated layouts. The effectiveness and usability of iStoryline are studied with qualitative evaluations.",
     "paper": "source/projects/istoryline/istoryline.pdf",
     "video": "https://www.youtube.com/watch?v=on4KbLd2RiY",
@@ -3537,7 +3537,7 @@
       2362,
       2377
     ],
-    "year": 2018,
+    "year": 2019,
     "abstract": "Interactive visualization of large image collections is important and useful in many applications, such as personal album management and user profiling on images. However, most prior studies focus on using low-level visual features of images, such as texture and color histogram, to create visualizations without considering the more important semantic information embedded in images. This paper proposes a novel visual analytic system to analyze images in a semantic-aware manner. The system mainly comprises two components: a semantic information extractor and a visual layout generator. The semantic information extractor employs an image captioning technique based on convolutional neural network (CNN) to produce descriptive captions for images, which can be transformed into semantic keywords. The layout generator employs a novel co-embedding model to project images and the associated semantic keywords to the same 2D space. Inspired by the galaxy metaphor, we further turn the projected 2D space to a galaxy visualization of images, in which semantic keywords and images are visually encoded as stars and planets. Our system naturally supports multi-scale visualization and navigation, in which users can immediately see a semantic overview of an image collection and drill down for detailed inspection of a certain group of images. Users can iteratively refine the visual layout by integrating their domain knowledge into the co-embedding process. Two task-based evaluations are conducted to demonstrate the effectiveness of our system.",
     "paper": "source/projects/imagevis/imgvis.pdf",
     "video": "https://www.youtube.com/watch?v=dOhs3YZBZTM",
@@ -3885,7 +3885,7 @@
       1,
       10
     ],
-    "year": 2016,
+    "year": 2017,
     "abstract": "The problem of formulating solutions immediately and comparing them rapidly for billboard placements has plagued advertising planners for a long time, owing to the lack of efficient tools for in-depth analyses to make informed decisions. In this study, we attempt to employ visual analytics that combines the state-of-the-art mining and visualization techniques to tackle this problem using large-scale GPS trajectory data. In particular, we present SmartAdP, an interactive visual analytics system that deals with the two major challenges including finding good solutions in a huge solution space and comparing the solutions in a visual and intuitive manner. An interactive framework that integrates a novel visualization-driven data mining model enables advertising planners to effectively and efficiently formulate good candidate solutions. In addition, we propose a set of coupled visualizations: a solution view with metaphor-based glyphs to visualize the correlation between different solutions; a location view to display billboard locations in a compact manner; and a ranking view to present multi-typed rankings of the solutions. This system has been demonstrated using case studies with a real-world dataset and domain-expert interviews. Our approach can be adapted for other location selection problems such as selecting locations of retail stores or restaurants using trajectory data.",
     "paper": "source/projects/smartadp/smartadp.pdf",
     "video": "https://www.youtube.com/watch?v=Nkdup4YcX0A",
@@ -3911,7 +3911,7 @@
       1506,
       1519
     ],
-    "year": 2016,
+    "year": 2017,
     "abstract": "Analysis and exploration of spatio-temporal data such as traffic flow and vehicle trajectories have become important in urban planning and management. In this paper, we present a novel visualization technique called route-zooming that can embed spatio-temporal information into a map seamlessly for occlusion-free visualization of both spatial and temporal data. The proposed technique can broaden a selected route in a map by deforming the overall road network. We formulate the problem of route-zooming as a nonlinear least squares optimization problem by defining an energy function that ensures the route is broadened successfully on demand while the distortion caused to the road network is minimized. The spatio-temporal information can then be embedded into the route to reveal both spatial and temporal patterns without occluding the spatial context information. The route-zooming technique is applied in two instantiations including an interactive metro map for city tourism and illustrative maps to highlight information on the broadened roads to prove its applicability. We demonstrate the usability of our spatio-temporal visualization approach with case studies on real traffic flow data. We also study various design choices in our method, including the encoding of the time direction and choices of temporal display, and conduct a comprehensive user study to validate our embedded visualization design.",
     "paper": "source/projects/road_broadening/road_broadening.pdf"
   },
