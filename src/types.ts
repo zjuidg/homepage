@@ -112,5 +112,4 @@ export interface Slide {
   titleZh?: string;        // Chinese caption; system & paper names stay untranslated
   subtitle?: string;       // paper title — not translated
   imgSrc: string;          // relative path under /
-  link?: string;           // e.g. "/publications/<id>"
 }
