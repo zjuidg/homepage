@@ -4,20 +4,28 @@ import type { Plugin } from 'vite';
 import sharp from 'sharp';
 
 /**
- * Paper teaser images live in `public/source/projects/**` and are copied to the
- * build verbatim by Vite (anything under `public/` bypasses the asset pipeline).
- * The committed sources are full-resolution (some are >10000px wide), but the
- * publication card only ever renders the thumbnail at 180px (desktop) / 220px
- * (mobile, single column). This plugin downscales + recompresses the copies in
- * `dist/` to 2x the largest rendered size, so the deployed images are crisp on
- * HiDPI screens without shipping multi-megabyte originals.
+ * Static images under `public/source/**` are copied to the build verbatim by
+ * Vite (anything under `public/` bypasses the asset pipeline). The committed
+ * sources are full-resolution, but the site only ever renders downscaled copies.
+ * This plugin downscales + recompresses the copies in `dist/`, sized per use:
  *
+ *   - `source/projects/**` teasers render as 180px (desktop) / 220px (mobile)
+ *     thumbnails on publication cards.
+ *   - `source/slides/**` render full-width in the highlights carousel, which is
+ *     capped by the page container (--maxw 1180px → ~1132px content width).
+ *
+ * Each target is downscaled to ~2x its largest rendered width, so the deployed
+ * images stay crisp on HiDPI screens without shipping multi-megabyte originals.
  * Only the build output is rewritten — the committed sources in `public/` are
  * left untouched.
  */
 
-// 2x the largest rendered thumbnail width (220px on mobile single-column).
-const MAX_WIDTH = 440;
+// { subdir under dist/source, max width = 2x the largest rendered width }
+const TARGETS = [
+  { dir: 'projects', maxWidth: 440 }, // 2x the 220px mobile thumbnail
+  { dir: 'slides', maxWidth: 2280 }, // 2x the ~1132px full-width carousel slide
+];
+
 const JPEG_QUALITY = 80;
 
 const exts = new Set(['.png', '.jpg', '.jpeg']);
@@ -45,32 +53,34 @@ export function compressTeasers(): Plugin {
       outDir = config.build.outDir;
     },
     async closeBundle() {
-      const root = join(outDir, 'source', 'projects');
       let before = 0;
       let after = 0;
       let count = 0;
 
-      for await (const file of walk(root)) {
-        const orig = await readFile(file);
-        const ext = extname(file).toLowerCase();
-        const pipeline = sharp(orig).resize({
-          width: MAX_WIDTH,
-          withoutEnlargement: true,
-        });
-        const out =
-          ext === '.png'
-            ? await pipeline.png({ compressionLevel: 9, palette: true }).toBuffer()
-            : await pipeline.jpeg({ quality: JPEG_QUALITY, mozjpeg: true }).toBuffer();
+      for (const { dir, maxWidth } of TARGETS) {
+        const root = join(outDir, 'source', dir);
+        for await (const file of walk(root)) {
+          const orig = await readFile(file);
+          const ext = extname(file).toLowerCase();
+          const pipeline = sharp(orig).resize({
+            width: maxWidth,
+            withoutEnlargement: true,
+          });
+          const out =
+            ext === '.png'
+              ? await pipeline.png({ compressionLevel: 9, palette: true }).toBuffer()
+              : await pipeline.jpeg({ quality: JPEG_QUALITY, mozjpeg: true }).toBuffer();
 
-        // Keep whichever is smaller — never inflate an already-tiny image.
-        if (out.length < orig.length) {
-          await writeFile(file, out);
-          after += out.length;
-        } else {
-          after += orig.length;
+          // Keep whichever is smaller — never inflate an already-tiny image.
+          if (out.length < orig.length) {
+            await writeFile(file, out);
+            after += out.length;
+          } else {
+            after += orig.length;
+          }
+          before += orig.length;
+          count++;
         }
-        before += orig.length;
-        count++;
       }
 
       if (count > 0) {
