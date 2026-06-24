@@ -25,6 +25,9 @@ public/source/**/*.PDF
 !.env.example
 .dev.vars
 
+# private maintenance guide — holds a shared R2 token, shared out-of-band, never committed
+MAINTENANCE.md
+
 # wrangler
 .wrangler/
 
