@@ -92,6 +92,10 @@
   color: #1a1205;
   background: linear-gradient(120deg, #ffd479, #ff9d4d);
   border-color: transparent;
+  /* Clip the gradient to the padding box. Otherwise Chrome paints it under the
+     1px transparent border (default border-box clip) and leaves a hard solid
+     edge along the rounded corners. */
+  background-clip: padding-box;
 }
 .pubs__award-count {
   font-size: 0.78rem;
