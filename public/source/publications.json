@@ -334,7 +334,7 @@
     "venue": [
       "SIGSPATIAL 2023"
     ],
-    "year": 2024,
+    "year": 2023,
     "abstract": "To contain the transmission of respiratory diseases, such as COVID-19, it is vital to control the locations visited by the cases. However, not all locations pose the same risk, and quarantining all close contacts is costly. Therefore, precise identification of outbreak locations is essential for public health. Fortunately, public health data includes detailed epidemiological surveys, offering a data-driven approach. In this paper, we propose a novel epidemic amplifier detection model, namely EADetector, which extracts spatiotemporal features from candidate locations, and employs a multitask learning-based method to fuse the infected location detection task along with the epidemic location inference task to acquire potential locations. We perform extensive experiments and present a set of case studies based on the real epidemiological surveys collected in Beijing. The proposed model is deployed as a part of the epidemiological survey system in Beijing, China.",
     "doi": "10.1145/3589132.3625632"
   },
