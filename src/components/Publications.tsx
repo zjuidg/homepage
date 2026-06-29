@@ -109,20 +109,22 @@ export default function Publications(props: { pubs: Publication[] }) {
             />
           </div>
 
-          <select class="pubs__select" value={String(venue())} onChange={(e) => setVenue(e.currentTarget.value)}>
-            <option value={ALL}>{t().pubs.allVenues}</option>
-            <For each={venues()}>{(v) => <option value={v}>{v}</option>}</For>
-          </select>
+          <div class="pubs__row2">
+            <select class="pubs__select" value={String(venue())} onChange={(e) => setVenue(e.currentTarget.value)}>
+              <option value={ALL}>{t().pubs.allVenues}</option>
+              <For each={venues()}>{(v) => <option value={v}>{v}</option>}</For>
+            </select>
 
-          <button
-            class="pubs__award-filter"
-            classList={{ active: awardsOnly() }}
-            onClick={() => setAwardsOnly((v) => !v)}
-            aria-pressed={awardsOnly()}
-          >
-            ★ {t().pubs.awardPapers}
-            <span class="pubs__award-count">{awardCount()}</span>
-          </button>
+            <button
+              class="pubs__award-filter"
+              classList={{ active: awardsOnly() }}
+              onClick={() => setAwardsOnly((v) => !v)}
+              aria-pressed={awardsOnly()}
+            >
+              ★ {t().pubs.awardPapers}
+              <span class="pubs__award-count">{awardCount()}</span>
+            </button>
+          </div>
         </div>
 
         <div class="pubs__years" ref={reveal}>

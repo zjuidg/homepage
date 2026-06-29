@@ -38,9 +38,10 @@
   cursor: pointer;
   appearance: none;
   /* A native select grows to fit its widest option; some venue labels are long,
-     so pin a compact width and let the closed-value text truncate instead of
-     stretching the control (and overflowing the viewport on mobile). */
-  flex: 0 0 auto;
+     so pin a compact 180px width and let the closed-value text truncate instead
+     of stretching the control. It only shrinks (never grows) so the search box —
+     not the select — soaks up the extra width on desktop. */
+  flex: 0 1 180px;
   width: 180px;
   max-width: 100%;
   min-width: 0;
@@ -53,15 +54,26 @@
   transition: border-color 0.25s;
 }
 .pubs__select:focus { outline: none; border-color: var(--accent); }
-@media (max-width: 620px) {
-  /* Fill the row on mobile, where the select wraps onto its own line. */
-  .pubs__select { flex: 1 1 auto; width: auto; }
-}
 .pubs__select option { background: var(--option-bg); color: var(--text); }
+
+.pubs__row2 {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  /* Only as wide as the select + award button (no grow), so the search box fills
+     the rest of the row on desktop. Shrinks when wrapped onto its own line on
+     mobile so the select can give up width. */
+  flex: 0 1 auto;
+  min-width: 0;
+}
 
 .pubs__award-filter {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
+  /* Natural width: never grows or shrinks, so the label + count badge always stay
+     fully visible and the search box takes the spare room instead. */
+  flex: 0 0 auto;
   gap: 8px;
   padding: 8px 16px;
   border-radius: 12px;
