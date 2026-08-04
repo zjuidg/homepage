@@ -375,8 +375,9 @@
       "Journal of Visualization",
       "ChinaVis 2025"
     ],
-    "year": 2025,
-    "abstract": "In recent years, animated geographical visualization has arisen as an intuitive narrative medium for presenting and disseminating geographic information, with extensive applications across various domains. However, existing approaches to creating geographic animations often face trade-offs among learning curve, ease of use, the complexity of output videos and other limitations. To further lower the barrier for producing geographic animations, we first conducted a survey of 50 geographic data animations and synthesized a design space that outlines the key elements in geographic animation presentation. Based on this, we designed a declarative grammar targeted at geographic animations. Then we developed an interactive tool called GeoAnimation to enable animators to create geographic animations efficiently and effectively. Finally, we verified the usefulness of our tool through two use cases and expert interviews conducted with two experts. The results indicate that GeoAnimation enables animators to quickly and conveniently create satisfactory geographic animations, effectively reducing the barriers, tedium, and inconvenience associated with creating such animations."
+    "year": 2026,
+    "abstract": "Animated geographic visualization is a common way to communicate spatial processes and narratives. However, authoring such animations often requires tradeoffs among learnability, control, and production effort. To explore a structured authoring approach, we analyzed 64 source videos containing geographic animation segments and synthesized a design space for geographic animation targets, attributes, and effects. Based on this analysis, we designed GeoAnimation, a domain-specific declarative grammar and interactive prototype for authoring common point, line, and region animations. We examined the prototype through two use cases and expert interviews with two visualization researchers. The results provide preliminary evidence that GeoAnimation is feasible for the studied authoring tasks, while broader usability, expressiveness, and performance require further evaluation.",
+    "doi": "10.1007/s12650-026-01146-0"
   },
   {
     "id": "codelin",
