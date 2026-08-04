@@ -106,7 +106,22 @@ Field behavior worth knowing:
 - **`doi`/`DOI`**: bare DOI (e.g. `10.1109/…`) is auto-prefixed with `https://doi.org/`;
   a full URL is used as-is.
 
-### 4. Deploy
+### 4. Regenerate the paper map
+The unit chart and co-author network update automatically from `publications.json`, but
+the paper map uses the committed, precomputed layout in
+`public/source/paper-map.json`. Regenerate it whenever publications are added, removed,
+or their titles/abstracts change:
+
+```bash
+node scripts/compute-paper-map.mjs
+```
+
+The script reads `OPENAI_API_KEY` from the environment or `.env`, caches embeddings by
+content hash in `scripts/.cache/paper-embeddings.json`, and only requests embeddings for
+new or changed papers. It then reruns UMAP for the complete collection and writes all
+paper coordinates. Commit the updated `public/source/paper-map.json`.
+
+### 5. Deploy
 Push to `main` → the GitHub Action builds and deploys to Cloudflare Pages. Or deploy
 manually: `pnpm build && npx wrangler pages deploy dist --project-name=zjuidg-homepage`.
 The build needs `VITE_PAPERS_BASE` set (locally via `.env`; in CI via a repo variable).

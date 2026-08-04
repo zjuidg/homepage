@@ -361,6 +361,23 @@
     "doi": "10.1145/3706598.3714329"
   },
   {
+    "id": "geoanimation",
+    "paper": "https://chinavis.org/2025/papers/GeoAnimation%20A%20Grammar%20for%20Animated%20Geographic%20Visualization.pdf",
+    "teaser": "source/projects/geoanimation/geoanimation.avif",
+    "title": "GeoAnimation: A Grammar for Animated Geographic Visualization",
+    "authors": [
+      "Jie Yu",
+      "Zhenning Chen",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "ChinaVis 2025"
+    ],
+    "year": 2025,
+    "abstract": "In recent years, animated geographical visualization has arisen as an intuitive narrative medium for presenting and disseminating geographic information, with extensive applications across various domains. However, existing approaches to creating geographic animations often face trade-offs among learning curve, ease of use, the complexity of output videos and other limitations. To further lower the barrier for producing geographic animations, we first conducted a survey of 50 geographic data animations and synthesized a design space that outlines the key elements in geographic animation presentation. Based on this, we designed a declarative grammar targeted at geographic animations. Then we developed an interactive tool called GeoAnimation to enable animators to create geographic animations efficiently and effectively. Finally, we verified the usefulness of our tool through two use cases and expert interviews conducted with two experts. The results indicate that GeoAnimation enables animators to quickly and conveniently create satisfactory geographic animations, effectively reducing the barriers, tedium, and inconvenience associated with creating such animations."
+  },
+  {
     "id": "codelin",
     "teaser": "source/projects/codelin/codelin.png",
     "title": "CodeLin: An in situ visualization method for understanding data transformation scripts",

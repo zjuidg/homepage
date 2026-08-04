@@ -38,6 +38,7 @@ export const Venue = {
   CCS2024: 'CCS 2024',
   ChinaVis2020: 'ChinaVis 2020',
   ChinaVis2024: 'ChinaVis 2024',
+  ChinaVis2025: 'ChinaVis 2025',
   CHI2018: 'CHI 2018',
   CHI2021: 'CHI 2021',
   CHI2023: 'CHI 2023',
