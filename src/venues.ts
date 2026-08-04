@@ -100,12 +100,16 @@ export function venueChipLabel(label: string): string {
 }
 
 /**
- * The group a paper counts/filters as: "IEEE TVCG" when archived in TVCG (so
- * IEEE VIS / PacificVis-journal papers fold together), otherwise the year-less
- * series of its conference (e.g. "IEEE VIS 2024" → "IEEE VIS").
+ * The group a paper counts/filters as: its archival journal when one is
+ * explicitly recognized (currently TVCG and Journal of Visualization),
+ * otherwise the year-less series of its conference (e.g. "IEEE VIS 2024" →
+ * "IEEE VIS").
  */
 export function venueGroup(p: Publication): string {
   if (p.venue.includes(Venue.TVCG)) return Venue.TVCG;
+  if (p.venue.includes(Venue.JournalOfVisualization)) {
+    return Venue.JournalOfVisualization;
+  }
   const conf = p.venue.find((v) => /(?:19|20)\d{2}/.test(v));
   return series(conf ?? p.venue[0] ?? 'Other');
 }

@@ -101,6 +101,10 @@ Field behavior worth knowing:
   membership check, and the unit chart / venue filter group these under "IEEE TVCG"
   (`venueGroup()` in `src/venues.ts`, which also strips the year, e.g. "IEEE VIS 2026" →
   "IEEE VIS"). Conference-track (non-journal) papers omit `"IEEE TVCG"`.
+- **Archival journals determine the unit-chart group.** `venueGroup()` currently prefers
+  `"IEEE TVCG"` and `"Journal of Visualization"` when either is present, so a paper may
+  retain a conference chip (for example, `"ChinaVis 2025"`) while counting under its
+  journal. The venue filter still finds the paper under both venue series.
 - **`titleKey`** entries render as gold award badges and make the paper count toward the
   "Award papers" filter.
 - **`doi`/`DOI`**: bare DOI (e.g. `10.1109/…`) is auto-prefixed with `https://doi.org/`;

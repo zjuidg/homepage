@@ -362,7 +362,7 @@
   },
   {
     "id": "geoanimation",
-    "paper": "https://chinavis.org/2025/papers/GeoAnimation%20A%20Grammar%20for%20Animated%20Geographic%20Visualization.pdf",
+    "paper": "source/projects/geoanimation/geoanimation.pdf",
     "teaser": "source/projects/geoanimation/geoanimation.avif",
     "title": "GeoAnimation: A Grammar for Animated Geographic Visualization",
     "authors": [
@@ -372,6 +372,7 @@
       "Yingcai Wu"
     ],
     "venue": [
+      "Journal of Visualization",
       "ChinaVis 2025"
     ],
     "year": 2025,
