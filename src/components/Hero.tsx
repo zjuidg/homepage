@@ -1,6 +1,7 @@
 import { createMemo, createSignal, For, Show } from 'solid-js';
 import type { Publication } from '../types';
-import { venueGroup, venueScale } from '../venues';
+import { OTHER_ID, venueGroup } from '../venues';
+import { ccfAVenueGroup, ccfAVenueScale } from '../ccf-venues';
 import { searchPublications } from '../search';
 import { t } from '../i18n';
 import './Hero.css';
@@ -25,7 +26,7 @@ export default function Hero(props: Props) {
   const [tip, setTip] = createSignal<{ x: number; y: number; title: string; venue: string } | null>(null);
   let figEl: HTMLElement | undefined;
   const pubs = () => props.pubs ?? [];
-  const scale = createMemo(() => venueScale(pubs()));
+  const scale = createMemo(() => ccfAVenueScale(pubs()));
 
   const showTip = (e: MouseEvent, m: { title: string; venue: string }) => {
     if (!figEl) return;
@@ -54,7 +55,7 @@ export default function Hero(props: Props) {
       .map(([year, papers], xi) => {
         const xLeft = xi * yearPitch;
         const sorted = papers
-          .map((p) => ({ p, m: sc.lookup(venueGroup(p)) }))
+          .map((p) => ({ p, m: sc.lookup(ccfAVenueGroup(p)) }))
           .sort((a, b) => sc.rank(a.m.id) - sc.rank(b.m.id));
         const marks = sorted.map(({ p, m }, k) => {
           const col = k % COLS;
@@ -113,7 +114,7 @@ export default function Hero(props: Props) {
                   onBlur={() => setHot(null)}
                 >
                   <span class="hero__swatch" style={{ background: item.color }} />
-                  {item.label}
+                  {item.id === OTHER_ID ? t().hero.otherVenues : item.label}
                 </button>
               )}
             </For>

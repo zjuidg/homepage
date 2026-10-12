@@ -20,6 +20,7 @@ export interface Copy {
     explore: string;
     aboutCta: string;
     archiveAria: (n: number) => string;
+    otherVenues: string;
     stats: { publications: string; venues: string; founded: string };
   };
   about: {
@@ -113,7 +114,8 @@ const en: Copy = {
     explore: 'Explore publications',
     aboutCta: 'About the group',
     archiveAria: (n) =>
-      `Unit chart: each of ${n} publications drawn as one square, stacked by year and colored by venue.`,
+      `Unit chart: each of ${n} publications drawn as one square, stacked by year. CCF-A venues have distinct colors; all others are gray.`,
+    otherVenues: 'Other venues',
     stats: { publications: 'Publications', venues: 'Venues', founded: 'Founded' },
   },
   about: {
@@ -228,7 +230,8 @@ const zh: Copy = {
     lead: '我们研究信息可视化、可视分析与人机交互技术，帮助人们理解大规模、复杂的数据——涵盖体育分析、社交媒体与城市信息学等领域。',
     explore: '浏览论文',
     aboutCta: '了解课题组',
-    archiveAria: (n) => `单元图：${n} 篇论文，每篇对应一个方块，按年份堆叠并以会议配色。`,
+    archiveAria: (n) => `单元图：${n} 篇论文，每篇对应一个方块，按年份堆叠。CCF-A 类期刊与会议以不同颜色显示，其余为灰色。`,
+    otherVenues: '其他期刊与会议',
     stats: { publications: '学术论文', venues: '期刊与会议', founded: '成立年份' },
   },
   about: {
