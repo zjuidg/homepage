@@ -16,6 +16,7 @@ const FULL_VENUE_NAMES: Partial<Record<Venue, string>> = {
   [Venue.TITS]: 'IEEE Transactions on Intelligent Transportation Systems',
   [Venue.TIST]: 'ACM Transactions on Intelligent Systems and Technology',
   [Venue.TiiS]: 'ACM Transactions on Interactive Intelligent Systems',
+  [Venue.TOSEM]: 'ACM Transactions on Software Engineering and Methodology',
   [Venue.TBD]: 'IEEE Transactions on Big Data',
   [Venue.TMM]: 'IEEE Transactions on Multimedia',
   [Venue.IMWUT]:
@@ -29,6 +30,10 @@ const FULL_VENUE_NAMES: Partial<Record<Venue, string>> = {
   [Venue.JVLC]: 'Journal of Visual Languages & Computing',
   [Venue.ACL2026Main]:
     'Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026 Main)',
+  [Venue.ACL2026Findings]:
+    'Findings of the Association for Computational Linguistics: ACL 2026',
+  [Venue.EMNLP2026Findings]:
+    'Findings of the Association for Computational Linguistics: EMNLP 2026',
   [Venue.ImmersiveAnalytics2017]:
     'Workshop on Immersive Analytics, colocated with IEEE VIS 2017',
   [Venue.IEEEVISAP2021]: 'IEEE VIS Arts Program (VISAP), 2021',
@@ -37,6 +42,8 @@ const FULL_VENUE_NAMES: Partial<Record<Venue, string>> = {
 };
 
 const CHIP_VENUE_NAMES: Partial<Record<Venue, string>> = {
+  [Venue.ACL2026Findings]: 'ACL Findings',
+  [Venue.EMNLP2026Findings]: 'EMNLP Findings',
   [Venue.CGA]: 'CG&A',
   [Venue.CGF]: 'CGF',
   [Venue.ComputerScienceReview]: 'CSR',
@@ -75,6 +82,7 @@ export function venueDisplayName(label: string): string {
     yearSuffix('CCS', 'ACM SIGSAC Conference on Computer and Communications Security') ??
     yearSuffix('CHI', 'ACM CHI Conference on Human Factors in Computing Systems') ??
     yearSuffix('Edutainment', 'International Conference on E-Learning and Games (Edutainment)') ??
+    yearSuffix('EMNLP', 'Conference on Empirical Methods in Natural Language Processing') ??
     yearSuffix('EuroVis', 'Eurographics Conference on Visualization') ??
     yearSuffix('IEEE SciVis', 'IEEE Scientific Visualization Conference', ' ') ??
     yearSuffix('IEEE VIS', 'IEEE VIS', ' ') ??

@@ -13,6 +13,7 @@ export const Venue = {
   TITS: 'IEEE TITS',
   TIST: 'ACM TIST',
   TiiS: 'ACM TiiS',
+  TOSEM: 'ACM TOSEM',
   TBD: 'IEEE TBD',
   TMM: 'IEEE TMM',
   IMWUT: 'ACM IMWUT',
@@ -32,6 +33,7 @@ export const Venue = {
   JournalOfNeurosurgery: 'Journal of Neurosurgery',
   // conferences & tracks (year-specific)
   ACL2026Main: 'ACL 2026 Main',
+  ACL2026Findings: 'ACL 2026 Findings',
   AAAI2024: 'AAAI 2024',
   AAAI2025: 'AAAI 2025',
   ACMMM2020Demo: 'ACM MM 2020 Demo',
@@ -46,6 +48,9 @@ export const Venue = {
   CHI2025: 'CHI 2025',
   CHI2026: 'CHI 2026',
   Edutainment2016: 'Edutainment 2016',
+  EMNLP2025Main: 'EMNLP 2025 Main',
+  EMNLP2026Main: 'EMNLP 2026 Main',
+  EMNLP2026Findings: 'EMNLP 2026 Findings',
   EuroVis2016: 'EuroVis 2016',
   EuroVis2018: 'EuroVis 2018',
   EuroVis2023: 'EuroVis 2023',
@@ -62,6 +67,7 @@ export const Venue = {
   IEEEVIS2023: 'IEEE VIS 2023',
   IEEEVIS2024: 'IEEE VIS 2024',
   IEEEVIS2025: 'IEEE VIS 2025',
+  IEEEVIS2026: 'IEEE VIS 2026',
   IEEEVISAP2021: 'IEEE VISAP 2021',
   IEEEVISAP2023: 'IEEE VISAP 2023',
   IEEEVR2024: 'IEEE VR 2024',
@@ -85,6 +91,7 @@ export const Venue = {
   UIST2023: 'UIST 2023',
   UIST2024: 'UIST 2024',
   UIST2025: 'UIST 2025',
+  UIST2026: 'UIST 2026',
   VDSIEEEVIS2023: 'VDS @ IEEE VIS 2023',
 } as const;
 

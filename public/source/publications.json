@@ -1,5 +1,231 @@
 [
   {
+    "id": "puzzleclone",
+    "title": "PuzzleClone: A DSL-Powered Framework for Synthesizing Verifiable Data",
+    "authors": [
+      "Kai Xiong",
+      "Yanwei Huang",
+      "Rongjunchen Zhang",
+      "Kun Chen",
+      "Haipang Wu",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "ACL 2026 Findings"
+    ],
+    "year": 2026,
+    "abstract": "High-quality mathematical and logical datasets with verifiable answers are essential for strengthening the reasoning capabilities of large language models (LLMs). While recent data augmentation techniques have facilitated the creation of large-scale benchmarks, existing LLM-generated datasets often suffer from limited reliability, diversity, and scalability. To address these challenges, we introduce PuzzleClone, a formal framework for synthesizing verifiable data at scale using a novel DSL-driven approach. Our approach features three key innovations: (1) encoding seed puzzles into structured logical specifications, (2) generating scalable variants through systematic variable and constraint randomization, and (3) ensuring validity via a reproduction mechanism. Applying PuzzleClone, we construct PC-83K, a benchmark comprising over 83K diverse and programmatically validated puzzles. The generated puzzles span a wide spectrum of difficulty and formats, posing significant challenges to current state-of-the-art models. Experimental results show that post training (SFT and RL) on PC-83K yields substantial improvements not only on the testset but also on various logic and mathematical benchmarks. Post training raises average performance on PC-83K from 14.5 to 66.0 and delivers consistent improvements across 7 logic and mathematical benchmarks up to 18.4 absolute percentage points (SATBench from 51.6 to 70.0). Our code and data are available at https://github.com/HiThink-Research/PuzzleClone.",
+    "teaser": "source/projects/puzzleclone/puzzleclone.png",
+    "paper": "source/projects/puzzleclone/puzzleclone.pdf",
+    "doi": "10.18653/v1/2026.findings-acl.1669",
+    "demo": "https://github.com/HiThink-Research/PuzzleClone"
+  },
+  {
+    "id": "navigating-risks",
+    "title": "Navigating the Risks: A Survey of Security and Privacy Threats in LLM-Based Agents",
+    "authors": [
+      "Yuyou Gan",
+      "Yong Yang",
+      "Zhe Ma",
+      "Ping He",
+      "Rui Zeng",
+      "Yiming Wang",
+      "Qingming Li",
+      "Chunyi Zhou",
+      "Songze Li",
+      "Ting Wang",
+      "Yunjun Gao",
+      "Yingcai Wu",
+      "Shouling Ji"
+    ],
+    "venue": [
+      "ACM TOSEM"
+    ],
+    "year": 2026,
+    "abstract": "Large language models (LLMs) are increasingly embedded into software engineering workflows as autonomous or semi-autonomous agents for code generation, test synthesis, tool orchestration, and end-to-end task automation. While these agentic capabilities promise substantial productivity and quality gains, they also introduce distinct security and privacy risks at the levels of artifacts, processes, and socio-technical deployment pipelines. These risks threaten the trustworthiness of LLM-powered software and complicate core engineering activities such as specification, design, verification, maintenance, and governance. This survey systematizes the threat landscape for LLM-based agents from a software engineering perspective. We propose a taxonomy organized by threat sources and their impacts across the software lifecycle, explicitly capturing cross-module and cross-stage attack surfaces (e.g., tool-use mediation, memory management, and environment interaction). We further distill six agent features grounded in information-flow and control-flow properties that shape risk exposure. We synthesize current mitigation techniques and their limitations for each feature, and conduct four case studies on web search, gaming, navigation, and software development to illustrate practical risks and failure modes. Building on these analyses, we outline research directions in data, methodology, and policy to guide the development of secure and trustworthy LLM-based agents.",
+    "teaser": "source/projects/navigating-risks/navigating-risks.jpg",
+    "paper": "source/projects/navigating-risks/navigating-risks.pdf",
+    "doi": "10.1145/3807666"
+  },
+  {
+    "id": "sia",
+    "title": "Linking Heterogeneous Data with Coordinated Agent Flows for Social Media Analysis",
+    "authors": [
+      "Shifu Chen",
+      "Dazhen Deng",
+      "Zhihong Xu",
+      "Sijia Xu",
+      "Linyu Qin",
+      "Tai-Quan Peng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE TVCG",
+      "IEEE VIS 2026"
+    ],
+    "year": 2026,
+    "abstract": "Social media platforms generate volumes of heterogeneous data, capturing user behaviors, textual content, and network structures. Analyzing such data is crucial for understanding phenomena such as opinion dynamics, community formation, and information diffusion. However, discovering insights from this complex landscape is exploratory, conceptually challenging, and requires expertise in social media mining and visualization. Existing automated approaches, including large language models (LLMs), remain largely confined to structured tabular data and cannot adequately address the heterogeneity of social media analysis. We present SIA (Social Insight Agents), an LLM agent system that links heterogeneous multi-modal data, including raw inputs (e.g., text, network, and behavioral data), mined analytical results, and rendered visual artifacts, through coordinated agent flows. Guided by an insight-oriented taxonomy connecting insight types with suitable mining methods and visualization strategies, SIA adopts a stage-synchronized strategy that proceeds through goal decomposition, query, mining, visualization, and reporting stages. At each stage, it collects prior information to jointly plan and execute agent actions, while the coordinator maintains cross-stage action dependencies and assembles and distributes data to agents. Through quantitative evaluation and case studies supported by an interactive interface, we show that SIA can discover diverse and meaningful insights from social media with opportunities for subsequent reliability assessment.",
+    "teaser": "source/projects/sia/sia.png",
+    "paper": "source/projects/sia/sia.pdf"
+  },
+  {
+    "id": "neurobreak",
+    "title": "NeuroBreak: Unveil Internal Jailbreak Mechanisms in Large Language Models",
+    "authors": [
+      "Chuhan Zhang",
+      "Ye Zhang",
+      "Bowen Shi",
+      "Yuyou Gan",
+      "Tianyu Du",
+      "Shouling Ji",
+      "Dazhen Deng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE TVCG",
+      "IEEE VIS 2026"
+    ],
+    "year": 2026,
+    "abstract": "In deployment and application, large language models (LLMs) typically undergo safety alignment to prevent illegal and unethical outputs. However, the continuous advancement of jailbreak attack techniques, designed to bypass safety mechanisms with adversarial prompts, has placed increasing pressure on the security defenses of LLMs. Strengthening resistance to jailbreak attacks requires an in-depth understanding of the security mechanisms and vulnerabilities of LLMs. However, the vast number of parameters and complex structure of LLMs make analyzing security weaknesses from an internal perspective a challenging task. This paper presents NeuroBreak, a top-down jailbreak analysis system designed to analyze neuron-level safety mechanisms and mitigate vulnerabilities. We carefully design system requirements through collaboration with three experts in the field of AI security. The system provides a comprehensive analysis of various jailbreak attack methods. By incorporating layer-wise representation probing analysis, NeuroBreak offers a novel perspective on the model’s decision-making process throughout its generation steps. Furthermore, the system supports the analysis of critical neurons from both semantic and functional perspectives, facilitating a deeper exploration of security mechanisms. We conduct quantitative evaluations and case studies to verify the effectiveness of our system, offering mechanistic insights for developing next-generation defense strategies against evolving jailbreak attacks.",
+    "teaser": "source/projects/neurobreak/neurobreak.png",
+    "paper": "source/projects/neurobreak/neurobreak.pdf"
+  },
+  {
+    "id": "cograder",
+    "title": "CoGrader: Transforming Instructors' Assessment of Project Reports through Collaborative LLM Integration",
+    "authors": [
+      "Zixin Chen",
+      "Jiachen Wang",
+      "Yumeng Li",
+      "Haobo Li",
+      "Chuhan Shi",
+      "Rong Zhang",
+      "Huamin Qu"
+    ],
+    "venue": [
+      "UIST 2025"
+    ],
+    "year": 2025,
+    "doi": "10.1145/3746059.3747670",
+    "abstract": "Grading project reports is increasingly significant in today’s educational landscape, where they serve as key assessments of students’ comprehensive problem-solving abilities. However, it remains challenging due to the multifaceted evaluation criteria involved, such as creativity and peer-comparative achievement. Meanwhile, instructors often struggle to maintain fairness throughout the time-consuming grading process. Recent advances in AI, particularly large language models, have demonstrated potential for automating simpler grading tasks, such as assessing quizzes or basic writing quality. However, these tools often fall short when it comes to complex metrics, like design innovation and the practical application of knowledge, that require an instructor’s educational insights and contextual understanding of the class. To address this challenge, we conducted a formative study with six instructors and developed CoGrader, which introduces a novel grading workflow combining human-LLM collaborative metrics design, benchmarking, and AI-assisted feedback. CoGrader was found effective in improving grading efficiency and consistency while providing reliable peer-comparative feedback to students. We also discuss design insights and ethical considerations for the development of human-AI collaborative grading systems.",
+    "teaser": "source/projects/cograder/cograder.png",
+    "paper": "source/projects/cograder/cograder.pdf"
+  },
+  {
+    "id": "cllmate",
+    "title": "CLLMate: A Multimodal Benchmark for Weather and Climate Events Forecasting",
+    "authors": [
+      "Haobo Li",
+      "Zhaowei Wang",
+      "Jiachen Wang",
+      "Yueya Wang",
+      "Alexis Kai Hon Lau",
+      "Huamin Qu"
+    ],
+    "venue": [
+      "EMNLP 2025 Main"
+    ],
+    "year": 2025,
+    "doi": "10.18653/v1/2025.emnlp-main.886",
+    "demo": "https://github.com/hobolee/CLLMate",
+    "abstract": "Forecasting weather and climate events is crucial for making appropriate measures to mitigate environmental hazards and minimize losses. However, existing environmental forecasting research focuses narrowly on predicting numerical meteorological variables (e.g., temperature), neglecting the translation of these variables into actionable textual narratives of events and their consequences. To bridge this gap, we proposed Weather and Climate Event Forecasting (WCEF), a new task that leverages numerical meteorological raster data and textual event data to predict weather and climate events. This task is challenging to accomplish due to difficulties in aligning multimodal data and the lack of supervised datasets. To address these challenges, we present CLLMate, the first multimodal dataset for WCEF, using 26,156 environmental news articles aligned with ERA5 reanalysis data. We systematically benchmark 32 existing models on CLLMate, including closed-source, open-source, and our fine-tuned models. Our experiments reveal the advantages and limitations of existing MLLMs and the value of CLLMate for the training and benchmarking of the WCEF task. The dataset is available at https://github.com/hobolee/CLLMate.",
+    "teaser": "source/projects/cllmate/cllmate.png",
+    "paper": "source/projects/cllmate/cllmate.pdf"
+  },
+  {
+    "id": "veriscope",
+    "title": "Veriscope: Provenance-Aware Verification of LLM Reasoning Artifacts in Conversational Data Analysis",
+    "authors": [
+      "Lingyu Meng",
+      "Hanbei Zhan",
+      "Yuan Tian",
+      "Yuchen He",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "UIST 2026"
+    ],
+    "year": 2026,
+    "abstract": "Large language models (LLMs) are increasingly adopted by data analysts to perform various analytical tasks within conversational interfaces, owing to their capabilities in code generation and analytical reasoning. Conversational LLMs generate diverse artifacts through multiple reasoning steps and summarize analytical results into insights. Verifying such analysis remains essential yet challenging, as it requires examining both diverse artifacts and the underlying complex reasoning logic, which is not fully addressed by previous work. To facilitate validating LLM-generated results, we present a claim-centered view of analytic provenance and introduce Veriscope, an interactive system that supports fine-grained verification across interconnected artifacts, on-demand tracing of analytic provenance, and modification of analytical results. We formulated our design considerations based on findings derived from a formative study conducted with data analysts (N=6) who have prior experience in verification. We evaluated the effectiveness and usability of our method through a user study (N=18), which demonstrated that Veriscope substantially improves the efficiency of verifying analytical results produced by LLMs. The reliability of LLM-based features was assessed through a technical evaluation.",
+    "teaser": "source/projects/veriscope/veriscope.avif",
+    "paper": "source/projects/veriscope/veriscope.pdf",
+    "doi": "10.1145/3830398.3830599"
+  },
+  {
+    "id": "chronomantic",
+    "title": "ChronoMantic: A Natural Language Interface for Interactive Time Series Pattern Query",
+    "authors": [
+      "Yangtian Liu",
+      "Shuhan Liu",
+      "Guobin Tu",
+      "Yunfan Zhou",
+      "Xiwen Cai",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "UIST 2026"
+    ],
+    "year": 2026,
+    "abstract": "Finding time series patterns is an important problem in finance, healthcare, climatology, and manufacturing, where temporal data analysis informs critical decision-making processes. Existing approaches use examples, sketches, and natural language (NL) for time series pattern querying, but precisely formulating complex queries, inspecting query interpretations, and refining queries iteratively remain challenging. Nevertheless, NL is a promising modality for pattern specification, balancing expressiveness and preciseness while providing an intuitive means of articulating query intent. This paper introduces ChronoMantic, an NL-driven interactive interface for time series pattern querying. The tool provides glyph-based feedback on query interpretation and supports iterative querying through by-example refinement. We illustrate ChronoMantic's workflow through two usage scenarios, assess its retrieval performance on a manually annotated benchmark, and evaluate its query effectiveness and usability via a two-stage user study.",
+    "teaser": "source/projects/chronomantic/chronomantic.avif",
+    "paper": "source/projects/chronomantic/chronomantic.pdf",
+    "doi": "10.1145/3830398.3830491"
+  },
+  {
+    "id": "fea-slt",
+    "title": "FEA-SLT: A Gloss-Free End-to-End Framework for Facial-Expression-Aware Sign Language Translation",
+    "authors": [
+      "Guobin Tu",
+      "Di Weng"
+    ],
+    "venue": [
+      "EMNLP 2026 Main"
+    ],
+    "year": 2026,
+    "abstract": "Sign Language Translation (SLT) is a challenging cross-modal task requiring joint modeling of manual articulations and non-manual signals. Existing gloss-free SLT methods effectively capture gestural dynamics but often underutilize facial expressions, which play crucial grammatical and disambiguating roles. This limitation can cause semantic degradation when distinct concepts share similar manual configurations. To address this issue, we propose FEA-SLT (Facial-Expression-Aware Sign Language Translation), a gloss-free end-to-end framework that uses facial dynamics as semantic anchors for resolving manual ambiguity. FEA-SLT employs a domain-transferred facial encoder to extract expression-sensitive representations and integrates them with manual features through a linguistically constrained Facial-Expression-Aware Fusion (FEAF) module. FEAF captures reciprocal dependencies between manual and facial channels via bidirectional modulation, enhancing syntactic fidelity. Experiments on PHOENIX14T and CSL-Daily show that FEA-SLT achieves state-of-the-art BLEU performance among gloss-free methods, while targeted analyses confirm improved translation of facial-sensitive utterances.",
+    "teaser": "source/projects/fea-slt/fea-slt.avif",
+    "paper": "source/projects/fea-slt/fea-slt.pdf",
+    "demo": "https://github.com/TuGuobin/FEA-SLT"
+  },
+  {
+    "id": "spader",
+    "title": "SPADER: Step-wise Peer Advantage with Diversity-Aware Exploration Rewards for Multi-Answer Question Answering",
+    "authors": [
+      "Qiming Shi",
+      "Zhaolu Kang",
+      "Yunfan Zhou",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "EMNLP 2026 Main"
+    ],
+    "year": 2026,
+    "abstract": "Large language models are increasingly deployed as tool-augmented agents to acquire information beyond parametric knowledge. While recent work has improved long-horizon tool-use reasoning, most approaches focus on tasks with a single correct answer. In contrast, many real-world queries require discovering a comprehensive set of valid answers, a setting known as Multi-Answer QA. This setting raises two challenges: fine-grained credit assignment over long search trajectories and reward alignment for sustained exploration beyond easy high-frequency entities. We propose SPADER, a reinforcement learning framework for long-horizon tool use in Multi-Answer QA. SPADER includes Step-wise Peer Advantage (SPA), a critic-free step-level credit assignment mechanism that aligns parallel trajectories by decision step and estimates advantages from peer returns. It also includes a diversity-aware exploration reward that promotes long-tail entity discovery by upweighting rare findings and downweighting redundant ones. Experiments on QAMPARI, Mintaka, WebQSP, and QUEST show that SPADER generally improves recall and overall F1 over prompting-based agents, outcome-supervised RL methods, and recent step-level supervision approaches.",
+    "teaser": "source/projects/spader/spader.avif",
+    "paper": "source/projects/spader/spader.pdf",
+    "demo": "https://github.com/KhanCold/spader"
+  },
+  {
+    "id": "bird-history",
+    "title": "BIRD-History: A Benchmark for History-Driven Text-to-SQL with Fine-Grained Knowledge Annotations",
+    "authors": [
+      "Yunfan Zhou",
+      "Qiming Shi",
+      "Yizhou Yang",
+      "Di Weng",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "EMNLP 2026 Findings"
+    ],
+    "year": 2026,
+    "abstract": "While recent Large Language Model (LLM)-based text-to-SQL systems achieve impressive performance on standard benchmarks, they struggle when user queries implicitly rely on domain-specific knowledge, such as business logic, data conventions, and analytical practices, that is neither captured by the schema nor explicitly stated in the natural language question. Historical SQL query logs offer a valuable source of such knowledge, yet existing benchmarks do not adequately support evaluation of history-driven approaches. To address this gap, we introduce BIRD-History, a benchmark consisting of 1,393 tasks across 11 databases, designed to evaluate text-to-SQL systems' ability to ground underspecified natural language questions using historical SQL scripts. Each task is annotated with ground-truth labels specifying which historical queries contain relevant knowledge and which SQL clauses encode it, enabling systematic evaluation of both retrieval effectiveness and knowledge utilization. Alongside the benchmark, we propose a plug-in retriever that extracts five types of external knowledge from historical SQL scripts, then retrieves and reranks relevant fragments for query generation. The retriever integrates seamlessly into existing few-shot text-to-SQL pipelines without requiring prompt modifications. Experiments demonstrate consistent improvements across four text-to-SQL systems, highlighting the value of leveraging historical query logs for handling underspecified queries.",
+    "teaser": "source/projects/bird-history/bird-history.avif"
+  },
+  {
     "id": "net-efficiency",
     "teaser": "source/projects/net-efficiency/net-efficiency.png",
     "title": "Key indicator for winning soccer matches: net efficiency",

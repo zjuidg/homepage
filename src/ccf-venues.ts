@@ -7,9 +7,11 @@ import { OTHER_COLOR, OTHER_ID, type VenueScale } from './venues';
 // https://www.ccf.org.cn/Academic_Evaluation/AI/
 // https://www.ccf.org.cn/Academic_Evaluation/DM_CS/
 // https://www.ccf.org.cn/Academic_Evaluation/NIS/
+// https://www.ccf.org.cn/c/2017-03-15/587248.shtml (TOSEM)
 // Fixed colors keep each venue consistent as publication counts change.
 const CCF_A_COLORS = new Map<string, string>([
   [Venue.TVCG, '#5b8cff'],
+  [Venue.TOSEM, '#a4cf9a'],
   ['CHI', '#b07cff'],
   ['UIST', '#ff6b9d'],
   ['AAAI', '#ffb454'],
