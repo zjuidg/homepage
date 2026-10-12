@@ -1,6 +1,8 @@
 import { Venue, type Publication } from './types';
 import { OTHER_COLOR, OTHER_ID, type VenueScale } from './venues';
 
+const VIS_TVCG_GROUP = 'IEEE VIS/TVCG';
+
 // CCF-A venues represented in our data, checked against the CCF directory:
 // https://www.ccf.org.cn/Academic_Evaluation/CGAndMT/
 // https://www.ccf.org.cn/Academic_Evaluation/HCIAndPC/
@@ -10,13 +12,12 @@ import { OTHER_COLOR, OTHER_ID, type VenueScale } from './venues';
 // https://www.ccf.org.cn/c/2017-03-15/587248.shtml (TOSEM)
 // Fixed colors keep each venue consistent as publication counts change.
 const CCF_A_COLORS = new Map<string, string>([
-  [Venue.TVCG, '#5b8cff'],
+  [VIS_TVCG_GROUP, '#5b8cff'],
   [Venue.TOSEM, '#a4cf9a'],
   ['CHI', '#b07cff'],
   ['UIST', '#ff6b9d'],
   ['AAAI', '#ffb454'],
   ['KDD', '#2fe6d6'],
-  ['IEEE VIS', '#8bd450'],
   [Venue.IMWUT, '#e8cf66'],
   ['ACL', '#63c6ff'],
   ['CCS', '#c99673'],
@@ -29,15 +30,15 @@ const CCF_A_COLORS = new Map<string, string>([
 // CCF conference listings cover full/regular papers, not these other tracks.
 const NON_REGULAR_TRACK = /\b(short(?: paper)?|demo|technical brief|summary|findings|workshop|poster|art gallery)\b/i;
 
-/** CCF-A group used by the hero chart, with archival TVCG taking priority. */
+/** CCF-A group used by the hero chart, with VIS and archival TVCG combined. */
 export function ccfAVenueGroup(p: Publication): string {
-  if (p.venue.includes(Venue.TVCG)) return Venue.TVCG;
+  if (p.venue.includes(Venue.TVCG)) return VIS_TVCG_GROUP;
 
   for (const venue of p.venue) {
     if (NON_REGULAR_TRACK.test(venue)) continue;
     const series = venue.replace(/\s*(?:19|20)\d{2}.*$/, '').trim();
     // SciVis was one of the conferences within IEEE VIS before unification.
-    const group = series === 'IEEE SciVis' ? 'IEEE VIS' : series;
+    const group = series === 'IEEE VIS' || series === 'IEEE SciVis' ? VIS_TVCG_GROUP : series;
     if (CCF_A_COLORS.has(group)) return group;
   }
   return OTHER_ID;
