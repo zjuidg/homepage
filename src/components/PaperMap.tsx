@@ -8,22 +8,23 @@ import { reveal } from '../reveal';
 import { lang, t } from '../i18n';
 import './PaperMap.css';
 
+// Bright macaron pastels, shared with scripts/preview-topic-map.py.
 const COLORS: Record<PublicationCategory, string> = {
-  'sports-analytics': '#efc5a5',
-  'visualization-design': '#c9bbdc',
-  'urban-geospatial': '#b9d6ca',
-  'data-wrangling': '#b5cee0',
-  'social-behavior': '#e8b8b4',
-  'model-mechanisms': '#b3d7d8',
-  'industrial-analytics': '#d2d8b2',
-  'cultural-heritage': '#dcbdd1',
-  'perception-interaction': '#bdc5df',
-  'time-series-analysis': '#bdd3b4',
-  'health-analytics': '#e7c7b7',
-  'causal-analysis': '#dcd1ae',
-  'graph-analytics': '#b5ced0',
-  'research-evaluation': '#d1d2bf',
-  'multimodal-analytics': '#d5c3b1',
+  'sports-analytics': '#ffd2ad',
+  'visualization-design': '#dccbff',
+  'urban-geospatial': '#bcebd5',
+  'data-wrangling': '#bfe0ff',
+  'social-behavior': '#ffc5cd',
+  'model-mechanisms': '#bceee7',
+  'industrial-analytics': '#e7edb3',
+  'cultural-heritage': '#f7c8e5',
+  'perception-interaction': '#cdd5ff',
+  'time-series-analysis': '#cfebbb',
+  'health-analytics': '#ffe0cf',
+  'causal-analysis': '#ffedba',
+  'graph-analytics': '#bce4f1',
+  'research-evaluation': '#e1ebcc',
+  'multimodal-analytics': '#f4dec5',
 };
 const ringPath = (ring: MapCoordinate[]) => `M${ring.map((p) => p.join(',')).join('L')}Z`;
 const linePath = (edges: [MapCoordinate, MapCoordinate][]) => edges.map(([a, b]) => `M${a.join(',')}L${b.join(',')}`).join('');

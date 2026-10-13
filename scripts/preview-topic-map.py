@@ -23,21 +23,21 @@ BACKGROUND = "#10151e"
 INK = "#eaf0f3"
 MUTED = "#98a6b7"
 COLORS = {
-    "sports-analytics": "#e7bd70",
-    "visualization-design": "#b69fea",
-    "urban-geospatial": "#78c3ad",
-    "data-wrangling": "#78b8ec",
-    "social-behavior": "#e89492",
-    "model-mechanisms": "#69cbd5",
-    "industrial-analytics": "#b9cb7f",
-    "cultural-heritage": "#d5a0c4",
-    "perception-interaction": "#91a7e9",
-    "time-series-analysis": "#89c79a",
-    "health-analytics": "#e9a77e",
-    "causal-analysis": "#d4c6a2",
-    "graph-analytics": "#88bdcd",
-    "research-evaluation": "#b5bcaa",
-    "multimodal-analytics": "#ceac91",
+    "sports-analytics": "#ffd2ad",
+    "visualization-design": "#dccbff",
+    "urban-geospatial": "#bcebd5",
+    "data-wrangling": "#bfe0ff",
+    "social-behavior": "#ffc5cd",
+    "model-mechanisms": "#bceee7",
+    "industrial-analytics": "#e7edb3",
+    "cultural-heritage": "#f7c8e5",
+    "perception-interaction": "#cdd5ff",
+    "time-series-analysis": "#cfebbb",
+    "health-analytics": "#ffe0cf",
+    "causal-analysis": "#ffedba",
+    "graph-analytics": "#bce4f1",
+    "research-evaluation": "#e1ebcc",
+    "multimodal-analytics": "#f4dec5",
 }
 
 

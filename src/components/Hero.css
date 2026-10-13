@@ -35,6 +35,10 @@
   animation-delay: 0.16s;
 }
 
+:root[data-theme='light'] .hero__logo {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 .hero__lead {
   max-width: 60ch;
   font-size: clamp(1.02rem, 1.7vw, 1.22rem);
@@ -73,11 +77,11 @@
 .btn--primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #07070d;
+  color: var(--on-accent);
 }
 .btn--primary:hover {
   transform: translateY(-2px);
-  background: #76a0ff;
+  background: var(--accent-hover);
 }
 .btn--primary:hover svg {
   transform: translateX(4px);

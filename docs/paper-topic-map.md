@@ -104,9 +104,12 @@ are recorded in the output JSON.
 The visual reference is Fig. 5A and Section 5.1 of
 [CausalMap](https://doi.org/10.1109/TVCG.2025.3633839), also visible in the
 repository's `public/source/projects/CausalMap/CausalMap.jpg` teaser. The map uses
-pastel land, dark region boundaries, faint dashed subdivisions, and direct topic
-labels. Color encodes research categories here. The site's surrounding UI stays
-dark. There is no time axis, causal pathway encoding, or paper-to-paper edge.
+bright macaron pastel land, soft slate-gray boundaries and paper markers, faint
+dashed subdivisions, and direct topic labels. Color encodes research categories
+here. The surrounding UI follows the selected dark or light theme; category
+colors stay the same in both themes. Selected markers and region borders use a
+deeper slate gray for contrast.
+There is no time axis, causal pathway encoding, or paper-to-paper edge.
 
 Each paper's Voronoi cell is its pointer target for a paper tooltip and marker
 highlight. Hovering or focusing a cell adds a subtle white background at 18%

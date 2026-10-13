@@ -54,7 +54,7 @@
   font-size: clamp(1.05rem, 2.4vw, 1.6rem);
   font-weight: 700;
   line-height: 1.28;
-  /* caption always sits over a dark photo overlay — keep it light in both themes */
+  /* Captions sit over a dark photo overlay in both themes. */
   color: #f6f8fd;
 }
 .carousel__subtitle {
@@ -76,9 +76,9 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: var(--text);
+  color: #f6f8fd;
   background: rgba(8, 9, 16, 0.55);
-  border: 1px solid var(--border-strong);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   cursor: pointer;

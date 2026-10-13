@@ -6,7 +6,8 @@ homepage — a single-page SolidJS app that showcases the group's publications.
 ## Stack & commands
 
 - **SolidJS + Vite + TypeScript**, package manager **pnpm**.
-- Dark theme only. Full **English / Simplified Chinese** i18n (English default).
+- Dark and light themes (dark default), with a saved choice in the navigation.
+  Full **English / Simplified Chinese** i18n (English default).
 
 ```bash
 pnpm install
@@ -25,6 +26,8 @@ preview tooling). Run `pnpm build` / `npx tsc -b` to typecheck.
 - `src/i18n.ts` — `en`/`zh` copy bundle + `lang` signal + `t()` accessor. UI strings live
   here, **not** inline in components. Paper titles/authors/venues are data and stay
   in their original language.
+- `src/theme.ts`: theme signal and switcher state. `index.html` restores the saved
+  theme before the first paint. Theme colors live in `src/index.css`.
 - `src/types.ts` — `Publication`, `Slide`.
 - `src/components/`: `Nav`, `LangToggle`, `Hero`, `About`, `PaperMap`, `Carousel`,
   `Publications`, `PublicationCard`, `Footer`. Component styles live in colocated

@@ -1,6 +1,6 @@
 # ZJU Interactive Data Group — Homepage
 
-A modern, dark redesign of the [Interactive Data Group](https://zjuidg.org) homepage,
+A homepage with dark and light themes for the [Interactive Data Group](https://zjuidg.org),
 built with **SolidJS + Vite + TypeScript**. The site is a single-page experience that
 showcases the group's research publications, with full **English / Simplified Chinese**
 support.
@@ -134,5 +134,8 @@ scripts/               # embeddings, topic-map generation/validation, PDF upload
 ## Theming
 
 Design tokens (colors, gradients, radii) live as CSS custom properties in
-[`src/index.css`](src/index.css). The palette is a cool cyan→blue→violet "data spectrum"
-on a near-black background. Respects `prefers-reduced-motion`.
+[`src/index.css`](src/index.css). Use the sun or moon button beside the language
+switcher to change themes. Dark is the default; the choice is saved in
+`localStorage` and restored before the first paint. The light theme uses a white
+background, dark text, and blue controls. Both themes keep the same venue and
+research-category colors and respect `prefers-reduced-motion`.

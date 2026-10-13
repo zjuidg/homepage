@@ -7,7 +7,9 @@ const KEY = 'idg-lang';
 
 export interface Copy {
   langLabel: string; // label shown on the switcher (the OTHER language to switch to)
-  nav: { about: string; highlights: string; network: string; publications: string; contact: string };
+  langSwitch: string;
+  theme: { switchToLight: string; switchToDark: string };
+  nav: { about: string; highlights: string; network: string; publications: string; contact: string; toggleMenu: string };
   hero: {
     eyebrow: string;
     title1: string;
@@ -97,12 +99,15 @@ export interface Copy {
 
 const en: Copy = {
   langLabel: '中文',
+  langSwitch: 'Switch language',
+  theme: { switchToLight: 'Switch to light theme', switchToDark: 'Switch to dark theme' },
   nav: {
     about: 'About',
     highlights: 'Highlights',
     network: 'Network',
     publications: 'Publications',
     contact: 'Contact',
+    toggleMenu: 'Toggle menu',
   },
   hero: {
     eyebrow: 'Zhejiang University · State Key Lab of CAD&CG',
@@ -219,12 +224,15 @@ const en: Copy = {
 
 const zh: Copy = {
   langLabel: 'EN',
+  langSwitch: '切换语言',
+  theme: { switchToLight: '切换到浅色主题', switchToDark: '切换到深色主题' },
   nav: {
     about: '关于',
     highlights: '近期亮点',
     network: '合作网络',
     publications: '学术论文',
     contact: '联系',
+    toggleMenu: '切换菜单',
   },
   hero: {
     eyebrow: '浙江大学 · 计算机辅助设计与图形系统全国重点实验室',

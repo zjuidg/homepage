@@ -1,5 +1,5 @@
 .paper-map { position: relative; scroll-margin-top: 90px; }
-.map__atlas { border: 1px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; background: #10141b; }
+.map__atlas { border: 1px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; background: var(--map-bg); }
 .map__toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 17px 22px; border-bottom: 1px solid var(--border); }
 .map__summary strong { font-size: .88rem; font-weight: 500; }
 .map__zoom { display: flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }
@@ -16,23 +16,23 @@
 .map__region { pointer-events: none; transition: opacity .2s; }
 .map__region.dim { opacity: .38; }
 .map__subdivisions, .map__borders, .map__coast, .map__selected-border { fill: none; pointer-events: none; stroke-linejoin: round; stroke-linecap: round; }
-.map__subdivisions { stroke: #35434a; stroke-width: .5; stroke-dasharray: 1.4 3; opacity: .42; }
-.map__borders { stroke: #333b41; stroke-width: 1.05; }
-.map__coast { stroke: #d4d8d7; stroke-width: 1.7; }
-.map__selected-border { stroke: #141b21; stroke-width: 3.2; }
+.map__subdivisions { stroke: #cbd5e1; stroke-width: .5; stroke-dasharray: 1.4 3; opacity: .42; }
+.map__borders { stroke: #94a3b8; stroke-width: 1.05; }
+.map__coast { stroke: var(--map-coast); stroke-width: 1.7; }
+.map__selected-border { stroke: #64748b; stroke-width: 3.2; }
 .map__node { pointer-events: none; transition: opacity .2s; }
 .map__node.dim { opacity: .12; }
 .map__paper-cell { fill: transparent; pointer-events: all; cursor: pointer; transition: fill .15s; }
 .map__paper-cell.hot { fill: rgba(255, 255, 255, .18); }
 .map__paper-cell:focus { outline: none; }
 .map__paper-cell:focus-visible { stroke: #fff; stroke-width: 1.5; }
-.map__dot { fill: #36444b; stroke: #fff; stroke-width: 1.2; pointer-events: none; }
-.map__node.hot .map__dot { fill: #111c25; stroke: #fff; stroke-width: 1.6; r: 4.8; }
+.map__dot { fill: #94a3b8; stroke: #fff; stroke-width: 1.2; pointer-events: none; }
+.map__node.hot .map__dot { fill: #64748b; stroke: #fff; stroke-width: 1.6; r: 4.8; }
 .map__labels { pointer-events: none; }
-.map__label { fill: #26333a; opacity: .6; font-family: Arial, 'Heiti SC', 'Microsoft YaHei', sans-serif; font-weight: 700; paint-order: stroke fill; stroke: var(--land); stroke-width: 3px; stroke-linejoin: round; transition: opacity .2s; }
+.map__label { fill: #26333a; opacity: .75; font-family: Arial, 'Heiti SC', 'Microsoft YaHei', sans-serif; font-weight: 700; paint-order: stroke fill; stroke: var(--land); stroke-width: 3px; stroke-linejoin: round; transition: opacity .2s; }
 html:lang(zh) .map__label { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; font-weight: 800; }
 .map__label.dim { opacity: .22; }
-.map__sidebar { border-left: 1px solid var(--border); padding: 22px 12px 18px; background: rgba(4, 7, 13, .15); }
+.map__sidebar { border-left: 1px solid var(--border); padding: 22px 12px 18px; background: var(--map-sidebar-bg); }
 .map__legend-head { padding: 0 8px 13px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .map__legend-head h3 { font-size: .78rem; font-weight: 500; letter-spacing: 0; }
 .map__legend-head button { appearance: none; border: 0; padding: 0; color: var(--text-dim); background: transparent; font: inherit; font-size: .65rem; cursor: pointer; }
@@ -45,7 +45,7 @@ html:lang(zh) .map__label { font-family: 'PingFang SC', 'Microsoft YaHei', sans-
 .map__swatch { width: 10px; height: 10px; border-radius: 2px; flex: none; }
 .map__legend-name { flex: 1; }
 .map__legend-count { font-family: var(--mono); color: var(--text-faint); font-size: .65rem; }
-.map__tooltip { position: fixed; z-index: 100; width: min(320px, calc(100vw - 24px)); padding: 13px 15px; display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--border-strong); border-radius: 8px; background: rgba(16, 20, 27, .97); box-shadow: 0 8px 28px rgba(0, 0, 0, .3); pointer-events: none; overflow-wrap: anywhere; }
+.map__tooltip { position: fixed; z-index: 100; width: min(320px, calc(100vw - 24px)); padding: 13px 15px; display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--map-tooltip-bg); box-shadow: var(--tooltip-shadow); pointer-events: none; overflow-wrap: anywhere; }
 .map__tooltip strong { color: var(--text); font-size: .82rem; font-weight: 500; line-height: 1.45; }
 .map__tooltip > span { font-size: .71rem; color: var(--text-dim); line-height: 1.5; }
 .map__unavailable { font-size: .8rem; color: var(--text-faint); margin: 0; }

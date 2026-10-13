@@ -84,7 +84,7 @@ export default function Hero(props: Props) {
         <p class="eyebrow hero__eyebrow">{t().hero.eyebrow}</p>
 
         <h1 class="hero__title">
-          <img style="max-width: 600px; width: 100%; height: auto;" src="/logo.png" alt="" class="hero__logo" />
+          <img style="max-width: 600px; width: 100%; height: auto;" src="/logo-transparent.png" alt={`${t().hero.title1} ${t().hero.title2}`} class="hero__logo" />
           {/* <span>{t().hero.title1}</span>
           <span class="hero__title-em">{t().hero.title2}</span> */}
         </h1>

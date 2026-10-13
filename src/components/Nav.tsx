@@ -1,5 +1,6 @@
 import { createSignal, For, onCleanup, onMount } from 'solid-js';
 import LangToggle from './LangToggle';
+import ThemeToggle from './ThemeToggle';
 import { t } from '../i18n';
 import './Nav.css';
 
@@ -40,11 +41,15 @@ export default function Nav() {
           </For>
         </nav>
 
-        <LangToggle />
+        <div class="nav__controls">
+          <ThemeToggle />
+          <LangToggle />
+        </div>
 
         <button
           class="nav__burger"
-          aria-label="Toggle menu"
+          type="button"
+          aria-label={t().nav.toggleMenu}
           aria-expanded={open()}
           onClick={() => setOpen((v) => !v)}
         >
