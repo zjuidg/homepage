@@ -1,4 +1,4 @@
-import { Venue, type Publication, type Slide } from './types';
+import { Venue, type Publication, type PublicationCategory, type Slide } from './types';
 
 const base = import.meta.env.BASE_URL || '/';
 
@@ -43,16 +43,37 @@ export async function loadSlides(): Promise<Slide[]> {
   return getJSON<Slide[]>('slides.json');
 }
 
-/**
- * Precomputed paper-map layout: publication id → [x, y], each in [-1, 1]. Points
- * come from `scripts/compute-paper-map.mjs` (OpenAI embeddings + t-SNE), so no
- * model runs at page load. Papers added without re-running the script are simply
- * absent from the map.
- */
-export type PaperMap = Record<string, [number, number]>;
+export type MapCoordinate = [number, number];
+export interface MapLabel {
+  x: number;
+  y: number;
+  size: number;
+  lines: string[];
+  width: number;
+  height: number;
+  angle: number;
+}
+export interface MapRegion {
+  category: PublicationCategory;
+  count: number;
+  area: number;
+  paperShare: number;
+  rings: MapCoordinate[][];
+  labels: Record<'en' | 'zh', MapLabel>;
+}
+/** Precomputed semantic node layout and merged ordinary Voronoi cells. */
+export interface PaperMap {
+  width: number;
+  height: number;
+  papers: { id: string; category: PublicationCategory; x: number; y: number; cell: MapCoordinate[] }[];
+  regions: MapRegion[];
+  coast: MapCoordinate[];
+  borders: [MapCoordinate, MapCoordinate][];
+  subdivisions: [MapCoordinate, MapCoordinate][];
+}
 
 export async function loadPaperMap(): Promise<PaperMap> {
-  return getJSON<PaperMap>('paper-map.json');
+  return getJSON<PaperMap>('paper-topic-map.json');
 }
 
 /**

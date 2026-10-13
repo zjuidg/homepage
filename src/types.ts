@@ -97,9 +97,31 @@ export const Venue = {
 
 export type Venue = (typeof Venue)[keyof typeof Venue];
 
+/** Primary research categories. Coding rules live in docs/publication-categories.md. */
+export const PublicationCategory = {
+  SportsAnalytics: 'sports-analytics',
+  UrbanGeospatial: 'urban-geospatial',
+  SocialBehavior: 'social-behavior',
+  DataWrangling: 'data-wrangling',
+  VisualizationDesign: 'visualization-design',
+  TimeSeriesAnalysis: 'time-series-analysis',
+  CausalAnalysis: 'causal-analysis',
+  GraphAnalytics: 'graph-analytics',
+  PerceptionInteraction: 'perception-interaction',
+  ResearchEvaluation: 'research-evaluation',
+  MultimodalAnalytics: 'multimodal-analytics',
+  ModelMechanisms: 'model-mechanisms',
+  CulturalHeritage: 'cultural-heritage',
+  IndustrialAnalytics: 'industrial-analytics',
+  HealthAnalytics: 'health-analytics',
+} as const;
+
+export type PublicationCategory = (typeof PublicationCategory)[keyof typeof PublicationCategory];
+
 export interface Publication {
   id: string;
   title: string;
+  category: PublicationCategory; // exactly one primary research category
   authors: string[];
   venue: Venue[];          // archival outlet and/or conference (see Venue)
   year: number;

@@ -1,207 +1,68 @@
-.mapsec {
-  position: relative;
+.paper-map { position: relative; scroll-margin-top: 90px; }
+.map__atlas { border: 1px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; background: #10141b; }
+.map__toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 17px 22px; border-bottom: 1px solid var(--border); }
+.map__summary strong { font-size: .88rem; font-weight: 500; }
+.map__zoom { display: flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }
+.map__zoom button { appearance: none; border: 0; border-right: 1px solid var(--border); background: transparent; color: var(--text-dim); height: 31px; min-width: 31px; font: inherit; font-size: .78rem; cursor: pointer; }
+.map__zoom button:nth-child(2) { min-width: 55px; font-family: var(--mono); font-size: .68rem; }
+.map__zoom button:last-child { border-right: 0; }
+.map__zoom button:hover { background: var(--surface-2); color: var(--text); }
+.map__zoom button:disabled { opacity: .3; cursor: default; }
+.map__body { display: grid; grid-template-columns: minmax(0, 1fr) 232px; }
+.map__stage { min-width: 0; display: flex; align-items: center; overflow: hidden; }
+.map__svg { display: block; width: 100%; height: auto; max-height: 720px; aspect-ratio: var(--map-aspect); overflow: hidden; user-select: none; touch-action: pan-y; }
+.map__svg.is-zoomed { cursor: grab; touch-action: none; }
+.map__svg.is-zoomed:active { cursor: grabbing; }
+.map__region { pointer-events: none; transition: opacity .2s; }
+.map__region.dim { opacity: .38; }
+.map__subdivisions, .map__borders, .map__coast, .map__selected-border { fill: none; pointer-events: none; stroke-linejoin: round; stroke-linecap: round; }
+.map__subdivisions { stroke: #35434a; stroke-width: .5; stroke-dasharray: 1.4 3; opacity: .42; }
+.map__borders { stroke: #333b41; stroke-width: 1.05; }
+.map__coast { stroke: #d4d8d7; stroke-width: 1.7; }
+.map__selected-border { stroke: #141b21; stroke-width: 3.2; }
+.map__node { pointer-events: none; transition: opacity .2s; }
+.map__node.dim { opacity: .12; }
+.map__paper-cell { fill: transparent; pointer-events: all; cursor: pointer; transition: fill .15s; }
+.map__paper-cell.hot { fill: rgba(255, 255, 255, .18); }
+.map__paper-cell:focus { outline: none; }
+.map__paper-cell:focus-visible { stroke: #fff; stroke-width: 1.5; }
+.map__dot { fill: #36444b; stroke: #fff; stroke-width: 1.2; pointer-events: none; }
+.map__node.hot .map__dot { fill: #111c25; stroke: #fff; stroke-width: 1.6; r: 4.8; }
+.map__labels { pointer-events: none; }
+.map__label { fill: #26333a; opacity: .6; font-family: Arial, 'Heiti SC', 'Microsoft YaHei', sans-serif; font-weight: 700; paint-order: stroke fill; stroke: var(--land); stroke-width: 3px; stroke-linejoin: round; transition: opacity .2s; }
+html:lang(zh) .map__label { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; font-weight: 800; }
+.map__label.dim { opacity: .22; }
+.map__sidebar { border-left: 1px solid var(--border); padding: 22px 12px 18px; background: rgba(4, 7, 13, .15); }
+.map__legend-head { padding: 0 8px 13px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.map__legend-head h3 { font-size: .78rem; font-weight: 500; letter-spacing: 0; }
+.map__legend-head button { appearance: none; border: 0; padding: 0; color: var(--text-dim); background: transparent; font: inherit; font-size: .65rem; cursor: pointer; }
+.map__legend-head button:disabled { color: var(--text-faint); cursor: default; }
+.map__legend { padding: 0; margin: 0; list-style: none; }
+.map__legend-item { display: flex; width: 100%; align-items: center; gap: 8px; text-align: left; padding: 8px; border: 1px solid transparent; border-radius: 5px; background: transparent; color: var(--text-dim); font: inherit; font-size: .72rem; line-height: 1.35; cursor: pointer; transition: opacity .2s, background .2s; }
+.map__legend-item:hover, .map__legend-item.active { color: var(--text); background: var(--surface-2); }
+.map__legend-item.active { border-color: var(--border-strong); }
+.map__legend-item.dim { opacity: .42; }
+.map__swatch { width: 10px; height: 10px; border-radius: 2px; flex: none; }
+.map__legend-name { flex: 1; }
+.map__legend-count { font-family: var(--mono); color: var(--text-faint); font-size: .65rem; }
+.map__tooltip { position: fixed; z-index: 100; width: min(320px, calc(100vw - 24px)); padding: 13px 15px; display: flex; flex-direction: column; gap: 6px; border: 1px solid var(--border-strong); border-radius: 8px; background: rgba(16, 20, 27, .97); box-shadow: 0 8px 28px rgba(0, 0, 0, .3); pointer-events: none; overflow-wrap: anywhere; }
+.map__tooltip strong { color: var(--text); font-size: .82rem; font-weight: 500; line-height: 1.45; }
+.map__tooltip > span { font-size: .71rem; color: var(--text-dim); line-height: 1.5; }
+.map__unavailable { font-size: .8rem; color: var(--text-faint); margin: 0; }
+.map__zoom button:focus-visible, .map__legend button:focus-visible, .map__legend-head button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+@media (max-width: 900px) {
+  .map__body { grid-template-columns: minmax(0, 1fr); }
+  .map__sidebar { border-left: 0; border-top: 1px solid var(--border); padding: 17px 14px; }
+  .map__legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .map__legend-item { height: 100%; }
+  .map__legend-head { justify-content: flex-start; gap: 18px; }
 }
-
-/* ---- controls: venue legend + method note ---- */
-.map__controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-bottom: 22px;
+@media (max-width: 580px) {
+  .map__toolbar { flex-wrap: wrap; padding: 14px; gap: 12px; }
+  .map__svg { aspect-ratio: 1 / 1; }
+  .map__legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .map__legend-item { font-size: .69rem; padding: 7px 5px; }
 }
-
-.map__legend {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.map__legend li {
-  display: inline-flex;
-}
-.map__legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  appearance: none;
-  border: 0;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: var(--text-dim);
-  background: transparent;
-  padding: 4px 6px;
-  border-radius: 999px;
-  transition: color 0.25s, opacity 0.25s;
-}
-.map__legend-item:hover {
-  color: var(--text);
-}
-.map__legend-item.dim {
-  opacity: 0.4;
-}
-.map__swatch {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  flex: none;
-}
-
-.map__stats {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--text-faint);
-  font-variant-numeric: tabular-nums;
-}
-
-/* ---- stage ---- */
-.map__stage {
-  position: relative;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: radial-gradient(120% 90% at 50% 0%, rgba(91, 140, 255, 0.06), transparent 60%), var(--bg-2);
-  overflow: hidden;
-}
-
-.map__svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1000 / 680;
-  touch-action: none;
-}
-
-/* ---- links (papers sharing 2+ authors) ---- */
-/* The group co-authors heavily, so there are thousands of links — keep them a
-   faint connective texture at rest and let hover surface a single paper's ties. */
-.map__link {
-  stroke: #fff;
-  /* resting stroke-opacity is set inline, scaled by shared-author count; the
-     state rules below override it with !important. */
-  pointer-events: none; /* links never intercept the pointer */
-  transition: stroke 0.25s, stroke-opacity 0.25s;
-}
-/* while a dot is spotlighted, fade every link except the ones it touches */
-.map__svg.is-focused .map__link {
-  stroke-opacity: 0.02 !important;
-}
-.map__svg.is-focused .map__link.hot {
-  stroke: var(--accent);
-  stroke-opacity: 0.85 !important;
-}
-
-/* ---- nodes ---- */
-.map__node {
-  cursor: pointer;
-}
-.map__halo {
-  fill: transparent;
-  /* a generous, stable hit target so small pointer moves don't thrash hover */
-  pointer-events: all;
-  transition: fill 0.2s;
-}
-.map__dot {
-  stroke: rgba(6, 7, 13, 0.85);
-  stroke-width: 1.4;
-  pointer-events: none;
-  transition: opacity 0.25s, r 0.15s;
-}
-.map__node:hover .map__halo,
-.map__node:focus-visible .map__halo {
-  fill: rgba(255, 255, 255, 0.06);
-}
-.map__node:focus-visible {
-  outline: none;
-}
-
-/* spotlight: dim everything but the active venue / hovered paper */
-.map__svg.is-focused .map__node.dim .map__dot {
-  opacity: 0.16;
-}
-.map__node.hot .map__dot {
-  stroke: #fff;
-  stroke-width: 1.8;
-}
-.map__node:hover .map__dot,
-.map__node:focus-visible .map__dot {
-  stroke: #fff;
-  stroke-width: 1.8;
-  filter: drop-shadow(0 0 6px currentColor);
-}
-
-/* ---- readout (hovered paper) ---- */
-.map__readout {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  right: 16px;
-  max-width: 420px;
-  pointer-events: none;
-}
-.map__hint {
-  margin: 0;
-  font-size: 0.86rem;
-  color: var(--text-faint);
-  line-height: 1.5;
-}
-.map__card {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--nav-menu-bg);
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-}
-.map__card-dot {
-  width: 13px;
-  height: 13px;
-  margin-top: 4px;
-  border-radius: 50%;
-  flex: none;
-  box-shadow: 0 0 12px currentColor;
-}
-.map__card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  min-width: 0;
-}
-.map__card-title {
-  font-size: 0.96rem;
-  font-weight: 600;
-  font-family: var(--display);
-  line-height: 1.3;
-}
-.map__card-meta {
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  font-variant-numeric: tabular-nums;
-}
-
-@media (max-width: 640px) {
-  .map__controls {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .map__svg {
-    aspect-ratio: 1 / 1;
-  }
-  .map__readout {
-    max-width: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .map__dot,
-  .map__halo {
-    transition: none;
-  }
+  .map__region, .map__node, .map__paper-cell, .map__label, .map__legend-item { transition: none; }
 }

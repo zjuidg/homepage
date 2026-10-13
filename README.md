@@ -8,7 +8,7 @@ support.
 ## Sections
 
 - **Hero** — animated constellation network and live stats (founded, publication count, venues).
-- **About** — research areas of the lab.
+- **About**: group introduction and the interactive paper map, grouped by research topic.
 - **Highlights** — auto-playing photo carousel of recent talks, awards, and papers (`slides.json`).
 - **Publications** — searchable / filterable, paginated list of all papers (`publications.json`),
   with an award-paper filter, abstracts, teasers, and links to paper PDF, DOI, video, and demos.
@@ -29,7 +29,8 @@ Content is driven by JSON + image assets served from `public/source/`:
 
 | File | Purpose |
 | --- | --- |
-| `source/publications.json` | All publications (sorted newest-first at load) |
+| `source/publications.json` | All publications, each with one primary category (sorted newest-first at load) |
+| `source/paper-topic-map.json` | Precomputed UMAP topic map and merged Voronoi cells |
 | `source/slides.json` | Carousel highlight slides (`titleZh` for Chinese captions) |
 | `source/featuredProj.json` | Featured publication ids |
 | `source/projects/<id>/…` | Teaser images |
@@ -45,16 +46,38 @@ Paper PDFs are **not** bundled in the repo (≈900MB) — they are hosted on a p
 `source/` (e.g. `projects/trajgram/trajgram.pdf`). To (re)upload PDFs:
 
 ```bash
-# 1) populate public/source from the legacy site (incl. PDFs)
-python3 scripts/copy-assets.py
-# 2) authenticate wrangler (OAuth) and upload PDFs to R2 (resumable)
+# Place new PDFs directly in public/source/projects/<id>/.
+# Authenticate wrangler (OAuth) and upload PDFs to R2 (resumable).
 npx wrangler login
 PAPERS_PUBLIC_BASE=https://pub-XXXX.r2.dev scripts/upload-papers.sh zjuidg-papers
 ```
 
-`scripts/copy-assets.py` copies only the assets referenced by `publications.json`
-(teasers + papers) plus the JSON files — it skips outdated member photos and the intro video.
-The legacy CRA build in [`old/`](old) is git-ignored.
+`scripts/copy-assets.py` was a one-time migration. Do not rerun it for new papers:
+it overwrites manually maintained content from the ignored legacy `old/` directory.
+
+## Adding a publication
+
+Follow the [publication insertion workflow in AGENTS.md](AGENTS.md).
+Add the full-resolution teaser, upload the PDF to R2, and add the publication JSON
+with exactly one `category`. Update its evidence row and category counts in the
+[category codebook](docs/publication-categories.md).
+
+Then regenerate and validate the map before committing:
+
+```bash
+node scripts/compute-paper-map.mjs --embeddings-only
+python3 -B scripts/compute-topic-map.py
+node scripts/validate-topic-map.mjs
+pnpm build
+```
+
+Use Python 3.10+ with NumPy, Pillow, and the fonts described in AGENTS.md.
+New or changed titles/abstracts need `OPENAI_API_KEY` in the environment or `.env`;
+cached embeddings are reused, including for category-only changes. Inspect both
+languages in the browser, including the new paper's cell, tooltip, and click action.
+Commit `publications.json`, the codebook, `paper-topic-map.json`, and the teaser
+together. The previous `paper-map.json` is no longer used by the homepage.
+A commit-only request stops before pushing; a push to `main` deploys the site.
 
 ## Development
 
@@ -103,9 +126,9 @@ src/
   types.ts             # Publication / Slide types
   reveal.ts            # IntersectionObserver scroll-reveal helper
   index.css            # theme tokens, backdrop, shared utilities
-  components/          # Nav, LangToggle, Hero, About, Carousel, Publications, PublicationCard, Footer
+  components/          # Nav, LangToggle, Hero, About, PaperMap, Carousel, Publications, PublicationCard, Footer
 public/source/         # content JSON + teaser images
-scripts/               # copy-assets.py, upload-papers.sh
+scripts/               # embeddings, topic-map generation/validation, PDF upload
 ```
 
 ## Theming

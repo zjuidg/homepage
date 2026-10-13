@@ -1,18 +1,17 @@
 /**
- * Precompute the "paper map" layout.
+ * Cache publication embeddings, or regenerate the previous ungrouped map.
  *
  *   1. embed each publication (title + abstract) with an OpenAI embedding model
  *   2. project the embeddings to 2D with UMAP
  *   3. write public/source/paper-map.json  ->  { id: [x, y], ... }, x/y in [-1, 1]
  *
- * The PaperMap component reads that JSON and draws one dot per paper — no API
- * key or model run at page-load time. Re-run this script when publications
- * change (it caches embeddings by content hash, so unchanged papers are free):
+ * The homepage now reads paper-topic-map.json, produced by compute-topic-map.py.
+ * Use --embeddings-only before that step. Both maps use this content-hash cache:
  *
  *   node scripts/compute-paper-map.mjs            # uses OPENAI_API_KEY from .env
  *
  * Tunables via env: EMBED_MODEL (default text-embedding-3-small),
- * UMAP_NEIGHBORS (default 15), UMAP_MIN_DIST (default 0.1).
+ * UMAP_NEIGHBORS (default 8), UMAP_MIN_DIST (default 0.05), for the previous layout.
  */
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
@@ -113,7 +112,6 @@ function normalize(points) {
 
 async function main() {
   const pubs = JSON.parse(readFileSync(PUBS, 'utf8'));
-  const key = apiKey();
   const cache = loadCache();
 
   // Resolve each paper's embedding, hitting the API only for new/changed text.
@@ -126,6 +124,7 @@ async function main() {
 
   console.log(`${pubs.length} papers · ${missing.length} to embed (${pubs.length - missing.length} cached) · model ${MODEL}`);
 
+  const key = missing.length ? apiKey() : '';
   const BATCH = 100;
   for (let i = 0; i < missing.length; i += BATCH) {
     const idxs = missing.slice(i, i + BATCH);
@@ -134,6 +133,9 @@ async function main() {
     saveCache(cache);
     console.log(`  embedded ${Math.min(i + BATCH, missing.length)}/${missing.length}`);
   }
+
+  // The topic-map generator consumes this cache and runs its own projection.
+  if (process.argv.includes('--embeddings-only')) return;
 
   const data = pubs.map((_, i) => cache[hashes[i]]);
 

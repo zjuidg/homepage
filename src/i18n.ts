@@ -1,17 +1,13 @@
 import { createSignal } from 'solid-js';
+import type { PublicationCategory } from './types';
 
 export type Lang = 'en' | 'zh';
 
 const KEY = 'idg-lang';
 
-interface Area {
-  title: string;
-  desc: string;
-}
-
 export interface Copy {
   langLabel: string; // label shown on the switcher (the OTHER language to switch to)
-  nav: { about: string; highlights: string; map: string; network: string; publications: string; contact: string };
+  nav: { about: string; highlights: string; network: string; publications: string; contact: string };
   hero: {
     eyebrow: string;
     title1: string;
@@ -29,8 +25,6 @@ export interface Copy {
     headingEm: string;
     headingPost: string;
     body: string;
-    recentLabel: string;
-    areas: [Area, Area, Area];
   };
   highlights: { eyebrow: string; heading: string; subtitle: string };
   network: {
@@ -48,13 +42,18 @@ export interface Copy {
     legendLink: string;
   };
   map: {
-    eyebrow: string;
     heading: string;
     intro: string;
-    stats: (n: number) => string;
+    stats: (n: number, topics: number) => string;
     hint: string;
-    otherVenues: string;
-    linked: (n: number) => string;
+    topics: string;
+    allTopics: string;
+    zoomIn: string;
+    zoomOut: string;
+    resetView: string;
+    unavailable: string;
+    topicStats: (n: number, share: number) => string;
+    categories: Record<PublicationCategory, string>;
   };
   pubs: {
     eyebrow: string;
@@ -101,7 +100,6 @@ const en: Copy = {
   nav: {
     about: 'About',
     highlights: 'Highlights',
-    map: 'Map',
     network: 'Network',
     publications: 'Publications',
     contact: 'Contact',
@@ -124,21 +122,6 @@ const en: Copy = {
     headingEm: 'human–AI interaction',
     headingPost: '',
     body: 'Founded in 2015 within the State Key Lab of CAD&CG at Zhejiang University, the Interactive Data Group builds visualization, visual analytics, and interaction techniques — declarative authoring grammars, human-in-the-loop analysis systems, immersive and situated analytics, and interfaces that keep large models steerable. The work stays grounded in real domains: sports analytics, social media, and urban data.',
-    recentLabel: 'Recent work',
-    areas: [
-      {
-        title: 'Visualization & authoring',
-        desc: 'Declarative grammars and authoring tools for building expressive, reusable visualizations — from trajectories to messy tables and charts.',
-      },
-      {
-        title: 'Visual analytics for real domains',
-        desc: 'Human-in-the-loop systems for analytical reasoning over sports, social-media, and urban data.',
-      },
-      {
-        title: 'Human–AI interaction',
-        desc: 'Keeping large models and agents steerable and verifiable: red-teaming, knowledge editing, and reliable data extraction.',
-      },
-    ],
   },
   highlights: {
     eyebrow: 'Highlights',
@@ -162,14 +145,35 @@ const en: Copy = {
     legendLink: 'Shared papers',
   },
   map: {
-    eyebrow: 'Paper map',
-    heading: 'A map of our papers',
+    heading: 'Our research, by topic',
     intro:
-      'Every paper, placed by the meaning of its title and abstract — nearby dots are about similar things. Color marks the venue. Hover to inspect, click to find it below.',
-    stats: (n) => `${n} papers · OpenAI embeddings, projected with UMAP`,
-    hint: 'Hover a dot to inspect a paper. Lines join papers sharing three or more authors.',
-    otherVenues: 'Other venues',
-    linked: (n) => `${n} linked paper${n === 1 ? '' : 's'}`,
+      'Each region is a research topic. Topics with more papers generally occupy more space. Nearby papers share related ideas. Hover a paper cell for details, or select it to find the paper below.',
+    stats: (n, topics) => `${n} papers · ${topics} topics`,
+    hint: 'Hover a paper cell for details. Select the cell to find the paper below. Zoom and drag to explore.',
+    topics: 'Research topics',
+    allTopics: 'All topics',
+    zoomIn: 'Zoom in',
+    zoomOut: 'Zoom out',
+    resetView: 'Reset view',
+    unavailable: 'The paper map is unavailable. You can still browse all publications below.',
+    topicStats: (n, share) => `${n} papers · ${share.toFixed(1)}% of the collection`,
+    categories: {
+      'sports-analytics': 'Sports Analytics',
+      'urban-geospatial': 'Geospatial Analytics',
+      'social-behavior': 'Social Behavior',
+      'data-wrangling': 'Data Wrangling',
+      'visualization-design': 'Visualization Design',
+      'time-series-analysis': 'Time Series Analysis',
+      'causal-analysis': 'Causal Analysis',
+      'graph-analytics': 'Graph Analytics',
+      'perception-interaction': 'Perception and Interaction',
+      'research-evaluation': 'Research Evaluation',
+      'multimodal-analytics': 'Multimodal Analytics',
+      'model-mechanisms': 'Model Mechanisms',
+      'cultural-heritage': 'Culture and Art',
+      'industrial-analytics': 'Industrial Operations',
+      'health-analytics': 'Health Analytics',
+    },
   },
   pubs: {
     eyebrow: 'Publications',
@@ -218,7 +222,6 @@ const zh: Copy = {
   nav: {
     about: '关于',
     highlights: '近期亮点',
-    map: '论文地图',
     network: '合作网络',
     publications: '学术论文',
     contact: '联系',
@@ -240,21 +243,6 @@ const zh: Copy = {
     headingEm: '人机智能交互',
     headingPost: '',
     body: 'Interactive Data Group 成立于 2015 年，隶属于浙江大学计算机辅助设计与图形系统全国重点实验室。我们研究可视化、可视分析与交互技术——声明式创作语法、人在回路的分析系统、沉浸式与情境化分析，以及让大模型保持可控的交互界面，并始终扎根于体育分析、社交媒体与城市数据等真实场景。',
-    recentLabel: '近期工作',
-    areas: [
-      {
-        title: '可视化与创作',
-        desc: '声明式语法与创作工具，帮助构建富有表现力、可复用的可视化——从轨迹到非规整表格与图表。',
-      },
-      {
-        title: '面向真实场景的可视分析',
-        desc: '面向体育、社交媒体与城市数据的人在回路分析系统。',
-      },
-      {
-        title: '人机智能交互',
-        desc: '让大模型与智能体保持可控、可验证：红队测试、知识编辑与可靠的数据抽取。',
-      },
-    ],
   },
   highlights: {
     eyebrow: '近期亮点',
@@ -277,14 +265,35 @@ const zh: Copy = {
     legendLink: '合作论文',
   },
   map: {
-    eyebrow: '论文地图',
-    heading: '论文的语义地图',
+    heading: '按主题探索我们的研究',
     intro:
-      '每个圆点代表一篇论文，依据标题与摘要的语义来定位——相邻的点研究主题相近。颜色表示发表会议或期刊。悬停查看详情，点击可在下方列表中定位。',
-    stats: (n) => `${n} 篇论文 · 由 OpenAI 向量嵌入，经 UMAP 降维`,
-    hint: '悬停圆点查看论文。连线表示两篇论文有三位及以上共同作者。',
-    otherVenues: '其他会议',
-    linked: (n) => `${n} 篇关联论文`,
+      '每个区域代表一个研究主题，论文较多的主题通常占据更大区域。位置相近的论文研究内容相关。悬停论文分区查看详情，点击分区可在下方找到论文。',
+    stats: (n, topics) => `${n} 篇论文 · ${topics} 个主题`,
+    hint: '悬停论文分区查看详情，点击分区可在下方找到论文。可放大和拖动地图。',
+    topics: '研究主题',
+    allTopics: '全部主题',
+    zoomIn: '放大',
+    zoomOut: '缩小',
+    resetView: '重置视图',
+    unavailable: '论文地图暂时无法加载，可继续浏览下方论文列表。',
+    topicStats: (n, share) => `${n} 篇论文 · 占全部论文的 ${share.toFixed(1)}%`,
+    categories: {
+      'sports-analytics': '体育分析',
+      'urban-geospatial': '地理空间分析',
+      'social-behavior': '社会行为',
+      'data-wrangling': '数据整理',
+      'visualization-design': '可视化设计',
+      'time-series-analysis': '时序分析',
+      'causal-analysis': '因果分析',
+      'graph-analytics': '图网络分析',
+      'perception-interaction': '感知交互',
+      'research-evaluation': '研究评估',
+      'multimodal-analytics': '多模态分析',
+      'model-mechanisms': '模型机理',
+      'cultural-heritage': '文化艺术',
+      'industrial-analytics': '工业运营',
+      'health-analytics': '健康分析',
+    },
   },
   pubs: {
     eyebrow: '学术论文',

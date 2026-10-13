@@ -1,278 +1,263 @@
-import { createMemo, createResource, createSignal, For, Show } from 'solid-js';
-import type { Publication } from '../types';
-import { loadPaperMap } from '../data';
-import { venueChipLabel, venueGroup, venueScale, OTHER_ID } from '../venues';
+import { createMemo, createResource, createSignal, createUniqueId, For, onCleanup, onMount, Show } from 'solid-js';
+import { Portal } from 'solid-js/web';
+import type { Publication, PublicationCategory } from '../types';
+import { loadPaperMap, type MapCoordinate, type MapRegion } from '../data';
+import { venueChipLabel } from '../venues';
 import { searchPublications } from '../search';
 import { reveal } from '../reveal';
-import { t } from '../i18n';
+import { lang, t } from '../i18n';
 import './PaperMap.css';
 
-// SVG user-space canvas; the svg scales to its container.
-const W = 1000;
-const H = 680;
-const PAD = 44; // keep dots clear of the edges
-const R = 5.5; // dot radius
-const COLLIDE_PAD = 3.5; // extra gap kept between dot edges
-const SHARED_MIN = 3; // draw a link when two papers share at least this many authors
-
-interface MapNode {
-  pub: Publication;
-  x: number;
-  y: number;
-  ax: number; // UMAP anchor (semantic position) the relaxation springs back to
-  ay: number;
-  color: string;
-  venueId: string;
-  neighbors: Set<string>;
-}
-
-interface MapLink {
-  source: MapNode;
-  target: MapNode;
-  shared: number;
-}
-
-/** Map a precomputed coordinate in [-1, 1] onto the padded SVG canvas. */
-function place(v: number, size: number): number {
-  return PAD + ((v + 1) / 2) * (size - 2 * PAD);
-}
-
-/**
- * Nudge overlapping dots apart while springing each back toward its semantic
- * (UMAP) anchor — so the layout reads as the embedding, just without dots piling
- * on top of one another. Deterministic: same input → same output.
- */
-function relax(nodes: MapNode[]) {
-  const minSep = 2 * R + COLLIDE_PAD;
-  const minSep2 = minSep * minSep;
-  const anchorK = 0.1;
-  for (let iter = 0; iter < 160; iter++) {
-    // collision: split the overlap and push each dot along the centre line
-    for (let i = 0; i < nodes.length; i++) {
-      const ni = nodes[i];
-      for (let j = i + 1; j < nodes.length; j++) {
-        const nj = nodes[j];
-        let dx = nj.x - ni.x;
-        let dy = nj.y - ni.y;
-        let d2 = dx * dx + dy * dy;
-        if (d2 >= minSep2) continue;
-        let dist = Math.sqrt(d2);
-        if (dist < 1e-6) {
-          // deterministically jitter coincident dots apart
-          dx = ((i * 13 + j) % 5) - 2 || 1;
-          dy = ((i * 7 + j) % 5) - 2 || 1;
-          dist = Math.sqrt(dx * dx + dy * dy);
-        }
-        const push = (minSep - dist) / 2;
-        const ox = (dx / dist) * push;
-        const oy = (dy / dist) * push;
-        ni.x -= ox;
-        ni.y -= oy;
-        nj.x += ox;
-        nj.y += oy;
-      }
-    }
-    // spring back toward the semantic anchor, then keep inside the canvas
-    for (const n of nodes) {
-      n.x += (n.ax - n.x) * anchorK;
-      n.y += (n.ay - n.y) * anchorK;
-      n.x = Math.min(W - PAD, Math.max(PAD, n.x));
-      n.y = Math.min(H - PAD, Math.max(PAD, n.y));
-    }
-  }
-}
+const COLORS: Record<PublicationCategory, string> = {
+  'sports-analytics': '#efc5a5',
+  'visualization-design': '#c9bbdc',
+  'urban-geospatial': '#b9d6ca',
+  'data-wrangling': '#b5cee0',
+  'social-behavior': '#e8b8b4',
+  'model-mechanisms': '#b3d7d8',
+  'industrial-analytics': '#d2d8b2',
+  'cultural-heritage': '#dcbdd1',
+  'perception-interaction': '#bdc5df',
+  'time-series-analysis': '#bdd3b4',
+  'health-analytics': '#e7c7b7',
+  'causal-analysis': '#dcd1ae',
+  'graph-analytics': '#b5ced0',
+  'research-evaluation': '#d1d2bf',
+  'multimodal-analytics': '#d5c3b1',
+};
+const ringPath = (ring: MapCoordinate[]) => `M${ring.map((p) => p.join(',')).join('L')}Z`;
+const linePath = (edges: [MapCoordinate, MapCoordinate][]) => edges.map(([a, b]) => `M${a.join(',')}L${b.join(',')}`).join('');
+interface MapNode { pub: Publication; x: number; y: number; cell: MapCoordinate[] }
+type TooltipDetail = { kind: 'paper'; node: MapNode } | { kind: 'topic'; region: MapRegion };
+interface TooltipPosition { x: number; y: number; below: boolean; viewportHeight: number; anchor: Element | null }
 
 export default function PaperMap(props: { pubs: Publication[] }) {
-  const [points] = createResource(loadPaperMap);
-  const [active, setActive] = createSignal<MapNode | null>(null);
-  const [hotVenue, setHotVenue] = createSignal<string | null>(null);
-
-  const scale = createMemo(() => venueScale(props.pubs));
-
-  const layout = createMemo<{ nodes: MapNode[]; links: MapLink[] }>(() => {
-    const pts = points();
-    if (!pts) return { nodes: [], links: [] };
-    const sc = scale();
-
-    const nodes: MapNode[] = [];
-    const authorSets: Set<string>[] = [];
-    for (const pub of props.pubs) {
-      const p = pts[pub.id];
-      if (!p) continue; // paper added after the last precompute — skip
-      const { id, color } = sc.lookup(venueGroup(pub));
-      const ax = place(p[0], W);
-      const ay = place(p[1], H);
-      nodes.push({ pub, x: ax, y: ay, ax, ay, color, venueId: id, neighbors: new Set() });
-      authorSets.push(new Set((pub.authors ?? []).filter(Boolean)));
-    }
-
-    // Link two papers that share at least SHARED_MIN authors.
-    const links: MapLink[] = [];
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i + 1; j < nodes.length; j++) {
-        let shared = 0;
-        const small = authorSets[i].size < authorSets[j].size ? authorSets[i] : authorSets[j];
-        const big = small === authorSets[i] ? authorSets[j] : authorSets[i];
-        for (const a of small) if (big.has(a)) shared++;
-        if (shared < SHARED_MIN) continue;
-        links.push({ source: nodes[i], target: nodes[j], shared });
-        nodes[i].neighbors.add(nodes[j].pub.id);
-        nodes[j].neighbors.add(nodes[i].pub.id);
-      }
-    }
-
-    relax(nodes);
-    return { nodes, links };
+  const [map] = createResource(async () => {
+    try { return await loadPaperMap(); } catch { return null; }
   });
-
-  const legend = createMemo(() =>
-    scale().legend.map((item) =>
-      item.id === OTHER_ID ? { ...item, label: t().map.otherVenues } : item
-    )
-  );
-
-  const isDim = (n: MapNode): boolean => {
-    const hv = hotVenue();
-    if (hv !== null) return n.venueId !== hv;
-    const a = active();
-    if (a !== null) return a.pub.id !== n.pub.id && !a.neighbors.has(n.pub.id);
-    return false;
+  const [active, setActive] = createSignal<MapNode | null>(null);
+  const [hovered, setHovered] = createSignal<PublicationCategory | null>(null);
+  const [selected, setSelected] = createSignal<PublicationCategory | null>(null);
+  const [zoom, setZoom] = createSignal(1);
+  const [pan, setPan] = createSignal({ x: 0, y: 0 });
+  const [tooltip, setTooltip] = createSignal<(TooltipDetail & TooltipPosition) | null>(null);
+  const tooltipId = createUniqueId();
+  let svg: SVGSVGElement | undefined;
+  let drag: { pointer: number; x: number; y: number; panX: number; panY: number; scaleX: number; scaleY: number } | undefined;
+  let didDrag = false;
+  const hideTooltip = () => setTooltip(null);
+  const tooltipPosition = (x: number, y: number, anchor: Element | null): TooltipPosition => {
+    const box = anchor?.getBoundingClientRect();
+    if (box) { x = box.left + box.width / 2; y = box.top + box.height / 2; }
+    const below = y < window.innerHeight / 2;
+    const tipWidth = Math.min(320, window.innerWidth - 24);
+    return {
+      x: Math.max(12, Math.min(x + 14, window.innerWidth - tipWidth - 12)),
+      y: box ? below ? box.bottom : box.top : y,
+      below, viewportHeight: window.innerHeight, anchor,
+    };
   };
-  const isHot = (n: MapNode): boolean => {
-    const hv = hotVenue();
-    if (hv !== null) return n.venueId === hv;
-    const a = active();
-    return a !== null && (a.pub.id === n.pub.id || a.neighbors.has(n.pub.id));
+  const showTooltip = (event: PointerEvent | FocusEvent, detail: TooltipDetail) => {
+    if (!drag) setTooltip({ ...detail, ...tooltipPosition(
+      event instanceof PointerEvent ? event.clientX : 0,
+      event instanceof PointerEvent ? event.clientY : 0,
+      event instanceof PointerEvent ? null : event.currentTarget as Element,
+    ) });
+  };
+  const moveTooltip = (event: PointerEvent) => {
+    if (tooltip() && !drag) setTooltip((current) => current && { ...current, ...tooltipPosition(event.clientX, event.clientY, null) });
+  };
+  const tooltipText = createMemo(() => {
+    const detail = tooltip();
+    if (!detail) return null;
+    if (detail.kind === 'paper') {
+      const pub = detail.node.pub;
+      return { title: pub.title, meta: `${pub.authors[0]} · ${pub.year} · ${pub.venue.map(venueChipLabel).join(' · ')}` };
+    }
+    return { title: t().map.categories[detail.region.category], meta: t().map.topicStats(detail.region.count, detail.region.paperShare * 100) };
+  });
+  const describesPaper = (id: string) => { const tip = tooltip(); return tip?.kind === 'paper' && tip.node.pub.id === id ? tooltipId : undefined; };
+  const describesTopic = (category: PublicationCategory) => { const tip = tooltip(); return tip?.kind === 'topic' && tip.region.category === category ? tooltipId : undefined; };
+  onMount(() => {
+    const dismiss = (event: KeyboardEvent) => { if (event.key === 'Escape') hideTooltip(); };
+    const onScroll = () => {
+      const current = tooltip();
+      if (!current?.anchor) { hideTooltip(); return; }
+      const box = current.anchor.getBoundingClientRect();
+      if (box.bottom < 0 || box.top > window.innerHeight) hideTooltip();
+      else setTooltip({ ...current, ...tooltipPosition(0, 0, current.anchor) });
+    };
+    window.addEventListener('scroll', onScroll, true);
+    window.addEventListener('resize', hideTooltip);
+    window.addEventListener('keydown', dismiss);
+    onCleanup(() => {
+      window.removeEventListener('scroll', onScroll, true);
+      window.removeEventListener('resize', hideTooltip);
+      window.removeEventListener('keydown', dismiss);
+    });
+  });
+  const bounds = createMemo(() => {
+    const coast = map()?.coast;
+    if (!coast?.length) return { x: 0, y: 0, width: 1100, height: 800 };
+    const xs = coast.map((p) => p[0]), ys = coast.map((p) => p[1]);
+    const x = Math.min(...xs) - 32, y = Math.min(...ys) - 32;
+    return { x, y, width: Math.max(...xs) - x + 32, height: Math.max(...ys) - y + 32 };
+  });
+  const width = () => bounds().width;
+  const height = () => bounds().height;
+  const focus = () => active()?.pub.category ?? selected() ?? hovered();
+  const nodes = createMemo(() => {
+    const pubs = new Map(props.pubs.map((p) => [p.id, p]));
+    return (map()?.papers ?? []).flatMap((p) => {
+      const pub = pubs.get(p.id);
+      return pub ? [{ pub, x: p.x, y: p.y, cell: p.cell }] : [];
+    });
+  });
+  const regions = createMemo(() => [...(map()?.regions ?? [])].sort((a, b) => b.count - a.count));
+  const focusedRegion = createMemo(() => regions().find((r) => r.category === focus()));
+  const borders = createMemo(() => linePath(map()?.borders ?? []));
+  const subdivisions = createMemo(() => linePath(map()?.subdivisions ?? []));
+  const coast = createMemo(() => ringPath(map()?.coast ?? []));
+  const selectTopic = (category: PublicationCategory) => {
+    if (!didDrag) setSelected((current) => current === category ? null : category);
+  };
+  const openPaper = (node: MapNode) => { hideTooltip(); searchPublications(node.pub.title); };
+  const reset = () => { setZoom(1); setPan({ x: 0, y: 0 }); setSelected(null); setHovered(null); setActive(null); hideTooltip(); };
+  const changeZoom = (factor: number) => {
+    hideTooltip();
+    const next = Math.min(4, Math.max(1, zoom() * factor));
+    setZoom(next);
+    if (next === 1) setPan({ x: 0, y: 0 });
+  };
+  const lines = (region: MapRegion) => {
+    const label = region.labels[lang()];
+    const title = t().map.categories[region.category];
+    if (label.lines.length === 1) return [title];
+    const parts = lang() === 'zh' ? Array.from(title) : title.split(' ');
+    let offset = 0;
+    return label.lines.map((line) => {
+      const count = lang() === 'zh' ? Array.from(line).length : line.split(' ').length;
+      const value = parts.slice(offset, offset + count).join(lang() === 'zh' ? '' : ' ');
+      offset += count;
+      return value;
+    });
+  };
+  const beginDrag = (event: PointerEvent) => {
+    if (event.button !== 0 || !svg) return;
+    didDrag = false;
+    if (zoom() === 1) return;
+    const box = svg.getBoundingClientRect();
+    const unitScale = Math.max(width() / box.width, height() / box.height) / zoom();
+    drag = { pointer: event.pointerId, x: event.clientX, y: event.clientY, panX: pan().x, panY: pan().y, scaleX: unitScale, scaleY: unitScale };
+  };
+  const moveDrag = (event: PointerEvent) => {
+    if (!drag || drag.pointer !== event.pointerId) return;
+    if (Math.hypot(event.clientX - drag.x, event.clientY - drag.y) > 4) {
+      didDrag = true;
+      svg?.setPointerCapture(event.pointerId);
+      setActive(null);
+      hideTooltip();
+      const limitX = width() * (1 - 1 / zoom()) / 2;
+      const limitY = height() * (1 - 1 / zoom()) / 2;
+      setPan({
+        x: Math.max(-limitX, Math.min(limitX, drag.panX - (event.clientX - drag.x) * drag.scaleX)),
+        y: Math.max(-limitY, Math.min(limitY, drag.panY - (event.clientY - drag.y) * drag.scaleY)),
+      });
+    }
+  };
+  const endDrag = (event: PointerEvent) => {
+    if (svg?.hasPointerCapture(event.pointerId)) svg.releasePointerCapture(event.pointerId);
+    drag = undefined;
   };
 
   return (
-    <section id="map" class="section mapsec">
-      <div class="container">
-        <div class="section-head" ref={reveal}>
-          <span class="eyebrow">{t().map.eyebrow}</span>
-          <h2>{t().map.heading}</h2>
-          <p>{t().map.intro}</p>
-        </div>
-
-        <div class="map__controls" ref={reveal}>
-          <ul class="map__legend" aria-label="Venues">
-            <For each={legend()}>
-              {(item) => (
-                <li>
-                  <button
-                    type="button"
-                    class="map__legend-item"
-                    classList={{ dim: hotVenue() !== null && hotVenue() !== item.id }}
-                    onMouseEnter={() => setHotVenue(item.id)}
-                    onMouseLeave={() => setHotVenue(null)}
-                    onFocus={() => setHotVenue(item.id)}
-                    onBlur={() => setHotVenue(null)}
-                  >
-                    <span class="map__swatch" style={{ background: item.color }} />
-                    {item.label}
-                  </button>
-                </li>
-              )}
-            </For>
-          </ul>
-          <p class="map__stats">{t().map.stats(layout().nodes.length)}</p>
-        </div>
-
-        <div class="map__stage" ref={reveal}>
-          <svg
-            class="map__svg"
-            classList={{ 'is-focused': hotVenue() !== null || active() !== null }}
-            viewBox={`0 0 ${W} ${H}`}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            aria-label={t().map.heading}
-          >
-            <g class="map__links">
-              <For each={layout().links}>
-                {(l) => (
-                  <line
-                    class="map__link"
-                    classList={{
-                      hot:
-                        active() !== null &&
-                        (active()!.pub.id === l.source.pub.id ||
-                          active()!.pub.id === l.target.pub.id),
-                    }}
-                    x1={l.source.x.toFixed(1)}
-                    y1={l.source.y.toFixed(1)}
-                    x2={l.target.x.toFixed(1)}
-                    y2={l.target.y.toFixed(1)}
-                    style={{
-                      // resting opacity climbs with shared authors: 3 is barely
-                      // visible, rare high-overlap pairs read more strongly. The
-                      // hover/focus rules override this with !important.
-                      'stroke-opacity': Math.min(0.6, 0.04 + (l.shared - SHARED_MIN) * 0.085),
-                      'stroke-width': `${Math.min(1.4, 0.4 + l.shared * 0.25)}px`,
-                    }}
-                  />
-                )}
-              </For>
-            </g>
-            <g class="map__nodes">
-              <For each={layout().nodes}>
-                {(n) => (
-                  <g
-                    class="map__node"
-                    classList={{ hot: isHot(n), dim: isDim(n) }}
-                    transform={`translate(${n.x.toFixed(1)} ${n.y.toFixed(1)})`}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={n.pub.title}
-                    onPointerEnter={() => setActive(n)}
-                    onPointerLeave={() => setActive((cur) => (cur === n ? null : cur))}
-                    onFocus={() => setActive(n)}
-                    onBlur={() => setActive((cur) => (cur === n ? null : cur))}
-                    onClick={() => searchPublications(n.pub.title)}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        searchPublications(n.pub.title);
-                      }
-                    }}
-                  >
-                    <circle class="map__halo" r={R + 6} />
-                    <circle class="map__dot" r={R} style={{ fill: n.color, color: n.color }} />
-                  </g>
-                )}
-              </For>
-            </g>
-          </svg>
-
-          <div class="map__readout" classList={{ 'is-active': !!active() }}>
-            <Readout node={active()} />
+    <div id="map" class="paper-map">
+      <Show when={map()} fallback={<p class="map__unavailable">{map.loading ? t().loading : t().map.unavailable}</p>}>
+        <div class="map__atlas" ref={reveal}>
+          <div class="map__toolbar">
+            <div class="map__summary"><strong>{t().map.stats(nodes().length, regions().length)}</strong></div>
+            <div class="map__zoom">
+              <button type="button" aria-label={t().map.zoomOut} disabled={zoom() <= 1} onClick={() => changeZoom(1 / 1.4)}>−</button>
+              <button type="button" aria-label={t().map.resetView} onClick={reset}>{Math.round(zoom() * 100)}%</button>
+              <button type="button" aria-label={t().map.zoomIn} disabled={zoom() >= 4} onClick={() => changeZoom(1.4)}>+</button>
+            </div>
+          </div>
+          <div class="map__body">
+            <div class="map__stage">
+              <svg ref={svg} class="map__svg" classList={{ 'is-zoomed': zoom() > 1, 'is-focused': focus() !== null }} style={{ '--map-aspect': `${width()} / ${height()}` }}
+                viewBox={`${bounds().x + (width() - width() / zoom()) / 2 + pan().x} ${bounds().y + (height() - height() / zoom()) / 2 + pan().y} ${width() / zoom()} ${height() / zoom()}`}
+                role="group" aria-label={t().map.heading} onPointerDown={beginDrag} onPointerMove={moveDrag} onPointerUp={endDrag} onPointerCancel={endDrag}>
+                <desc>{t().map.intro} {t().map.hint}</desc>
+                <g class="map__regions" aria-hidden="true">
+                  <For each={map()!.regions}>{(region) => (
+                    <path d={region.rings.map(ringPath).join('')} fill={COLORS[region.category]} class="map__region"
+                      data-category={region.category} classList={{ dim: focus() !== null && focus() !== region.category }} />
+                  )}</For>
+                </g>
+                <g class="map__paper-cells">
+                  <For each={nodes()}>{(node) => (
+                    <path class="map__paper-cell" classList={{ hot: active()?.pub.id === node.pub.id }}
+                      data-paper-id={node.pub.id} d={ringPath(node.cell)} role="button" tabIndex={0}
+                      aria-label={node.pub.title} aria-describedby={describesPaper(node.pub.id)}
+                      onPointerEnter={(e) => { if (!drag) { setActive(node); showTooltip(e, { kind: 'paper', node }); } }} onPointerMove={moveTooltip}
+                      onPointerLeave={() => { setActive(null); hideTooltip(); }}
+                      onFocus={(e) => { setActive(node); showTooltip(e, { kind: 'paper', node }); }} onBlur={() => { setActive(null); hideTooltip(); }}
+                      onClick={() => { if (!didDrag) openPaper(node); }}
+                      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPaper(node); } }} />
+                  )}</For>
+                </g>
+                <path d={subdivisions()} class="map__subdivisions" />
+                <path d={borders()} class="map__borders" />
+                <path d={coast()} class="map__coast" />
+                <Show when={focusedRegion()}>{(region) => <path d={region().rings.map(ringPath).join('')} class="map__selected-border" />}</Show>
+                <g class="map__labels" aria-hidden="true">
+                  <For each={map()!.regions}>{(region) => {
+                    const label = () => region.labels[lang()];
+                    const text = () => lines(region);
+                    return <text class="map__label" classList={{ dim: focus() !== null && focus() !== region.category }}
+                      x={label().x} y={label().y} font-size={String(label().size)} style={{ '--land': COLORS[region.category] }} text-anchor="middle">
+                      <For each={text()}>{(line, i) => <tspan x={label().x} y={label().y + (i() - (text().length - 1) / 2) * label().size * 1.12 + label().size * .34}>{line}</tspan>}</For>
+                    </text>;
+                  }}</For>
+                </g>
+                <g class="map__nodes" aria-hidden="true">
+                  <For each={nodes()}>{(node) => (
+                    <g class="map__node" classList={{ dim: focus() !== null && focus() !== node.pub.category, hot: active()?.pub.id === node.pub.id }}
+                      transform={`translate(${node.x} ${node.y})`}>
+                      <circle class="map__dot" r={3.6} />
+                    </g>
+                  )}</For>
+                </g>
+              </svg>
+            </div>
+            <aside class="map__sidebar" aria-label={t().map.topics}>
+              <div class="map__legend-head"><h3>{t().map.topics}</h3><button type="button" onClick={reset} disabled={selected() === null && zoom() === 1}>{t().map.allTopics}</button></div>
+              <ul class="map__legend">
+                <For each={regions()}>{(region) => (
+                  <li><button type="button" class="map__legend-item" classList={{ active: selected() === region.category, dim: focus() !== null && focus() !== region.category }}
+                    aria-pressed={selected() === region.category} aria-describedby={describesTopic(region.category)}
+                    onPointerEnter={(e) => { setHovered(region.category); showTooltip(e, { kind: 'topic', region }); }} onPointerMove={moveTooltip}
+                    onPointerLeave={() => { setHovered(null); hideTooltip(); }}
+                    onFocus={(e) => { setHovered(region.category); showTooltip(e, { kind: 'topic', region }); }} onBlur={() => { setHovered(null); hideTooltip(); }} onClick={() => { didDrag = false; selectTopic(region.category); }}>
+                    <span class="map__swatch" style={{ background: COLORS[region.category] }} /><span class="map__legend-name">{t().map.categories[region.category]}</span><span class="map__legend-count">{region.count}</span>
+                  </button></li>
+                )}</For>
+              </ul>
+            </aside>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Readout(props: { node: MapNode | null }) {
-  const n = () => props.node;
-  return (
-    <Show when={n()} fallback={<p class="map__hint">{t().map.hint}</p>}>
-      {(node) => (
-        <div class="map__card">
-          <span class="map__card-dot" style={{ background: node().color, color: node().color }} />
-          <div class="map__card-body">
-            <strong class="map__card-title">{node().pub.title}</strong>
-            <span class="map__card-meta">
-              {node().pub.authors[0]}
-              {node().pub.authors.length > 1 ? ' et al.' : ''} · {node().pub.year} ·{' '}
-              {node().pub.venue.map(venueChipLabel).join(' · ')}
-              <Show when={node().neighbors.size}>
-                {' '}
-                · {t().map.linked(node().neighbors.size)}
-              </Show>
-            </span>
-          </div>
-        </div>
-      )}
-    </Show>
+        <Show when={tooltip()}>{(tip) => (
+          <Portal>
+            <div id={tooltipId} class="map__tooltip" role="tooltip" style={{
+              left: `${tip().x}px`,
+              top: tip().below ? `${tip().y + 14}px` : undefined,
+              bottom: tip().below ? undefined : `${tip().viewportHeight - tip().y + 14}px`,
+            }}>
+              <strong>{tooltipText()?.title}</strong><span>{tooltipText()?.meta}</span>
+            </div>
+          </Portal>
+        )}</Show>
+      </Show>
+    </div>
   );
 }

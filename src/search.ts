@@ -1,8 +1,8 @@
 import { createSignal } from 'solid-js';
 
 /**
- * Shared publication-search state so other sections (the About work tags, the
- * hero unit chart) can drive the publication list: set the query, clear other
+ * Shared publication-search state so the paper map and hero unit chart
+ * can drive the publication list: set the query, clear other
  * filters, and scroll the list into view.
  */
 const [searchQuery, setSearchQuery] = createSignal('');

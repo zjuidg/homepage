@@ -1,6 +1,7 @@
 [
   {
     "id": "puzzleclone",
+    "category": "model-mechanisms",
     "title": "PuzzleClone: A DSL-Powered Framework for Synthesizing Verifiable Data",
     "authors": [
       "Kai Xiong",
@@ -22,6 +23,7 @@
   },
   {
     "id": "navigating-risks",
+    "category": "model-mechanisms",
     "title": "Navigating the Risks: A Survey of Security and Privacy Threats in LLM-Based Agents",
     "authors": [
       "Yuyou Gan",
@@ -49,6 +51,7 @@
   },
   {
     "id": "sia",
+    "category": "social-behavior",
     "title": "Linking Heterogeneous Data with Coordinated Agent Flows for Social Media Analysis",
     "authors": [
       "Shifu Chen",
@@ -70,6 +73,7 @@
   },
   {
     "id": "neurobreak",
+    "category": "model-mechanisms",
     "title": "NeuroBreak: Unveil Internal Jailbreak Mechanisms in Large Language Models",
     "authors": [
       "Chuhan Zhang",
@@ -92,6 +96,7 @@
   },
   {
     "id": "cograder",
+    "category": "perception-interaction",
     "title": "CoGrader: Transforming Instructors' Assessment of Project Reports through Collaborative LLM Integration",
     "authors": [
       "Zixin Chen",
@@ -113,6 +118,7 @@
   },
   {
     "id": "cllmate",
+    "category": "urban-geospatial",
     "title": "CLLMate: A Multimodal Benchmark for Weather and Climate Events Forecasting",
     "authors": [
       "Haobo Li",
@@ -134,6 +140,7 @@
   },
   {
     "id": "veriscope",
+    "category": "data-wrangling",
     "title": "Veriscope: Provenance-Aware Verification of LLM Reasoning Artifacts in Conversational Data Analysis",
     "authors": [
       "Lingyu Meng",
@@ -154,6 +161,7 @@
   },
   {
     "id": "chronomantic",
+    "category": "time-series-analysis",
     "title": "ChronoMantic: A Natural Language Interface for Interactive Time Series Pattern Query",
     "authors": [
       "Yangtian Liu",
@@ -175,6 +183,7 @@
   },
   {
     "id": "fea-slt",
+    "category": "multimodal-analytics",
     "title": "FEA-SLT: A Gloss-Free End-to-End Framework for Facial-Expression-Aware Sign Language Translation",
     "authors": [
       "Guobin Tu",
@@ -191,6 +200,7 @@
   },
   {
     "id": "spader",
+    "category": "model-mechanisms",
     "title": "SPADER: Step-wise Peer Advantage with Diversity-Aware Exploration Rewards for Multi-Answer Question Answering",
     "authors": [
       "Qiming Shi",
@@ -210,6 +220,7 @@
   },
   {
     "id": "bird-history",
+    "category": "data-wrangling",
     "title": "BIRD-History: A Benchmark for History-Driven Text-to-SQL with Fine-Grained Knowledge Annotations",
     "authors": [
       "Yunfan Zhou",
@@ -227,6 +238,7 @@
   },
   {
     "id": "net-efficiency",
+    "category": "sports-analytics",
     "teaser": "source/projects/net-efficiency/net-efficiency.png",
     "title": "Key indicator for winning soccer matches: net efficiency",
     "authors": [
@@ -243,6 +255,7 @@
   },
   {
     "id": "stroke-performance-fluctuation",
+    "category": "sports-analytics",
     "teaser": "source/projects/stroke-performance-fluctuation/stroke-performance-fluctuation.webp",
     "title": "Stroke-level performance fluctuation analysis in elite table tennis",
     "authors": [
@@ -260,6 +273,7 @@
   },
   {
     "id": "geoauthor",
+    "category": "visualization-design",
     "paper": "source/projects/geoauthor/geoauthor.pdf",
     "teaser": "source/projects/geoauthor/geoauthor.png",
     "title": "GeoAuthor: Linking Text and Visualization for Geographic Article Authoring",
@@ -279,6 +293,7 @@
   },
   {
     "id": "rulescope",
+    "category": "data-wrangling",
     "paper": "source/projects/rulescope/rulescope.pdf",
     "teaser": "source/projects/rulescope/rulescope.png",
     "title": "RuleScope: Semantic-aware Authoring of Data Validation Rules",
@@ -303,6 +318,7 @@
   },
   {
     "id": "tmoe",
+    "category": "time-series-analysis",
     "paper": "source/projects/tmoe/tmoe.pdf",
     "teaser": "source/projects/tmoe/tmoe.png",
     "title": "Dynamic TMoE: A Drift-Aware Dynamic Mixture of Experts Framework for Non-Stationary Time Series Forecasting",
@@ -321,6 +337,7 @@
   },
   {
     "id": "StealthGraph",
+    "category": "model-mechanisms",
     "paper": "source/projects/StealthGraph/StealthGraph.pdf",
     "teaser": "source/projects/StealthGraph/StealthGraph.png",
     "title": "StealthGraph: Exposing Domain-Specific Risks in LLMs through Knowledge-Graph-Guided Harmful Prompt Generation",
@@ -341,6 +358,7 @@
   },
   {
     "id": "collaborative-crowd-simulation",
+    "category": "urban-geospatial",
     "teaser": "source/projects/collaborative-crowd-simulation/collaborative-crowd-simulation.png",
     "title": "Collaborative Small and Large Models for Crowd Simulation With Incomplete Trajectory Data",
     "authors": [
@@ -360,6 +378,7 @@
   },
   {
     "id": "custmatcher",
+    "category": "social-behavior",
     "teaser": "source/projects/custmatcher/custmatcher.png",
     "title": "CustMatcher: Enhancing preference-driven people-to-people recommendation",
     "authors": [
@@ -379,6 +398,7 @@
   },
   {
     "id": "camouflagevis",
+    "category": "industrial-analytics",
     "teaser": "source/projects/camouflagevis/camouflagevis.webp",
     "title": "CamouflageVis: a visual analytics approach for discovering camouflaged malicious entities in e-commerce",
     "authors": [
@@ -396,6 +416,7 @@
   },
   {
     "id": "visualtsc",
+    "category": "urban-geospatial",
     "paper": "source/projects/visualtsc/visualtsc.pdf",
     "teaser": "source/projects/visualtsc/visualtsc.png",
     "title": "A Visual Analytics Approach to Traffic Signal Control Optimization for Multiple Road Intersections",
@@ -414,6 +435,7 @@
   },
   {
     "id": "camh",
+    "category": "model-mechanisms",
     "paper": "source/projects/camh/camh.pdf",
     "teaser": "source/projects/camh/camh.png",
     "title": "CAMH: Advancing Model Hijacking Attack in Machine Learning",
@@ -436,6 +458,7 @@
   },
   {
     "id": "puzzlesorter",
+    "category": "cultural-heritage",
     "paper": "source/projects/puzzlesorter/puzzlesorter.pdf",
     "teaser": "source/projects/puzzlesorter/puzzlesorter.png",
     "title": "PuzzleSorter: Certainty-Aware Visual Restoration of Multiple Cultural Artifacts",
@@ -459,6 +482,7 @@
   },
   {
     "id": "t-foresight",
+    "category": "sports-analytics",
     "teaser": "source/projects/t-foresight/t-foresight.png",
     "title": "T-Foresight: Interpret moving strategies based on context-aware trajectory prediction",
     "authors": [
@@ -476,6 +500,7 @@
   },
   {
     "id": "pvesight",
+    "category": "industrial-analytics",
     "paper": "source/projects/pvesight/pvesight.pdf",
     "teaser": "source/projects/pvesight/pvesight.png",
     "title": "PVeSight: Dimensionality reduction-based anomaly detection and visual analysis of photovoltaic strings",
@@ -499,6 +524,7 @@
   },
   {
     "id": "multimodal-analysis-survey",
+    "category": "multimodal-analytics",
     "teaser": "source/projects/multimodal-analysis-survey/multimodal-analysis-survey.jpg",
     "title": "Empowering multimodal analysis with visualization: A survey",
     "authors": [
@@ -519,6 +545,7 @@
   },
   {
     "id": "painting-authentication",
+    "category": "cultural-heritage",
     "teaser": "source/projects/painting-authentication/painting-authentication.png",
     "title": "Multi-Modal Visual Analytic Approach for Attributing and Authenticating Ancient Chinese Paintings",
     "authors": [
@@ -539,6 +566,7 @@
   },
   {
     "id": "eadetector",
+    "category": "health-analytics",
     "teaser": "source/projects/eadetector/eadetector.png",
     "title": "Epidemic Amplifier Detection: Finding High-Risk Locations in COVID-19 Cases' Location Sequences via Multi-task Learning",
     "authors": [
@@ -566,6 +594,7 @@
   },
   {
     "id": "TableNarrator",
+    "category": "perception-interaction",
     "paper": "source/projects/TableNarrator/TableNarrator.pdf",
     "teaser": "source/projects/TableNarrator/TableNarrator.jpg",
     "title": "TableNarrator: Making Image Tables Accessible to Blind and Low Vision People",
@@ -588,6 +617,7 @@
   },
   {
     "id": "geoanimation",
+    "category": "visualization-design",
     "paper": "source/projects/geoanimation/geoanimation.pdf",
     "teaser": "source/projects/geoanimation/geoanimation.avif",
     "title": "GeoAnimation: A Grammar for Animated Geographic Visualization",
@@ -607,6 +637,7 @@
   },
   {
     "id": "codelin",
+    "category": "data-wrangling",
     "teaser": "source/projects/codelin/codelin.png",
     "title": "CodeLin: An in situ visualization method for understanding data transformation scripts",
     "authors": [
@@ -626,6 +657,7 @@
   },
   {
     "id": "dkpvva",
+    "category": "industrial-analytics",
     "paper": "source/projects/dkpvva/dkpvva.pdf",
     "teaser": "source/projects/dkpvva/dkpvva.png",
     "title": "A Domain Knowledge-Driven Visual Analytics System for Photovoltaic Power Time Series Forecasting",
@@ -649,6 +681,7 @@
   },
   {
     "id": "icfinder",
+    "category": "industrial-analytics",
     "paper": "source/projects/icfinder/icfinder.pdf",
     "teaser": "source/projects/icfinder/icfinder.png",
     "title": "Towards Better Illegal Chemical Facility Detection with Hazardous Chemicals Transportation Trajectories",
@@ -673,6 +706,7 @@
   },
   {
     "id": "dstc",
+    "category": "urban-geospatial",
     "paper": "source/projects/dstc/dstc.pdf",
     "teaser": "source/projects/dstc/dstc.png",
     "title": "A Deep Spatiotemporal Trajectory Representation Learning Framework for Clustering",
@@ -694,6 +728,7 @@
   },
   {
     "id": "neighviz",
+    "category": "social-behavior",
     "paper": "source/projects/neighviz/neighviz.pdf",
     "teaser": "source/projects/neighviz/neighviz.png",
     "title": "NeighViz: Towards Better Understanding of Neighborhood Effects on Social Groups with Spatial Data",
@@ -715,6 +750,7 @@
   },
   {
     "id": "GrandChallenges",
+    "category": "research-evaluation",
     "paper": "source/projects/GrandChallenges/GrandChallenges.pdf",
     "teaser": "source/projects/GrandChallenges/GrandChallenges.png",
     "title": "Grand Challenges in Visual Analytics Applications",
@@ -738,6 +774,7 @@
   },
   {
     "id": "ct3",
+    "category": "urban-geospatial",
     "paper": "source/projects/ct3/ct3.pdf",
     "teaser": "source/projects/ct3/ct3.png",
     "title": "You are experienced: interactive tour planning with crowdsourcing tour data from web",
@@ -755,6 +792,7 @@
   },
   {
     "id": "industrial-survey",
+    "category": "industrial-analytics",
     "paper": "source/projects/industrial-survey/industrial-survey.pdf",
     "teaser": "source/projects/industrial-survey/industrial-survey.png",
     "title": "A Review on Industrial Data Visual Analytics",
@@ -772,6 +810,7 @@
   },
   {
     "id": "trajgram",
+    "category": "visualization-design",
     "titleKey": [
       "Honorable Mention"
     ],
@@ -804,6 +843,7 @@
   },
   {
     "id": "rcinvestigator",
+    "category": "industrial-analytics",
     "paper": "source/projects/rcinvestigator/rcinvestigator.pdf",
     "teaser": "source/projects/rcinvestigator/rcinvestigator.jpg",
     "title": "RCInvestigator: Towards Better Investigation of Anomaly Root Causes in Cloud Computing Systems",
@@ -838,6 +878,7 @@
   },
   {
     "id": "keditvis",
+    "category": "model-mechanisms",
     "paper": "source/projects/keditvis/keditvis.pdf",
     "teaser": "source/projects/keditvis/keditvis.png",
     "title": "KEditVis: A Visual Analytics System for Knowledge Editing of Large Language Models",
@@ -869,6 +910,7 @@
   },
   {
     "id": "trajectorycurer",
+    "category": "data-wrangling",
     "title": "TrajectoryCurer: Visual Analysis of Trajectory Data Quality",
     "teaser": "source/projects/trajectorycurer/trajectorycurer.jpg",
     "authors": [
@@ -896,6 +938,7 @@
   },
   {
     "id": "toa",
+    "category": "perception-interaction",
     "title": "Visualizing Tree-of-Analysis: Facilitating Conversational Visual Analytics for Novices\n",
     "teaser": "source/projects/toa/toa.png",
     "authors": [
@@ -920,6 +963,7 @@
   },
   {
     "id": "exchart",
+    "category": "data-wrangling",
     "title": "Making Multimodal LLMs Reliable Chart Data Extractors: A Benchmark and Training Framework",
     "teaser": "source/projects/exchart/exchart.png",
     "authors": [
@@ -943,6 +987,7 @@
   },
   {
     "id": "cerebra",
+    "category": "data-wrangling",
     "title": "Cerebra: Aligning Implicit Knowledge in Interactive SQL Authoring",
     "teaser": "source/projects/cerebra/cerebra.jpg",
     "authors": [
@@ -968,6 +1013,7 @@
   },
   {
     "id": "tseditor",
+    "category": "data-wrangling",
     "title": "TSEditor: Interactive Time Series Editing for Privacy Preservation",
     "teaser": "source/projects/tseditor/tseditor.png",
     "authors": [
@@ -992,6 +1038,7 @@
   },
   {
     "id": "noteflow",
+    "category": "data-wrangling",
     "title": "NoteFlow: Leveraging Charts as Sight Glasses for Consistent and Continuous Data Flow Tracing",
     "teaser": "source/projects/noteflow/noteflow.png",
     "authors": [
@@ -1016,6 +1063,7 @@
   },
   {
     "id": "CausalMap",
+    "category": "social-behavior",
     "titleKey": [
       "Best Paper"
     ],
@@ -1051,6 +1099,7 @@
   },
   {
     "id": "TableCanoniser",
+    "category": "data-wrangling",
     "titleKey": [
       "Honorable Mention"
     ],
@@ -1075,6 +1124,7 @@
   },
   {
     "id": "InsightChaser",
+    "category": "sports-analytics",
     "title": "InsightChaser: Enhancing Visual Reasoning of Sports Tactical Visualization with Visual-Text Linking",
     "teaser": "source/projects/InsightChaser/InsightChaser.jpg",
     "authors": [
@@ -1105,6 +1155,7 @@
   },
   {
     "id": "ReSpark",
+    "category": "visualization-design",
     "title": "ReSpark: Leveraging Previous Data Reports as References to Generate New Reports with LLMs",
     "teaser": "source/projects/ReSpark/ReSpark.png",
     "authors": [
@@ -1130,6 +1181,7 @@
   },
   {
     "id": "ViseGPT",
+    "category": "data-wrangling",
     "title": "ViseGPT: Towards Better Alignment of LLM-generated Data Wrangling Scripts and User Prompts",
     "teaser": "source/projects/ViseGPT/ViseGPT.jpg",
     "authors": [
@@ -1153,6 +1205,7 @@
   },
   {
     "id": "SportsVideos",
+    "category": "sports-analytics",
     "title": "From Sports Videos to Immersive Training: Augmenting Human Motion to Enrich Basketball Training Experience",
     "teaser": "source/projects/SportsVideos/SportsVideos.png",
     "authors": [
@@ -1179,6 +1232,7 @@
   },
   {
     "id": "CAnnotator",
+    "category": "cultural-heritage",
     "title": "CAnnotator: Photo-Guided Color Annotation for Degraded Ancient Paintings",
     "teaser": "source/projects/CAnnotator/CAnnotator.jpg",
     "authors": [
@@ -1205,6 +1259,7 @@
   },
   {
     "id": "VisMimic",
+    "category": "sports-analytics",
     "title": "VisMimic: Integrating Motion Chain in Feedback Video Generation for Motor Coaching",
     "teaser": "source/projects/VisMimic/VisMimic.png",
     "authors": [
@@ -1230,6 +1285,7 @@
   },
   {
     "id": "Reviving",
+    "category": "visualization-design",
     "paper": "source/projects/Reviving/Reviving.pdf",
     "teaser": "source/projects/Reviving/Reviving.jpg",
     "title": "Reviving Static Charts Into Live Charts",
@@ -1261,6 +1317,7 @@
   },
   {
     "id": "ChronoDeck",
+    "category": "time-series-analysis",
     "title": "ChronoDeck: A Visual Analytics Approach for Hierarchical Time Series Analysis",
     "teaser": "source/projects/ChronoDeck/ChronoDeck.jpg",
     "authors": [
@@ -1290,6 +1347,7 @@
   },
   {
     "id": "HYPNOS",
+    "category": "data-wrangling",
     "paper": "source/projects/HYPNOS/HYPNOS.pdf",
     "teaser": "source/projects/HYPNOS/HYPNOS.png",
     "title": "HYPNOS: Interactive Data Lineage Tracing for Data Transformation Scripts",
@@ -1322,6 +1380,7 @@
   },
   {
     "id": "StructVizor",
+    "category": "data-wrangling",
     "title": "StructVizor: Interactive profiling of semi-structured textual data",
     "teaser": "source/projects/StructVizor/StructVizor.png",
     "authors": [
@@ -1343,6 +1402,7 @@
   },
   {
     "id": "ProTAL",
+    "category": "data-wrangling",
     "title": "ProTAL: A Drag-and-Link Video Programming Framework for Temporal Action Localization",
     "teaser": "source/projects/ProTAL/ProTAL.png",
     "authors": [
@@ -1365,6 +1425,7 @@
   },
   {
     "id": "Xavier",
+    "category": "data-wrangling",
     "title": "Xavier: Toward Better Coding Assistance in Authoring Tabular Data Wrangling Scripts",
     "teaser": "source/projects/Xavier/Xavier.png",
     "authors": [
@@ -1394,6 +1455,7 @@
   },
   {
     "id": "RidgeBuilder",
+    "category": "visualization-design",
     "title": "RidgeBuilder: Interactive Authoring of Expressive Ridgeline Plots",
     "teaser": "source/projects/RidgeBuilder/ridgebuilder.png",
     "authors": [
@@ -1418,6 +1480,7 @@
   },
   {
     "id": "T3Set",
+    "category": "sports-analytics",
     "title": "T3Set: A Multimodal Dataset with Targeted Suggestions for LLM-based Virtual Coach in Table Tennis Training",
     "teaser": "source/projects/t3set/t3set.png",
     "authors": [
@@ -1444,6 +1507,7 @@
   },
   {
     "id": "AdversaFlow",
+    "category": "model-mechanisms",
     "titleKey": [
       "Honorable Mention"
     ],
@@ -1477,6 +1541,7 @@
   },
   {
     "id": "Ferry",
+    "category": "data-wrangling",
     "paper": "source/projects/ferry/ferry.pdf",
     "teaser": "source/projects/ferry/ferry.png",
     "video": "https://youtu.be/ckWQGHQwdb4",
@@ -1507,6 +1572,7 @@
   },
   {
     "id": "TeamScouter",
+    "category": "sports-analytics",
     "paper": "source/projects/TeamScouter/TeamScouter.pdf",
     "teaser": "source/projects/TeamScouter/TeamScouter.png",
     "title": "Team-Scouter: Simulative Visual Analytics of Soccer Player Scouting",
@@ -1538,6 +1604,7 @@
   },
   {
     "id": "BloomWind",
+    "category": "social-behavior",
     "paper": "source/projects/BloomWind/BloomWind.pdf",
     "teaser": "source/projects/BloomWind/BloomWind.png",
     "title": "Blowing Seeds Across Gardens: Visualizing Implicit Propagation of Cross-Platform Social Media Posts",
@@ -1569,6 +1636,7 @@
   },
   {
     "id": "SmartBoard",
+    "category": "sports-analytics",
     "paper": "source/projects/SmartBoard/Smartboard.pdf",
     "teaser": "source/projects/SmartBoard/SmartBoard.png",
     "title": "Smartboard: Visual Exploration of Team Tactics with LLM Agent",
@@ -1600,6 +1668,7 @@
   },
   {
     "id": "VisCourt",
+    "category": "sports-analytics",
     "paper": "source/projects/VisCourt/VisCourt.pdf",
     "teaser": "source/projects/VisCourt/VisCourt.png",
     "title": "VisCourt: In-Situ Guidance for Interactive Tactic Training in Mixed Reality",
@@ -1625,6 +1694,7 @@
   },
   {
     "id": "loss",
+    "category": "cultural-heritage",
     "teaser": "source/projects/loss/loss.jpg",
     "title": "Loss of Sonnet 18",
     "paper": "source/projects/loss/loss.pdf",
@@ -1649,6 +1719,7 @@
   },
   {
     "id": "vistec",
+    "category": "sports-analytics",
     "paper": "source/projects/vistec/vistec.pdf",
     "teaser": "source/projects/vistec/vistec.png",
     "title": "ViSTec: Video Modeling for Sports Technique Recognition and Tactical Analysis",
@@ -1672,6 +1743,7 @@
   },
   {
     "id": "SNIL",
+    "category": "sports-analytics",
     "paper": "source/projects/SNIL/SNIL.pdf",
     "teaser": "source/projects/SNIL/SNIL.png",
     "title": "SNIL: Generating Sports News From Insights With Large Language Models",
@@ -1701,6 +1773,7 @@
   },
   {
     "id": "textlin",
+    "category": "visualization-design",
     "paper": "source/projects/textlin/textlin.pdf",
     "teaser": "source/projects/textlin/textlin.png",
     "title": "Linking Text and Visualizations via Contextual Knowledge Graph",
@@ -1730,6 +1803,7 @@
   },
   {
     "id": "chartgpt",
+    "category": "visualization-design",
     "paper": "source/projects/ChartGPT/ChartGPT.pdf",
     "teaser": "source/projects/ChartGPT/chartgpt.png",
     "title": "ChartGPT: Leveraging LLMs to Generate Charts From Abstract Natural Language",
@@ -1763,6 +1837,7 @@
   },
   {
     "id": "relaq",
+    "category": "time-series-analysis",
     "paper": "source/projects/relaq/relaq.pdf",
     "teaser": "source/projects/relaq/relaq.jpg",
     "title": "Relation-Driven Query of Multiple Time Series",
@@ -1793,6 +1868,7 @@
   },
   {
     "id": "stringlineEva",
+    "category": "perception-interaction",
     "paper": "source/projects/stringlineEva/stringline.pdf",
     "teaser": "source/projects/stringlineEva/stringlineEva.png",
     "title": "A Comparative Study on Fixed-order Event Sequence Visualizations: Gantt, Extended Gantt, and Stringline Charts",
@@ -1822,6 +1898,7 @@
   },
   {
     "id": "TableIllustrator",
+    "category": "data-wrangling",
     "title": "Table Illustrator: Puzzle-based interactive authoring of plain tables",
     "teaser": "source/projects/TableIllustrator/TableIllustrator.png",
     "authors": [
@@ -1844,6 +1921,7 @@
   },
   {
     "id": "OptiMuse",
+    "category": "perception-interaction",
     "title": "Understanding Nonlinear Collaboration between Human and AI Agents: A Co-design Framework for Creative Design",
     "teaser": "source/projects/OptiMuse/OptiMuse.png",
     "authors": [
@@ -1866,6 +1944,7 @@
   },
   {
     "id": "VAID",
+    "category": "visualization-design",
     "title": "VAID: Indexing View Designs in Visual Analytics System",
     "teaser": "source/projects/VAID/VAID.png",
     "authors": [
@@ -1891,6 +1970,7 @@
   },
   {
     "id": "VolleyNaut",
+    "category": "sports-analytics",
     "paper": "source/projects/volleynaut2/volleynaut.pdf",
     "teaser": "source/projects/volleynaut2/volleynaut.png",
     "title": "VolleyNaut: Pioneering Immersive Training for Inclusive Sitting Volleyball Skill Development",
@@ -1913,6 +1993,7 @@
   },
   {
     "id": "JsonCurer",
+    "category": "data-wrangling",
     "paper": "source/projects/JsonCurer/jsoncurer.pdf",
     "teaser": "source/projects/JsonCurer/JsonCurer.png",
     "title": "JsonCurer: Data Quality Management for JSON Based on an Aggregated Schema",
@@ -1943,6 +2024,7 @@
   },
   {
     "id": "TacPrint",
+    "category": "sports-analytics",
     "paper": "source/projects/TacPrint/TacPrint.pdf",
     "teaser": "source/projects/TacPrint/TacPrint.png",
     "title": "TacPrint: Visualizing the Biomechanical Fingerprint in Table Tennis",
@@ -1973,6 +2055,7 @@
   },
   {
     "id": "NL2R",
+    "category": "data-wrangling",
     "paper": "source/projects/NL2Rigel/nl2rigel.pdf",
     "teaser": "source/projects/NL2Rigel/NL2Rigel.png",
     "title": "Interactive Table Synthesis with Natural Language",
@@ -2002,6 +2085,7 @@
   },
   {
     "id": "ArEnhanced",
+    "category": "sports-analytics",
     "paper": "source/projects/ArEnhanced/ArEnhanced.pdf",
     "teaser": "source/projects/ArEnhanced/ArEnhanced.png",
     "title": "AR-Enhanced Workouts: Exploring Visual Cues for At-Home Workout Videos in AR Environment",
@@ -2026,6 +2110,7 @@
   },
   {
     "id": "PColorizor",
+    "category": "cultural-heritage",
     "paper": "source/projects/PColorizor/PColorizor.pdf",
     "teaser": "source/projects/PColorizor/PColorizor.png",
     "title": "PColorizor: Re-coloring Ancient Chinese Paintings with Ideorealm-congruent Poems",
@@ -2048,6 +2133,7 @@
   },
   {
     "id": "island-of-loneliness",
+    "category": "cultural-heritage",
     "teaser": "source/projects/island-of-loneliness/island-of-loneliness.png",
     "title": "Posts with No Response: The Island of Loneliness",
     "authors": [
@@ -2068,6 +2154,7 @@
   },
   {
     "id": "GeoChron",
+    "category": "urban-geospatial",
     "paper": "source/projects/GeoChron/GeoChron.pdf",
     "teaser": "source/projects/GeoChron/GeoChron.png",
     "title": "Visualizing Large-Scale Spatial Time Series with GeoChron",
@@ -2100,6 +2187,7 @@
   },
   {
     "id": "Questionnaire",
+    "category": "causal-analysis",
     "paper": "source/projects/Questionnaire/Questionnaire.pdf",
     "teaser": "source/projects/Questionnaire/Questionnaire.png",
     "title": "Causality-Based Visual Analysis of Questionnaire Responses",
@@ -2132,6 +2220,7 @@
   },
   {
     "id": "ActionEvaluator",
+    "category": "sports-analytics",
     "paper": "source/projects/ActionEvaluator/ActionEvaluator.pdf",
     "teaser": "source/projects/ActionEvaluator/ActionEvaluator.png",
     "title": "Action-Evaluator: A Visualization Approach for Player Action Evaluation in Soccer",
@@ -2162,6 +2251,7 @@
   },
   {
     "id": "MediVizor",
+    "category": "causal-analysis",
     "paper": "source/projects/MediVizor/MediVizor.pdf",
     "teaser": "source/projects/MediVizor/MediVizor.png",
     "title": "MediVizor: Visual Mediation Analysis of Nominal Variables",
@@ -2190,6 +2280,7 @@
   },
   {
     "id": "OBTracker",
+    "category": "sports-analytics",
     "titleKey": [
       "Honorable Mention"
     ],
@@ -2224,6 +2315,7 @@
   },
   {
     "id": "GeoNetverse",
+    "category": "urban-geospatial",
     "paper": "source/projects/GeoNetverse/GeoNetverse.pdf",
     "teaser": "source/projects/GeoNetverse/GeoNetverse.png",
     "title": "Multilevel Visual Analysis of Aggregate Geo-Networks",
@@ -2253,6 +2345,7 @@
   },
   {
     "id": "CompositeVisualization",
+    "category": "visualization-design",
     "paper": "source/projects/CompositeVisualization/CompositeVisualization.pdf",
     "teaser": "source/projects/CompositeVisualization/CompositeVisualization.png",
     "video": "",
@@ -2283,6 +2376,7 @@
   },
   {
     "id": "ECoalVis",
+    "category": "industrial-analytics",
     "paper": "source/projects/ECoalVis/ECoalVis.pdf",
     "teaser": "source/projects/ECoalVis/ECoalVis.png",
     "video": "https://youtu.be/XsqdJd2y6Z0",
@@ -2315,6 +2409,7 @@
   },
   {
     "id": "TacTrainer",
+    "category": "sports-analytics",
     "paper": "source/projects/TacTrainer/TacTrainer.pdf",
     "teaser": "source/projects/TacTrainer/TacTrainer.png",
     "video": "https://youtu.be/nriqaQUjZ1E",
@@ -2345,6 +2440,7 @@
   },
   {
     "id": "MetaGlyph",
+    "category": "visualization-design",
     "paper": "source/projects/MetaGlyph/MetaGlyph.pdf",
     "teaser": "source/projects/MetaGlyph/MetaGlyph.png",
     "video": "https://youtu.be/E_68JwZmlcY",
@@ -2375,6 +2471,7 @@
   },
   {
     "id": "DashBot",
+    "category": "visualization-design",
     "paper": "source/projects/DashBot/DashBot.pdf",
     "teaser": "source/projects/DashBot/DashBot.png",
     "video": "https://youtu.be/hM4XMU7pv-0",
@@ -2403,6 +2500,7 @@
   },
   {
     "id": "Rasipam",
+    "category": "sports-analytics",
     "paper": "source/projects/Rasipam/Rasipam.pdf",
     "teaser": "source/projects/Rasipam/Rasipam.png",
     "video": "https://youtu.be/hsOZEcwZtCc",
@@ -2431,6 +2529,7 @@
   },
   {
     "id": "COMANTICS",
+    "category": "data-wrangling",
     "paper": "source/projects/COMANTICS/COMANTICS.pdf",
     "teaser": "source/projects/COMANTICS/COMANTICS.png",
     "video": "https://youtu.be/acVSqJQ3jnQ",
@@ -2460,6 +2559,7 @@
   },
   {
     "id": "PuzzleFixer",
+    "category": "cultural-heritage",
     "paper": "source/projects/PuzzleFixer/PuzzleFixer.pdf",
     "teaser": "source/projects/PuzzleFixer/PuzzleFixer.png",
     "video": "https://youtu.be/Djho5RjXXJ4",
@@ -2491,6 +2591,7 @@
   },
   {
     "id": "Rigel",
+    "category": "data-wrangling",
     "paper": "source/projects/Rigel/Rigel.pdf",
     "teaser": "source/projects/Rigel/Rigel.png",
     "video": "https://youtu.be/fvM_W-1n7N4",
@@ -2522,6 +2623,7 @@
   },
   {
     "id": "Sporthesia",
+    "category": "sports-analytics",
     "paper": "source/projects/Sporthesia/Sporthesia.pdf",
     "teaser": "source/projects/Sporthesia/Sporthesia.png",
     "title": "Sporthesia: Augmenting Sports Videos Using Natural Language",
@@ -2550,6 +2652,7 @@
   },
   {
     "id": "TeamBuilder",
+    "category": "sports-analytics",
     "paper": "source/projects/TeamBuilder/TeamBuilder.pdf",
     "teaser": "source/projects/TeamBuilder/TeamBuilder.png",
     "video": "https://youtu.be/-V_Mzp_o5Vw",
@@ -2579,6 +2682,7 @@
   },
   {
     "id": "ReVast",
+    "category": "research-evaluation",
     "paper": "source/projects/ReVast/ReVast.pdf",
     "teaser": "source/projects/ReVast/ReVast.png",
     "title": "In Defence of Visual Analytics Systems: Replies to Critics",
@@ -2607,6 +2711,7 @@
   },
   {
     "id": "urbanva",
+    "category": "urban-geospatial",
     "paper": "source/projects/urbanva/urbanva.pdf",
     "teaser": "source/projects/urbanva/urbanva.png",
     "title": "A survey of urban visual analytics: advances and future directions",
@@ -2633,6 +2738,7 @@
   },
   {
     "id": "VisImages",
+    "category": "visualization-design",
     "title": "VisImages: A Fine-Grained Expert-Annotated Visualization Dataset",
     "DOI": "10.1109/TVCG.2022.3155440",
     "teaser": "source/projects/visimages/visimages.png",
@@ -2661,6 +2767,7 @@
   },
   {
     "id": "Somnus",
+    "category": "data-wrangling",
     "title": "Visualizing the Scripts of Data Wrangling with SOMNUS",
     "DOI": "10.1109/TVCG.2022.3144975",
     "teaser": "source/projects/Somnus/Somnus.png",
@@ -2691,6 +2798,7 @@
   },
   {
     "id": "SimuExplorer",
+    "category": "sports-analytics",
     "title": "SimuExplorer: Visual Exploration of Game Simulation in Table Tennis",
     "DOI": "10.1109/TVCG.2021.3130422",
     "teaser": "source/projects/SimuExplorer/SimuExplorer.png",
@@ -2717,6 +2825,7 @@
   },
   {
     "id": "Compass",
+    "category": "urban-geospatial",
     "title": "Compass: Towards Better Causal Analysis of Urban Time Series",
     "DOI": "10.1109/TVCG.2021.3114875",
     "teaser": "source/projects/compass/compass.png",
@@ -2748,6 +2857,7 @@
   },
   {
     "id": "OrderMonitor",
+    "category": "industrial-analytics",
     "title": "A Visualization Approach for Monitoring Order Processing in E-Commerce Warehouse",
     "DOI": "10.1109/TVCG.2021.3114878",
     "teaser": "source/projects/warehouse/warehouse.png",
@@ -2779,6 +2889,7 @@
   },
   {
     "id": "TIVEE",
+    "category": "sports-analytics",
     "title": "TIVEE: Visual Exploration and Explanation of Badminton Tactics in Immersive Visualizations",
     "DOI": "10.1109/TVCG.2021.3114861",
     "teaser": "source/projects/TIVEE/TIVEE.png",
@@ -2811,6 +2922,7 @@
   },
   {
     "id": "HVSM",
+    "category": "social-behavior",
     "title": "Real-Time Visual Analysis of High-Volume Social Media Posts",
     "DOI": "10.1109/TVCG.2021.3114800",
     "titleKey": [
@@ -2841,6 +2953,7 @@
   },
   {
     "id": "GlyphCreator",
+    "category": "visualization-design",
     "title": "GlyphCreator: Towards Example-based Automatic Generation of Circular Glyphs",
     "DOI": "10.1109/TVCG.2021.3114877",
     "teaser": "source/projects/glyphcreator/glyphcreator.png",
@@ -2871,6 +2984,7 @@
   },
   {
     "id": "VideoModerator",
+    "category": "industrial-analytics",
     "title": "VideoModerator: A Risk-aware Framework for Multimodal Video Moderation in E-Commerce",
     "DOI": "10.1109/TVCG.2021.3114781",
     "teaser": "source/projects/videomoderator/videomoderator.png",
@@ -2898,6 +3012,7 @@
   },
   {
     "id": "AcademicCareerSuccess",
+    "category": "social-behavior",
     "title": "Seek for Success: A Visualization Approach for Understanding the Dynamics of Academic Careers",
     "DOI": "10.1109/TVCG.2021.3114790",
     "teaser": "source/projects/ssuccess/ssuccess.png",
@@ -2928,6 +3043,7 @@
   },
   {
     "id": "VisCommentator",
+    "category": "sports-analytics",
     "title": "Augmenting Sports Videos with VisCommentator",
     "DOI": "10.1109/TVCG.2021.3114806",
     "titleKey": [
@@ -2961,6 +3077,7 @@
   },
   {
     "id": "TacticFlow",
+    "category": "sports-analytics",
     "title": "TacticFlow: Visual Analytics of Ever-Changing Tactics in Racket Sports",
     "DOI": "10.1109/TVCG.2021.3114832",
     "teaser": "source/projects/tacticflow/tacticflow.jpg",
@@ -2989,6 +3106,7 @@
   },
   {
     "id": "Nebula",
+    "category": "visualization-design",
     "title": "Nebula: A Coordinating Grammar of Graphics",
     "DOI": "10.1109/TVCG.2021.3076222",
     "teaser": "source/projects/nebula/nebula.png",
@@ -3019,6 +3137,7 @@
   },
   {
     "id": "Tac-Valuer",
+    "category": "sports-analytics",
     "title": "Tac-Valuer: Knowledge-based Stroke Evaluation in Table Tennis",
     "teaser": "source/projects/tacValuer/tacValuer.png",
     "authors": [
@@ -3042,6 +3161,7 @@
   },
   {
     "id": "CareerLens",
+    "category": "social-behavior",
     "title": "Interactive Visual Exploration of Longitudinal Historical Career Mobility Data",
     "DOI": "10.1109/TVCG.2021.3067200",
     "teaser": "source/projects/CareerLens/teaser.png",
@@ -3074,6 +3194,7 @@
   },
   {
     "id": "VisCas",
+    "category": "urban-geospatial",
     "title": "Visual Cascade Analytics of Large-scale Spatiotemporal Data",
     "DOI": "10.1109/TVCG.2021.3071387",
     "teaser": "source/projects/VisCas/VisCas.png",
@@ -3104,6 +3225,7 @@
   },
   {
     "id": "Tac-Miner",
+    "category": "sports-analytics",
     "title": "Tac-Miner: Visual Tactic Mining for Multiple Table Tennis Matches",
     "titleKey": [
       "Honorable Mention"
@@ -3131,6 +3253,7 @@
   },
   {
     "id": "EventAnchor",
+    "category": "sports-analytics",
     "title": "EventAnchor: Reducing Human Interactions in Event Annotation of Racket Sports Videos",
     "teaser": "source/projects/eventanchor/eventanchor.png",
     "authors": [
@@ -3155,6 +3278,7 @@
   },
   {
     "id": "PlotThread",
+    "category": "visualization-design",
     "title": "PlotThread: Creating Expressive Storyline Visualizations using Reinforcement Learning",
     "DOI": "10.1109/TVCG.2020.3030467",
     "teaser": "source/projects/plotthread/plotthread.png",
@@ -3188,6 +3312,7 @@
   },
   {
     "id": "BusNet",
+    "category": "urban-geospatial",
     "title": "Towards Better Bus Networks: A Visual Analytics Approach",
     "DOI": "10.1109/TVCG.2020.3030458",
     "teaser": "source/projects/busnet/busnet.png",
@@ -3219,6 +3344,7 @@
   },
   {
     "id": "PassVizor",
+    "category": "sports-analytics",
     "title": "PassVizor: Toward Better Understanding of the Dynamics of Soccer Passes",
     "DOI": "10.1109/TVCG.2020.3030359",
     "teaser": "source/projects/passvizor/passvizor.png",
@@ -3250,6 +3376,7 @@
   },
   {
     "id": "ShuttleSpace",
+    "category": "sports-analytics",
     "title": "ShuttleSpace: Exploring and Analyzing Movement Trajectory in Immersive Visualization",
     "DOI": "10.1109/TVCG.2020.3030392",
     "teaser": "source/projects/shuttlespace/shuttlespace.png",
@@ -3281,6 +3408,7 @@
   },
   {
     "id": "Fine-tuning Layout",
+    "category": "visualization-design",
     "title": "Exemplar-based Layout Fine-tuning for Node-link Diagrams",
     "DOI": "10.1109/TVCG.2020.3030393",
     "teaser": "source/projects/finetuninglayout/finetuninglayout.png",
@@ -3313,6 +3441,7 @@
   },
   {
     "id": "CausalExplorer",
+    "category": "causal-analysis",
     "title": "A Visual Analytics Approach for Exploratory Causal Analysis: Exploration, Validation, and Applications",
     "DOI": "10.1109/TVCG.2020.3028957",
     "teaser": "source/projects/CausalExplorer/CausalExplorer.png",
@@ -3337,6 +3466,7 @@
   },
   {
     "id": "Data-GIF",
+    "category": "perception-interaction",
     "title": "What Makes a Data-GIF Understandable?",
     "DOI": "10.1109/TVCG.2020.3030396",
     "teaser": "source/projects/datagif/datagif.png",
@@ -3367,6 +3497,7 @@
   },
   {
     "id": "ESRac",
+    "category": "sports-analytics",
     "title": "Visual Analytics of Multivariate Event Sequence Data in Racquet Sports",
     "teaser": "source/projects/esrac/esrac.png",
     "authors": [
@@ -3387,6 +3518,7 @@
   },
   {
     "id": "TransVideo",
+    "category": "visualization-design",
     "title": "Narrative Transitions in Data Videos",
     "teaser": "source/projects/TransVideo/transVideo.png",
     "authors": [
@@ -3410,6 +3542,7 @@
   },
   {
     "id": "CorVizor",
+    "category": "urban-geospatial",
     "title": "Towards Better Detection and Analysis of Massive Spatiotemporal Co-Occurrence Patterns",
     "teaser": "source/projects/corvizor/corvizor.png",
     "DOI": "10.1109/TITS.2020.2983226",
@@ -3442,6 +3575,7 @@
   },
   {
     "id": "Route Planning",
+    "category": "urban-geospatial",
     "title": "Pareto-Optimal Transit Route Planning with Multi-Objective Monte-Carlo Tree Search",
     "teaser": "source/projects/routePlanning/routePlanning.png",
     "DOI": "10.1109/TITS.2020.2964012",
@@ -3471,6 +3605,7 @@
   },
   {
     "id": "Resource Allocation",
+    "category": "urban-geospatial",
     "title": "Dynamic Public Resource Allocation based on Human Mobility Prediction",
     "teaser": "source/projects/resourceAllocation/resourceAllocation.png",
     "DOI": "10.1145/3380986",
@@ -3498,6 +3633,7 @@
   },
   {
     "id": "Efficient Path Query",
+    "category": "urban-geospatial",
     "title": "Efficient Path Query Processing over Massive Trajectories on the Cloud",
     "teaser": "source/projects/efficientquery/efficientquery.png",
     "DOI": "10.1109/TBDATA.2018.2868936",
@@ -3528,6 +3664,7 @@
   },
   {
     "id": "Three Geo-based Features",
+    "category": "urban-geospatial",
     "title": "A User Study on the Capability of Three Geo-based Features in Analyzing and Locating Trajectories",
     "teaser": "source/projects/threeGeo/threeGeo.png",
     "DOI": "10.1109/TITS.2018.2875021",
@@ -3558,6 +3695,7 @@
   },
   {
     "id": "AirVis",
+    "category": "urban-geospatial",
     "title": "AirVis: Visual Analytics of Air Pollution Propagation",
     "teaser": "source/projects/airvis/teaser.png",
     "DOI": "10.1109/TVCG.2019.2934670",
@@ -3590,6 +3728,7 @@
   },
   {
     "id": "Tac-Simur",
+    "category": "sports-analytics",
     "title": "Tac-Simur: Tactic-based Simulative Visual Analytics of Table Tennis",
     "teaser": "source/projects/tacSimur/Tac-Simur.png",
     "DOI": "10.1109/TVCG.2019.2934630",
@@ -3621,6 +3760,7 @@
   },
   {
     "id": "VA in MMORPGs",
+    "category": "social-behavior",
     "title": "BeXplorer: Visual analytics of dynamic interplay between communication and purchase behaviors in MMORPGs",
     "teaser": "source/projects/bexplorer/bexplorer.png",
     "authors": [
@@ -3650,6 +3790,7 @@
   },
   {
     "id": "MARVisT",
+    "category": "visualization-design",
     "title": "MARVisT: Authoring Glyph-based Visualization in Mobile Augmented Reality",
     "teaser": "source/projects/MarVisT/MarVisT.png",
     "authors": [
@@ -3678,6 +3819,7 @@
   },
   {
     "id": "ForVizor",
+    "category": "sports-analytics",
     "title": "ForVizor: Visualizing Spatio-Temporal Team Formations in Soccer",
     "teaser": "source/projects/forvizor/forvizor.png",
     "authors": [
@@ -3709,6 +3851,7 @@
   },
   {
     "id": "SRVis",
+    "category": "urban-geospatial",
     "title": "SRVis: Towards Better Spatial Integration in Ranking Visualization",
     "teaser": "source/projects/srvis/srvis.png",
     "authors": [
@@ -3738,6 +3881,7 @@
   },
   {
     "id": "iStoryline",
+    "category": "visualization-design",
     "title": "iStoryline: Effective Convergence to Hand-drawn Storylines",
     "teaser": "source/projects/istoryline/istoryline.png",
     "authors": [
@@ -3767,6 +3911,7 @@
   },
   {
     "id": "ImgVis",
+    "category": "multimodal-analytics",
     "title": "A Semantic-based Method for Visualizing Large Image Collections",
     "teaser": "source/projects/imagevis/imagevis.jpg",
     "authors": [
@@ -3794,6 +3939,7 @@
   },
   {
     "id": "StreamExplorer",
+    "category": "social-behavior",
     "title": "StreamExplorer: A Multi-Stage System for Visually Exploring Events in Social Streams",
     "teaser": "source/projects/streamexplorer/streamexplorer.png",
     "authors": [
@@ -3823,6 +3969,7 @@
   },
   {
     "id": "AbstractScatterplot",
+    "category": "visualization-design",
     "title": "Cluster-based Visual Abstraction for Multivariate Scatterplots",
     "teaser": "source/projects/AbstractScatterplot/AbstractScatterplot.png",
     "authors": [
@@ -3847,6 +3994,7 @@
   },
   {
     "id": "iTTVis",
+    "category": "sports-analytics",
     "title": "iTTVis: Interactive Visualization of Table Tennis Data",
     "teaser": "source/projects/iTTVis/iTTVis.jpg",
     "authors": [
@@ -3877,6 +4025,7 @@
   },
   {
     "id": "ViewpointSelection",
+    "category": "visualization-design",
     "title": "Similarity Voting based Viewpoint Selection for Volumes",
     "teaser": "source/projects/ViewpointSelection/ViewpointSelection.jpeg",
     "authors": [
@@ -3903,6 +4052,7 @@
   },
   {
     "id": "SocialMediaSurvey",
+    "category": "social-behavior",
     "title": "A Survey on Visual Analytics of Social Media Data",
     "teaser": "source/projects/SocialMediaSurvey/SocialMediaSurvey.png",
     "authors": [
@@ -3928,6 +4078,7 @@
   },
   {
     "id": "K-Location",
+    "category": "urban-geospatial",
     "title": "Mining the Most Influential k-Location Set from Massive Trajectories",
     "teaser": "source/projects/K-Location/K-Location.png",
     "authors": [
@@ -3955,6 +4106,7 @@
   },
   {
     "id": "Doughnut",
+    "category": "perception-interaction",
     "title": "A Study of the Effect of Doughnut Chart Parameters on Proportion Estimation Accuracy",
     "teaser": "source/projects/doughnut/doughnut.jpg",
     "authors": [
@@ -3982,6 +4134,7 @@
   },
   {
     "id": "HomeFinder",
+    "category": "urban-geospatial",
     "title": "HomeFinder Revisited: Finding Ideal Homes with Reachability-Centric Multi-Criteria Decision Making",
     "teaser": "source/projects/homefinder/reach.png",
     "authors": [
@@ -4007,6 +4160,7 @@
   },
   {
     "id": "SocialWave",
+    "category": "social-behavior",
     "title": "SocialWave: Visual Analysis of Spatio-temporal Diffusion of Information on Social Media",
     "teaser": "source/projects/socialwave/socialwave.png",
     "authors": [
@@ -4032,6 +4186,7 @@
   },
   {
     "id": "ArVis",
+    "category": "urban-geospatial",
     "title": "Exploring the design space of immersive urban analytics",
     "teaser": "source/projects/arvis/arvis.png",
     "authors": [
@@ -4060,6 +4215,7 @@
   },
   {
     "id": "pathquery",
+    "category": "urban-geospatial",
     "title": "Querying Massive Trajectories by Path on the Cloud",
     "teaser": "source/projects/pathquery/pathquery.png",
     "authors": [
@@ -4084,6 +4240,7 @@
   },
   {
     "id": "IntR",
+    "category": "social-behavior",
     "title": "Examining the effects of network externalities, density, and closure on in-game currency price in online games",
     "teaser": "source/projects/IntR/IntR.png",
     "authors": [
@@ -4111,6 +4268,7 @@
   },
   {
     "id": "SmartAdP",
+    "category": "urban-geospatial",
     "title": "SmartAdP: Visual Analytics of Large-scale Taxi Trajectories for Selecting Billboard Locations",
     "teaser": "source/projects/smartadp/smartadp.png",
     "DOI": "10.1109/TVCG.2016.2598432",
@@ -4141,6 +4299,7 @@
   },
   {
     "id": "RouteMaps",
+    "category": "urban-geospatial",
     "title": "Embedding Spatio-temporal Information into Maps by Route-Zooming",
     "teaser": "source/projects/route/route.jpg",
     "DOI": "10.1109/TVCG.2016.2535234",
@@ -4165,6 +4324,7 @@
   },
   {
     "id": "PieceStack",
+    "category": "time-series-analysis",
     "title": "PieceStack: Toward Better Understanding of Stacked Graphs",
     "teaser": "source/projects/piecestack/piecestack.jpg",
     "DOI": "10.1109/TVCG.2016.2534518",
@@ -4194,6 +4354,7 @@
   },
   {
     "id": "PeakVizor",
+    "category": "social-behavior",
     "title": "PeakVizor: Visual Analytics of Peaks in Video Clickstreams from Massive Open Online Courses",
     "teaser": "source/projects/peakvizor/peakvizor.png",
     "DOI": "10.1109/TVCG.2015.2505305",
@@ -4220,6 +4381,7 @@
   },
   {
     "id": "Follower-followee",
+    "category": "social-behavior",
     "title": "Follower-Followee Network, Communication Networks, and Vote Agreement of the U.S. Members of Congress",
     "teaser": "source/projects/Follower-followee/Follower-followee.png",
     "DOI": "10.1177/0093650214559601",
@@ -4244,6 +4406,7 @@
   },
   {
     "id": "visarena",
+    "category": "research-evaluation",
     "teaser": "source/projects/visarena/visarena.png",
     "title": "VisArena: A testbed for visualization with synthetic data tables",
     "authors": [
@@ -4263,6 +4426,7 @@
   },
   {
     "id": "hoopscouter",
+    "category": "sports-analytics",
     "paper": "source/projects/hoopscouter/hoopscouter.pdf",
     "teaser": "source/projects/hoopscouter/hoopscouter.png",
     "title": "HoopScouter: Visual Analytics of Ball Handlers’ Decisions in Basketball Games",
@@ -4283,6 +4447,7 @@
   },
   {
     "id": "arteyer",
+    "category": "cultural-heritage",
     "paper": "source/projects/arteyer/arteyer.pdf",
     "teaser": "source/projects/arteyer/arteyer.png",
     "title": "ArtEyer: Enriching GPT-based agents with contextual data visualizations for fine art authentication",
@@ -4305,6 +4470,7 @@
   },
   {
     "id": "graphgesture",
+    "category": "perception-interaction",
     "teaser": "source/projects/graphgesture/graphgesture.png",
     "title": "Audio-visual training and feedback to learn touch-based gestures",
     "authors": [
@@ -4323,6 +4489,7 @@
   },
   {
     "id": "nuwa",
+    "category": "visualization-design",
     "teaser": "source/projects/nuwa/nuwa.png",
     "title": "Nuwa: An Authoring Tool for Graph Visualizations",
     "authors": [
@@ -4342,6 +4509,7 @@
   },
   {
     "id": "subplay",
+    "category": "model-mechanisms",
     "teaser": "source/projects/subplay/subplay.png",
     "paper": "source/projects/subplay/subplay.pdf",
     "title": "SUB-PLAY: Adversarial Policies against Partially Observed Multi-Agent Reinforcement Learning Systems",
@@ -4364,6 +4532,7 @@
   },
   {
     "id": "visualinsights",
+    "category": "visualization-design",
     "teaser": "source/projects/visualinsights/visualinsights.png",
     "title": "An intelligent approach to automatically discovering visual insights",
     "authors": [
@@ -4383,6 +4552,7 @@
   },
   {
     "id": "visaudio",
+    "category": "perception-interaction",
     "teaser": "source/projects/visaudio/visaudio.png",
     "title": "Exploring Effective Relationships Between Visual-Audio Channels in Data Visualization",
     "authors": [
@@ -4400,6 +4570,7 @@
   },
   {
     "id": "notable",
+    "category": "visualization-design",
     "teaser": "source/projects/notable/notable.png",
     "paper": "source/projects/notable/notable.pdf",
     "title": "Notable: On-the-fly Assistant for Data Storytelling in Computational Notebooks",
@@ -4420,6 +4591,7 @@
   },
   {
     "id": "tac-anticipator",
+    "category": "sports-analytics",
     "teaser": "source/projects/tac-anticipator/tac-anticipator.png",
     "title": "Tac-Anticipator: Visual Analytics of Anticipation Behaviors in Table Tennis Matches",
     "authors": [
@@ -4442,6 +4614,7 @@
   },
   {
     "id": "sportsxr",
+    "category": "sports-analytics",
     "teaser": "source/projects/sportsxr/sportsxr.png",
     "title": "The Ball is in Our Court: Conducting Visualization Research With Sports Experts",
     "authors": [
@@ -4461,6 +4634,7 @@
   },
   {
     "id": "rallycomparator",
+    "category": "sports-analytics",
     "teaser": "source/projects/rallycomparator/rallycomparator.png",
     "title": "RallyComparator: visual comparison of the multivariate and spatial stroke sequence in table tennis rally",
     "authors": [
@@ -4480,6 +4654,7 @@
   },
   {
     "id": "smartshots",
+    "category": "visualization-design",
     "teaser": "source/projects/smartshots/smartshots.png",
     "title": "SmartShots: An Optimization Approach for Generating Videos with Data Visualizations Embedded",
     "authors": [
@@ -4500,6 +4675,7 @@
   },
   {
     "id": "scatterplot-comprehension",
+    "category": "perception-interaction",
     "teaser": "source/projects/scatterplot-comprehension/scatterplot-comprehension.png",
     "title": "What makes a scatterplot hard to comprehend: data size and pattern salience matter",
     "authors": [
@@ -4518,6 +4694,7 @@
   },
   {
     "id": "scrollytelling",
+    "category": "visualization-design",
     "teaser": "source/projects/scrollytelling/scrollytelling.png",
     "title": "Automatic Generation of Unit Visualization-based Scrollytelling for Impromptu Data Facts Delivery",
     "authors": [
@@ -4540,6 +4717,7 @@
   },
   {
     "id": "dancingwords",
+    "category": "visualization-design",
     "teaser": "source/projects/dancingwords/dancingwords.png",
     "title": "DancingWords: exploring animated word clouds to tell stories",
     "authors": [
@@ -4564,6 +4742,7 @@
   },
   {
     "id": "ecolens",
+    "category": "urban-geospatial",
     "teaser": "source/projects/ecolens/ecolens.png",
     "title": "EcoLens: visual analysis of ecological regions in urban contexts using traffic data",
     "authors": [
@@ -4586,6 +4765,7 @@
   },
   {
     "id": "interaction-survey",
+    "category": "visualization-design",
     "teaser": "source/projects/interaction-survey/interaction-survey.png",
     "title": "Examining interaction techniques in data visualization authoring tools from the perspective of goals and human cognition: a survey",
     "authors": [
@@ -4602,6 +4782,7 @@
   },
   {
     "id": "mig-viewer",
+    "category": "sports-analytics",
     "teaser": "source/projects/mig-viewer/mig-viewer.jpg",
     "title": "MIG-Viewer: Visual analytics of soccer player migration",
     "authors": [
@@ -4624,6 +4805,7 @@
   },
   {
     "id": "shortvideo-guidelines",
+    "category": "visualization-design",
     "teaser": "source/projects/shortvideo-guidelines/shortvideo-guidelines.png",
     "title": "Design guidelines for augmenting short-form videos using animated data visualizations",
     "authors": [
@@ -4643,6 +4825,7 @@
   },
   {
     "id": "smartshots-demo",
+    "category": "visualization-design",
     "teaser": "source/projects/smartshots-demo/smartshots-demo.png",
     "title": "SmartShots: Enabling Automatic Generation of Videos with Data Visualizations Embedded",
     "authors": [
@@ -4663,6 +4846,7 @@
   },
   {
     "id": "uncertainty-streaming",
+    "category": "time-series-analysis",
     "title": "Toward the better modeling and visualization of uncertainty for streaming data",
     "authors": [
       "Tan Tang",
@@ -4680,6 +4864,7 @@
   },
   {
     "id": "rankbrushers",
+    "category": "time-series-analysis",
     "title": "RankBrushers: interactive analysis of temporal ranking ensembles",
     "authors": [
       "Dongming Han",
@@ -4700,6 +4885,7 @@
   },
   {
     "id": "steering-data-quality",
+    "category": "data-wrangling",
     "title": "Steering data quality with visual analytics: The complexity challenge",
     "authors": [
       "Shixia Liu",
@@ -4721,6 +4907,7 @@
   },
   {
     "id": "egocomp",
+    "category": "graph-analytics",
     "title": "egoComp: A node-link-based technique for visual comparison of ego-networks",
     "authors": [
       "Dongyu Liu",
@@ -4739,6 +4926,7 @@
   },
   {
     "id": "gamelifevis",
+    "category": "social-behavior",
     "title": "GameLifeVis: visual analysis of behavior evolutions in multiplayer online games",
     "authors": [
       "Wei Chen",
@@ -4762,6 +4950,7 @@
   },
   {
     "id": "tievis",
+    "category": "social-behavior",
     "title": "TieVis: visual analytics of evolution of interpersonal ties",
     "authors": [
       "Fangzhou Guo",
@@ -4783,6 +4972,7 @@
   },
   {
     "id": "unmat",
+    "category": "graph-analytics",
     "title": "UNMAT: Visual comparison and exploration of uncertainty in large graph sampling",
     "authors": [
       "Tan Tang",
@@ -4801,6 +4991,7 @@
   },
   {
     "id": "visual-voting",
+    "category": "urban-geospatial",
     "title": "A visual voting framework for weather forecast calibration",
     "authors": [
       "Hongsen Liao",
@@ -4822,6 +5013,7 @@
   },
   {
     "id": "tt-performance-optimization",
+    "category": "sports-analytics",
     "title": "The performance optimization model of adjusting technical and tactical decisions with ideal usages for elite female table tennis players",
     "authors": [
       "Xiangtong Chu",
@@ -4840,6 +5032,7 @@
   },
   {
     "id": "eeg-ictal-mtle",
+    "category": "health-analytics",
     "title": "EEG signature orchestrating expression of ictal behavior in mesial temporal lobe epilepsy",
     "authors": [
       "Chenmin He",
@@ -4875,6 +5068,7 @@
   },
   {
     "id": "intelligent-cad-2",
+    "category": "industrial-analytics",
     "title": "Intelligent CAD 2.0",
     "authors": [
       "Qiang Zou",
@@ -4893,6 +5087,7 @@
   },
   {
     "id": "eeg-va-epilepsy",
+    "category": "health-analytics",
     "title": "An Electroencephalogram Visual Analytics Approach for Epilepsy",
     "authors": [
       "Guoming Ding",
@@ -4911,6 +5106,7 @@
   },
   {
     "id": "changevis",
+    "category": "data-wrangling",
     "title": "Visualizing the Semantics of Data Wrangling Scripts",
     "authors": [
       "Zhongsu Luo",
@@ -4930,6 +5126,7 @@
   },
   {
     "id": "pre-ictal-fc-mtle",
+    "category": "health-analytics",
     "title": "Pre-ictal fluctuation of EEG functional connectivity discriminates seizure phenotypes in mesial temporal lobe epilepsy",
     "authors": [
       "Hongyi Ye",
@@ -4957,6 +5154,7 @@
   },
   {
     "id": "ictal-eeg-lvfa",
+    "category": "health-analytics",
     "title": "Ictal EEG desynchronization during low-voltage fast activity for prediction of surgical outcomes in focal epilepsy",
     "authors": [
       "Lingli Hu",
@@ -4989,6 +5187,7 @@
   },
   {
     "id": "mindfulness-book-of-songs",
+    "category": "cultural-heritage",
     "title": "Explore Mindfulness Without Deflection: A Data Art Based On The Book Of Songs",
     "authors": [
       "Yifang Wang",
@@ -5008,6 +5207,7 @@
   },
   {
     "id": "immersive-visualization-survey",
+    "category": "perception-interaction",
     "title": "A Survey on Immersive Visualization",
     "authors": [
       "Shuainan Ye",
@@ -5024,6 +5224,7 @@
   },
   {
     "id": "dynamic-graphs-evolution",
+    "category": "graph-analytics",
     "title": "Understanding Evolution Patterns in Multiple Sequences of Dynamic Graphs",
     "authors": [
       "Kaijuan Yuan",
@@ -5041,6 +5242,7 @@
   },
   {
     "id": "public-attention-emotion-twitter",
+    "category": "social-behavior",
     "title": "Interplay between Public Attention and Public Emotion toward Multiple Social Issues on Twitter",
     "authors": [
       "Tai-Quan Peng",
@@ -5057,6 +5259,7 @@
   },
   {
     "id": "immersive-urban-analytics-exploded-views",
+    "category": "urban-geospatial",
     "title": "Immersive urban analytics through exploded views",
     "authors": [
       "Zhutian Chen",
