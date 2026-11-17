@@ -5271,5 +5271,29 @@
     ],
     "year": 2017,
     "teaser": "source/projects/immersive-urban-analytics-exploded-views/immersive-urban-analytics-exploded-views.png"
+  },
+  {
+    "id": "backdoorscope",
+    "category": "model-mechanisms",
+    "title": "BackdoorScope: Visual Analytics of Internal Behaviors in LLMs under Backdoor Attacks",
+    "authors": [
+      "Hanze Jia",
+      "Tan Tang",
+      "Yan Chen",
+      "Feiyuan Qu",
+      "Dazhen Deng",
+      "Yule Liu",
+      "Shouling Ji",
+      "Yingcai Wu"
+    ],
+    "venue": [
+      "IEEE TVCG",
+      "IEEE VIS 2026"
+    ],
+    "year": 2026,
+    "abstract": "BackdoorScope helps security analysts investigate how hidden triggers alter the behavior of large language models during inference. Its visualizations trace unusual attention patterns across layers and heads. An attention-based screening method flags suspicious spans and lets analysts inspect the evidence behind those flags. Model experiments and case studies show how the system helps analysts prioritize inputs for review and diagnose screening errors.",
+    "teaser": "source/projects/backdoorscope/backdoorscope.png",
+    "paper": "source/projects/backdoorscope/backdoorscope.pdf",
+    "system": "https://www.hzjia.website/backdoorscope"
   }
 ]

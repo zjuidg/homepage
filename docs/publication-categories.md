@@ -1,12 +1,12 @@
 # Publication category coding
 
-初始编码日期：2026-10-12；分类边界修订日期：2026-10-13。范围：`public/source/publications.json` 中现有的 203 篇论文。
+初始编码日期：2026-10-12；分类边界修订日期：2026-10-13。范围：`public/source/publications.json` 中现有的 204 篇论文。
 
 每篇论文只分配一个主类别，写入标量字符串字段 `category`。类别 ID 使用稳定的 lowercase-kebab-case；中英文名称及边界在本文件定义。中文名称为 4–6 个字，英文名称为 2–3 个词。类别数为 15，不设置含糊的 `other` 类，也不要求各类数量相等。
 
 ## 编码方法与依据
 
-本轮逐篇阅读配置中的标题和全部 198 条非空摘要，依据主要研究问题、服务对象和核心贡献完成主题编码。其余 5 篇结合标题及下表列出的作者、机构或会议来源确认研究对象。
+逐篇阅读标题和 199 篇论文的摘要，依据主要研究问题、服务对象和核心贡献完成主题编码。其余 5 篇结合标题及下表列出的作者、机构或会议来源确认研究对象。
 
 判断顺序如下：
 
@@ -34,7 +34,7 @@
 | `perception-interaction` | Perception and Interaction | 感知交互 | 11 |
 | `research-evaluation` | Research Evaluation | 研究评估 | 3 |
 | `multimodal-analytics` | Multimodal Analytics | 多模态分析 | 3 |
-| `model-mechanisms` | Model Mechanisms | 模型机理 | 9 |
+| `model-mechanisms` | Model Mechanisms | 模型机理 | 10 |
 | `cultural-heritage` | Culture and Art | 文化艺术 | 9 |
 | `industrial-analytics` | Industrial Operations | 工业运营 | 10 |
 | `health-analytics` | Health Analytics | 健康分析 | 5 |
@@ -362,3 +362,4 @@
 | 201 | `dynamic-graphs-evolution` | Understanding Evolution Patterns in Multiple Sequences of Dynamic Graphs | `graph-analytics` | 提出跨应用动态图序列演化模式的分析方法；原文：“evolution patterns in multiple sequences of dynamic graphs”。 |
 | 202 | `public-attention-emotion-twitter` | Interplay between Public Attention and Public Emotion toward Multiple Social Issues on Twitter | `social-behavior` | 研究公众对多类社会议题的关注与情绪互动；原文：“public attention and public emotion”。 |
 | 203 | `immersive-urban-analytics-exploded-views` | Immersive urban analytics through exploded views | `urban-geospatial` | 通过分解视图处理城市三维环境中的分析与遮挡；原文：“Immersive urban analytics”。 |
+| 204 | `backdoorscope` | BackdoorScope: Visual Analytics of Internal Behaviors in LLMs under Backdoor Attacks | `model-mechanisms` | 诊断后门触发时语言模型推理过程中内部注意力的异常；[IEEE VIS 摘要](https://ieeevis.org/year/2026/program/content/d26baffc-e5d2-4cb3-b0b3-a6fd50176194/)：“white-box, inference-stage diagnosis of backdoor behaviors in LLMs”。 |
