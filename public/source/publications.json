@@ -15,6 +15,7 @@
       "ACL 2026 Findings"
     ],
     "year": 2026,
+    "publicationDate": "2026-07",
     "abstract": "High-quality mathematical and logical datasets with verifiable answers are essential for strengthening the reasoning capabilities of large language models (LLMs). While recent data augmentation techniques have facilitated the creation of large-scale benchmarks, existing LLM-generated datasets often suffer from limited reliability, diversity, and scalability. To address these challenges, we introduce PuzzleClone, a formal framework for synthesizing verifiable data at scale using a novel DSL-driven approach. Our approach features three key innovations: (1) encoding seed puzzles into structured logical specifications, (2) generating scalable variants through systematic variable and constraint randomization, and (3) ensuring validity via a reproduction mechanism. Applying PuzzleClone, we construct PC-83K, a benchmark comprising over 83K diverse and programmatically validated puzzles. The generated puzzles span a wide spectrum of difficulty and formats, posing significant challenges to current state-of-the-art models. Experimental results show that post training (SFT and RL) on PC-83K yields substantial improvements not only on the testset but also on various logic and mathematical benchmarks. Post training raises average performance on PC-83K from 14.5 to 66.0 and delivers consistent improvements across 7 logic and mathematical benchmarks up to 18.4 absolute percentage points (SATBench from 51.6 to 70.0). Our code and data are available at https://github.com/HiThink-Research/PuzzleClone.",
     "teaser": "source/projects/puzzleclone/puzzleclone.png",
     "paper": "source/projects/puzzleclone/puzzleclone.pdf",
@@ -44,6 +45,7 @@
       "ACM TOSEM"
     ],
     "year": 2026,
+    "publicationDate": "2026-05-07",
     "abstract": "Large language models (LLMs) are increasingly embedded into software engineering workflows as autonomous or semi-autonomous agents for code generation, test synthesis, tool orchestration, and end-to-end task automation. While these agentic capabilities promise substantial productivity and quality gains, they also introduce distinct security and privacy risks at the levels of artifacts, processes, and socio-technical deployment pipelines. These risks threaten the trustworthiness of LLM-powered software and complicate core engineering activities such as specification, design, verification, maintenance, and governance. This survey systematizes the threat landscape for LLM-based agents from a software engineering perspective. We propose a taxonomy organized by threat sources and their impacts across the software lifecycle, explicitly capturing cross-module and cross-stage attack surfaces (e.g., tool-use mediation, memory management, and environment interaction). We further distill six agent features grounded in information-flow and control-flow properties that shape risk exposure. We synthesize current mitigation techniques and their limitations for each feature, and conduct four case studies on web search, gaming, navigation, and software development to illustrate practical risks and failure modes. Building on these analyses, we outline research directions in data, methodology, and policy to guide the development of secure and trustworthy LLM-based agents.",
     "teaser": "source/projects/navigating-risks/navigating-risks.jpg",
     "paper": "source/projects/navigating-risks/navigating-risks.pdf",
@@ -67,6 +69,7 @@
       "IEEE VIS 2026"
     ],
     "year": 2026,
+    "presentationDate": "2026-11-12",
     "abstract": "Social media platforms generate volumes of heterogeneous data, capturing user behaviors, textual content, and network structures. Analyzing such data is crucial for understanding phenomena such as opinion dynamics, community formation, and information diffusion. However, discovering insights from this complex landscape is exploratory, conceptually challenging, and requires expertise in social media mining and visualization. Existing automated approaches, including large language models (LLMs), remain largely confined to structured tabular data and cannot adequately address the heterogeneity of social media analysis. We present SIA (Social Insight Agents), an LLM agent system that links heterogeneous multi-modal data, including raw inputs (e.g., text, network, and behavioral data), mined analytical results, and rendered visual artifacts, through coordinated agent flows. Guided by an insight-oriented taxonomy connecting insight types with suitable mining methods and visualization strategies, SIA adopts a stage-synchronized strategy that proceeds through goal decomposition, query, mining, visualization, and reporting stages. At each stage, it collects prior information to jointly plan and execute agent actions, while the coordinator maintains cross-stage action dependencies and assembles and distributes data to agents. Through quantitative evaluation and case studies supported by an interactive interface, we show that SIA can discover diverse and meaningful insights from social media with opportunities for subsequent reliability assessment.",
     "teaser": "source/projects/sia/sia.png",
     "paper": "source/projects/sia/sia.pdf"
@@ -90,6 +93,7 @@
       "IEEE VIS 2026"
     ],
     "year": 2026,
+    "presentationDate": "2026-11-11",
     "abstract": "In deployment and application, large language models (LLMs) typically undergo safety alignment to prevent illegal and unethical outputs. However, the continuous advancement of jailbreak attack techniques, designed to bypass safety mechanisms with adversarial prompts, has placed increasing pressure on the security defenses of LLMs. Strengthening resistance to jailbreak attacks requires an in-depth understanding of the security mechanisms and vulnerabilities of LLMs. However, the vast number of parameters and complex structure of LLMs make analyzing security weaknesses from an internal perspective a challenging task. This paper presents NeuroBreak, a top-down jailbreak analysis system designed to analyze neuron-level safety mechanisms and mitigate vulnerabilities. We carefully design system requirements through collaboration with three experts in the field of AI security. The system provides a comprehensive analysis of various jailbreak attack methods. By incorporating layer-wise representation probing analysis, NeuroBreak offers a novel perspective on the model’s decision-making process throughout its generation steps. Furthermore, the system supports the analysis of critical neurons from both semantic and functional perspectives, facilitating a deeper exploration of security mechanisms. We conduct quantitative evaluations and case studies to verify the effectiveness of our system, offering mechanistic insights for developing next-generation defense strategies against evolving jailbreak attacks.",
     "teaser": "source/projects/neurobreak/neurobreak.png",
     "paper": "source/projects/neurobreak/neurobreak.pdf"
@@ -154,6 +158,7 @@
       "UIST 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-11-02",
     "abstract": "Large language models (LLMs) are increasingly adopted by data analysts to perform various analytical tasks within conversational interfaces, owing to their capabilities in code generation and analytical reasoning. Conversational LLMs generate diverse artifacts through multiple reasoning steps and summarize analytical results into insights. Verifying such analysis remains essential yet challenging, as it requires examining both diverse artifacts and the underlying complex reasoning logic, which is not fully addressed by previous work. To facilitate validating LLM-generated results, we present a claim-centered view of analytic provenance and introduce Veriscope, an interactive system that supports fine-grained verification across interconnected artifacts, on-demand tracing of analytic provenance, and modification of analytical results. We formulated our design considerations based on findings derived from a formative study conducted with data analysts (N=6) who have prior experience in verification. We evaluated the effectiveness and usability of our method through a user study (N=18), which demonstrated that Veriscope substantially improves the efficiency of verifying analytical results produced by LLMs. The reliability of LLM-based features was assessed through a technical evaluation.",
     "teaser": "source/projects/veriscope/veriscope.avif",
     "paper": "source/projects/veriscope/veriscope.pdf",
@@ -176,6 +181,7 @@
       "UIST 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-11-02",
     "abstract": "Finding time series patterns is an important problem in finance, healthcare, climatology, and manufacturing, where temporal data analysis informs critical decision-making processes. Existing approaches use examples, sketches, and natural language (NL) for time series pattern querying, but precisely formulating complex queries, inspecting query interpretations, and refining queries iteratively remain challenging. Nevertheless, NL is a promising modality for pattern specification, balancing expressiveness and preciseness while providing an intuitive means of articulating query intent. This paper introduces ChronoMantic, an NL-driven interactive interface for time series pattern querying. The tool provides glyph-based feedback on query interpretation and supports iterative querying through by-example refinement. We illustrate ChronoMantic's workflow through two usage scenarios, assess its retrieval performance on a manually annotated benchmark, and evaluate its query effectiveness and usability via a two-stage user study.",
     "teaser": "source/projects/chronomantic/chronomantic.avif",
     "paper": "source/projects/chronomantic/chronomantic.pdf",
@@ -193,6 +199,7 @@
       "EMNLP 2026 Main"
     ],
     "year": 2026,
+    "publicationDate": "2026-10",
     "abstract": "Sign Language Translation (SLT) is a challenging cross-modal task requiring joint modeling of manual articulations and non-manual signals. Existing gloss-free SLT methods effectively capture gestural dynamics but often underutilize facial expressions, which play crucial grammatical and disambiguating roles. This limitation can cause semantic degradation when distinct concepts share similar manual configurations. To address this issue, we propose FEA-SLT (Facial-Expression-Aware Sign Language Translation), a gloss-free end-to-end framework that uses facial dynamics as semantic anchors for resolving manual ambiguity. FEA-SLT employs a domain-transferred facial encoder to extract expression-sensitive representations and integrates them with manual features through a linguistically constrained Facial-Expression-Aware Fusion (FEAF) module. FEAF captures reciprocal dependencies between manual and facial channels via bidirectional modulation, enhancing syntactic fidelity. Experiments on PHOENIX14T and CSL-Daily show that FEA-SLT achieves state-of-the-art BLEU performance among gloss-free methods, while targeted analyses confirm improved translation of facial-sensitive utterances.",
     "teaser": "source/projects/fea-slt/fea-slt.avif",
     "paper": "source/projects/fea-slt/fea-slt.pdf",
@@ -213,6 +220,7 @@
       "EMNLP 2026 Main"
     ],
     "year": 2026,
+    "publicationDate": "2026-10",
     "abstract": "Large language models are increasingly deployed as tool-augmented agents to acquire information beyond parametric knowledge. While recent work has improved long-horizon tool-use reasoning, most approaches focus on tasks with a single correct answer. In contrast, many real-world queries require discovering a comprehensive set of valid answers, a setting known as Multi-Answer QA. This setting raises two challenges: fine-grained credit assignment over long search trajectories and reward alignment for sustained exploration beyond easy high-frequency entities. We propose SPADER, a reinforcement learning framework for long-horizon tool use in Multi-Answer QA. SPADER includes Step-wise Peer Advantage (SPA), a critic-free step-level credit assignment mechanism that aligns parallel trajectories by decision step and estimates advantages from peer returns. It also includes a diversity-aware exploration reward that promotes long-tail entity discovery by upweighting rare findings and downweighting redundant ones. Experiments on QAMPARI, Mintaka, WebQSP, and QUEST show that SPADER generally improves recall and overall F1 over prompting-based agents, outcome-supervised RL methods, and recent step-level supervision approaches.",
     "teaser": "source/projects/spader/spader.avif",
     "paper": "source/projects/spader/spader.pdf",
@@ -233,6 +241,7 @@
       "EMNLP 2026 Findings"
     ],
     "year": 2026,
+    "publicationDate": "2026-10",
     "abstract": "While recent Large Language Model (LLM)-based text-to-SQL systems achieve impressive performance on standard benchmarks, they struggle when user queries implicitly rely on domain-specific knowledge, such as business logic, data conventions, and analytical practices, that is neither captured by the schema nor explicitly stated in the natural language question. Historical SQL query logs offer a valuable source of such knowledge, yet existing benchmarks do not adequately support evaluation of history-driven approaches. To address this gap, we introduce BIRD-History, a benchmark consisting of 1,393 tasks across 11 databases, designed to evaluate text-to-SQL systems' ability to ground underspecified natural language questions using historical SQL scripts. Each task is annotated with ground-truth labels specifying which historical queries contain relevant knowledge and which SQL clauses encode it, enabling systematic evaluation of both retrieval effectiveness and knowledge utilization. Alongside the benchmark, we propose a plug-in retriever that extracts five types of external knowledge from historical SQL scripts, then retrieves and reranks relevant fragments for query generation. The retriever integrates seamlessly into existing few-shot text-to-SQL pipelines without requiring prompt modifications. Experiments demonstrate consistent improvements across four text-to-SQL systems, highlighting the value of leveraging historical query logs for handling underspecified queries.",
     "teaser": "source/projects/bird-history/bird-history.avif"
   },
@@ -250,6 +259,7 @@
       "BMC Sports Science, Medicine and Rehabilitation"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-28",
     "abstract": "Current soccer match analysis focuses predominantly on team tactics and technical aspects, such as offensive and defensive strategies and their transitions. However, match efficiency has received limited attention, making it difficult to explain scenarios where a team dominates possession but fails to secure victory.",
     "doi": "10.1186/s13102-026-01717-6"
   },
@@ -268,6 +278,7 @@
       "BMC Sports Science, Medicine and Rehabilitation"
     ],
     "year": 2026,
+    "publicationDate": "2026-01-10",
     "abstract": "Table tennis is characterized by high intensity and short rallies, where the stability of technical and tactical execution is crucial to performance. Existing research on performance fluctuations has primarily focused on psychological or score-based metrics, neglecting the technical execution of strokes. To address this gap, this study introduces a novel metric: Stroke Performance Fluctuation (SPF).",
     "doi": "10.1186/s13102-025-01521-8"
   },
@@ -289,6 +300,7 @@
       "IEEE TVCG"
     ],
     "year": 2026,
+    "publicationDate": "2026-07",
     "abstract": "Articles containing geographic information are widely distributed and commonly used in daily life, frequently incorporating geographic visualizations as illustrations. However, the creation of such articles remains cumbersome, necessitating authors to switch between authoring text and illustrations, thereby disrupting immersive writing. Our interviews corroborated this observation and revealed the primary challenge in the traditional process stems from the low synchronization frequency between text and geographic visualizations during creation, coupled with weak visual links, forcing users to mentally maintain this synchronization and thereby increasing their cognitive burden. In response, we developed GeoAuthor, which facilitates the interactive creation of geographic articles by automatically synchronizing text creation with geographic visualizations with rich visual links. This bidirectional approach ensures that the written content and visual representations remain consistent and mutually informative throughout the creation process. Our evaluation demonstrated the efficacy of GeoAuthor, indicating its capacity to streamline the process of creating geographic articles."
   },
   {
@@ -313,6 +325,7 @@
       "IEEE TVCG"
     ],
     "year": 2026,
+    "publicationDate": "2026-08",
     "abstract": "Data validation is a crucial step in data analytics workflows that assesses and ensures the reliability of data flowing into analytical processes. One common approach to data validation involves defining validation rules, which provide explicit constraints and conditions that data must satisfy. However, creating accurate and effective validation rules remains challenging for many practitioners. This challenge stems from the need for practitioners to understand both data structures and their domain-specific semantic relationships. Recent studies have proposed automated approaches to generate validation rules by deriving patterns from data properties. However, these approaches generate rules with limited interpretability and lack support for rule verification and modification, making the rules difficult to understand and adapt. To address these limitations in current validation rule authoring approaches, we present RuleScope, an interactive system for authoring data validation rules through semantic-aware rule generation, visualization, and refinement. RuleScope employs an LLM-based workflow to generate interpretable rules by analyzing data semantics and incorporating domain knowledge. To facilitate rule comprehension, we design a matrix-based visualization that helps users understand rules and analyze validation results. Additionally, RuleScope enables users to interactively refine rules. We evaluate the LLM-based workflow through model evaluation on datasets from different domains and assess RuleScope's usability and effectiveness through two case studies and a user study.",
     "demo": "https://github.com/rulescopevis/RuleScope"
   },
@@ -332,6 +345,7 @@
       "ICML 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-09-29",
     "abstract": "Non-stationary time series forecasting is challenged by evolving distribution shifts that static models struggle to capture. While Mixture-of-Experts (MoE) architectures offer a promising paradigm for decoupling complex drift patterns, existing approaches are limited by fixed expert pools and memoryless routing, hampering their ability to adapt to abrupt regime shifts. To address this, we propose Dynamic TMoE, a framework that unifies architectural evolution with temporal continuity during learning phase. By detecting distribution shifts via Maximum Mean Discrepancy (MMD), we dynamically instantiate heterogeneous experts and prune redundant ones to optimize capacity. Additionally, a temporal memory router leverages recurrent states and an anomaly repository to ensure stable, context-aware expert selection without requiring test-time updates. Experiments on nine benchmarks demonstrate state-of-the-art performance, reducing MSE by 10.4% and MAE by 7.8%.",
     "demo": "https://github.com/andone-07/Dynamic-TMoE"
   },
@@ -353,6 +367,7 @@
       "ACL 2026 Main"
     ],
     "year": 2026,
+    "publicationDate": "2026-07",
     "doi": "10.48550/arXiv.2601.04740",
     "demo": "https://github.com/huawzheng/StealthGraph"
   },
@@ -373,6 +388,7 @@
       "IEEE TVCG"
     ],
     "year": 2026,
+    "publicationDate": "2026-03",
     "abstract": "Crowd simulation plays a crucial role in various domains, including entertainment, urban planning, and safety assessment. Data-driven methods offer significant advantages in simulating natural and diverse crowd behaviors, enabling highly realistic simulations. However, existing methods often face challenges due to incomplete trajectory data and limited generalization to unfamiliar scenarios. To address these limitations, we propose a novel crowd simulation framework based on the collaboration of a small model and a large model. Inspired by the dual-process decision-making mechanism in cognitive psychology, this framework enables efficient handling of familiar scenarios while leveraging the reasoning capabilities of large models in complex or unfamiliar environments. The small model, responsible for generating fast and reactive behaviors, is trained on real-world incomplete trajectory data to learn movement patterns. The large model, which performs simulation correction to refine failed behaviors, leverages past successful and failed experiences to enhance behavior generation in complex scenarios. Experimental results demonstrate that our framework significantly improves simulation accuracy in the presence of missing trajectory segments and enhances cross-scene generalization.",
     "doi": "10.1109/TVCG.2025.3649986"
   },
@@ -393,6 +409,7 @@
       "Visual Informatics"
     ],
     "year": 2026,
+    "publicationDate": "2026-03",
     "abstract": "People-to-people recommendation involves suggesting connections or relationships between individuals based on shared interests, skills, or other relevant factors, such as preferred field of study or geographical location. It is a common matching task across various domains, notably in education, where it assists in forming study groups, mentorship programs, and collaborative projects. However, generating people-to-people recommendations that satisfy users' preferences is laborious, requiring extensive profile analysis and thus prompting the need for interactive visualization systems. In this work, we collaborated with experts from various education domains and developed CustMatcher which coordinates automatic matching algorithms and visualizations to enable efficient people-to-people recommendations. We first propose a steerable matching framework considering both the flexibility and the efficiency. A constraint space is defined to allow users to express their explicit preferences and implicit preferences about the matching. Visualizations and interactions are designed based on the framework and the constraint space to help users generate the initial matching result, handle the conflicts between preferences, and improve the matching result progressively. We evaluate the effectiveness and usability of the system with a user study and a case study.",
     "doi": "10.1016/j.visinf.2025.100298"
   },
@@ -411,6 +428,7 @@
       "Journal of Visualization"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-22",
     "abstract": "Malicious entities are conducting illegal activities that undermine fair competition on e-commerce platforms. However, identifying malicious entities remains challenging because malicious entities always camouflage themselves among the sheer volume of benign entities. Even the most advanced automated approaches have to sacrifice precision to obtain an acceptable recall rate due to the camouflages. To discover camouflaged malicious entities efficiently, we propose CamouflageVis, a visual analytics approach that integrates machine insights with human knowledge. Compared with existing methods, our approach incorporates advanced machine learning models to detect malicious entities against their camouflage behaviors. Moreover, we develop a visualization interface to help domain experts obtain deep insights into the camouflages and identify underlying malicious entities. Specifically, we provide a clustering view to show which entities are similar based on the learned embedding features. We then design a feature view and an annotation view to reveal the feature distribution of both benign and malicious entities. We also introduce a community view and an entity view to manifest single-level and group-level aggregation of entities in multi-relational graphs. Finally, we evaluated our approach with two usage scenarios based on real-world datasets.",
     "doi": "10.1007/s12650-026-01128-2"
   },
@@ -430,6 +448,7 @@
       "Journal of Computer-Aided Design & Computer Graphics"
     ],
     "year": 2026,
+    "publicationDate": "2026-01",
     "abstract": "Traffic lights have been widely used to alleviate traffic congestion and improve traffic efficiency. However, due to the complex variability of traffic conditions and interactions between intersections, formulating effective traffic signal control strategies for multiple intersections is highly challenging. Aiming at issues in existing optimization methods which are adaptive and fixed-time, this paper proposes a visual analytics method for multi-intersection traffic signal control optimization. Through collaborative interviews with experts, the paper extracts the problems and demands related to identifying and optimizing inefficient traffic signal control strategies, and accordingly constructs a novel visual analytics system, VisualTSC. The implemented trajectory mining process, which integrates the extraction of inefficient intersections and generation of optimization strategies, assists experts to understand the traffic efficiency of intersections and provides feasible alternative control strategies via simulation combined with the visual analytics system. VisualTSC employs a multi-level contour map to visualize intersection relationships, and offers tabular and trajectory views to support optimal strategies decision-making. The effectiveness of VisualTSC is verified via two application scenarios using real-world datasets and follow-up expert interviews, where experts reproduced the cases and provided positive qualitative evaluations on its performance.",
     "doi": "10.3724/SP.J.1089.2025-00260"
   },
@@ -632,6 +651,7 @@
       "ChinaVis 2025"
     ],
     "year": 2026,
+    "publicationDate": "2026-07-08",
     "abstract": "Animated geographic visualization is a common way to communicate spatial processes and narratives. However, authoring such animations often requires tradeoffs among learnability, control, and production effort. To explore a structured authoring approach, we analyzed 64 source videos containing geographic animation segments and synthesized a design space for geographic animation targets, attributes, and effects. Based on this analysis, we designed GeoAnimation, a domain-specific declarative grammar and interactive prototype for authoring common point, line, and region animations. We examined the prototype through two use cases and expert interviews with two visualization researchers. The results provide preliminary evidence that GeoAnimation is feasible for the studied authoring tasks, while broader usability, expressiveness, and performance require further evaluation.",
     "doi": "10.1007/s12650-026-01146-0"
   },
@@ -830,6 +850,7 @@
       "PacificVis 2026 Conference Track"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-20",
     "abstract": "Trajectory visualizations play a crucial role in urban computing, supporting tasks from analyzing road networks and vehicle movements to informing transport policy. However, creating such visualizations faces usability and flexibility limitations in trajectory visualization scenarios: limited usability due to insufficient trajectory-specific specialization, and limited flexibility due to tightly-coupled interactions that are not treated as first-class components.\nTo address these challenges, we first conduct a systematic review of prior work and define a comprehensive design space for interactive trajectory visualization across three key dimensions: transformation, display, and interaction. We then present TrajGram, a declarative grammar built upon this design space that streamlines the creation of diverse interactive trajectory visualizations. TrajGram enables rapid prototyping with rich interactions grounded in real-world traffic analysis needs, while remaining extensible for complex scenarios.\nWe demonstrate the effectiveness, usability, and learning curve of TrajGram through two usage scenarios and a user study.",
     "video": "https://youtu.be/JzO2j2Bvxto",
     "embedVideo": "https://www.youtube.com/embed/JzO2j2Bvxto",
@@ -865,6 +886,7 @@
       "PacificVis 2026 TVCG Journal Track"
     ],
     "year": 2026,
+    "publicationDate": "2026-06",
     "abstract": "Root cause analysis (RCA) is critical for maintaining the availability and efficiency of cloud computing systems. However, identifying root causes from the large-scale, high-dimensional monitoring data generated by these complex environments is a significant challenge. Current approaches often rely on time-consuming manual analysis to ensure flexibility and reliability, while recent automated methods lack the crucial insights provided by domain experts. To bridge this gap, we propose RCInvestigator, a visual analytics system that facilitates interactive root cause investigation by establishing a tight collaboration between human experts and machine analysis. Our approach addresses three key challenges: a) modeling databases for the root cause investigation, b) inferring root causes from large-scale time series, and c) building comprehensible investigation results. We demonstrate the effectiveness and utility of RCInvestigator through two real-world case studies, which received positive feedback from domain experts.",
     "video": "https://youtu.be/xnZdN0d0lXY",
     "embedVideo": "https://www.youtube.com/embed/xnZdN0d0lXY",
@@ -897,6 +919,7 @@
       "PacificVis 2026 TVCG Journal Track"
     ],
     "year": 2026,
+    "publicationDate": "2026-06",
     "abstract": "Large Language Models (LLMs) demonstrate exceptional capabilities in factual question answering, yet they sometimes provide incorrect responses. To address this issue, knowledge editing techniques have emerged as effective methods for correcting factual information in LLMs. However, typical knowledge editing workflows struggle with identifying the optimal set of model layers for editing and rely on summary indicators that provide insufficient guidance. This lack of transparency hinders effective comparison and identification of optimal editing strategies. In this paper, we present KEditVis, a novel visual analytics system designed to assist users in gaining a deeper understanding of knowledge editing through interactive visualizations, improving editing outcomes, and discovering valuable insights for the future development of knowledge editing algorithms. With KEditVis, users can select appropriate layers as the editing target, explore the reasons behind ineffective edits, and perform more targeted and effective edits. Our evaluation, including usage scenarios, expert interviews, and a user study, validates the effectiveness and usability of the system.",
     "video": "https://youtu.be/P9IPsgis77w",
     "embedVideo": "https://www.youtube.com/embed/P9IPsgis77w",
@@ -930,6 +953,7 @@
       11
     ],
     "year": 2026,
+    "publicationDate": "2026-04-20",
     "abstract": "Trajectory data record spatiotemporal information and related attributes of moving objects. High-quality trajectory data can accurately reflect behavior patterns, providing a reliable foundation for traffic management, logistics optimization, and smart city planning. However, existing research on trajectory data quality management remains limited, lacking interactive tools for addressing quality issues and making it difficult for users to explore and resolve problems in trajectory datasets. To address this gap, we present TrajectoryCurer, an interactive visual analytics system designed for trajectory data quality management. Through expert interviews and synthesis of preprocessing operations from 30 relevant articles on trajectory visualization and management, we construct a taxonomy of 19 trajectory data quality issues across six dimensions. Based on this taxonomy, we design a multilevel visualization approach encompassing Trajectory View, Point View, Map View, and Data View, enabling users to observe and address quality issues across multiple dimensions through an integrated interface. We demonstrate the effectiveness and usability of TrajectoryCurer through two usage scenarios and expert evaluations.",
     "paper": "source/projects/trajectorycurertrajectorycurer.pdf",
     "video": "https://youtu.be/rzDVNxLRCQM",
@@ -955,6 +979,7 @@
       "CHI 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-13",
     "video": "https://youtu.be/le3WoY_XP9k",
     "embedVideo": "https://www.youtube.com/embed/le3WoY_XP9k",
     "abstract": "Conversational visual analytics (CVA) make data exploration accessible to novices but often leave users disoriented during multi-turn conversations. Previous approaches provide data-centric recommendations, but fail to help users regain orientations. To bridge this gap, we conducted a formative study (N = 12) revealing that novices are insensitive to analytical cues and rely on vague queries, leading to disorientation and task failures. In contrast, experts are sensitive to two types of analytical cues and use seven types of queries to organize workflows. Based on these findings, we propose ToA, a novel approach that structures the CVA process as an interactive analysis tree. Moreover, we visualize this tree, with AI outputs as nodes (containing two cue types) and user queries as edges (categorized by seven query types), to provide novices with an overview of their analysis journey. We evaluated ToA through user studies (N = 12) and expert interviews (N = 3). The results suggest that ToA eliminates task failure and increases per-turn insights (+58.3%), despite longer per-turn thinking time (+17.7%). Expert interviews further confirm its potential to democratize visual analytics.",
@@ -979,6 +1004,7 @@
       "CHI 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-13",
     "video": "https://youtu.be/wcZ82QwNMxs",
     "embedVideo": "https://www.youtube.com/embed/wcZ82QwNMxs",
     "abstract": "Chart data extraction, which reverse-engineers data tables from chart images, is essential for reproducibility, analysis, retrieval, and redesign. Existing interactive tools are reliable but tedious, and mixed-initiative systems, while more efficient, lack generalizability. Recent multimodal large language models (MLLMs) offer a unified interface for chart interpretation, yet their ability to extract accurate data tables, especially without visible labels, remains unclear. We build a benchmark featuring diverse real-world charts without data labels to evaluate this capability. Results show that, while current MLLMs reliably reconstruct table structures, they struggle with precise value recovery. To address this, we revisit chart data extraction from a human-centered perspective and argue that extraction should follow a progressive learning process similar to how people read charts. Our training framework substantially improves numerical accuracy, achieving state-of-the-art performance with a 7B-parameter model. A user study further shows that our model effectively supports mixed-initiative workflows for reliable chart data extraction.",
@@ -1004,6 +1030,7 @@
       "CHI 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-13",
     "video": "https://youtu.be/Kq8pTX1UbZU",
     "embedVideo": "https://www.youtube.com/embed/Kq8pTX1UbZU",
     "abstract": "LLM-driven tools have significantly lowered barriers to writing SQL queries. However, user instructions are often underspecified, assuming the model understands implicit knowledge, such as dataset schemas, domain conventions, and task-specific requirements, that isn’t explicitly provided. This results in frequently erroneous scripts that require users to repeatedly clarify their intent. Additionally, users struggle to validate generated scripts because they cannot verify whether the model correctly applied implicit knowledge. We present Cerebra, an interactive NL-to-SQL tool that aligns implicit knowledge between users and LLMs during SQL authoring. Cerebra automatically retrieves implicit knowledge from historical SQL scripts based on user instructions, presents this knowledge in an interactive tree view for code review, and supports iterative refinement to improve generated scripts. To evaluate the effectiveness and usability of Cerebra, we conducted a user study with 16 participants, demonstrating its improved support for customized SQL authoring. The source code of Cerebra is available at https://github.com/zjuidg/CHI26-Cerebra.",
@@ -1030,6 +1057,7 @@
       "CHI 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-13",
     "video": "https://youtu.be/mcAw8C6SSDk",
     "embedVideo": "https://www.youtube.com/embed/mcAw8C6SSDk",
     "abstract": "Publishing time series datasets raises substantial privacy concerns, as the underlying patterns (e.g., trends, values) can lead to the disclosure of individual identification. Mitigating these concerns remains challenging due to difficulties in pinpointing specific privacy-leaking patterns and protecting them without significantly compromising the analytical utility of the published data. Existing methods remain vulnerable to identity attacks utilizing diverse temporal patterns and may compromise data utility for subsequent analytical tasks. To address these limitations, we collaborated with domain experts to summarize a taxonomy of privacy risks in time series data and developed TSEditor, an interactive editing system. TSEditor integrates coordinated views for multi-perspective analysis of privacy risks and introduces six editing operations for targeted modifications, providing visual feedback. We demonstrate the effectiveness and usability of TSEditor through two case studies, an expert interview, a model evaluation, and a user study.",
@@ -1055,6 +1083,7 @@
       "CHI 2026"
     ],
     "year": 2026,
+    "publicationDate": "2026-04-13",
     "video": "https://youtu.be/XWOHHbdAk_M",
     "embedVideo": "https://www.youtube.com/embed/XWOHHbdAk_M",
     "abstract": "Computational notebooks offer a flexible environment for exploratory data analysis (EDA), but this flexibility often leads to disorganized and iterative execution of notebook cells, making it difficult to track how data states evolve. Consequently, data scientists must devote extra mental effort to staying aware of data states, which is both tedious and prone to overlooking anomalies. To address this challenge, we developed NoteFlow, a notebook extension that leverages charts as “sight glasses” to provide a consistent and continuous tracing of data flow. NoteFlow allows users to (1) validate various facets of the current data state using recommended charts provided immediately after each cell execution, and (2) trace the global evolution of selected charts to continuously observe how particular data attributes evolve throughout the EDA process. We evaluated NoteFlow’s effectiveness through a controlled study with 12 participants and a one-month field study with 2 data scientists on real-world workflows.",
@@ -1085,6 +1114,7 @@
       "IEEE VIS 2025"
     ],
     "year": 2026,
+    "publicationDate": "2026-01",
     "volume": 32,
     "issue": 1,
     "page": [
@@ -1141,6 +1171,7 @@
       "IEEE VIS 2025"
     ],
     "year": 2026,
+    "publicationDate": "2026-01",
     "volume": 32,
     "issue": 1,
     "page": [
@@ -5291,6 +5322,7 @@
       "IEEE VIS 2026"
     ],
     "year": 2026,
+    "presentationDate": "2026-11-11",
     "abstract": "BackdoorScope helps security analysts investigate how hidden triggers alter the behavior of large language models during inference. Its visualizations trace unusual attention patterns across layers and heads. An attention-based screening method flags suspicious spans and lets analysts inspect the evidence behind those flags. Model experiments and case studies show how the system helps analysts prioritize inputs for review and diagnose screening errors.",
     "teaser": "source/projects/backdoorscope/backdoorscope.png",
     "paper": "source/projects/backdoorscope/backdoorscope.pdf",

@@ -10,6 +10,10 @@ import './Publications.css';
 const ALL = 'All';
 const PER_PAGE = 12;
 
+function publicationDateKey(p: Publication): string {
+  return p.publicationDate ?? p.presentationDate ?? String(p.year || 0);
+}
+
 export default function Publications(props: { pubs: Publication[] }) {
   const [year, setYear] = createSignal<number | typeof ALL>(ALL);
   const [venue, setVenue] = createSignal<string>(ALL);
@@ -33,13 +37,16 @@ export default function Publications(props: { pubs: Publication[] }) {
     Array.from(new Set(props.pubs.flatMap((p) => venueSeriesList(p)))).sort()
   );
   const awardCount = createMemo(() => props.pubs.filter((p) => p.titleKey?.length).length);
+  const newestFirst = createMemo(() =>
+    [...props.pubs].sort((a, b) => publicationDateKey(b).localeCompare(publicationDateKey(a)))
+  );
 
   const filtered = createMemo(() => {
     const q = searchQuery().trim().toLowerCase();
     const y = year();
     const v = venue();
     const aw = awardsOnly();
-    return props.pubs.filter((p) => {
+    return newestFirst().filter((p) => {
       if (y !== ALL && p.year !== y) return false;
       if (v !== ALL && !venueSeriesList(p).includes(v)) return false;
       if (aw && !p.titleKey?.length) return false;

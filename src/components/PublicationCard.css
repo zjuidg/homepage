@@ -32,7 +32,7 @@
   padding: 3px 9px;
   border-radius: 6px;
 }
-.pcard__year { color: var(--text-faint); border: 1px solid var(--border); }
+.pcard__date { color: var(--text-faint); border: 1px solid var(--border); }
 
 /* award badge — the one deliberately prominent chip */
 .pcard__award {

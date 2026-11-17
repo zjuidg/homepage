@@ -77,8 +77,8 @@ local path minus `source/` — e.g. `source/projects/foo/foo.pdf` → key
 404s.**
 
 ### 3. Add the JSON entry
-Append an object to `public/source/publications.json` (order doesn't matter — the list is
-sorted by `year` descending at load):
+Append an object to `public/source/publications.json`. The publication list displays
+the newest dates first and uses `year` for entries without a date.
 
 ```jsonc
 {
@@ -87,7 +87,8 @@ sorted by `year` descending at load):
   "category": "visualization-design",            // exactly one primary research category
   "authors": ["First Author", "Di Weng", "Yingcai Wu"],
   "venue": ["IEEE TVCG", "IEEE VIS 2026"],       // Venue[] → venue chips, filter, chart color
-  "year": 2026,                                 // number → sort, year tag, year filter
+  "year": 2026,                                 // bibliographic year → chart and year filter
+  "publicationDate": "2026-07-08",              // optional → date tag and default order
   "abstract": "…",                              // optional → expandable "Abstract"
   "teaser": "source/projects/foo/foo.png",      // optional
   "paper": "source/projects/foo/foo.pdf",       // optional → resolved to R2
@@ -101,6 +102,12 @@ sorted by `year` descending at load):
 
 Field behavior worth knowing:
 
+- **`publicationDate`** is the publisher's online date in the listed year, or the
+  date of the issue or proceedings credited in `year`. Use `YYYY-MM-DD` for a
+  documented day and `YYYY-MM` for a documented month. If the publication date is
+  pending and the official program lists a presentation date, use `presentationDate`
+  (`YYYY-MM-DD`). The card labels it as a presentation and uses it for sorting until
+  a publication date is available.
 - **`category`** is one required `PublicationCategory` value (`src/types.ts`), stored
   as a scalar string. Assign it from the paper's main research problem and contribution,
   following [the category codebook](docs/publication-categories.md). Do not classify by

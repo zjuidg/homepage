@@ -125,6 +125,8 @@ export interface Publication {
   authors: string[];
   venue: Venue[];          // archival outlet and/or conference (see Venue)
   year: number;
+  publicationDate?: string;  // ISO YYYY-MM-DD or YYYY-MM, at the source's precision
+  presentationDate?: string; // ISO YYYY-MM-DD when only a conference date is available
   abstract?: string;
   teaser?: string;         // relative path under /
   paper?: string;          // pdf path

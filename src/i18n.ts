@@ -78,6 +78,7 @@ export interface Copy {
     system: string;
     abstract: string;
     hideAbstract: string;
+    presentedOn: (date: string) => string;
     alsoAppearsIn: (venue: string) => string;
   };
   footer: {
@@ -203,6 +204,7 @@ const en: Copy = {
     system: 'System',
     abstract: 'Abstract',
     hideAbstract: 'Hide abstract',
+    presentedOn: (date) => `Presented ${date}`,
     alsoAppearsIn: (venue) => `(also appears in ${venue})`,
   },
   footer: {
@@ -326,6 +328,7 @@ const zh: Copy = {
     system: '系统',
     abstract: '摘要',
     hideAbstract: '收起摘要',
+    presentedOn: (date) => `${date}会议报告`,
     alsoAppearsIn: (venue) => `（同时发表于 ${venue}）`,
   },
   footer: {
@@ -361,6 +364,18 @@ function detect(): Lang {
 const [lang, setLangSignal] = createSignal<Lang>(detect());
 
 export { lang };
+
+export function formatPublicationDate(isoDate: string): string {
+  const hasDay = isoDate.length === 10;
+  const date = new Date(hasDay ? isoDate : `${isoDate}-01`);
+  const locale = lang() === 'zh' ? 'zh-CN' : 'en-US';
+  return date.toLocaleDateString(locale, {
+    year: 'numeric',
+    month: 'short',
+    day: hasDay ? 'numeric' : undefined,
+    timeZone: 'UTC',
+  });
+}
 
 function applyHtmlLang(l: Lang) {
   document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';

@@ -3,7 +3,7 @@ import type { Publication } from '../types';
 import { asset, doiUrl, paperUrl } from '../data';
 import { searchPublications } from '../search';
 import { venueChipLabel, venueDisplayName } from '../venues';
-import { t } from '../i18n';
+import { formatPublicationDate, t } from '../i18n';
 import './PublicationCard.css';
 
 const ICONS: Record<string, string> = {
@@ -29,6 +29,12 @@ export default function PublicationCard(props: { pub: Publication; index: number
   const [open, setOpen] = createSignal(false);
   const p = props.pub;
   const doi = doiUrl(p);
+  const date = p.publicationDate ?? p.presentationDate;
+  const dateLabel = () => {
+    if (!date) return p.year;
+    const formatted = formatPublicationDate(date);
+    return p.publicationDate ? formatted : t().card.presentedOn(formatted);
+  };
 
   return (
     <article class="pcard">
@@ -51,7 +57,7 @@ export default function PublicationCard(props: { pub: Publication; index: number
               </For>
             </div>
           </Show>
-          <span class="pcard__tag pcard__year">{p.year}</span>
+          <time class="pcard__tag pcard__date" datetime={date ?? String(p.year)}>{dateLabel()}</time>
           <Show when={p.titleKey?.length}>
             <For each={p.titleKey}>
               {(k) => (
