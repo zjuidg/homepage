@@ -121,7 +121,7 @@ const en: Copy = {
     eyebrow: 'Zhejiang University · State Key Lab of CAD&CG',
     title1: 'Interactive',
     title2: 'Data Group',
-    lead: 'We build visualization, visual analytics, and interaction techniques that help people make sense of large, complex data — in sports analytics, social media, and urban informatics.',
+    lead: 'We study visualization, visual analytics, and human–AI interaction—coupling visual representation with intelligent models so people can explore, question, and reason with complex data across real-world domains.',
     explore: 'Explore publications',
     aboutCta: 'About the group',
     archiveAria: (n) =>
@@ -134,7 +134,7 @@ const en: Copy = {
     headingPre: 'From expressive visualization to ',
     headingEm: 'human–AI interaction',
     headingPost: '',
-    body: 'Founded in 2015 within the State Key Lab of CAD&CG at Zhejiang University, the Interactive Data Group builds visualization, visual analytics, and interaction techniques — declarative authoring grammars, human-in-the-loop analysis systems, immersive and situated analytics, and interfaces that keep large models steerable. The work stays grounded in real domains: sports analytics, social media, and urban data.',
+    body: 'Founded in 2015 at Zhejiang University’s State Key Lab of CAD&CG, the Interactive Data Group designs the visual languages and interactive systems that make complex data—and the AI models built on it—legible, steerable, and verifiable. Our research moves across the analytical stack: taming messy tables and data pipelines, crafting declarative grammars and authoring tools, probing the internal mechanisms and safety of large models, and putting human–AI reasoning to work in elite sports, cities, social media, industry, and cultural heritage.',
   },
   highlights: {
     heading: 'Recent highlights',
@@ -248,7 +248,7 @@ const zh: Copy = {
     eyebrow: '浙江大学 · 计算机辅助设计与图形系统全国重点实验室',
     title1: 'Interactive',
     title2: 'Data Group',
-    lead: '我们研究信息可视化、可视分析与人机交互技术，帮助人们理解大规模、复杂的数据——涵盖体育分析、社交媒体与城市信息学等领域。',
+    lead: '我们研究信息可视化、可视分析与人机智能交互——将视觉表征与智能模型深度融合，帮助人们在真实场景中探索、审视并理解复杂数据。',
     explore: '浏览论文',
     aboutCta: '了解课题组',
     archiveAria: (n) => `单元图：${n} 篇论文，每篇对应一个方块，按年份堆叠。CCF-A 类期刊与会议以不同颜色显示，其余为灰色。`,
@@ -260,7 +260,7 @@ const zh: Copy = {
     headingPre: '从富有表现力的可视化到',
     headingEm: '人机智能交互',
     headingPost: '',
-    body: 'Interactive Data Group 成立于 2015 年，隶属于浙江大学计算机辅助设计与图形系统全国重点实验室。我们研究可视化、可视分析与交互技术——声明式创作语法、人在回路的分析系统、沉浸式与情境化分析，以及让大模型保持可控的交互界面，并始终扎根于体育分析、社交媒体与城市数据等真实场景。',
+    body: 'Interactive Data Group 成立于 2015 年，扎根于浙江大学计算机辅助设计与图形系统全国重点实验室。我们探索视觉表达与智能交互的边界，让庞杂的数据与黑盒大模型变得清晰可读、可控且可验证——从规整杂乱表格与数据流水线、构建声明式可视化语法，到剖析大模型内部机理与安全风险，并将人机协同推理深入竞技体育、城市空间、舆论传播、工业运维与文化遗产等真实世界场景。',
   },
   highlights: {
     heading: '近期亮点',
