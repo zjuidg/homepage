@@ -3,7 +3,7 @@ import type { Publication } from '../types';
 import { asset, doiUrl, paperUrl } from '../data';
 import { searchPublications } from '../search';
 import { venueChipLabel, venueDisplayName } from '../venues';
-import { formatPublicationDate, t } from '../i18n';
+import { formatDate, t } from '../i18n';
 import './PublicationCard.css';
 
 const ICONS: Record<string, string> = {
@@ -32,7 +32,7 @@ export default function PublicationCard(props: { pub: Publication; index: number
   const date = p.publicationDate ?? p.presentationDate;
   const dateLabel = () => {
     if (!date) return p.year;
-    const formatted = formatPublicationDate(date);
+    const formatted = formatDate(date);
     return p.publicationDate ? formatted : t().card.presentedOn(formatted);
   };
 

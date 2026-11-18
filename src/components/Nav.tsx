@@ -1,18 +1,22 @@
 import { createSignal, For, onCleanup, onMount } from 'solid-js';
 import LangToggle from './LangToggle';
 import ThemeToggle from './ThemeToggle';
+import { asset } from '../data';
 import { t } from '../i18n';
 import './Nav.css';
 
-export default function Nav() {
+export default function Nav(props: { archive?: boolean }) {
   const [scrolled, setScrolled] = createSignal(false);
   const [open, setOpen] = createSignal(false);
+  const home = props.archive ? asset('/') : '';
+  const news = asset('news/');
 
   const links = () => [
-    { href: '#about', label: t().nav.about },
-    { href: '#highlights', label: t().nav.highlights },
-    { href: '#publications', label: t().nav.publications },
-    { href: '#network', label: t().nav.network },
+    { href: `${home}#about`, label: t().nav.about },
+    { href: `${home}#highlights`, label: t().nav.highlights },
+    { href: news, label: t().nav.news },
+    { href: `${home}#publications`, label: t().nav.publications },
+    { href: `${home}#network`, label: t().nav.network },
     { href: '#contact', label: t().nav.contact },
   ];
 
@@ -26,7 +30,7 @@ export default function Nav() {
   return (
     <header class={`nav ${scrolled() ? 'nav--scrolled' : ''}`}>
       <div class="container nav__inner">
-        <a href="#top" class="nav__brand" onClick={() => setOpen(false)}>
+        <a href={`${home}#top`} class="nav__brand" onClick={() => setOpen(false)}>
           <span class="nav__mark" aria-hidden="true">
             <span></span><span></span><span></span>
           </span>
@@ -37,7 +41,15 @@ export default function Nav() {
 
         <nav class={`nav__links ${open() ? 'is-open' : ''}`}>
           <For each={links()}>
-            {(l) => <a href={l.href} onClick={() => setOpen(false)}>{l.label}</a>}
+            {(l) => (
+              <a
+                href={l.href}
+                aria-current={props.archive && l.href === news ? 'page' : undefined}
+                onClick={() => setOpen(false)}
+              >
+                {l.label}
+              </a>
+            )}
           </For>
         </nav>
 

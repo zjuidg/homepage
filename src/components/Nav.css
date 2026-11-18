@@ -50,8 +50,8 @@
   background: var(--accent);
   transition: width 0.28s var(--ease);
 }
-.nav__links a:not(.nav__cta):hover { color: var(--text); }
-.nav__links a:not(.nav__cta):hover::after { width: 100%; }
+.nav__links a:not(.nav__cta):hover, .nav__links a[aria-current="page"] { color: var(--text); }
+.nav__links a:not(.nav__cta):hover::after, .nav__links a[aria-current="page"]::after { width: 100%; }
 
 /* burger */
 .nav__burger { display: none; flex: none; width: 42px; height: 42px; border: 1px solid var(--border); background: var(--surface); border-radius: 12px; cursor: pointer; position: relative; }
@@ -88,10 +88,11 @@
     border-bottom: 1px solid var(--border);
     transform: translateY(-12px);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
   }
-  .nav__links.is-open { opacity: 1; transform: none; pointer-events: auto; }
+  .nav__links.is-open { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
   .nav__links a { padding: 14px 4px; border-bottom: 1px solid var(--border); font-size: 1rem; }
   .nav__links a:last-child { border-bottom: none; }
   .nav__controls { margin-left: auto; margin-right: 12px; }

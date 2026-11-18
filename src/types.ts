@@ -139,9 +139,10 @@ export interface Publication {
   titleKey?: string[];     // awards / honors
 }
 
-export interface Slide {
-  title: string;
-  titleZh?: string;        // Chinese caption; system & paper names stay untranslated
-  subtitle?: string;       // paper title — not translated
-  imgSrc: string;          // relative path under /
+export interface Highlight {
+  event: string;
+  eventZh?: string;
+  date: string;     // ISO date of the event or the start of its date range
+  endDate?: string; // ISO end date for an event with a known range
+  body: ({ text: string; textZh?: string } | { label: string; paperTitle: string })[];
 }

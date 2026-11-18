@@ -1,8 +1,11 @@
+import { asset } from '../data';
 import { reveal } from '../reveal';
 import { t } from '../i18n';
 import './Footer.css';
 
-export default function Footer() {
+export default function Footer(props: { archive?: boolean }) {
+  const home = props.archive ? asset('/') : '';
+
   return (
     <footer id="contact" class="footer">
       <div class="container">
@@ -34,9 +37,9 @@ export default function Footer() {
           </div>
 
           <nav class="footer__links" aria-label="Footer">
-            <a href="#about">{t().footer.links.about}</a>
-            <a href="#highlights">{t().footer.links.highlights}</a>
-            <a href="#publications">{t().footer.links.publications}</a>
+            <a href={`${home}#about`}>{t().footer.links.about}</a>
+            <a href={`${home}#highlights`}>{t().footer.links.highlights}</a>
+            <a href={`${home}#publications`}>{t().footer.links.publications}</a>
           </nav>
         </div>
 

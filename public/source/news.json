@@ -1,0 +1,149 @@
+[
+  {
+    "event": "IEEE VIS 2026",
+    "date": "2026-11-09",
+    "endDate": "2026-11-13",
+    "body": [
+      {
+        "text": "Chuhan Zhang and Hanze Jia presented ",
+        "textZh": "Chuhan Zhang 和 Hanze Jia 分别汇报了 "
+      },
+      {
+        "label": "NeuroBreak",
+        "paperTitle": "NeuroBreak: Unveil Internal Jailbreak Mechanisms in Large Language Models"
+      },
+      { "text": " and ", "textZh": " 和 " },
+      {
+        "label": "BackdoorScope",
+        "paperTitle": "BackdoorScope: Visual Analytics of Internal Behaviors in LLMs under Backdoor Attacks"
+      },
+      {
+        "text": ", respectively. Zhongsu Luo and Zhenning Chen presented their IEEE TVCG papers ",
+        "textZh": "。Zhongsu Luo 和 Zhenning Chen 分别汇报了他们发表于 IEEE TVCG 的论文 "
+      },
+      {
+        "label": "RuleScope",
+        "paperTitle": "RuleScope: Semantic-aware Authoring of Data Validation Rules"
+      },
+      { "text": " and ", "textZh": " 和 " },
+      {
+        "label": "GeoAuthor",
+        "paperTitle": "GeoAuthor: Linking Text and Visualization for Geographic Article Authoring"
+      },
+      {
+        "text": ", respectively. Shifu Chen presented ",
+        "textZh": "。Shifu Chen 通过预录视频汇报了 "
+      },
+      {
+        "label": "SIA",
+        "paperTitle": "Linking Heterogeneous Data with Coordinated Agent Flows for Social Media Analysis"
+      },
+      { "text": " via prerecorded video.", "textZh": "。" }
+    ]
+  },
+  {
+    "event": "ACM UIST 2026",
+    "date": "2026-11-02",
+    "endDate": "2026-11-05",
+    "body": [
+      { "text": "Lingyu Meng presented ", "textZh": "Lingyu Meng 汇报了 " },
+      {
+        "label": "Veriscope",
+        "paperTitle": "Veriscope: Provenance-Aware Verification of LLM Reasoning Artifacts in Conversational Data Analysis"
+      },
+      {
+        "text": ". Yangtian Liu presented ",
+        "textZh": "。Yangtian Liu 通过预录视频汇报了 "
+      },
+      {
+        "label": "ChronoMantic",
+        "paperTitle": "ChronoMantic: A Natural Language Interface for Interactive Time Series Pattern Query"
+      },
+      { "text": " via prerecorded video.", "textZh": "。" }
+    ]
+  },
+  {
+    "event": "IEEE TVCG",
+    "date": "2026-07-23",
+    "body": [
+      {
+        "label": "ChartGPT",
+        "paperTitle": "ChartGPT: Leveraging LLMs to Generate Charts From Abstract Natural Language"
+      },
+      {
+        "text": " received the 2025 IEEE TVCG Best Paper Award in Visualization and Visual Analytics.",
+        "textZh": " 获得 IEEE TVCG 2025 年度可视化与可视分析领域最佳论文奖。"
+      }
+    ]
+  },
+  {
+    "event": "IEEE PacificVis 2026",
+    "date": "2026-04-20",
+    "endDate": "2026-04-23",
+    "body": [
+      {
+        "text": "Shifu Chen and other coauthors received a Conference Track Honorable Mention for ",
+        "textZh": "Shifu Chen 和其他共同作者凭借 "
+      },
+      {
+        "label": "TrajGram",
+        "paperTitle": "A Declarative Grammar for Interactive Trajectory Visualization: Interaction as First-Class Component"
+      },
+      {
+        "text": ", which Di Weng presented. Zhenning Chen, Shuhan Liu, and Di Weng presented ",
+        "textZh": " 获得会议论文荣誉提名奖，该论文由 Di Weng 汇报。Zhenning Chen、Shuhan Liu 和 Di Weng 分别汇报了 "
+      },
+      {
+        "label": "KEditVis",
+        "paperTitle": "KEditVis: A Visual Analytics System for Knowledge Editing of Large Language Models"
+      },
+      { "text": ", ", "textZh": "、" },
+      {
+        "label": "RCInvestigator",
+        "paperTitle": "RCInvestigator: Towards Better Investigation of Anomaly Root Causes in Cloud Computing Systems"
+      },
+      { "text": ", and ", "textZh": " 和 " },
+      {
+        "label": "TrajectoryCurer",
+        "paperTitle": "TrajectoryCurer: Visual Analysis of Trajectory Data Quality"
+      },
+      { "text": ", respectively.", "textZh": "。" }
+    ]
+  },
+  {
+    "event": "ACM CHI 2026",
+    "date": "2026-04-13",
+    "endDate": "2026-04-17",
+    "body": [
+      {
+        "text": "Feiyuan Qu, Yunfan Zhou, Yuchen He, Yuan Tian, and Zihan Xu presented ",
+        "textZh": "Feiyuan Qu、Yunfan Zhou、Yuchen He、Yuan Tian 和 Zihan Xu 分别汇报了 "
+      },
+      {
+        "label": "Toa",
+        "paperTitle": "Visualizing Tree-of-Analysis: Facilitating Conversational Visual Analytics for Novices"
+      },
+      { "text": ", ", "textZh": "、" },
+      {
+        "label": "Cerebra",
+        "paperTitle": "Cerebra: Aligning Implicit Knowledge in Interactive SQL Authoring"
+      },
+      { "text": ", ", "textZh": "、" },
+      {
+        "label": "Exchart",
+        "paperTitle": "Making Multimodal LLMs Reliable Chart Data Extractors: A Benchmark and Training Framework"
+      },
+      { "text": ", ", "textZh": "、" },
+      {
+        "label": "NoteFlow",
+        "paperTitle": "NoteFlow: Leveraging Charts as Sight Glasses for Consistent and Continuous Data Flow Tracing"
+      },
+      { "text": ", and ", "textZh": " 和 " },
+      {
+        "label": "TSEditor",
+        "paperTitle": "TSEditor: Interactive Time Series Editing for Privacy Preservation"
+      },
+      { "text": ", respectively.", "textZh": "。" }
+    ]
+  }
+]

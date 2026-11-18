@@ -9,7 +9,7 @@ export interface Copy {
   langLabel: string; // label shown on the switcher (the OTHER language to switch to)
   langSwitch: string;
   theme: { switchToLight: string; switchToDark: string };
-  nav: { about: string; highlights: string; network: string; publications: string; contact: string; toggleMenu: string };
+  nav: { about: string; highlights: string; news: string; network: string; publications: string; contact: string; toggleMenu: string };
   hero: {
     eyebrow: string;
     title1: string;
@@ -28,7 +28,15 @@ export interface Copy {
     headingPost: string;
     body: string;
   };
-  highlights: { eyebrow: string; heading: string; subtitle: string };
+  highlights: {
+    heading: string;
+    archiveHeading: string;
+    allNews: string;
+    backToHighlights: string;
+    loading: string;
+    empty: string;
+    unavailable: string;
+  };
   network: {
     eyebrow: string;
     heading: string;
@@ -105,6 +113,7 @@ const en: Copy = {
   nav: {
     about: 'About',
     highlights: 'Highlights',
+    news: 'News',
     network: 'Network',
     publications: 'Publications',
     contact: 'Contact',
@@ -130,9 +139,13 @@ const en: Copy = {
     body: 'Founded in 2015 within the State Key Lab of CAD&CG at Zhejiang University, the Interactive Data Group builds visualization, visual analytics, and interaction techniques — declarative authoring grammars, human-in-the-loop analysis systems, immersive and situated analytics, and interfaces that keep large models steerable. The work stays grounded in real domains: sports analytics, social media, and urban data.',
   },
   highlights: {
-    eyebrow: 'Highlights',
     heading: 'Recent highlights',
-    subtitle: 'Talks, awards, and papers our group has recently presented.',
+    archiveHeading: 'News',
+    allNews: 'All news',
+    backToHighlights: 'Back to highlights',
+    loading: 'Loading news…',
+    empty: 'No news has been posted yet.',
+    unavailable: 'News is temporarily unavailable.',
   },
   network: {
     eyebrow: 'Collaboration network',
@@ -231,6 +244,7 @@ const zh: Copy = {
   nav: {
     about: '关于',
     highlights: '近期亮点',
+    news: '新闻',
     network: '合作网络',
     publications: '学术论文',
     contact: '联系',
@@ -255,9 +269,13 @@ const zh: Copy = {
     body: 'Interactive Data Group 成立于 2015 年，隶属于浙江大学计算机辅助设计与图形系统全国重点实验室。我们研究可视化、可视分析与交互技术——声明式创作语法、人在回路的分析系统、沉浸式与情境化分析，以及让大模型保持可控的交互界面，并始终扎根于体育分析、社交媒体与城市数据等真实场景。',
   },
   highlights: {
-    eyebrow: '近期亮点',
     heading: '近期亮点',
-    subtitle: '课题组近期的学术报告、获奖与论文。',
+    archiveHeading: '新闻',
+    allNews: '查看全部新闻',
+    backToHighlights: '返回近期亮点',
+    loading: '正在加载新闻…',
+    empty: '暂无新闻。',
+    unavailable: '新闻暂时无法加载。',
   },
   network: {
     eyebrow: '合作网络',
@@ -365,16 +383,17 @@ const [lang, setLangSignal] = createSignal<Lang>(detect());
 
 export { lang };
 
-export function formatPublicationDate(isoDate: string): string {
+export function formatDate(isoDate: string, endDate?: string): string {
   const hasDay = isoDate.length === 10;
   const date = new Date(hasDay ? isoDate : `${isoDate}-01`);
   const locale = lang() === 'zh' ? 'zh-CN' : 'en-US';
-  return date.toLocaleDateString(locale, {
+  const formatter = new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: 'short',
     day: hasDay ? 'numeric' : undefined,
     timeZone: 'UTC',
   });
+  return endDate ? formatter.formatRange(date, new Date(endDate)) : formatter.format(date);
 }
 
 function applyHtmlLang(l: Lang) {

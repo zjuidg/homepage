@@ -1,4 +1,4 @@
-import { Venue, type Publication, type PublicationCategory, type Slide } from './types';
+import { Venue, type Highlight, type Publication, type PublicationCategory } from './types';
 
 const base = import.meta.env.BASE_URL || '/';
 
@@ -39,8 +39,9 @@ export async function loadFeatured(): Promise<string[]> {
   return getJSON<string[]>('featuredProj.json');
 }
 
-export async function loadSlides(): Promise<Slide[]> {
-  return getJSON<Slide[]>('slides.json');
+export async function loadHighlights(): Promise<Highlight[]> {
+  const highlights = await getJSON<Highlight[]>('news.json');
+  return highlights.sort((a, b) => (b.endDate ?? b.date).localeCompare(a.endDate ?? a.date));
 }
 
 export type MapCoordinate = [number, number];

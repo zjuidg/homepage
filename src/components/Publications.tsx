@@ -1,7 +1,7 @@
-import { createEffect, createMemo, createSignal, For, on, Show } from 'solid-js';
+import { createEffect, createMemo, createSignal, For, on, onMount, Show } from 'solid-js';
 import type { Publication } from '../types';
 import { venueDisplayName, venueSeriesList } from '../venues';
-import { searchQuery, setSearchQuery, externalTick } from '../search';
+import { searchPublications, searchQuery, setSearchQuery, externalTick } from '../search';
 import { reveal } from '../reveal';
 import { t } from '../i18n';
 import PublicationCard from './PublicationCard';
@@ -19,6 +19,11 @@ export default function Publications(props: { pubs: Publication[] }) {
   const [venue, setVenue] = createSignal<string>(ALL);
   const [awardsOnly, setAwardsOnly] = createSignal(false);
   const [page, setPage] = createSignal(1);
+
+  onMount(() => {
+    const linkedPaper = new URLSearchParams(window.location.search).get('paper');
+    if (linkedPaper) searchPublications(linkedPaper);
+  });
 
   // An external search (About tag, hero unit) clears the other filters so the
   // searched paper is the only result.

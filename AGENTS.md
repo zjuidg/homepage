@@ -1,7 +1,7 @@
 # AGENTS.md
 
-Guidance for working in this repo. The site is the **ZJU Interactive Data Group**
-homepage — a single-page SolidJS app that showcases the group's publications.
+Guidance for working in this repo. The **ZJU Interactive Data Group** site uses
+SolidJS for its publications homepage and news archive.
 
 ## Stack & commands
 
@@ -28,11 +28,12 @@ preview tooling). Run `pnpm build` / `npx tsc -b` to typecheck.
   in their original language.
 - `src/theme.ts`: theme signal and switcher state. `index.html` restores the saved
   theme before the first paint. Theme colors live in `src/index.css`.
-- `src/types.ts` — `Publication`, `Slide`.
-- `src/components/`: `Nav`, `LangToggle`, `Hero`, `About`, `PaperMap`, `Carousel`,
+- `src/types.ts` — `Publication`, `Highlight`.
+- `src/components/`: `Nav`, `LangToggle`, `Hero`, `About`, `PaperMap`, `Highlights`,
   `Publications`, `PublicationCard`, `Footer`. Component styles live in colocated
   `.css` files. `About` embeds `PaperMap` below the group introduction.
 - `public/source/` — content JSON + teaser images (served as static assets).
+- `news/index.html` and `src/news.tsx` — standalone news archive at `/news/`.
 
 Content lives in `public/source/`. **Edit those files directly** — they are the
 committed, served source of truth. (`scripts/copy-assets.py` was a one-time migration
@@ -235,7 +236,7 @@ Open `pnpm dev` and check English and Chinese:
 
 Review and commit the publication JSON, teaser, category codebook, generated
 `paper-topic-map.json`, and any related type or translation changes together.
-Include carousel assets and `slides.json` only when adding a highlight.
+Include `news.json` when updating a news entry.
 
 When publishing is requested, push to `main`. The current
 `.github/workflows/deploy.yml` builds and publishes to **GitHub Pages** at
@@ -243,23 +244,30 @@ https://zjuidg.org. It serves the committed map without regenerating embeddings
 or polygons. The build needs `VITE_PAPERS_BASE` set locally in `.env` and as a
 repository variable in CI. A request to commit alone does not include pushing.
 
-## Adding a carousel highlight (optional)
+## Adding a highlight (optional)
 
-Add an object to `public/source/slides.json`. Translate the sentence in `titleZh` but keep
-system/paper names verbatim; leave `subtitle` (the paper title) untranslated:
+Add or update an event in `public/source/news.json`. Keep updates from the same
+conference in one entry. Use `text` and `textZh` for prose, and use `label` and
+`paperTitle` for links to papers. Include spaces and punctuation in the prose
+around each link.
 
 ```jsonc
 {
-  "title":   "Foo Bar presented BazSystem at ACM CHI 2026!",
-  "titleZh": "Foo Bar 在 ACM CHI 2026 上汇报了 BazSystem！",
-  "subtitle":"Full Paper Title",
-  "imgSrc":  "source/slides/baz.jpg",          // committed image
-  "link":    "/publications/foo"
+  "event": "ACM CHI 2026",
+  "date": "2026-04-13",
+  "endDate": "2026-04-17",
+  "body": [
+    { "text": "Foo Bar presented ", "textZh": "Foo Bar 汇报了 " },
+    { "label": "BazSystem", "paperTitle": "Full Paper Title" },
+    { "text": ".", "textZh": "。" }
+  ]
 }
 ```
 
-Clicking a slide searches for its `subtitle` and scrolls to the publication list.
-Keep `subtitle` identical to the paper's title.
+The homepage shows up to five events. The news archive shows all events.
+Use the first day as `date` and add `endDate` for events that span multiple days.
+Entries sort newest first using `endDate` when present. Keep `paperTitle`
+identical to the publication title so the link finds the paper.
 
 ## Deployment quick reference
 
