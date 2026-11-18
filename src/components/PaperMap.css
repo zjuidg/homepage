@@ -21,6 +21,7 @@
 .map__coast { stroke: var(--map-coast); stroke-width: 1.7; }
 .map__selected-border { stroke: #64748b; stroke-width: 3.2; }
 .map__node { pointer-events: none; transition: opacity .2s; }
+.map__svg:not(.is-focused) .map__node { opacity: .5; }
 .map__node.dim { opacity: .12; }
 .map__paper-cell { fill: transparent; pointer-events: all; cursor: pointer; transition: fill .15s; }
 .map__paper-cell.hot { fill: rgba(255, 255, 255, .18); }

@@ -310,7 +310,6 @@ export default function CoauthorNetwork(props: { pubs: Publication[] }) {
         <div class="section-head" ref={reveal}>
           <span class="eyebrow">{t().network.eyebrow}</span>
           <h2>{t().network.heading}</h2>
-          <p>{t().network.intro}</p>
         </div>
 
         <div class="net__controls" ref={reveal}>

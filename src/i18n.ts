@@ -40,7 +40,6 @@ export interface Copy {
   network: {
     eyebrow: string;
     heading: string;
-    intro: string;
     filterLabel: string;
     thAll: string;
     th2: string;
@@ -68,7 +67,6 @@ export interface Copy {
   pubs: {
     eyebrow: string;
     heading: string;
-    intro: (n: number) => string;
     search: string;
     allVenues: string;
     awardPapers: string;
@@ -150,8 +148,6 @@ const en: Copy = {
   network: {
     eyebrow: 'Collaboration network',
     heading: 'A network of co-authors',
-    intro:
-      'Each node is an author; each link, a shared paper. Drag to explore, hover to spotlight collaborators.',
     filterLabel: 'Show authors with',
     thAll: 'Any paper',
     th2: '2+ papers',
@@ -197,8 +193,6 @@ const en: Copy = {
   pubs: {
     eyebrow: 'Publications',
     heading: 'Our research',
-    intro: (n) =>
-      `${n} peer-reviewed papers at venues including IEEE VIS, ACM CHI, UIST, and PacificVis. Search or filter below.`,
     search: 'Search title, author, or venue…',
     allVenues: 'All venues',
     awardPapers: 'Award papers',
@@ -280,8 +274,6 @@ const zh: Copy = {
   network: {
     eyebrow: '合作网络',
     heading: '作者合作网络',
-    intro:
-      '每个节点是一位作者，每条连线代表一篇合作论文。可拖拽探索，悬停高亮合作者。',
     filterLabel: '筛选作者',
     thAll: '全部',
     th2: '≥2 篇',
@@ -326,8 +318,6 @@ const zh: Copy = {
   pubs: {
     eyebrow: '学术论文',
     heading: '我们的研究',
-    intro: (n) =>
-      `${n} 篇经同行评审的论文，发表于 IEEE VIS、ACM CHI、UIST、PacificVis 等会议与期刊。可在下方搜索或筛选。`,
     search: '搜索标题、作者或发表会议…',
     allVenues: '全部会议',
     awardPapers: '获奖论文',

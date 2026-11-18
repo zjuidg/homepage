@@ -107,7 +107,6 @@ export default function Publications(props: { pubs: Publication[] }) {
         <div class="section-head" ref={reveal}>
           <span class="eyebrow">{t().pubs.eyebrow}</span>
           <h2>{t().pubs.heading}</h2>
-          <p>{t().pubs.intro(props.pubs.length)}</p>
         </div>
 
         <div class="pubs__controls" ref={reveal}>
